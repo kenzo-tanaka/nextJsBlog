@@ -9,7 +9,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
+      <main className={styles.main}>
         <h1 className={`${styles.title} ${styles.alignCenter}`}>
           Welcome to <a href="https://nextjs.org">Kenzo Blog</a>
         </h1>
@@ -25,18 +25,6 @@ export default function Home() {
           GitHub
         </a>
       </footer>
-
-      {/* TODO: module管理に移行する */}
-      <style jsx>{`
-        main {
-          padding: 5rem 0;
-          flex: 1;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-      `}</style>
     </div>
   );
 }
