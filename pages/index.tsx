@@ -15,7 +15,7 @@ export default function Home() {
         </h1>
       </main>
 
-      <footer className={styles.footer}>
+      <footer>
         <a
           className={styles.dispCenter}
           href="https://github.com/kenzoukenzou/nextJsBlog"
