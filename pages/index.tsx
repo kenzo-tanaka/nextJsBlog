@@ -1,5 +1,6 @@
 import Head from "next/head";
 import styles from "../components/layout.module.css";
+import utilStyles from "../styles/utils.module.css";
 
 export default function Home() {
   return (
@@ -10,14 +11,14 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={`${styles.title} ${styles.alignCenter}`}>
+        <h1 className={`${styles.title} ${utilStyles.alignCenter}`}>
           Welcome to <a href="https://nextjs.org">Kenzo Blog</a>
         </h1>
       </main>
 
       <footer>
         <a
-          className={styles.dispCenter}
+          className={utilStyles.dispCenter}
           href="https://github.com/kenzoukenzou/nextJsBlog"
           target="_blank"
           rel="noopener noreferrer"

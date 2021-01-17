@@ -21,14 +21,3 @@
   justify-content: center;
   align-items: center;
 }
-
-/* TODO: layout ではないファイルの方が良さそう */
-.dispCenter {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.alignCenter {
-  text-align: center;
-}
