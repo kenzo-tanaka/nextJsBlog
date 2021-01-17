@@ -1,15 +1,16 @@
 import Head from "next/head";
+import styles from "../components/layout.module.css";
 
 export default function Home() {
   return (
-    <div className="container">
+    <div className={styles.container}>
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main>
-        <h1 className="title">
+        <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Kenzo Blog</a>
         </h1>
       </main>
@@ -24,17 +25,7 @@ export default function Home() {
         </a>
       </footer>
 
-      {/* TODO: module管理に移行する */}
       <style jsx>{`
-        .container {
-          min-height: 100vh;
-          padding: 0 0.5rem;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-
         main {
           padding: 5rem 0;
           flex: 1;
@@ -74,18 +65,13 @@ export default function Home() {
           text-decoration: underline;
         }
 
-        .title {
-          margin: 0;
-          line-height: 1.15;
-          font-size: 4rem;
-        }
-
         .title,
         .description {
           text-align: center;
         }
       `}</style>
 
+      {/* TODO: module管理に移行する */}
       <style jsx global>{`
         html,
         body {
