@@ -41,7 +41,7 @@ export const getAllPostIds = () => {
   });
 };
 
-export function getPostData(id) {
+export function getPostData(id: string) {
   const fullPath = path.join(postDir, `${id}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const matterResult = matter(fileContents);
