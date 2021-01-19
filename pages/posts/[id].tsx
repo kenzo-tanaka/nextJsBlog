@@ -32,7 +32,9 @@ export default function Post({ postData }) {
         <div className={utilStyles.lightText}>
           <Date dateString={postData.date} />
         </div>
-        <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+
+        {/* TODO: markdown -> html */}
+        <div>{postData.content}</div>
       </article>
     </Layout>
   );
