@@ -40,7 +40,6 @@ export default function Post({ postData }) {
         <div className={utilStyles.lightText}>
           <Date dateString={postData.date} />
         </div>
-        {/* TODO: シンタックスハイライト */}
         <ReactMarkdown renderers={renderers} children={postData.content} />
       </article>
     </Layout>
