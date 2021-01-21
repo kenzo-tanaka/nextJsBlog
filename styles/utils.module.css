@@ -60,3 +60,7 @@
 .lightText {
   color: #999;
 }
+
+.textBold {
+  font-weight: 750;
+}
