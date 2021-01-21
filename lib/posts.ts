@@ -47,16 +47,11 @@ export async function getPostData(id: string) {
   const fullPath = path.join(postDir, `${id}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const matterResult = matter(fileContents);
+  const content = matterResult.content;
 
-  const processedContent = await remark()
-    .use(html)
-    .process(matterResult.content);
-  const contentHtml = processedContent.toString();
-
-  // Combine the data with the id
   return {
     id,
-    contentHtml,
+    content,
     ...matterResult.data,
   };
 }

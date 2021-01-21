@@ -3,6 +3,14 @@ import Layout from "../../components/layout";
 import Date from "../../components/date";
 import { getAllPostIds, getPostData } from "../../lib/posts";
 import utilStyles from "../../styles/utils.module.css";
+import ReactMarkdown from "react-markdown";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+
+const renderers = {
+  code: ({ language, value }) => {
+    return <SyntaxHighlighter language={language} children={value} />;
+  },
+};
 
 export async function getStaticProps({ params }) {
   const postData = await getPostData(params.id);
@@ -32,7 +40,7 @@ export default function Post({ postData }) {
         <div className={utilStyles.lightText}>
           <Date dateString={postData.date} />
         </div>
-        <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+        <ReactMarkdown renderers={renderers} children={postData.content} />
       </article>
     </Layout>
   );
