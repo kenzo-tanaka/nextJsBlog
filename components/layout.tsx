@@ -6,7 +6,7 @@ import Link from "next/link";
 const name = "Kenzo Tanaka";
 export const siteTitle = "Kenzo Blog";
 
-const Layout = ({ children, home }) => {
+const Layout = ({ children, home = false }) => {
   return (
     <div className={styles.container}>
       <Head>
