@@ -21,13 +21,16 @@ export function getSortedPostsData() {
     };
   });
 
-  return allPostsData.sort((a, b) => {
-    if (a.date < b.date) {
-      return 1;
-    } else {
-      return -1;
-    }
-  });
+  return allPostsData;
+
+  // TODO: dateを読めないので一旦コメントアウト
+  // return allPostsData.sort((a, b) => {
+  //   if (a.date < b.date) {
+  //     return 1;
+  //   } else {
+  //     return -1;
+  //   }
+  // });
 }
 
 export const getAllPostIds = () => {
