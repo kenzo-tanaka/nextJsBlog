@@ -4,7 +4,7 @@ import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
 
 const name = "Kenzo Tanaka";
-export const siteTitle = "Next.js Kenzo Website";
+export const siteTitle = "Kenzo Blog";
 
 const Layout = ({ children, home }) => {
   return (
