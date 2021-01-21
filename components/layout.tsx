@@ -10,7 +10,7 @@ const Layout = ({ children, home }) => {
   return (
     <div className={styles.container}>
       <Head>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/images/profile.jpg" />
         <meta name="description" content="hoge" />
         <meta
           property="og:image"
