@@ -6,8 +6,8 @@ import matter from "gray-matter";
 const postDir = path.join(process.cwd(), "posts");
 
 export function getSortedPostsData() {
-  const fileNmaes = fs.readdirSync(postDir);
-  const allPostsData = fileNmaes.map((fileName) => {
+  const fileNames = fs.readdirSync(postDir);
+  const allPostsData = fileNames.map((fileName) => {
     const id = fileName.replace(/\.md$/, "");
 
     const fullPath = path.join(postDir, fileName);
