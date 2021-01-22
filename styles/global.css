@@ -25,3 +25,19 @@ img {
   max-width: 100%;
   display: block;
 }
+
+h5 {
+  font-size: 1.0em;
+}
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border: 1px solid grey;
+  padding: 5px;
+}
+
+th {
+  text-align: left;
+  border-bottom: 1px solid grey;
+}
