@@ -43,7 +43,7 @@ export default function Post({ postData }) {
         </div>
         <ReactMarkdown renderers={renderers} children={postData.content} />
         <Link
-          href={`https://github.com/kenzoukenzou/nextJsBlog/edit/main/posts/${postData.id}.md`}
+          href={`https://github.com/kenzoukenzou/nextJsBlog/edit/main/contents/posts/${postData.id}.md`}
         >
           <a target="_blank">Edit on GitHub</a>
         </Link>
