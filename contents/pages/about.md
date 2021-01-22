@@ -2,20 +2,6 @@
 title: "About me"
 ---
 
-<img src="https://kenzoblog.netlify.com/photo.jpg" width="100px" alt="ソーシャルロゴ">
-
-|key|value|
-|----|----|
-|名前|田中建蔵|
-|年齢|25歳|
-|大学|関西大学 法学部 法律政治学科|
-|Twitter|[@kenzoooooB](https://twitter.com/kenzoooooB) |
-|Qiita|[@kenz-dev](https://qiita.com/kenz-dev) |
-|connpass|[connpass](https://connpass.com/user/kenzoukenzou/) |
-|Zenn|[kenzo](https://zenn.dev/kenzo) |
-|本棚|[ブクログ](https://booklog.jp/users/4165b902f43abd44) |
-
-
 ### できること
 
 [DOGADOZO](http://dogadozo.com/)というサービスの要件定義・設計・実装・テスト・リリースまで一貫して行ってきました。Ruby on Railsでの機能開発やテストの面でバリューを発揮できるかと思います。具体的に使用していた技術は、経歴に記載しています。
