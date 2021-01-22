@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Link from "next/link";
 import Layout from "../../components/layout";
 import Date from "../../components/date";
 import { getAllPostIds, getPostData } from "../../lib/posts";
@@ -41,6 +42,11 @@ export default function Post({ postData }) {
           <Date dateString={postData.date} />
         </div>
         <ReactMarkdown renderers={renderers} children={postData.content} />
+        <Link
+          href={`https://github.com/kenzoukenzou/nextJsBlog/edit/main/posts/${postData.id}.md`}
+        >
+          <a target="_blank">Edit on GitHub</a>
+        </Link>
       </article>
     </Layout>
   );
