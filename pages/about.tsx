@@ -2,6 +2,7 @@ import Head from "next/head";
 import Layout from "../components/layout";
 import { getPageData } from "../lib/page";
 import ReactMarkdown from "react-markdown";
+import gfm from "remark-gfm";
 
 export async function getStaticProps() {
   const pageData = await getPageData("about");
@@ -18,7 +19,7 @@ export default function About({ pageData }) {
       <Head>
         <title>{pageData.title}</title>
       </Head>
-      <ReactMarkdown children={pageData.content} />
+      <ReactMarkdown plugins={[gfm]} children={pageData.content} />
     </Layout>
   );
 }
