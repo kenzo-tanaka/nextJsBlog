@@ -18,7 +18,7 @@ export default function ShareBtns({ slug, title }) {
       </a>
       /
       <a
-        href={`https://b.hatna.ne.jp/add?mode=confirm&url=${pageUrl}`}
+        href={`http://b.hatena.ne.jp/add?mode=confirm&url=${pageUrl}`}
         rel="nofollow"
       >
         Bookmark
