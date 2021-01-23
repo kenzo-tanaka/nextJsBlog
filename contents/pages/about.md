@@ -71,3 +71,8 @@ Githubリポジトリ： [kenzoukenzou/kingkong_playlist: Vue.js x RoR](https://
 
 ### 興味関心
 過去の人生で医療との接点が多く恩返しをしたいという思いから、医療系の事業に関わりたいと思っています。  
+
+### コンタクト
+
+下記アドレスにご連絡ください。  
+dev.kenzo99@gmail.com
