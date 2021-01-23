@@ -45,13 +45,15 @@ export default function Post({ postData }) {
           <Date dateString={postData.date} />
         </div>
         <ReactMarkdown renderers={renderers} children={postData.content} />
+      </article>
+      <ShareBtns slug={postData.slug} title={postData.title} />
+      <div style={{ textAlign: "center", marginTop: "1em" }}>
         <Link
           href={`https://github.com/kenzoukenzou/nextJsBlog/edit/main/contents/posts/${postData.slug}.md`}
         >
           <a target="_blank">Edit on GitHub</a>
         </Link>
-      </article>
-      <ShareBtns slug={postData.slug} title={postData.title} />
+      </div>
     </Layout>
   );
 }
