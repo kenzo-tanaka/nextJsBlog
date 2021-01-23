@@ -23,7 +23,7 @@ const SnsBtn = styled.a`
 `;
 
 export default function ShareBtns({ slug, title }) {
-  const pageUrl = `https://next-js-blog-taupe.vercel.app/posts/${slug}`;
+  const pageUrl = `https://kenzoblog.vercel.app/posts/${slug}`;
   const postTitle = encodeURIComponent(`${title} | Kenzo Blog`);
   return (
     <BtnsWrapper>
