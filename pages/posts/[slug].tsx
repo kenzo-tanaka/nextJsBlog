@@ -2,6 +2,7 @@ import Head from "next/head";
 import Link from "next/link";
 import Layout from "../../components/layout";
 import Date from "../../components/date";
+import ShareBtns from "../../components/shareBtns";
 import { getAllPostSlugs, getPostData } from "../../lib/posts";
 import utilStyles from "../../styles/utils.module.css";
 import ReactMarkdown from "react-markdown";
@@ -50,6 +51,7 @@ export default function Post({ postData }) {
           <a target="_blank">Edit on GitHub</a>
         </Link>
       </article>
+      <ShareBtns slug={postData.slug} title={postData.title} />
     </Layout>
   );
 }
