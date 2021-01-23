@@ -31,7 +31,7 @@ export default function ShareBtns({ slug, title }) {
         href={`https://twitter.com/share?url=${pageUrl}&text=${postTitle}&via=kenzoooooB`}
         rel="nofollow"
       >
-        <img src="/images/twitter-white.svg" alt="Twitter" />
+        T{/* <img src="/images/twitter-white.svg" alt="Twitter" /> */}
       </SnsBtn>
       <SnsBtn
         href={`https://www.facebook.com/share.php?u=${pageUrl}`}
