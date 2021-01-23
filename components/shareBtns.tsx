@@ -35,7 +35,7 @@ export default function ShareBtns({ slug, title }) {
         <img
           src="/images/twitter-white.svg"
           alt="Twitter"
-          style={{ maxWidth: "44px", margin: "3px" }}
+          style={{ maxWidth: "44px", margin: "3px", display: "inline-block" }}
         />
       </SnsBtn>
       <SnsBtn
