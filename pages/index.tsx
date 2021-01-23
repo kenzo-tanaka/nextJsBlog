@@ -21,9 +21,14 @@ export default function Home({ allPostsData }) {
         <title>{siteTitle}</title>
       </Head>
 
-      <Link href={"/about"}>
-        <a>About Me</a>
-      </Link>
+      <p>
+        2019年からEXestという会社で、動画サービスの開発をしています。
+        業務ではRailsを扱っていますが、JavaScriptが好きです。詳しい経歴は
+        <Link href={"/about"}>
+          <a>こちら</a>
+        </Link>
+        。
+      </p>
 
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Articles</h2>
