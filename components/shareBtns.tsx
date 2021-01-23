@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const BtnsWrapper = styled.div`
-  margin-top: 1em;
+  margin-top: 1.8em;
   text-align: center;
 `;
 

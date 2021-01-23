@@ -51,7 +51,9 @@ export default function Post({ postData }) {
         <Link
           href={`https://github.com/kenzoukenzou/nextJsBlog/edit/main/contents/posts/${postData.slug}.md`}
         >
-          <a target="_blank">Edit on GitHub</a>
+          <a target="_blank" style={{ color: "grey" }}>
+            Edit on GitHub
+          </a>
         </Link>
       </div>
     </Layout>
