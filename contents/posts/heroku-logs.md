@@ -1,9 +1,33 @@
 ---
-title: Herokuのログ確認方法や使い分け
+title: Herokuのログ確認方法や監視について
 date: "2021-01-24"
 ---
 
-Herokuで不具合等があった際にログを確認する方法についてです。
+Herokuで不具合等があった際などにログを確認する方法についてです。
+
+## Rollbarを入れておく
+
+Herokuのアドオンとして提供されているRollbarを入れておくと、エラーの検知がしやすくなります。  
+[Rollbar - Add-ons - Heroku Elements](https://elements.heroku.com/addons/rollbar)
+
+アプリケーションで例外が生じたときに、メールやSlackなどで通知させることができます。
+またRailsアプリケーションでRollbarのGemを入れておけば、エラー捕捉時に任意のメッセージとともにRollbarに通知させるということもできます。
+
+```rb
+begin
+ # 省略
+rescue NoMethodError => e
+  Rollbar.error(e)
+
+  # 説明も送信
+  Rollbar.error(e, 'The user info hash doesn\'t contain the correct data')
+end
+```
+
+`ActiveRecord::RecordNotFound`や`ActionController::RoutingError`を拾いたくないという場合には、`rollbar.rb`に設定を加えることで検知しないように設定できます。
+
+[Exception level filters - Ruby](https://docs.rollbar.com/docs/ruby#exception-level-filters)
+
 
 ## HerokuダッシュボードのMetricsを見る
 
@@ -16,7 +40,7 @@ R14等のエラーコード一覧はこちらで確認できます。
 
 僕は以下のような使い方をしています。
 - H12(Request timeout)が起こった時間帯にどういうリクエストがあったかを確認する
-- R14が常態化している場合などは、アクセスが集中しているか・Herokuのスペックがアクセス量に対して足りていないか・DDoS攻撃を受けているかなどを調査
+- R14が常態化している場合は、アクセスが集中しているか・Herokuのスペックがアクセス量に対して足りていないか・DDoS攻撃を受けているかなどを調査
 
 
 ## Herokuダッシュボードから確認する方法
