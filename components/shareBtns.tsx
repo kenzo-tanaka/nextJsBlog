@@ -31,12 +31,12 @@ export default function ShareBtns({ slug, title }) {
       <SnsBtn
         href={`https://twitter.com/share?url=${pageUrl}&text=${postTitle}&via=kenzoooooB`}
         rel="nofollow"
-        style={{ padding: "3px" }}
+        style={{ padding: "4px" }}
       >
         <img
           src="/images/twitter-white.svg"
           alt="Twitter"
-          style={{ maxWidth: "44px", margin: "3px", display: "inline-block" }}
+          style={{ maxWidth: "44px", margin: "4px", display: "inline-block" }}
         />
       </SnsBtn>
       <SnsBtn
