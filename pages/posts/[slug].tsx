@@ -3,6 +3,7 @@ import Link from "next/link";
 import Layout from "../../components/layout";
 import Date from "../../components/date";
 import ShareBtns from "../../components/shareBtns";
+import { PageSEO } from "../../components/pageSEO";
 import { getAllPostSlugs, getPostData } from "../../lib/posts";
 import utilStyles from "../../styles/utils.module.css";
 import ReactMarkdown from "react-markdown";
@@ -36,9 +37,7 @@ export const getStaticPaths = async () => {
 export default function Post({ postData }) {
   return (
     <Layout>
-      <Head>
-        <title>{postData.title}</title>
-      </Head>
+      <PageSEO title={postData.title} slug={postData.slug} />
       <article>
         <h1 className={utilStyles.headingXl}>{postData.title}</h1>
         <div className={utilStyles.lightText}>

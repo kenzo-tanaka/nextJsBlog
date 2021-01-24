@@ -1,7 +1,9 @@
 import Head from "next/head";
 import Link from "next/link";
 import Date from "../components/date";
-import Layout, { siteTitle } from "../components/layout";
+import Layout from "../components/layout";
+import { PageSEO } from "../components/pageSEO";
+import { config } from "../site.config";
 import utilStyles from "../styles/utils.module.css";
 import { getSortedPostsData } from "../lib/posts";
 
@@ -17,10 +19,7 @@ export const getStaticProps = async () => {
 export default function Home({ allPostsData }) {
   return (
     <Layout home>
-      <Head>
-        <title>{siteTitle}</title>
-      </Head>
-
+      <PageSEO title={config.siteMeta.title} />
       <p>
         2019年からEXestという会社で、動画サービスの開発をしています。
         業務ではRailsを扱っていますが、JavaScriptが好きです。詳しい経歴は

@@ -16,7 +16,14 @@ export const PageSEO: React.FC<Props> = (props) => {
       <title>{title}</title>
       <meta property="og:title" content={title} />
       <meta property="og:url" content={pageUrl} />
-      <meta name="description" content={description} />
+      <meta
+        property="og:description"
+        content={description || config.siteMeta.description}
+      />
+      <meta
+        name="description"
+        content={description || config.siteMeta.description}
+      />
       <meta name="twitter:card" content="summary_large_image" />
       <meta property="og:site" content={config.siteMeta.title} />
       <meta
