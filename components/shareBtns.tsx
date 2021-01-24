@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { config } from "../site.config";
 
 const BtnsWrapper = styled.div`
   margin-top: 1.8em;
@@ -23,7 +24,7 @@ const SnsBtn = styled.a`
 `;
 
 export default function ShareBtns({ slug, title }) {
-  const pageUrl = `https://kenzoblog.vercel.app/posts/${slug}`;
+  const pageUrl = `${config.siteRoot}/posts/${slug}`;
   const postTitle = encodeURIComponent(`${title} | Kenzo Blog`);
   return (
     <BtnsWrapper>
