@@ -37,7 +37,7 @@ export const getStaticPaths = async () => {
 export default function Post({ postData }) {
   return (
     <Layout>
-      <PageSEO title={postData.title} slug={postData.slug} />
+      <PageSEO title={postData.title} slug={`posts/${postData.slug}`} />
       <article>
         <h1 className={utilStyles.headingXl}>{postData.title}</h1>
         <div className={utilStyles.lightText}>

@@ -6,6 +6,6 @@ export const config = {
   },
   siteRoot:
     process.env.NODE_ENV === "production"
-      ? "https://kenzoblog.vercel.app/"
+      ? "https://kenzoblog.vercel.app"
       : "http://localhost:3000",
 };
