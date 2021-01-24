@@ -8,7 +8,7 @@ type Props = {
   ogImageUrl?: string;
 };
 
-export const pageSEO: React.FC<Props> = (props) => {
+export const PageSEO: React.FC<Props> = (props) => {
   const { title, slug, description, ogImageUrl } = props;
   const pageUrl = `${config.siteRoot}/${slug || ""}`;
   return (
