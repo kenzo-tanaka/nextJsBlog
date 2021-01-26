@@ -78,12 +78,11 @@
   display: inline-block;
   text-decoration: none;
   width: 50px;
-  margin: 2px;
   height: 50px;
   line-height: 50px;
   font-size: 23px;
   color: white;
-  border-radius: 50px;
+  border-radius: 50%;
   text-align: center;
   overflow: hidden;
   font-weight: bold;
