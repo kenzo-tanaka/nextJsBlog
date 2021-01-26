@@ -9,6 +9,7 @@ export default function ShareBtns({ slug, title }) {
       <a
         href={`https://twitter.com/share?url=${pageUrl}&text=${postTitle}&via=kenzoooooB`}
         rel="nofollow"
+        target="_blank"
         className={utilStyles.snsBtn}
         style={{ padding: "4px" }}
       >
