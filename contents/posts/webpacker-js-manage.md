@@ -3,9 +3,9 @@ title: "RailsプロジェクトにおけるJavaScript管理方法"
 date: "2020-01-21"
 ---
 
-「Rails のプロジェクトでの JavaScript 管理方法」について、備忘録も兼ねて書いておこうと思います。あくまで一例なのでもっと良いやり方があれば、教えて頂けると嬉しいです。
+「Rails のプロジェクトでの JavaScript 管理方法」について、備忘録も兼ねて書いておきます。あくまで一例なのでもっと良いやり方があれば、教えて頂けると嬉しいです。
 
-まず一番シンプルに「全ての JavaScript コードを`packs/application.js`に書く」というやり方があると思います。
+まず一番シンプルに「全ての JavaScript コードを`packs/application.js`に書く」というやり方があります。
 
 ```js
 // ページAで実行したい処理
@@ -49,7 +49,7 @@ javascript:
   window.HOGE.Welcome.Index();
 ```
 
-上記がベースとなる管理方法で、複数の view で読み込みたい処理がある場合には、その機能単位で JS ファイルを作成して、それを 1 の view 単位の JS ファイルで読み込みます。
+上記がベースとなる管理方法で、複数の view で読み込みたい処理がある場合には、その機能単位で JS ファイルを作成します。それを 1 の view 単位の JS ファイルで読み込みます。
 
 ```js
 // packs/javascripts/shared/videoPlayer.js
@@ -85,7 +85,7 @@ export default function (videoId) {
 }
 ```
 
-View が増えるごとに名前空間を切るため、`application.js`の記述量と JS のファイル数は増えますが、
+View が増えるごとに名前空間を切るため、`application.js`の記述量と JS のファイル数は増えますが、以下の点がメリットとなります。
 
 - 影響範囲を絞れること
 - 共通化しすぎると JS の処理の中で条件分岐を書かないといけなくなることがある
