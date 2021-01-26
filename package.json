@@ -1,6 +1,7 @@
 {
-  "name": "learn-starter",
+  "name": "kenzo-blog",
   "version": "0.1.0",
+  "description": "田中建蔵の技術ブログ",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -23,6 +24,11 @@
   "devDependencies": {
     "@types/node": "^14.14.21",
     "@types/react": "^17.0.0",
+    "husky": "^5.0.6",
+    "textlint": "^11.8.1",
+    "textlint-rule-preset-ja-spacing": "^2.0.2",
+    "textlint-rule-preset-ja-technical-writing": "^4.0.1",
+    "textlint-rule-spellcheck-tech-word": "^5.0.0",
     "typescript": "^4.1.3"
   }
 }
