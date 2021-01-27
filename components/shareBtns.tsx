@@ -22,6 +22,7 @@ export default function ShareBtns({ slug, title }) {
       <a
         href={`https://www.facebook.com/share.php?u=${pageUrl}`}
         rel="nofollow"
+        target="_blank"
         className={utilStyles.snsBtn}
         style={{ margin: "0 0.5em 0 0.5em" }}
       >
@@ -31,6 +32,7 @@ export default function ShareBtns({ slug, title }) {
         href={`http://b.hatena.ne.jp/add?mode=confirm&url=${pageUrl}`}
         className={utilStyles.snsBtn}
         rel="nofollow"
+        target="_blank"
       >
         B!
       </a>
