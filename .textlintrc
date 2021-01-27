@@ -10,6 +10,9 @@
       "sentence-length": {
         max: 200
       },
+       "max-kanji-continuous-len": {
+        max: 10
+      },
       "no-exclamation-question-mark": false
     },
     "spellcheck-tech-word": true
