@@ -44,10 +44,10 @@ Next.js はビルトインサポートしている CSS Modules を推してい�
 - CSS Modules を使用する場合は、ファイル名を `.module.css` にする必要がある。
 - `.module.css` で定義したクラス名がそのまま付与されるのではなくて、実際はユニークなクラス名が自動的に生成されて付与される
 - スタイルをサイト内でグローバルに効かせることもできる。
-  - [https://nextjs.org/learn/basics/assets-metadata-css/global-styles](https://nextjs.org/learn/basics/assets-metadata-css/global-styles)
+  - [Global Styles - Assets, Metadata, and CSS | Learn Next.js](https://nextjs.org/learn/basics/assets-metadata-css/global-styles)
 - ディレクトリ構成は Zenn のやり方が参考になる。
   - `/styles` ディレクトリの下に色々作っている感じ
-  - [https://zenn.dev/catnose99/scraps/5e3d51d75113d3#comment-1a556066794f35](https://zenn.dev/catnose99/scraps/5e3d51d75113d3#comment-1a556066794f35)
+  - [Next.js に CSS Modules を導入する](https://zenn.dev/catnose99/scraps/5e3d51d75113d3#comment-1a556066794f35)
 
 ## 所感
 
