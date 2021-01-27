@@ -1,12 +1,12 @@
 ---
-title: styled-components, CSS Modules について調べてまとめる
+title: styled-components, CSS Modules について調べたのでまとめる
 date: "2021-01-27"
 ---
 
 Next.js でブログを作っているときに CSS の管理方法について、色々やり方があることを知りました。
 それぞれプロコンを、調べたのでまとめておきます。
 
-## `styled-components`の話
+## `styled-components` を採用した経緯、運用方法(食べログ)
 
 [Sass から CSS Modules、そして styled-components に乗り換えた話｜食べログ フロントエンドエンジニアブログ｜ note](https://note.com/tabelog_frontend/n/n2541778b81e3)
 
@@ -19,7 +19,7 @@ CSS Modules→styled-components に移行した話の記事です。
 「なるほどな」と思ったのが`StyledComponent`を定義したら `Styled` というプレフィックスをつけるルールだそうです。
 確かにこうしておけば、自分が書いているのが `StyledComponent` なのか・カスタムコンポーネントなのかが分かりやすいなと思いました。
 
-## `styled-components` をやめた話
+## `styled-components` をやめた話(Qiita - jagaapple さん)
 
 [styled-components（CSS in JS）をやめた理由と、不完全な CSS Modules を愛する方法 - Qiita](https://qiita.com/jagaapple/items/7f74fc32c69f5b731159)
 
@@ -42,7 +42,7 @@ Next.js はビルトインサポートしている CSS Modules を推してい�
 
 - ビルトインサポートされているので、特別な設定は必要ない
 - CSS Modules を使用する場合は、ファイル名を `.module.css` にする必要がある。
-- `module.css` で定義したクラス名がそのまま付与されるのではなくて、実際はユニークなクラス名が自動的に生成されて付与される
+- `.module.css` で定義したクラス名がそのまま付与されるのではなくて、実際はユニークなクラス名が自動的に生成されて付与される
 - スタイルをサイト内でグローバルに効かせることもできる。
   - [https://nextjs.org/learn/basics/assets-metadata-css/global-styles](https://nextjs.org/learn/basics/assets-metadata-css/global-styles)
 - ディレクトリ構成は Zenn のやり方が参考になる。
@@ -61,5 +61,5 @@ const BtnsWrapper = styled.div`
 `;
 ```
 
-ただ確かに上記で書いた通り、どれが styled-components なのかわからなくなる問題・パフォーマンスに影響する問題などを踏まえると、`CSS Modules` の方が良いのかなと考えています。
+ただ確かに上記で書いた通り、どれが styled-components なのかわからなくなる問題・パフォーマンスに影響する問題などを踏まえると、`CSS Modules` の方が良いのかなと今は考えています。
 少なくとも Next.js のプロジェクトでは CSS Modules で書いたほうが良さそうなので、自分のブログも CSS Modules で書いていくつもりです。
