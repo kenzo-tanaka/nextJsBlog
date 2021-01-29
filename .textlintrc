@@ -4,11 +4,15 @@
     "preset-ja-spacing": {
       "ja-space-between-half-and-full-width": {
         "space": "always"
-      }
+      },
+      "ja-no-space-between-full-width": false
     },
     "preset-ja-technical-writing": {
       "sentence-length": {
         max: 200
+      },
+       "max-kanji-continuous-len": {
+        max: 10
       },
       "no-exclamation-question-mark": false
     },
