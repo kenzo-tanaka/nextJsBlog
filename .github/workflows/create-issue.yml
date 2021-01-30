@@ -2,7 +2,7 @@ name: Create an issue for jibun release note
 
 on:
   schedule:
-    - cron: "40 12 30 * *"
+    - cron: "45 * * * *"
 
 jobs:
   stuff:
