@@ -15,22 +15,21 @@ export function getSortedPostsData() {
 
     const matterResult = matter(fileContents);
 
+    // スプレッド構文を使うと、この下の date により比較でエラーになるため個別に指定
     return {
       slug,
-      ...matterResult.data,
+      title: matterResult.data.title,
+      date: matterResult.data.date,
     };
   });
 
-  return allPostsData;
-
-  // TODO: dateを読めないので一旦コメントアウト
-  // return allPostsData.sort((a, b) => {
-  //   if (a.date < b.date) {
-  //     return 1;
-  //   } else {
-  //     return -1;
-  //   }
-  // });
+  return allPostsData.sort((a, b) => {
+    if (a.date < b.date) {
+      return 1;
+    } else {
+      return -1;
+    }
+  });
 }
 
 export const getAllPostSlugs = () => {
