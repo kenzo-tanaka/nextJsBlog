@@ -4,7 +4,12 @@ import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
 import { config } from "../site.config";
 
-const Layout = ({ children, home = false }) => {
+type Props = {
+  children: Element;
+  home: boolean;
+};
+
+const Layout: React.FC<Props> = ({ children, home = false }) => {
   return (
     <div className={styles.container}>
       <header className={styles.header}>

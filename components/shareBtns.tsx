@@ -1,7 +1,12 @@
 import { config } from "../site.config";
 import utilStyles from "../styles/utils.module.css";
 
-export default function ShareBtns({ slug, title }) {
+type Props = {
+  slug: string;
+  title: string;
+};
+
+const ShareBtns: React.FC<Props> = ({ slug, title }) => {
   const pageUrl = `${config.siteRoot}/posts/${slug}`;
   const postTitle = encodeURIComponent(`${title} | Kenzo Blog`);
   return (
@@ -38,4 +43,6 @@ export default function ShareBtns({ slug, title }) {
       </a>
     </div>
   );
-}
+};
+
+export default ShareBtns;
