@@ -1,3 +1,4 @@
+import { NextPage } from "next";
 import Head from "next/head";
 import Layout from "../components/layout";
 import { getPageData } from "../lib/page";
@@ -13,7 +14,14 @@ export async function getStaticProps() {
   };
 }
 
-export default function About({ pageData }) {
+type Props = {
+  pageData: {
+    title: string;
+    content: string;
+  };
+};
+
+const About: NextPage<Props> = ({ pageData }) => {
   return (
     <Layout>
       <Head>
@@ -22,4 +30,6 @@ export default function About({ pageData }) {
       <ReactMarkdown plugins={[gfm]} children={pageData.content} />
     </Layout>
   );
-}
+};
+
+export default About;
