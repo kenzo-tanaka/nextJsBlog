@@ -1,4 +1,4 @@
-import Head from "next/head";
+import { NextPage, GetStaticProps } from "next";
 import Link from "next/link";
 import Layout from "../../components/layout";
 import Date from "../../components/date";
@@ -13,6 +13,15 @@ const renderers = {
   code: ({ language, value }) => {
     return <SyntaxHighlighter language={language} children={value} />;
   },
+};
+
+type Props = {
+  postData: {
+    slug: string;
+    title: string;
+    date: string;
+    content: string;
+  };
 };
 
 // Fetch necessary data for the blog post using params.slug
@@ -34,7 +43,7 @@ export const getStaticPaths = async () => {
   };
 };
 
-export default function Post({ postData }) {
+const Post: NextPage<Props> = ({ postData }) => {
   return (
     <Layout>
       <PageSEO title={postData.title} slug={`posts/${postData.slug}`} />
@@ -57,4 +66,6 @@ export default function Post({ postData }) {
       </div>
     </Layout>
   );
-}
+};
+
+export default Post;
