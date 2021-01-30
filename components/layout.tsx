@@ -5,8 +5,8 @@ import Link from "next/link";
 import { config } from "../site.config";
 
 type Props = {
-  children: Props;
-  home: boolean;
+  children: Element;
+  home?: boolean;
 };
 
 const Layout: React.FC<Props> = ({ children, home = false }) => {
