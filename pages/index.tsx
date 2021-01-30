@@ -1,4 +1,4 @@
-import Head from "next/head";
+import { NextPage } from "next";
 import Link from "next/link";
 import Date from "../components/date";
 import Layout from "../components/layout";
@@ -6,6 +6,7 @@ import { PageSEO } from "../components/pageSEO";
 import { config } from "../site.config";
 import utilStyles from "../styles/utils.module.css";
 import { getSortedPostsData } from "../lib/posts";
+import { PostData } from "@types";
 
 export const getStaticProps = async () => {
   const allPostsData = getSortedPostsData();
@@ -16,7 +17,11 @@ export const getStaticProps = async () => {
   };
 };
 
-export default function Home({ allPostsData }) {
+type Props = {
+  allPostsData: PostData[];
+};
+
+const Home: NextPage<Props> = ({ allPostsData }) => {
   return (
     <Layout home>
       <PageSEO title={config.siteMeta.title} />
@@ -49,4 +54,6 @@ export default function Home({ allPostsData }) {
       </section>
     </Layout>
   );
-}
+};
+
+export default Home;
