@@ -6,6 +6,7 @@ import { PageSEO } from "../components/pageSEO";
 import { config } from "../site.config";
 import utilStyles from "../styles/utils.module.css";
 import { getSortedPostsData } from "../lib/posts";
+import { PostData } from "@types";
 
 export const getStaticProps = async () => {
   const allPostsData = getSortedPostsData();
@@ -17,11 +18,7 @@ export const getStaticProps = async () => {
 };
 
 type Props = {
-  allPostsData: {
-    slug: string;
-    date: string;
-    title: string;
-  }[];
+  allPostsData: PostData[];
 };
 
 const Home: NextPage<Props> = ({ allPostsData }) => {
