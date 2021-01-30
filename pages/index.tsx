@@ -1,4 +1,4 @@
-import Head from "next/head";
+import { NextPage } from "next";
 import Link from "next/link";
 import Date from "../components/date";
 import Layout from "../components/layout";
@@ -16,7 +16,15 @@ export const getStaticProps = async () => {
   };
 };
 
-export default function Home({ allPostsData }) {
+type Props = {
+  allPostsData: {
+    slug: string;
+    date: string;
+    title: string;
+  }[];
+};
+
+const Home: NextPage<Props> = ({ allPostsData }) => {
   return (
     <Layout home>
       <PageSEO title={config.siteMeta.title} />
@@ -49,4 +57,6 @@ export default function Home({ allPostsData }) {
       </section>
     </Layout>
   );
-}
+};
+
+export default Home;
