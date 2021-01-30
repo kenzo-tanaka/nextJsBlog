@@ -46,13 +46,6 @@ blockquote {
   background: rgb(241, 244, 247);
 }
 
-/* table {
-  width: 100%;
-  border-collapse: separate;
-  border: 1px solid grey;
-  padding: 5px;
-} */
-
 table,
 td,
 th {
