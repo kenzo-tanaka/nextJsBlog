@@ -1,0 +1,14 @@
+name: Create an issue for jibun release note
+
+on:
+  schedule:
+    - cron: "35 12 30 * *"
+
+jobs:
+  stuff:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: JasonEtco/create-an-issue@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
