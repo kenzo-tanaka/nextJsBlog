@@ -16,8 +16,12 @@ const renderers = {
   },
 };
 
+type Props = {
+  postData: PostData;
+};
+
 // Fetch necessary data for the blog post using params.slug
-export async function getStaticProps({ params }: any) {
+export async function getStaticProps({ params }: { params: { slug: string } }) {
   const postData = await getPostData(params.slug);
   return {
     props: {
@@ -33,10 +37,6 @@ export const getStaticPaths = async () => {
     paths,
     fallback: false,
   };
-};
-
-type Props = {
-  postData: PostData;
 };
 
 const Post: NextPage<Props> = ({ postData }) => {
