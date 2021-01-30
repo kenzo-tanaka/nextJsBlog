@@ -17,7 +17,7 @@ const renderers = {
 };
 
 // Fetch necessary data for the blog post using params.slug
-export async function getStaticProps({ params }) {
+export async function getStaticProps({ params }: any) {
   const postData = await getPostData(params.slug);
   return {
     props: {
