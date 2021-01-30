@@ -1,4 +1,3 @@
-import { NextPage, GetStaticProps } from "next";
 import Link from "next/link";
 import Layout from "../../components/layout";
 import Date from "../../components/date";
@@ -10,18 +9,9 @@ import ReactMarkdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 
 const renderers = {
-  code: ({ language, value }) => {
+  code: ({ language, value }: { language: string; value: string }) => {
     return <SyntaxHighlighter language={language} children={value} />;
   },
-};
-
-type Props = {
-  postData: {
-    slug: string;
-    title: string;
-    date: string;
-    content: string;
-  };
 };
 
 // Fetch necessary data for the blog post using params.slug
@@ -43,7 +33,7 @@ export const getStaticPaths = async () => {
   };
 };
 
-const Post: NextPage<Props> = ({ postData }) => {
+export default function Post({ postData }) {
   return (
     <Layout>
       <PageSEO title={postData.title} slug={`posts/${postData.slug}`} />
@@ -66,6 +56,4 @@ const Post: NextPage<Props> = ({ postData }) => {
       </div>
     </Layout>
   );
-};
-
-export default Post;
+}
