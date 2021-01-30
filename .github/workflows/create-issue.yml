@@ -1,11 +1,14 @@
+name: Create an issue for jibun release note
+
 on:
   schedule:
     # * is a special character in YAML so you have to quote this string
-    - cron: "* * * * *"
-name: Create an issue for jibun release note
+    - cron: "10 * * * *"
+
 jobs:
-  stuff:
-    runs-on: ubuntu-latest
+  build:
+    name: Create an issue for jibun release note
+    runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
       - uses: JasonEtco/create-an-issue@v2
