@@ -2,8 +2,8 @@ name: create issue
 
 on:
   schedule:
-    # * is a special character in YAML so you have to quote this string
-    - cron: "15 * * * *"
+    # 執筆に余裕を持ちたいので 27 日で設定
+    - cron: "0 0 27 * *"
 
 jobs:
   build:
