@@ -5,7 +5,7 @@ import Link from "next/link";
 import { config } from "../site.config";
 
 type Props = {
-  children: Props;
+  children: Element[];
   home?: boolean;
 };
 
