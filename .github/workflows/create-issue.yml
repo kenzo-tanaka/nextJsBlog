@@ -1,6 +1,8 @@
-name: Create an issue on push
+name: Create an issue for jibun release note
 
-on: [push]
+on:
+  schedule:
+    - cron: "35 12 30 * *"
 
 jobs:
   stuff:
