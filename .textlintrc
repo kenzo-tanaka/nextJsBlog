@@ -5,7 +5,8 @@
       "ja-space-between-half-and-full-width": {
         "space": "always"
       },
-      "ja-no-space-between-full-width": false
+      "ja-no-space-between-full-width": false,
+      "ja-space-after-exclamation": false
     },
     "preset-ja-technical-writing": {
       "sentence-length": {
