@@ -69,6 +69,10 @@
   color: #282828;
 }
 
+.textBlack:visited {
+  color: #3e3f48;
+}
+
 .btnsWrapper {
   margin-top: 1.8em;
   text-align: center;
