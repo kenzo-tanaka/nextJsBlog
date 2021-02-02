@@ -8,15 +8,17 @@ const postDir = config.postDir;
 
 export async function getCategoryPosts(name: string) {
   const fileNames = fs.readdirSync(postDir);
+
   const categoryPosts = fileNames
     .filter((fileName) => {
       const matterResult = getMatterResult(path.join(postDir, fileName));
-      matterResult.data.category === name;
+      return matterResult.data.category === name;
     })
     .map((fileName) => {
       const matterResult = getMatterResult(path.join(postDir, fileName));
       return {
         slug: fileName.replace(/\.md$/, ""),
+        title: matterResult.data.title,
         content: matterResult.content,
         date: matterResult.data.date,
         category: matterResult.data.category,
