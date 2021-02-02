@@ -61,16 +61,21 @@
   color: #999;
 }
 
+.greyText {
+  color: #414141;
+}
+
 .textBold {
   font-weight: 750;
 }
 
-.textBlack {
-  color: #282828;
+.titleText {
+  color: #040404;
+  font-weight: 700;
 }
 
-.textBlack:visited {
-  color: #3e3f48;
+.titleText:visited {
+  color: #414141;
 }
 
 .btnsWrapper {
@@ -92,4 +97,11 @@
   overflow: hidden;
   font-weight: bold;
   background: #000;
+}
+
+.categoryLabel {
+  text-decoration: underline;
+  padding: 0 7px;
+  font-size: 17px;
+  color: #414141;
 }

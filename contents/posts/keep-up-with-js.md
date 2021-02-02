@@ -1,6 +1,7 @@
 ---
 title: JavaScriptを1から勉強し直すときの教材リスト
 date: "2021-01-24"
+category: "dev"
 ---
 
 ## 前提

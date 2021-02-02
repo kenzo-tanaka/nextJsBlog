@@ -1,6 +1,7 @@
 ---
 title: styled-components, CSS Modules について調べたのでまとめる
 date: "2021-01-27"
+category: "dev"
 ---
 
 Next.js でブログを作っているときに CSS の管理方法について、色々やり方があることを知りました。

@@ -1,25 +1,19 @@
-// fetch data from file system
 import fs from "fs";
 import path from "path";
-import matter from "gray-matter";
+import { config } from "../site.config";
+import { getMatterResult } from "./matter";
 
-const postDir = path.join(process.cwd(), "contents/posts");
+const postDir = config.postDir;
 
 export function getSortedPostsData() {
   const fileNames = fs.readdirSync(postDir);
   const allPostsData = fileNames.map((fileName) => {
-    const slug = fileName.replace(/\.md$/, "");
-
-    const fullPath = path.join(postDir, fileName);
-    const fileContents = fs.readFileSync(fullPath, "utf8");
-
-    const matterResult = matter(fileContents);
-
+    const matterResult = getMatterResult(path.join(postDir, fileName));
     // スプレッド構文を使うと、この下の date により比較でエラーになるため個別に指定
     return {
-      slug,
-      title: matterResult.data.title,
+      slug: fileName.replace(/\.md$/, ""),
       date: matterResult.data.date,
+      ...matterResult.data,
     };
   });
 
@@ -44,14 +38,10 @@ export const getAllPostSlugs = () => {
 };
 
 export async function getPostData(slug: string) {
-  const fullPath = path.join(postDir, `${slug}.md`);
-  const fileContents = fs.readFileSync(fullPath, "utf8");
-  const matterResult = matter(fileContents);
-  const content = matterResult.content;
-
+  const matterResult = getMatterResult(path.join(postDir, `${slug}.md`));
   return {
-    slug,
-    content,
+    slug: slug,
+    content: matterResult.content,
     ...matterResult.data,
   };
 }
