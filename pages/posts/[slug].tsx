@@ -40,16 +40,19 @@ export const getStaticPaths = async () => {
 };
 
 const Post: NextPage<Props> = ({ postData }) => {
-  const { slug, title, date, content } = postData;
+  const { slug, title, date, content, category } = postData;
 
   return (
     <Layout>
       <PageSEO title={title} slug={`posts/${slug}`} />
       <article>
-        <h1 className={utilStyles.headingXl}>{title}</h1>
-        <div className={utilStyles.lightText}>
+        <small className={utilStyles.lightText}>
           <Date dateString={date} />
-        </div>
+        </small>
+        <h1 className={utilStyles.headingXl}>{title}</h1>
+        <Link href={`/categories/${category}`}>
+          <a className={utilStyles.categoryLabel}>#{category}</a>
+        </Link>
         <ReactMarkdown renderers={renderers} children={content} />
       </article>
       <ShareBtns slug={slug} title={title} />
