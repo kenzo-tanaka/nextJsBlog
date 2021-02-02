@@ -17,9 +17,7 @@ const PostsList: NextPage<Props> = ({ posts, heading }) => {
         {posts.map(({ slug, date, title, category }) => (
           <li className={utilStyles.listItem} key={slug}>
             <Link href={`/posts/${slug}`}>
-              <a className={`${utilStyles.textBold} ${utilStyles.titleText}`}>
-                {title}
-              </a>
+              <a className={`${utilStyles.titleText}`}>{title}</a>
             </Link>
             <br />
             <small className={utilStyles.lightText}>
