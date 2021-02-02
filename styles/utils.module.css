@@ -71,6 +71,7 @@
 
 .titleText {
   color: #040404;
+  font-weight: 700;
 }
 
 .titleText:visited {
