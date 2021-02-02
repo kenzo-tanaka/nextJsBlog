@@ -1,9 +1,12 @@
+import path from "path";
+
 export const config = {
   siteMeta: {
     title: "Kenzo Blog",
     description: "Tech Blog by Kenzo Tanaka",
     author: "Kenzo Tanaka",
   },
+  postDir: path.join(process.cwd(), "contents/posts"),
   siteRoot:
     process.env.NODE_ENV === "production"
       ? "https://kenzoblog.vercel.app"
