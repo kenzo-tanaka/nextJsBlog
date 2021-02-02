@@ -35,7 +35,7 @@ const Home: NextPage<Props> = ({ allPostsData }) => {
       </p>
 
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-        <h2 className={utilStyles.headingLg}>Articles</h2>
+        <h2 className={utilStyles.headingLg}>All</h2>
         <ul className={utilStyles.list}>
           {allPostsData.map(({ slug, date, title, category }) => (
             <li className={utilStyles.listItem} key={slug}>
