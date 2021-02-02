@@ -1,6 +1,5 @@
 import fs from "fs";
 import path from "path";
-import matter from "gray-matter";
 import { config } from "../site.config";
 import { getMatterResult } from "./matter";
 
@@ -13,8 +12,8 @@ export function getSortedPostsData() {
     // スプレッド構文を使うと、この下の date により比較でエラーになるため個別に指定
     return {
       slug: fileName.replace(/\.md$/, ""),
-      title: matterResult.data.title,
       date: matterResult.data.date,
+      ...matterResult.data,
     };
   });
 

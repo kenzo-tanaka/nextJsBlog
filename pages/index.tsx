@@ -37,7 +37,7 @@ const Home: NextPage<Props> = ({ allPostsData }) => {
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Articles</h2>
         <ul className={utilStyles.list}>
-          {allPostsData.map(({ slug, date, title }) => (
+          {allPostsData.map(({ slug, date, title, category }) => (
             <li className={utilStyles.listItem} key={slug}>
               <Link href={`/posts/${slug}`}>
                 <a className={`${utilStyles.textBold} ${utilStyles.textBlack}`}>
@@ -47,6 +47,11 @@ const Home: NextPage<Props> = ({ allPostsData }) => {
               <br />
               <small className={utilStyles.lightText}>
                 <Date dateString={date} />
+              </small>
+              <small style={{ marginLeft: "10px" }}>
+                <Link href={`/categories/${category}`}>
+                  <a>{category}</a>
+                </Link>
               </small>
             </li>
           ))}
