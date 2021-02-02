@@ -40,7 +40,7 @@ const Category: NextPage<Props> = ({ posts, categoryName }) => {
           {posts.map(({ slug, date, title }) => (
             <li className={utilStyles.listItem} key={slug}>
               <Link href={`/posts/${slug}`}>
-                <a className={`${utilStyles.textBold} ${utilStyles.textBlack}`}>
+                <a className={`${utilStyles.textBold} ${utilStyles.titleText}`}>
                   {title}
                 </a>
               </Link>
