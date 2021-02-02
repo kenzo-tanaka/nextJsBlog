@@ -74,7 +74,7 @@ Github リポジトリ： [kenzoukenzou/kingkong_playlist: Vue.js x RoR](https:/
 - DOGADOZO：社内開発者２人と限られているため、プロジェクトの立ち上げから要件定義・設計・タスク分解・実装・テスト・リリースを一貫して担当し、プロジェクトを推進していきました。
 - WOW U：テストコードがなく保守しづらい状況を解消するため、カバレッジを 45 → 80％以上まで広げ、CircleCI 導入により自動ビルド&デプロイを推進しました。
 
-関連記事: [今の会社に入社して 1 年でやってきたこと](https://kenzoblog.netlify.app/posts/this-past-year-as-engineer)
+関連記事: [エンジニア 1 年目でやってきたこと](https://kenzoblog.vercel.app/posts/first-year-as-engineer)
 
 ### 興味関心
 
