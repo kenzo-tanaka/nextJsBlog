@@ -1,10 +1,9 @@
 import { NextPage } from "next";
 import Link from "next/link";
-import Date from "../components/date";
 import Layout from "../components/layout";
+import PostsList from "../components/postsList";
 import { PageSEO } from "../components/pageSEO";
 import { config } from "../site.config";
-import utilStyles from "../styles/utils.module.css";
 import { getSortedPostsData } from "../lib/posts";
 import { PostData } from "@types";
 
@@ -33,28 +32,7 @@ const Home: NextPage<Props> = ({ allPostsData }) => {
         </Link>
         。
       </p>
-
-      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-        <h2 className={utilStyles.headingLg}>All</h2>
-        <ul className={utilStyles.list}>
-          {allPostsData.map(({ slug, date, title, category }) => (
-            <li className={utilStyles.listItem} key={slug}>
-              <Link href={`/posts/${slug}`}>
-                <a className={`${utilStyles.textBold} ${utilStyles.titleText}`}>
-                  {title}
-                </a>
-              </Link>
-              <br />
-              <small className={utilStyles.lightText}>
-                <Date dateString={date} />
-              </small>
-              <Link href={`/categories/${category}`}>
-                <a className={utilStyles.categoryLabel}>#{category}</a>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </section>
+      <PostsList heading="All" posts={allPostsData} />
     </Layout>
   );
 };
