@@ -67,3 +67,7 @@ code {
   font-size: 85%;
   border-radius: 6px;
 }
+
+small {
+  font-size: 14px;
+}
