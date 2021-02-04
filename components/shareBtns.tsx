@@ -1,5 +1,5 @@
 import { config } from "../site.config";
-import utilStyles from "../styles/utils.module.css";
+import styles from "../styles/ShareBtns.module.css";
 
 type Props = {
   slug: string;
@@ -10,12 +10,12 @@ const ShareBtns: React.FC<Props> = ({ slug, title }) => {
   const pageUrl = `${config.siteRoot}/posts/${slug}`;
   const postTitle = encodeURIComponent(`${title} | Kenzo Blog`);
   return (
-    <div className={utilStyles.btnsWrapper}>
+    <div className={styles.btnsWrapper}>
       <a
         href={`https://twitter.com/share?url=${pageUrl}&text=${postTitle}&via=kenzoooooB`}
         rel="nofollow"
         target="_blank"
-        className={utilStyles.snsBtn}
+        className={styles.snsBtn}
         style={{ padding: "4px" }}
       >
         <img
@@ -28,14 +28,14 @@ const ShareBtns: React.FC<Props> = ({ slug, title }) => {
         href={`https://www.facebook.com/share.php?u=${pageUrl}`}
         rel="nofollow"
         target="_blank"
-        className={utilStyles.snsBtn}
+        className={styles.snsBtn}
         style={{ margin: "0 0.5em 0 0.5em" }}
       >
         F
       </a>
       <a
         href={`http://b.hatena.ne.jp/add?mode=confirm&url=${pageUrl}`}
-        className={utilStyles.snsBtn}
+        className={styles.snsBtn}
         rel="nofollow"
         target="_blank"
       >
