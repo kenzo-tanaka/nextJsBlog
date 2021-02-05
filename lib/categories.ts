@@ -6,17 +6,21 @@ import { config } from "../site.config";
 const postDir = config.postDir;
 
 export async function getCategoryPosts(name: string) {
-  const fileNames = fs.readdirSync(postDir);
+  const dirNames = fs.readdirSync(postDir);
 
-  const categoryPosts = fileNames
-    .filter((fileName) => {
-      const matterResult = getMatterResult(path.join(postDir, fileName));
+  const categoryPosts = dirNames
+    .filter((dirName) => {
+      const matterResult = getMatterResult(
+        path.join(postDir, dirName, "index.md")
+      );
       return matterResult.data.category === name;
     })
-    .map((fileName) => {
-      const matterResult = getMatterResult(path.join(postDir, fileName));
+    .map((dirName) => {
+      const matterResult = getMatterResult(
+        path.join(postDir, dirName, "index.md")
+      );
       return {
-        slug: fileName.replace(/\.md$/, ""),
+        slug: dirName,
         title: matterResult.data.title,
         content: matterResult.content,
         date: matterResult.data.date,
@@ -34,9 +38,11 @@ export async function getCategoryPosts(name: string) {
 }
 
 export const getCategoryNames = () => {
-  const fileNames = fs.readdirSync(postDir);
-  return fileNames.map((fileName) => {
-    const matterResult = getMatterResult(path.join(postDir, fileName));
+  const dirNames = fs.readdirSync(postDir);
+  return dirNames.map((dirName) => {
+    const matterResult = getMatterResult(
+      path.join(postDir, dirName, "index.md")
+    );
     return {
       params: {
         name: matterResult.data.category,

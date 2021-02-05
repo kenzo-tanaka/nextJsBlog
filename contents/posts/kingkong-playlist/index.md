@@ -20,10 +20,11 @@ category: "dev"
 個人の娯楽&開発学習のため作成したサービスなので、現時点では一般ユーザーの新規登録導線はありません。僕だけがタイムスタンプ・プレイリストを登録できます。
 
 まず動画に対して、タイムスタンプを保存できます。タイムスタンプは押すと、その秒数から動画がスタートします。
-![スクリーンショット 2020-12-11 14 40 50](https://user-images.githubusercontent.com/33926355/101867659-0abec980-3bbf-11eb-89ea-b6ce4236f639.png)
+![screen shot](kingkong-image1.png)
 
 各タイムスタンプはプレイリストに保存されるので、あとでプレイリストを見返すこともできます。例えば、「[梶原のボケシリーズ](https://playlist-2bf49.web.app/playlists/2)」では動画内で梶原さんがボケた箇所だけまとまっていて、タイムスタンプを押すとその動画のその秒数から動画が再生されます。
-![スクリーンショット 2020-12-11 14 43 52](https://user-images.githubusercontent.com/33926355/101867817-68ebac80-3bbf-11eb-93b0-52edfc5f049e.png)
+
+![screen shot](kingkong-image2.png)
 
 - [サービス URL](https://playlist-2bf49.web.app)
 - [ソースコード](https://github.com/kenzoukenzou/kingkong_playlist)

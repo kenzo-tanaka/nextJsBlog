@@ -6,12 +6,14 @@ import { getMatterResult } from "./matter";
 const postDir = config.postDir;
 
 export function getSortedPostsData() {
-  const fileNames = fs.readdirSync(postDir);
-  const allPostsData = fileNames.map((fileName) => {
-    const matterResult = getMatterResult(path.join(postDir, fileName));
+  const dirNames = fs.readdirSync(postDir);
+  const allPostsData = dirNames.map((dirName) => {
+    const matterResult = getMatterResult(
+      path.join(postDir, dirName, "index.md")
+    );
     // スプレッド構文を使うと、この下の date により比較でエラーになるため個別に指定
     return {
-      slug: fileName.replace(/\.md$/, ""),
+      slug: dirName,
       date: matterResult.data.date,
       ...matterResult.data,
     };
@@ -27,18 +29,18 @@ export function getSortedPostsData() {
 }
 
 export const getAllPostSlugs = () => {
-  const fileNames = fs.readdirSync(postDir);
-  return fileNames.map((fileName) => {
+  const dirNames = fs.readdirSync(postDir);
+  return dirNames.map((dirName) => {
     return {
       params: {
-        slug: fileName.replace(/\.md$/, ""),
+        slug: dirName,
       },
     };
   });
 };
 
 export async function getPostData(slug: string) {
-  const matterResult = getMatterResult(path.join(postDir, `${slug}.md`));
+  const matterResult = getMatterResult(path.join(postDir, slug, "index.md"));
   return {
     slug: slug,
     content: matterResult.content,
