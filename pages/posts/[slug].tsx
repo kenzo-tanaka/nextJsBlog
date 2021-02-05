@@ -8,16 +8,23 @@ import { getAllPostSlugs, getPostData } from "../../lib/posts";
 import utilStyles from "../../styles/utils.module.css";
 import ReactMarkdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import style from "react-syntax-highlighter/dist/cjs/styles/prism/dracula";
 import { PostData } from "@types";
-
-const renderers = {
-  code: ({ language, value }: { language: string; value: string }) => {
-    return <SyntaxHighlighter language={language} children={value} />;
-  },
-};
 
 type Props = {
   postData: PostData;
+};
+
+const CodeBlock = ({
+  language,
+  value,
+}: {
+  language: string;
+  value: string;
+}) => {
+  return (
+    <SyntaxHighlighter language={language} style={style} children={value} />
+  );
 };
 
 // Fetch necessary data for the blog post using params.slug
@@ -53,7 +60,7 @@ const Post: NextPage<Props> = ({ postData }) => {
         <Link href={`/categories/${category}`}>
           <a className={utilStyles.categoryLabel}>#{category}</a>
         </Link>
-        <ReactMarkdown renderers={renderers} children={content} />
+        <ReactMarkdown renderers={{ code: CodeBlock }} children={content} />
       </article>
       <ShareBtns slug={slug} title={title} />
       <div style={{ textAlign: "center", marginTop: "1em" }}>
