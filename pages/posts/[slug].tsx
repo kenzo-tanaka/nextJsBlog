@@ -10,7 +10,6 @@ import ReactMarkdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import style from "react-syntax-highlighter/dist/cjs/styles/prism/dracula";
 import { PostData } from "@types";
-import path from "path";
 
 type Props = {
   postData: PostData;
@@ -27,12 +26,6 @@ const CodeBlock = ({
     <SyntaxHighlighter language={language} style={style} children={value} />
   );
 };
-
-const MarkdownImg = ({ alt, src }: { alt: string; src: string }) => (
-  <picture>
-    <img src={require(`../../contents/assets/${src}`)} alt={alt} />
-  </picture>
-);
 
 // Fetch necessary data for the blog post using params.slug
 export async function getStaticProps({ params }: { params: { slug: string } }) {
@@ -56,6 +49,14 @@ export const getStaticPaths = async () => {
 const Post: NextPage<Props> = ({ postData }) => {
   const { slug, title, date, content, category } = postData;
 
+  const Img = ({ alt, src }: { alt: string; src: string }) => {
+    return (
+      <picture>
+        <img src={require(`../../contents/posts/${slug}/${src}`)} alt={alt} />
+      </picture>
+    );
+  };
+
   return (
     <Layout>
       <PageSEO title={title} slug={`posts/${slug}`} />
@@ -68,7 +69,7 @@ const Post: NextPage<Props> = ({ postData }) => {
           <a className={utilStyles.categoryLabel}>#{category}</a>
         </Link>
         <ReactMarkdown
-          renderers={{ code: CodeBlock, image: MarkdownImg }}
+          renderers={{ code: CodeBlock, image: Img }}
           children={content}
         />
       </article>
