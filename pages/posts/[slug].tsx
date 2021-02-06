@@ -71,6 +71,7 @@ const Post: NextPage<Props> = ({ postData }) => {
         <ReactMarkdown
           renderers={{ code: CodeBlock, image: Img }}
           children={content}
+          allowDangerousHtml={true}
         />
       </article>
       <ShareBtns slug={slug} title={title} />
