@@ -76,7 +76,7 @@ const Post: NextPage<Props> = ({ postData }) => {
       <ShareBtns slug={slug} title={title} />
       <div style={{ textAlign: "center", marginTop: "1em" }}>
         <Link
-          href={`https://github.com/kenzoukenzou/nextJsBlog/edit/main/contents/posts/${slug}.md`}
+          href={`https://github.com/kenzoukenzou/nextJsBlog/edit/main/contents/posts/${slug}/index.md`}
         >
           <a target="_blank" style={{ color: "grey" }}>
             Edit on GitHub
