@@ -10,6 +10,7 @@ import ReactMarkdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import style from "react-syntax-highlighter/dist/cjs/styles/prism/dracula";
 import { PostData } from "@types";
+import gfm from "remark-gfm";
 
 type Props = {
   postData: PostData;
@@ -70,6 +71,7 @@ const Post: NextPage<Props> = ({ postData }) => {
         </Link>
         <ReactMarkdown
           renderers={{ code: CodeBlock, image: Img }}
+          plugins={[gfm]}
           children={content}
           allowDangerousHtml={true}
         />
