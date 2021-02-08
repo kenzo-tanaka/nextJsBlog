@@ -28,6 +28,15 @@ const CodeBlock = ({
   );
 };
 
+const isURL = (url: string) => {
+  try {
+    new URL(url);
+  } catch (e) {
+    return false;
+  }
+  return true;
+};
+
 // Fetch necessary data for the blog post using params.slug
 export async function getStaticProps({ params }: { params: { slug: string } }) {
   const postData = await getPostData(params.slug);
@@ -53,7 +62,12 @@ const Post: NextPage<Props> = ({ postData }) => {
   const Img = ({ alt, src }: { alt: string; src: string }) => {
     return (
       <picture>
-        <img src={require(`../../contents/posts/${slug}/${src}`)} alt={alt} />
+        <img
+          src={
+            isURL(src) ? src : require(`../../contents/posts/${slug}/${src}`)
+          }
+          alt={alt}
+        />
       </picture>
     );
   };
