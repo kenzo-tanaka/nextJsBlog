@@ -11,6 +11,7 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import style from "react-syntax-highlighter/dist/cjs/styles/prism/dracula";
 import { PostData } from "@types";
 import gfm from "remark-gfm";
+import { TwitterTweetEmbed } from "react-twitter-embed";
 
 type Props = {
   postData: PostData;
@@ -23,6 +24,9 @@ const CodeBlock = ({
   language: string;
   value: string;
 }) => {
+  if (language === "twitter") {
+    return <TwitterTweetEmbed tweetId={value} />;
+  }
   return (
     <SyntaxHighlighter language={language} style={style} children={value} />
   );
