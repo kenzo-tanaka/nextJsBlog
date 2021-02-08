@@ -15,7 +15,9 @@ Chrome のブックマークから JavaScript を実行できる Bookmarklet を
 
 Issue のコメント文章をクリックしたら即編集できるようにします。
 
-<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">GitHub Issueのコメントをクリックしたら即編集できるようにしたかったので、JavaScriptを書いた。Bookmarkletを使ってブックマークから実行できるようにすると便利。<br><br>コード: <a href="https://t.co/f1NktnLzCE">https://t.co/f1NktnLzCE</a> <a href="https://t.co/cSbNzKwYlv">pic.twitter.com/cSbNzKwYlv</a></p>&mdash; 田中建蔵 (@kenzoooooB) <a href="https://twitter.com/kenzoooooB/status/1356594913782075397?ref_src=twsrc%5Etfw">February 2, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+```twitter
+1356594913782075397
+```
 
 ```js
 document.querySelectorAll(".comment-body").forEach((comment) => {
