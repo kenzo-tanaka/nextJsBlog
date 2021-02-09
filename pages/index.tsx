@@ -25,13 +25,11 @@ const Home: NextPage<Props> = ({ allPostsData }) => {
   return (
     <Layout home>
       <PageSEO title={config.siteMeta.title} />
-      <p className={utilStyles.greyText}>
-        2019年からEXestという会社で、動画サービスの開発をしています。
-        業務ではRailsを扱っていますが、JavaScriptが好きです。詳しい経歴は
+      <p className={`${utilStyles.alignCenter} ${utilStyles.greyText}`}>
+        Personal tech blog /{" "}
         <Link href={"/about"}>
-          <a>こちら</a>
+          <a>Resume</a>
         </Link>
-        。
       </p>
       <PostsList heading="All" posts={allPostsData} />
     </Layout>
