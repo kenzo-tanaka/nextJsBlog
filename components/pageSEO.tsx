@@ -16,6 +16,7 @@ export const PageSEO: React.FC<Props> = (props) => {
       <title>{title}</title>
       <meta property="og:title" content={title} />
       <meta property="og:url" content={pageUrl} />
+      <link rel="icon" href="/favicon.ico"></link>
       <meta
         property="og:description"
         content={description || config.siteMeta.description}
