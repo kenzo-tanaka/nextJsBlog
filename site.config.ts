@@ -7,6 +7,7 @@ export const config = {
     author: "Kenzo Tanaka",
   },
   postDir: path.join(process.cwd(), "contents/posts"),
+  repo: "https://github.com/kenzoukenzou/nextJsBlog",
   siteRoot:
     process.env.NODE_ENV === "production"
       ? "https://kenzoblog.vercel.app"

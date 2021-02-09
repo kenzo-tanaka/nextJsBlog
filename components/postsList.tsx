@@ -24,7 +24,11 @@ const PostsList: NextPage<Props> = ({ posts, heading }) => {
               <Date dateString={date} />
             </small>
             <Link href={`/categories/${category}`}>
-              <a className={utilStyles.categoryLabel}>#{category}</a>
+              <a
+                className={`${utilStyles.categoryLabel} ${utilStyles.linkUnderline}`}
+              >
+                #{category}
+              </a>
             </Link>
           </li>
         ))}

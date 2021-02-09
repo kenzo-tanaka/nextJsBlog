@@ -32,6 +32,15 @@ const Home: NextPage<Props> = ({ allPostsData }) => {
         </Link>
       </p>
       <PostsList heading="All" posts={allPostsData} />
+      <p className={utilStyles.alignCenter}>
+        <a
+          href={config.repo}
+          target="_blank"
+          className={`${utilStyles.linkUnderline} ${utilStyles.greyText}`}
+        >
+          SourceCode
+        </a>
+      </p>
     </Layout>
   );
 };

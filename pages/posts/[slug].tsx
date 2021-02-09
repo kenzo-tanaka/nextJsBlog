@@ -13,6 +13,7 @@ import { PostData } from "@types";
 import gfm from "remark-gfm";
 import { TwitterTweetEmbed } from "react-twitter-embed";
 import Skeleton from "react-loading-skeleton";
+import { config } from "../../site.config";
 
 type Props = {
   postData: PostData;
@@ -91,7 +92,11 @@ const Post: NextPage<Props> = ({ postData }) => {
         </small>
         <h1 className={utilStyles.headingXl}>{title}</h1>
         <Link href={`/categories/${category}`}>
-          <a className={utilStyles.categoryLabel}>#{category}</a>
+          <a
+            className={`${utilStyles.categoryLabel} ${utilStyles.linkUnderline}`}
+          >
+            #{category}
+          </a>
         </Link>
         <ReactMarkdown
           renderers={{ code: CodeBlock, image: Img }}
@@ -102,9 +107,7 @@ const Post: NextPage<Props> = ({ postData }) => {
       </article>
       <ShareBtns slug={slug} title={title} />
       <div style={{ textAlign: "center", marginTop: "1em" }}>
-        <Link
-          href={`https://github.com/kenzoukenzou/nextJsBlog/edit/main/contents/posts/${slug}/index.md`}
-        >
+        <Link href={`${config.repo}/edit/main/contents/posts/${slug}/index.md`}>
           <a target="_blank" style={{ color: "grey" }}>
             Edit on GitHub
           </a>

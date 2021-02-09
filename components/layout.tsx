@@ -21,12 +21,6 @@ const Layout: React.FC<Props> = ({ children, home = false }) => {
               alt={config.siteMeta.author}
             />
             <h1 className={utilStyles.heading2Xl}>{config.siteMeta.author}</h1>
-            <a href="https://github.com/kenzoukenzou" target="_blank">
-              <img
-                src="/images/github.png"
-                style={{ width: "24px", height: "24px" }}
-              />
-            </a>
           </>
         ) : (
           <>

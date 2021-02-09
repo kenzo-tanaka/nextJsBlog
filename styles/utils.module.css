@@ -78,8 +78,11 @@
   color: #414141;
 }
 
-.categoryLabel {
+.linkUnderline {
   text-decoration: underline;
+}
+
+.categoryLabel {
   padding: 0 7px;
   font-size: 17px;
   color: #414141;
