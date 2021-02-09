@@ -7,6 +7,7 @@ title: "About me"
 | 名前     | 田中建蔵                                              |
 | 年齢     | 25 歳                                                 |
 | 大学     | 関西大学・法学部・法律政治学科                        |
+| GitHub   | [kenzoukenzou](https://github.com/kenzoukenzou)       |
 | Twitter  | [@kenzoooooB](https://twitter.com/kenzoooooB)         |
 | Qiita    | [@kenz-dev](https://qiita.com/kenz-dev)               |
 | connpass | [connpass](https://connpass.com/user/kenzoukenzou/)   |
