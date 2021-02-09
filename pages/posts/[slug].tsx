@@ -12,6 +12,7 @@ import style from "react-syntax-highlighter/dist/cjs/styles/prism/dracula";
 import { PostData } from "@types";
 import gfm from "remark-gfm";
 import { TwitterTweetEmbed } from "react-twitter-embed";
+import Skeleton from "react-loading-skeleton";
 
 type Props = {
   postData: PostData;
@@ -25,7 +26,12 @@ const CodeBlock = ({
   value: string;
 }) => {
   if (language === "twitter") {
-    return <TwitterTweetEmbed tweetId={value} />;
+    return (
+      <TwitterTweetEmbed
+        tweetId={value}
+        placeholder={<Skeleton height={300} />}
+      />
+    );
   }
   return (
     <SyntaxHighlighter language={language} style={style} children={value} />
