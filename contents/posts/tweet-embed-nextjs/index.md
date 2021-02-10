@@ -35,7 +35,7 @@ category: "dev"
 結論、以下のようにしています。
 マークダウンの中のコードブロックで、`language` が `twitter` だったら埋め込みをするコンポーネントを返すようにしています。マークダウン記事の中では、`value` としてツイート ID を渡します。
 
-```tsx
+```tsx:[slug].tsx
 import ReactMarkdown from "react-markdown";
 import Skeleton from "react-loading-skeleton";
 import { TwitterTweetEmbed } from "react-twitter-embed";
