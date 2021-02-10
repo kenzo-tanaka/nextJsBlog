@@ -27,15 +27,13 @@ category: "dev"
 2. `application.js`で view の単位で名前空間を切り、1 の処理を突っ込む
 3. view で名前空間に突っ込んだ処理を呼び出す
 
-```js
-// packs/javascripts/views/welcome/index.js
+```js:packs/javascripts/views/welcome/index.js
 export default function () {
   // 実装
 }
 ```
 
-```js
-// packs/application.js
+```js:packs/application.js
 window.HOGE = window.HOGE || {};
 
 import welcomeIndex from "./welcome/index";
@@ -44,23 +42,20 @@ window.HOGE.Welcome.Index = window.HOGE.Welcome.Index || {};
 window.HOGE.Welcome.Index = welcomeIndex;
 ```
 
-```slim
-/ app/views/welcome/index.html.slim
+```slim:app/views/welcome/index.html.slim
 javascript:
   window.HOGE.Welcome.Index();
 ```
 
 上記がベースとなる管理方法で、複数の view で読み込みたい処理がある場合には、その機能単位で JS ファイルを作成します。それを 1 の view 単位の JS ファイルで読み込みます。
 
-```js
-// packs/javascripts/shared/videoPlayer.js
+```js:packs/javascripts/shared/videoPlayer.js
 export default function () {
   // Plyrを使ってvideoタグを装飾する処理
 }
 ```
 
-```js
-// packs/javascripts/views/welcome/index.js
+```js:packs/javascripts/views/welcome/index.js
 import videoPlayer from "../../shared/videoPlayer";
 
 export default function () {
@@ -73,14 +68,12 @@ export default function () {
 ページごとに名前空間を切っていくので、ページを跨いで JavaScript が影響するということを避けられます。  
 また View で JS を読み込む際に引数をわたし、それを使って JS の処理を走らせるなども可能になります。
 
-```slim
-/ app/views/videos/show.html.slim
+```slim:app/views/videos/show.html.slim
 javascript:
   window.HOGE.Videos.Show("#{@video.id}");
 ```
 
-```js
-// packs/javascripts/views/videos/show.js
+```js:packs/javascripts/views/videos/show.js
 export default function (videoId) {
   // videoIdを使った処理
 }

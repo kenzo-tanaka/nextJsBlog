@@ -80,7 +80,7 @@ npm install --save next-compose-plugins
 
 Next.js プロジェクトのアドバンス設定のために、`next.config.js` を作成できます。今回は下記の内容で設定します。
 
-```js
+```js:next.config.js
 const withPlugins = require("next-compose-plugins");
 const optimizedImages = require("next-optimized-images");
 
@@ -107,7 +107,7 @@ You may need an appropriate loader to handle this file type, currently no loader
 
 最後に `react-markdown` を使ってレンダリングを行っている箇所を修正します。色々省略して書くと、下記のような感じです。
 
-```tsx
+```tsx:[slug].tsx
 const Post: NextPage<Props> = ({ postData }) => {
   const { slug, title, date, content, category } = postData;
 
