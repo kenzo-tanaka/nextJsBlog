@@ -34,8 +34,17 @@ const CodeBlock = ({
       />
     );
   }
+
+  const [lang, file] = language.split(":");
   return (
-    <SyntaxHighlighter language={language} style={style} children={value} />
+    <div className={utilStyles.codeBlockContainer}>
+      {file && (
+        <div className="code-block-header">
+          <span className={utilStyles.codeBlockFilename}>{file}</span>
+        </div>
+      )}
+      <SyntaxHighlighter language={lang} style={style} children={value} />
+    </div>
   );
 };
 

@@ -87,3 +87,17 @@
   font-size: 17px;
   color: #414141;
 }
+
+.codeBlockContainer {
+  position: relative;
+  background: rgb(40, 42, 54);
+}
+
+.codeBlockFilename {
+  display: inline-block;
+  max-width: 100%;
+  font-size: 13px;
+  color: #ffffff;
+  padding: 5px;
+  background: rgba(177, 197, 247, 0.25);
+}

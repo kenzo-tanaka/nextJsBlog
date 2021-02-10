@@ -71,3 +71,8 @@ code {
 small {
   font-size: 14px;
 }
+
+pre {
+  margin-top: 0 !important;
+  padding: 10px 1em !important;
+}
