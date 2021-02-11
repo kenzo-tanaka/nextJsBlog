@@ -1,13 +1,14 @@
 import { useRouter } from "next/router";
 import * as gtag from "../lib/gtag";
 import { AppProps } from "next/app";
-import "../styles/global.css";
 import { useEffect } from "react";
+import "../styles/global.scss";
+import "tailwindcss/tailwind.css";
+import Navbar from "../components/navBar";
 
 const App = ({ Component, pageProps }: AppProps) => {
-  const router = useRouter();
-
   if (process.env.NODE_ENV === "production") {
+    const router = useRouter();
     useEffect(() => {
       const handleRouteChange = (url: URL) => {
         gtag.pageView(url);
@@ -19,7 +20,12 @@ const App = ({ Component, pageProps }: AppProps) => {
     }, [router.events]);
   }
 
-  return <Component {...pageProps} />;
+  return (
+    <>
+      <Navbar />
+      <Component {...pageProps} />
+    </>
+  );
 };
 
 export default App;
