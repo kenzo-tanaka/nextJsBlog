@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import "./post.scss";
+
 html,
 body {
   padding: 0;
@@ -30,26 +32,6 @@ img {
   display: block;
 }
 
-h3 {
-  font-size: 1.375rem;
-  line-height: 1.625rem;
-}
-
-h4 {
-  font-size: 1.2rem;
-}
-
-h5 {
-  font-size: 1em;
-}
-
-blockquote {
-  font-style: italic;
-  padding: 1.5rem;
-  margin: 0;
-  background: rgb(241, 244, 247);
-}
-
 table,
 td,
 th {
@@ -61,7 +43,7 @@ table {
   table-layout: auto;
   border-collapse: collapse;
   width: 90%;
-  margin: 0 auto;
+  margin: 20px auto;
 }
 
 code {
@@ -74,9 +56,4 @@ code {
 
 small {
   font-size: 14px;
-}
-
-pre {
-  margin-top: 0 !important;
-  padding: 10px 1em !important;
 }

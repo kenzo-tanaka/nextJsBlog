@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import * as gtag from "../lib/gtag";
 import { AppProps } from "next/app";
 import { useEffect } from "react";
-import "../styles/global.css";
+import "../styles/global.scss";
 import "tailwindcss/tailwind.css";
 import Navbar from "../components/navBar";
 
