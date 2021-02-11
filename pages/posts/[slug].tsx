@@ -107,12 +107,14 @@ const Post: NextPage<Props> = ({ postData }) => {
             #{category}
           </a>
         </Link>
-        <ReactMarkdown
-          renderers={{ code: CodeBlock, image: Img }}
-          plugins={[gfm]}
-          children={content}
-          allowDangerousHtml={true}
-        />
+        <div className="markdown-body">
+          <ReactMarkdown
+            renderers={{ code: CodeBlock, image: Img }}
+            plugins={[gfm]}
+            children={content}
+            allowDangerousHtml={true}
+          />
+        </div>
       </article>
       <ShareBtns slug={slug} title={title} />
       <div style={{ textAlign: "center", marginTop: "1em" }}>
