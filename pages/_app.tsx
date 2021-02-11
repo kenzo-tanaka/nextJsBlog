@@ -6,15 +6,18 @@ import { useEffect } from "react";
 
 const App = ({ Component, pageProps }: AppProps) => {
   const router = useRouter();
-  useEffect(() => {
-    const handleRouteChange = (url: URL) => {
-      gtag.pageView(url);
-    };
-    router.events.on("routeChangeComplete", handleRouteChange);
-    return () => {
-      router.events.off("routeChangeComplete", handleRouteChange);
-    };
-  }, [router.events]);
+
+  if (process.env.NODE_ENV === "production") {
+    useEffect(() => {
+      const handleRouteChange = (url: URL) => {
+        gtag.pageView(url);
+      };
+      router.events.on("routeChangeComplete", handleRouteChange);
+      return () => {
+        router.events.off("routeChangeComplete", handleRouteChange);
+      };
+    }, [router.events]);
+  }
 
   return <Component {...pageProps} />;
 };
