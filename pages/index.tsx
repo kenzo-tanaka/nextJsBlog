@@ -38,6 +38,7 @@ const Home: NextPage<Props> = ({ allPostsData }) => {
             </Link>
           </p>
         </div>
+        <hr className="my-5" />
         <PostsList heading="All" posts={allPostsData} />
       </div>
       <p className="mt-7 text-center">
