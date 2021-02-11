@@ -2,64 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+@import "./base.scss";
+
+// tailwind が h2 などのスタイルを上書きしてしまうので、post.scss でスタイリングしている
 @import "./post.scss";
+
+// TODO: tailwindcssで書く
 @import "./shareBtn.scss";
-
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
-    "Hiragino Sans", Meiryo, sans-serif;
-  line-height: 1.6;
-  font-weight: 400;
-  font-size: 100%;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-a {
-  color: #0070f3;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-img {
-  max-width: 100%;
-  display: block;
-}
-
-table,
-td,
-th {
-  border: 1px solid #222;
-  padding: 10px;
-}
-
-table {
-  table-layout: auto;
-  border-collapse: collapse;
-  width: 90%;
-  margin: 20px auto;
-}
-
-code {
-  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
-  background-color: rgba(27, 31, 35, 0.05);
-  padding: 0.2em 0.4em;
-  font-size: 85%;
-  border-radius: 6px;
-}
-
-small {
-  font-size: 14px;
-}
-
-.profile-section {
-  border-bottom: 1px solid rgb(51, 51, 51);
-}
