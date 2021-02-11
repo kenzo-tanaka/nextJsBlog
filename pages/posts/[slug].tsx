@@ -94,7 +94,7 @@ const Post: NextPage<Props> = ({ postData }) => {
   return (
     <Layout>
       <PageSEO title={title} slug={`posts/${slug}`} />
-      <article className="mt-8">
+      <article className="mt-8 p-5">
         <small className="text-sm font-normal text-gray-400">
           <Date dateString={date} />
         </small>
