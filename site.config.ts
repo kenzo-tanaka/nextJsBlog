@@ -6,6 +6,7 @@ export const config = {
     description: "Tech Blog by Kenzo Tanaka",
     author: "Kenzo Tanaka",
   },
+  gaID: "G-YVLG2X1KMY",
   postDir: path.join(process.cwd(), "contents/posts"),
   repo: "https://github.com/kenzoukenzou/nextJsBlog",
   siteRoot:
