@@ -4,6 +4,7 @@ import { AppProps } from "next/app";
 import { useEffect } from "react";
 import "../styles/global.css";
 import "tailwindcss/tailwind.css";
+import Navbar from "../components/navBar";
 
 const App = ({ Component, pageProps }: AppProps) => {
   const router = useRouter();
@@ -20,7 +21,12 @@ const App = ({ Component, pageProps }: AppProps) => {
     }, [router.events]);
   }
 
-  return <Component {...pageProps} />;
+  return (
+    <>
+      <Navbar />
+      <Component {...pageProps} />
+    </>
+  );
 };
 
 export default App;
