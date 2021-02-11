@@ -18,11 +18,7 @@ const ShareBtns: React.FC<Props> = ({ slug, title }) => {
         className={styles.snsBtn}
         style={{ padding: "4px" }}
       >
-        <img
-          src="/images/twitter-white.svg"
-          alt="Twitter"
-          style={{ display: "inline" }}
-        />
+        <img src="/images/twitter-white.svg" alt="Twitter" />
       </a>
       <a
         href={`https://www.facebook.com/share.php?u=${pageUrl}`}
