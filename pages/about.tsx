@@ -27,7 +27,7 @@ const About: NextPage<Props> = ({ pageData }) => {
       <Head>
         <title>{pageData.title}</title>
       </Head>
-      <div className="markdown-body">
+      <div className="markdown-body p-7">
         <ReactMarkdown plugins={[gfm]} children={pageData.content} />
       </div>
     </Layout>
