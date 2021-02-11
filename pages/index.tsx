@@ -26,11 +26,11 @@ const Home: NextPage<Props> = ({ allPostsData }) => {
     <Layout home>
       <PageSEO title={config.siteMeta.title} />
       <PostsList heading="All" posts={allPostsData} />
-      <p className={utilStyles.alignCenter}>
+      <p className="mt-7 text-center">
         <a
           href={config.repo}
           target="_blank"
-          className={`${utilStyles.linkUnderline} ${utilStyles.greyText}`}
+          className="text-gray-400 underline"
         >
           SourceCode
         </a>
