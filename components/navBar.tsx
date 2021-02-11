@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { config } from "../site.config";
 
 const NavBar: React.FC = () => {
@@ -7,16 +8,9 @@ const NavBar: React.FC = () => {
         <div className="relative flex items-center justify-between h-16">
           <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
             <div className="flex-shrink-0 flex items-center">
-              {/* <img
-                className="block lg:hidden h-8 w-auto"
-                src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
-                alt="site logo"
-              />
-              <img
-                className="hidden lg:block h-8 w-auto"
-                src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
-                alt="site logo"
-              /> */}
+              <h1 className="font-bold font-sans text-xl text-gray-800">
+                <Link href="/">{"{{ kenzo }}"}</Link>
+              </h1>
             </div>
           </div>
           <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">

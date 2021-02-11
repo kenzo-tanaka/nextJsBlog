@@ -25,12 +25,6 @@ const Home: NextPage<Props> = ({ allPostsData }) => {
   return (
     <Layout home>
       <PageSEO title={config.siteMeta.title} />
-      <p className={`${utilStyles.alignCenter} ${utilStyles.greyText}`}>
-        Personal tech blog /{" "}
-        <Link href={"/about"}>
-          <a>Resume</a>
-        </Link>
-      </p>
       <PostsList heading="All" posts={allPostsData} />
       <p className={utilStyles.alignCenter}>
         <a
