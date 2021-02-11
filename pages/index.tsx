@@ -1,5 +1,4 @@
 import { NextPage } from "next";
-import Link from "next/link";
 import Layout from "../components/layout";
 import PostsList from "../components/postsList";
 import { PageSEO } from "../components/pageSEO";
@@ -24,7 +23,9 @@ const Home: NextPage<Props> = ({ allPostsData }) => {
   return (
     <Layout home>
       <PageSEO title={config.siteMeta.title} />
-      <PostsList heading="All" posts={allPostsData} />
+      <div className="shadow-lg p-5">
+        <PostsList heading="All" posts={allPostsData} />
+      </div>
       <p className="mt-7 text-center">
         <a
           href={config.repo}

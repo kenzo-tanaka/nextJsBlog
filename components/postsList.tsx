@@ -10,10 +10,10 @@ type Props = {
 
 const PostsList: NextPage<Props> = ({ posts, heading }) => {
   return (
-    <section className="mt-8">
+    <section>
       <ul>
         {posts.map(({ slug, date, title }) => (
-          <li className="mt-3" key={slug}>
+          <li className="mt-6" key={slug}>
             <Link href={`/posts/${slug}`}>
               <a className="text-lg font-semibold text-gray-800">{title}</a>
             </Link>
