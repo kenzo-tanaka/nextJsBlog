@@ -1,8 +1,9 @@
 import { useRouter } from "next/router";
 import * as gtag from "../lib/gtag";
 import { AppProps } from "next/app";
-import "../styles/global.css";
 import { useEffect } from "react";
+import "../styles/global.css";
+import "tailwindcss/tailwind.css";
 
 const App = ({ Component, pageProps }: AppProps) => {
   const router = useRouter();
