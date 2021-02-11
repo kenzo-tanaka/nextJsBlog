@@ -1,6 +1,5 @@
 import { NextPage } from "next";
 import Link from "next/link";
-import utilStyles from "../styles/utils.module.css";
 import Date from "./date";
 import { PostData } from "@types";
 
@@ -11,9 +10,9 @@ type Props = {
 
 const PostsList: NextPage<Props> = ({ posts, heading }) => {
   return (
-    <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-      <ul className={utilStyles.list}>
-        {posts.map(({ slug, date, title, category }) => (
+    <section className="mt-8">
+      <ul>
+        {posts.map(({ slug, date, title }) => (
           <li className="mt-3" key={slug}>
             <Link href={`/posts/${slug}`}>
               <a className="text-lg font-semibold text-gray-800">{title}</a>

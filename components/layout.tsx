@@ -1,4 +1,3 @@
-import styles from "../styles/layout.module.css";
 import Link from "next/link";
 
 type Props = {
@@ -8,10 +7,10 @@ type Props = {
 
 const Layout: React.FC<Props> = ({ children, home = false }) => {
   return (
-    <div className={styles.container}>
+    <div className="max-w-xl mx-auto px-2 sm:px-6 lg:px-8 mt-4 mb-12">
       <main>{children}</main>
       {!home && (
-        <div className={styles.backToHome}>
+        <div className="underline">
           <Link href="/">
             <a>← Back to home</a>
           </Link>

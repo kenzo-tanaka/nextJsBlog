@@ -6,7 +6,6 @@ import { PageSEO } from "../components/pageSEO";
 import { config } from "../site.config";
 import { getSortedPostsData } from "../lib/posts";
 import { PostData } from "@types";
-import utilStyles from "../styles/utils.module.css";
 
 export const getStaticProps = async () => {
   const allPostsData = getSortedPostsData();

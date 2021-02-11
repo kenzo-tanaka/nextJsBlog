@@ -5,7 +5,6 @@ import Date from "../../components/date";
 import ShareBtns from "../../components/shareBtns";
 import { PageSEO } from "../../components/pageSEO";
 import { getAllPostSlugs, getPostData } from "../../lib/posts";
-import utilStyles from "../../styles/utils.module.css";
 import ReactMarkdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import style from "react-syntax-highlighter/dist/cjs/styles/prism/dracula";
@@ -37,10 +36,10 @@ const CodeBlock = ({
 
   const [lang, file] = language.split(":");
   return (
-    <div className={utilStyles.codeBlockContainer}>
+    <div className="codeBlockContainer">
       {file && (
         <div className="code-block-header">
-          <span className={utilStyles.codeBlockFilename}>{file}</span>
+          <span className="codeBlockFilename">{file}</span>
         </div>
       )}
       <SyntaxHighlighter language={lang} style={style} children={value} />
@@ -96,16 +95,12 @@ const Post: NextPage<Props> = ({ postData }) => {
     <Layout>
       <PageSEO title={title} slug={`posts/${slug}`} />
       <article>
-        <small className={utilStyles.lightText}>
+        <small className="text-sm font-normal text-gray-400">
           <Date dateString={date} />
         </small>
-        <h1 className={utilStyles.headingXl}>{title}</h1>
+        <h1 className="text-3xl font-bold my-3">{title}</h1>
         <Link href={`/categories/${category}`}>
-          <a
-            className={`${utilStyles.categoryLabel} ${utilStyles.linkUnderline}`}
-          >
-            #{category}
-          </a>
+          <a className="text-gray-500 underline">#{category}</a>
         </Link>
         <div className="markdown-body">
           <ReactMarkdown
