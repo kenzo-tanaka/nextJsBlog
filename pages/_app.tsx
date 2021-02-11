@@ -7,9 +7,8 @@ import "tailwindcss/tailwind.css";
 import Navbar from "../components/navBar";
 
 const App = ({ Component, pageProps }: AppProps) => {
-  const router = useRouter();
-
   if (process.env.NODE_ENV === "production") {
+    const router = useRouter();
     useEffect(() => {
       const handleRouteChange = (url: URL) => {
         gtag.pageView(url);
