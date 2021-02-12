@@ -112,9 +112,9 @@ const Post: NextPage<Props> = ({ postData }) => {
         </div>
       </article>
       <ShareBtns slug={slug} title={title} />
-      <div style={{ textAlign: "center", marginTop: "1em" }}>
+      <div className="text-center mt-3">
         <Link href={`${config.repo}/edit/main/contents/posts/${slug}/index.md`}>
-          <a target="_blank" style={{ color: "grey" }}>
+          <a target="_blank" className="text-gray-400">
             Edit on GitHub
           </a>
         </Link>

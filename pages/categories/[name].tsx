@@ -32,7 +32,11 @@ const Category: NextPage<Props> = ({ posts, categoryName }) => {
   return (
     <Layout>
       <PageSEO title={categoryName} slug={`categories/${categoryName}`} />
-      <PostsList heading={categoryName} posts={posts} />
+      <div className="shadow-lg p-5 divide-solid">
+        <p className="text-gray-500">#{categoryName}</p>
+        <hr className="my-5" />
+        <PostsList heading={categoryName} posts={posts} />
+      </div>
     </Layout>
   );
 };
