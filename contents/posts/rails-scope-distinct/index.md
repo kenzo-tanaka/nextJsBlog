@@ -66,7 +66,7 @@ Product.distinct.sum(&:price)
 
 コピーしてきたコードに、インラインでコメントを追記しました。
 
-```rb:rails/activerecord/lib/active_record/relation/calculations.rb
+```rb:calculations.rb
 def sum(column_name = nil)
   if block_given?
     unless column_name.nil?
@@ -90,7 +90,7 @@ end
 
 （1）で呼び出される `Enumerable#sum` では ブロックを `map` したあとに `sum` するので、`SELECT DISTINCT "products".* FROM "products"` が先に走った後合計の算出がされます。
 
-```rb:rails/activesupport/lib/active_support/core_ext/enumerable.rb
+```rb:enumerable.rb
 def sum(identity = nil, &block)
   if identity
     _original_sum_with_required_identity(identity, &block)
