@@ -9,13 +9,12 @@ const ShareBtns: React.FC<Props> = ({ slug, title }) => {
   const pageUrl = `${config.siteRoot}/posts/${slug}`;
   const postTitle = encodeURIComponent(`${title} | Kenzo Blog`);
   return (
-    <div className="btnsWrapper">
+    <div className="btnsWrapper mt-3 text-center">
       <a
         href={`https://twitter.com/share?url=${pageUrl}&text=${postTitle}&via=kenzoooooB`}
         rel="nofollow"
         target="_blank"
-        className="snsBtn"
-        style={{ padding: "4px" }}
+        className="p-1 text-center no-underline inline-block text-white truncate align-middle font-bold bg-black text-xl w-10 h-10 leading-10 rounded-full"
       >
         <img src="/images/twitter-white.svg" alt="Twitter" />
       </a>
@@ -23,14 +22,13 @@ const ShareBtns: React.FC<Props> = ({ slug, title }) => {
         href={`https://www.facebook.com/share.php?u=${pageUrl}`}
         rel="nofollow"
         target="_blank"
-        className="snsBtn"
-        style={{ margin: "0 0.5em 0 0.5em" }}
+        className="mx-3 text-center no-underline inline-block text-white truncate align-middle font-bold bg-black text-xl w-10 h-10 leading-10 rounded-full"
       >
         F
       </a>
       <a
         href={`http://b.hatena.ne.jp/add?mode=confirm&url=${pageUrl}`}
-        className="snsBtn"
+        className="text-center no-underline inline-block text-white truncate align-middle font-bold bg-black text-xl w-10 h-10 leading-10 rounded-full"
         rel="nofollow"
         target="_blank"
       >
