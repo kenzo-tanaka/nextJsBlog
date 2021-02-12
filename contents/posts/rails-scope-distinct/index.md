@@ -19,4 +19,16 @@ Product.create(price: 100)
 total = Product.distinct.sum(:price) # return 300
 ```
 
-ここでは合計値として `400` を期待していますが、結果 `300` を返します。
+Issue の作者は `400` を期待していますが、このコードは `300` を返します。  
+`distinct` は対象カラムの中でユニークなものだけをまとめるので、`[100, 200, 100]` → `[100, 200]` となりその合計として 300 を返しているという挙動です。
+
+`join` や `includes` をした末、`sum` で合計値を出したい時に `distinct` を使うのは自然な発想です。  
+一方で「`distinct` はユニークなやつだけまとめるのだから、バグではないよね」という[意見](https://github.com/rails/rails/issues/33082#issuecomment-395998491)もよく分かるなあと思いました。
+
+## 対応
+
+kamipo さんの[コメント](https://github.com/rails/rails/issues/33082#issuecomment-395999611)にあった対応方法です。
+
+```rb
+Product.distinct.sum(&:price)
+```
