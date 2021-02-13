@@ -39,20 +39,20 @@ const Home: NextPage<Props> = ({ allPostsData }) => {
           </p>
         </div>
         <hr className="my-5" />
-        <div className="grid grid-cols-6">
+        <div className="grid grid-cols-6 gap-4">
           <div>
             <Link href="/">
-              <a className="mb-2 pl-2 font-semibold text-gray-800 underline w-max block">
+              <a className="p-2 font-medium text-gray-800 w-full inline-block hover:bg-gray-100 hover:no-underline border-l-4 border-gray-500">
                 All
               </a>
             </Link>
             <Link href="/categories/dev">
-              <a className="mb-2 pl-2 font-semibold text-gray-800 w-max block">
+              <a className="p-2 font-medium text-gray-800 w-full inline-block hover:bg-gray-100 hover:no-underline">
                 dev
               </a>
             </Link>
             <Link href="/categories/work">
-              <a className="mb-2 pl-2 font-semibold text-gray-800 w-max block">
+              <a className="p-2 font-medium text-gray-800 w-full inline-block hover:bg-gray-100 hover:no-underline">
                 work
               </a>
             </Link>
