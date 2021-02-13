@@ -1,5 +1,5 @@
 ---
-title: 【Rails】distinct を使った合計値の計算で意図しない値を返す挙動について
+title: 【Rails】distinct を使った合計値の計算で意図しない値を返す挙動について調べた。
 date: "2021-02-12"
 category: "dev"
 ---
