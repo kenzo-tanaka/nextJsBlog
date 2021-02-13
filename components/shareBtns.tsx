@@ -9,7 +9,7 @@ const ShareBtns: React.FC<Props> = ({ slug, title }) => {
   const pageUrl = `${config.siteRoot}/posts/${slug}`;
   const postTitle = encodeURIComponent(`${title} | Kenzo Blog`);
   return (
-    <div className="btnsWrapper mt-3 text-center">
+    <div className="btnsWrapper mt-5 text-center">
       <a
         href={`https://twitter.com/share?url=${pageUrl}&text=${postTitle}&via=kenzoooooB`}
         rel="nofollow"
