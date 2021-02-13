@@ -38,8 +38,10 @@ const Category: NextPage<Props> = ({ posts, categoryName }) => {
         <Profile />
         <hr className="my-5" />
         <div className="grid grid-cols-6 gap-4">
-          <CategoryMenu />
-          <div className="col-span-5">
+          <div className="hidden md:block">
+            <CategoryMenu />
+          </div>
+          <div className="col-span-6 md:col-span-5">
             <PostsList heading="" posts={posts} />
           </div>
         </div>
