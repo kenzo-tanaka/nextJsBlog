@@ -7,7 +7,7 @@ type Props = {
 
 const Layout: React.FC<Props> = ({ children, home = false }) => {
   return (
-    <div className="max-w-2xl mx-auto px-2 sm:px-6 lg:px-8 mt-4 mb-12">
+    <div className="max-w-3xl mx-auto px-2 sm:px-6 lg:px-8 mt-4 mb-12">
       <main>{children}</main>
       {!home && (
         <div className="p-7">
