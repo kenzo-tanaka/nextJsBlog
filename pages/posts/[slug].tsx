@@ -94,30 +94,34 @@ const Post: NextPage<Props> = ({ postData }) => {
   return (
     <Layout>
       <PageSEO title={title} slug={`posts/${slug}`} />
-      <article className="mt-8 p-7">
-        <small className="text-sm font-normal text-gray-400">
-          <Date dateString={date} />
-        </small>
-        <h1 className="text-3xl font-bold my-3">{title}</h1>
-        <Link href={`/categories/${category}`}>
-          <a className="text-gray-500 underline">#{category}</a>
-        </Link>
-        <div className="markdown-body">
-          <ReactMarkdown
-            renderers={{ code: CodeBlock, image: Img }}
-            plugins={[gfm]}
-            children={content}
-            allowDangerousHtml={true}
-          />
+      <div className="shadow-lg mt-8 p-7">
+        <article>
+          <small className="text-sm font-normal text-gray-400">
+            <Date dateString={date} />
+          </small>
+          <h1 className="text-3xl font-bold my-3">{title}</h1>
+          <Link href={`/categories/${category}`}>
+            <a className="text-gray-500 underline">#{category}</a>
+          </Link>
+          <div className="markdown-body">
+            <ReactMarkdown
+              renderers={{ code: CodeBlock, image: Img }}
+              plugins={[gfm]}
+              children={content}
+              allowDangerousHtml={true}
+            />
+          </div>
+        </article>
+        <ShareBtns slug={slug} title={title} />
+        <div className="text-center mt-3">
+          <Link
+            href={`${config.repo}/edit/main/contents/posts/${slug}/index.md`}
+          >
+            <a target="_blank" className="text-gray-400">
+              Edit on GitHub
+            </a>
+          </Link>
         </div>
-      </article>
-      <ShareBtns slug={slug} title={title} />
-      <div className="text-center mt-3">
-        <Link href={`${config.repo}/edit/main/contents/posts/${slug}/index.md`}>
-          <a target="_blank" className="text-gray-400">
-            Edit on GitHub
-          </a>
-        </Link>
       </div>
     </Layout>
   );
