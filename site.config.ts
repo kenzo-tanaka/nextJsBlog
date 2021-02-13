@@ -13,4 +13,9 @@ export const config = {
     process.env.NODE_ENV === "production"
       ? "https://kenzoblog.vercel.app"
       : "http://localhost:3000",
+  categoryList: [
+    { slug: "/", name: "All" },
+    { slug: "/categories/dev", name: "dev" },
+    { slug: "/categories/work", name: "work" },
+  ],
 };
