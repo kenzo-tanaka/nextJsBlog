@@ -5,7 +5,7 @@ const Profile: React.FC = () => {
       <img
         src="/images/profile.jpg"
         alt="profile image"
-        className="w-20 rounded-l-full"
+        className="w-20 rounded-full"
       />
       <p className="text-gray-500 mt-4">
         Personal tech blog /{" "}
