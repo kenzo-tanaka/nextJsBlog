@@ -1,6 +1,8 @@
 import { NextPage } from "next";
 import Layout from "../../components/layout";
 import PostsList from "../../components/postsList";
+import Profile from "../../components/profile";
+import CategoryMenu from "../../components/categoryMenu";
 import { PageSEO } from "../../components/pageSEO";
 import { getCategoryPosts, getCategoryNames } from "../../lib/categories";
 import { PostData } from "@types";
@@ -33,9 +35,14 @@ const Category: NextPage<Props> = ({ posts, categoryName }) => {
     <Layout>
       <PageSEO title={categoryName} slug={`categories/${categoryName}`} />
       <div className="shadow-lg p-5 divide-solid">
-        <p className="text-gray-500">#{categoryName}</p>
+        <Profile />
         <hr className="my-5" />
-        <PostsList heading={categoryName} posts={posts} />
+        <div className="grid grid-cols-6 gap-4">
+          <CategoryMenu />
+          <div className="col-span-5">
+            <PostsList heading="" posts={posts} />
+          </div>
+        </div>
       </div>
     </Layout>
   );
