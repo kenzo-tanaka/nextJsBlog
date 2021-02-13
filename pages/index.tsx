@@ -39,7 +39,28 @@ const Home: NextPage<Props> = ({ allPostsData }) => {
           </p>
         </div>
         <hr className="my-5" />
-        <PostsList heading="All" posts={allPostsData} />
+        <div className="grid grid-cols-6">
+          <div>
+            <Link href="/">
+              <a className="mb-2 pl-2 font-semibold text-gray-800 underline w-max block">
+                All
+              </a>
+            </Link>
+            <Link href="/categories/dev">
+              <a className="mb-2 pl-2 font-semibold text-gray-800 w-max block">
+                dev
+              </a>
+            </Link>
+            <Link href="/categories/work">
+              <a className="mb-2 pl-2 font-semibold text-gray-800 w-max block">
+                work
+              </a>
+            </Link>
+          </div>
+          <div className="col-span-5">
+            <PostsList heading="All" posts={allPostsData} />
+          </div>
+        </div>
       </div>
       <p className="mt-7 text-center">
         <a
