@@ -134,7 +134,7 @@ const Post: NextPage<Props> = ({ postData, relatedPosts }) => {
         </div>
         <div className="px-7 pb-2">
           <hr className="mb-8" />
-          <h2 className="font-semibold text-gray-800 text-md my-2">関連記事</h2>
+          <h2 className="font-semibold text-gray-800 text-md mb-3">関連記事</h2>
           <PostList heading="関連記事" posts={relatedPosts} />
         </div>
       </div>

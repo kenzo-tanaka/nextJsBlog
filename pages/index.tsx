@@ -25,7 +25,7 @@ const Home: NextPage<Props> = ({ allPostsData }) => {
   return (
     <Layout home>
       <PageSEO title={config.siteMeta.title} />
-      <div className="shadow-lg p-5">
+      <div className="shadow-md p-5">
         <Profile />
         <hr className="my-5" />
         <div className="grid grid-cols-6 gap-4">
