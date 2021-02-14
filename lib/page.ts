@@ -12,7 +12,7 @@ export async function getPageData(dirName: string) {
   const content = matterResult.content;
 
   return {
-    dirName,
+    slug: dirName,
     content,
     ...matterResult.data,
   };
