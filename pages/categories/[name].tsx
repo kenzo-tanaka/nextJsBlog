@@ -34,7 +34,7 @@ const Category: NextPage<Props> = ({ posts, categoryName }) => {
   return (
     <Layout>
       <PageSEO title={categoryName} slug={`categories/${categoryName}`} />
-      <div className="shadow-lg p-5 divide-solid">
+      <div className="shadow-md p-5 divide-solid">
         {/* Desktop */}
         <div className="hidden md:block">
           <Profile />
