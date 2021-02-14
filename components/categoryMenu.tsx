@@ -8,7 +8,7 @@ const CategoryMenu: React.FC = () => {
   return (
     <div>
       {categoryList.map(({ slug, name }) => (
-        <Link href={slug}>
+        <Link href={slug} key={slug}>
           <a
             className={`p-2 font-medium text-gray-800 w-full inline-block hover:bg-gray-100 hover:no-underline ${
               router.asPath === slug ? "border-l-4 border-gray-500" : ""
