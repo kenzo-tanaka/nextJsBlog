@@ -36,10 +36,10 @@ const CodeBlock = ({
 
   const [lang, file] = language.split(":");
   return (
-    <div className="codeBlockContainer">
+    <div className="markdown-body__codeblock-container">
       {file && (
-        <div className="code-block-header">
-          <span className="codeBlockFilename">{file}</span>
+        <div>
+          <span className="markdown-body__codeblock-filename">{file}</span>
         </div>
       )}
       <SyntaxHighlighter language={lang} style={style} children={value} />
