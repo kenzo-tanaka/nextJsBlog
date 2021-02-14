@@ -4,10 +4,9 @@ import { getMatterResult } from "./matter";
 import { config } from "../site.config";
 
 const postDir = config.postDir;
+const dirNames = fs.readdirSync(postDir);
 
 export async function getCategoryPosts(name: string) {
-  const dirNames = fs.readdirSync(postDir);
-
   const categoryPosts = dirNames
     .filter((dirName) => {
       const matterResult = getMatterResult(
@@ -38,7 +37,6 @@ export async function getCategoryPosts(name: string) {
 }
 
 export const getCategoryNames = () => {
-  const dirNames = fs.readdirSync(postDir);
   return dirNames.map((dirName) => {
     const matterResult = getMatterResult(
       path.join(postDir, dirName, "index.md")
