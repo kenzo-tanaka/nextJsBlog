@@ -5,14 +5,14 @@ import matter from "gray-matter";
 
 const pageDir = path.join(process.cwd(), "contents/pages");
 
-export async function getPageData(fileName: string) {
-  const fullPath = path.join(pageDir, `${fileName}.md`);
+export async function getPageData(dirName: string) {
+  const fullPath = path.join(pageDir, dirName, "index.md");
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const matterResult = matter(fileContents);
   const content = matterResult.content;
 
   return {
-    fileName,
+    dirName,
     content,
     ...matterResult.data,
   };
