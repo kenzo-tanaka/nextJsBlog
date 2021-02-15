@@ -4,5 +4,5 @@
 
 @import "./base.scss";
 
-// tailwind が h2 などのスタイルを上書きしてしまうので、post.scss でスタイリングしている
+// tailwind が h2 などのスタイルをリセットするので、post.scss で上書きしている
 @import "./post.scss";
