@@ -42,7 +42,7 @@ const About: NextPage<Props> = ({ pageData }) => {
       <Head>
         <title>{title}</title>
       </Head>
-      <div className="markdown-body p-7">
+      <div className="markdown-body p-7 shadow-md mt-8">
         <ReactMarkdown
           renderers={{ image: Img }}
           plugins={[gfm]}
