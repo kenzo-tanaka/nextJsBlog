@@ -50,7 +50,7 @@ const CodeBlock = ({
   );
 };
 
-const isURL = (url: string) => {
+export const isURL = (url: string) => {
   try {
     new URL(url);
   } catch (e) {
