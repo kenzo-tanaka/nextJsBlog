@@ -3,6 +3,7 @@ import Layout from "../components/layout";
 import Profile from "../components/profile";
 import PostsList from "../components/postsList";
 import CategoryMenu from "../components/categoryMenu";
+import MobileCategoryMenu from "../components/mobileCategoryMenu";
 import { PageSEO } from "../components/pageSEO";
 import { config } from "../site.config";
 import { getSortedPostsData } from "../lib/posts";
@@ -27,7 +28,8 @@ const Home: NextPage<Props> = ({ allPostsData }) => {
       <PageSEO title={config.siteMeta.title} />
       <div className="shadow-md p-5">
         <Profile />
-        <hr className="my-5" />
+        <MobileCategoryMenu />
+        <hr className="my-5 hidden sm:block" />
         <div className="grid grid-cols-6 gap-4">
           <div className="hidden md:block">
             <CategoryMenu />
