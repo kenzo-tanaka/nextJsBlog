@@ -3,7 +3,7 @@ import Layout from "../../components/layout";
 import PostsList from "../../components/postsList";
 import Profile from "../../components/profile";
 import CategoryMenu from "../../components/categoryMenu";
-import MobileCategoryMenu from "../../components/MobileCategoryMenu";
+import MobileCategoryMenu from "../../components/mobileCategoryMenu";
 import { PageSEO } from "../../components/pageSEO";
 import { getCategoryPosts, getCategoryNames } from "../../lib/categories";
 import { PostData } from "@types";
