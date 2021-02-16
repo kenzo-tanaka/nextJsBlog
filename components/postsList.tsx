@@ -4,11 +4,10 @@ import Date from "./date";
 import { PostData } from "@types";
 
 type Props = {
-  heading: string;
   posts: PostData[];
 };
 
-const PostsList: NextPage<Props> = ({ posts, heading }) => {
+const PostsList: NextPage<Props> = ({ posts }) => {
   return (
     <section>
       <ul>

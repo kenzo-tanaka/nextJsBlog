@@ -35,7 +35,7 @@ const Home: NextPage<Props> = ({ allPostsData }) => {
             <CategoryMenu />
           </div>
           <div className="col-span-6 md:col-span-5">
-            <PostsList heading="All" posts={allPostsData} />
+            <PostsList posts={allPostsData} />
           </div>
         </div>
       </div>

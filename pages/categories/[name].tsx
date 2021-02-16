@@ -7,6 +7,7 @@ import MobileCategoryMenu from "../../components/mobileCategoryMenu";
 import { PageSEO } from "../../components/pageSEO";
 import { getCategoryPosts, getCategoryNames } from "../../lib/categories";
 import { PostData } from "@types";
+import { config } from "../../site.config";
 
 type Props = {
   categoryName: string;
@@ -44,10 +45,19 @@ const Category: NextPage<Props> = ({ posts, categoryName }) => {
             <CategoryMenu />
           </div>
           <div className="col-span-6 md:col-span-5">
-            <PostsList heading="" posts={posts} />
+            <PostsList posts={posts} />
           </div>
         </div>
       </div>
+      <p className="mt-7 text-center">
+        <a
+          href={config.repo}
+          target="_blank"
+          className="text-gray-400 underline"
+        >
+          SourceCode
+        </a>
+      </p>
     </Layout>
   );
 };
