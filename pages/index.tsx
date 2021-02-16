@@ -1,9 +1,6 @@
 import { NextPage } from "next";
 import Layout from "../components/layout";
-import Profile from "../components/profile";
-import PostsList from "../components/postsList";
-import CategoryMenu from "../components/categoryMenu";
-import MobileCategoryMenu from "../components/mobileCategoryMenu";
+import PostsContainer from "../components/postsContainer";
 import { PageSEO } from "../components/pageSEO";
 import { config } from "../site.config";
 import { getSortedPostsData } from "../lib/posts";
@@ -26,19 +23,7 @@ const Home: NextPage<Props> = ({ allPostsData }) => {
   return (
     <Layout home>
       <PageSEO title={config.siteMeta.title} />
-      <div className="shadow-md p-5">
-        <Profile />
-        <MobileCategoryMenu />
-        <hr className="my-5 hidden sm:block" />
-        <div className="grid grid-cols-6 gap-4">
-          <div className="hidden md:block">
-            <CategoryMenu />
-          </div>
-          <div className="col-span-6 md:col-span-5">
-            <PostsList heading="All" posts={allPostsData} />
-          </div>
-        </div>
-      </div>
+      <PostsContainer posts={allPostsData} />
       <p className="mt-7 text-center">
         <a
           href={config.repo}

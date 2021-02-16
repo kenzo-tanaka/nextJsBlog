@@ -1,12 +1,10 @@
 import { NextPage } from "next";
 import Layout from "../../components/layout";
-import PostsList from "../../components/postsList";
-import Profile from "../../components/profile";
-import CategoryMenu from "../../components/categoryMenu";
-import MobileCategoryMenu from "../../components/mobileCategoryMenu";
+import PostsContainer from "../../components/postsContainer";
 import { PageSEO } from "../../components/pageSEO";
 import { getCategoryPosts, getCategoryNames } from "../../lib/categories";
 import { PostData } from "@types";
+import { config } from "../../site.config";
 
 type Props = {
   categoryName: string;
@@ -35,19 +33,16 @@ const Category: NextPage<Props> = ({ posts, categoryName }) => {
   return (
     <Layout>
       <PageSEO title={categoryName} slug={`categories/${categoryName}`} />
-      <div className="shadow-md p-5">
-        <Profile />
-        <MobileCategoryMenu />
-        <hr className="my-5 hidden sm:block" />
-        <div className="grid grid-cols-6 gap-4">
-          <div className="hidden md:block">
-            <CategoryMenu />
-          </div>
-          <div className="col-span-6 md:col-span-5">
-            <PostsList heading="" posts={posts} />
-          </div>
-        </div>
-      </div>
+      <PostsContainer posts={posts} />
+      <p className="mt-7 text-center">
+        <a
+          href={config.repo}
+          target="_blank"
+          className="text-gray-400 underline"
+        >
+          SourceCode
+        </a>
+      </p>
     </Layout>
   );
 };
