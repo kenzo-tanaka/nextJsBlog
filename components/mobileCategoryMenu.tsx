@@ -6,12 +6,14 @@ const MobileCategoryMenu: React.FC = () => {
   const router = useRouter();
   const categoryList = config.categoryList;
   return (
-    <div className="block sm:hidden grid grid-cols-3 my-5 text-center content-center">
+    <div className="block sm:hidden grid grid-cols-3 mt-5 mb-8 text-center content-center">
       {categoryList.map(({ slug, name }) => (
         <Link href={slug} key={slug}>
           <a
-            className={`m-auto font-medium text-gray-800 w-3/4 hover:bg-gray-100 ${
-              router.asPath === slug ? "border-b-4 border-gray-500" : ""
+            className={`m-auto font-medium text-gray-800 w-full pb-1 ${
+              router.asPath === slug
+                ? "border-b-4 border-gray-500 bg-gray-100"
+                : ""
             }`}
           >
             {name}
