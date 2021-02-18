@@ -4,7 +4,7 @@
   "description": "田中建蔵の技術ブログ",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next-remote-watch contents/",
     "build": "next build",
     "start": "next start"
   },
@@ -19,6 +19,7 @@
     "next": "^10.0.0",
     "next-compose-plugins": "^2.2.1",
     "next-optimized-images": "^2.6.2",
+    "next-remote-watch": "^0.3.0",
     "postcss": "^7.0.35",
     "raw-loader": "^4.0.2",
     "react": "17.0.1",
