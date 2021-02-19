@@ -6,7 +6,7 @@ category: "dev"
 
 以下は [Using Google Analytics with NextJS and TypeScript | Frontend Digest](https://medium.com/frontend-digest/using-nextjs-with-google-analytics-and-typescript-620ba2359dea) の翻訳記事です。著者の許可を得て、翻訳・公開しています。
 
-Google Analytics はユーザー、ブラウザ、デバイスのトラッキングに使用される非常に人気のある無料ツールです。NextJS は　 2020 年に React プロジェクトを作成するためのベストな方法です。2 つを組み合わせて何か作りましょう。
+Google Analytics はユーザー、ブラウザ、デバイスのトラッキングに使用される非常に人気のある無料ツールです。NextJS は 2020 年に React プロジェクトを作成するためのベストな方法です。2 つを組み合わせて何か作りましょう。
 
 今日は NextJS プロジェクトで Google Analytics を使い始める方法を紹介します。この目標を達成するために独自のカスタム `_document` を追加して、トラッキングスニペットを挿入し、ページビューとイベントをトラッキングします。
 
