@@ -1,5 +1,22 @@
 ---
 title: "About me"
+pdf_options:
+  format: A4
+  margin: 30mm 20mm
+  printBackground: true
+  footerTemplate: |-
+    <style>
+      section {
+        margin: 0 auto;
+        font-family: system-ui;
+        font-size: 10px;
+      }
+    </style>
+    <section>
+      <div>
+        Originally from <a href="https://kenzoblog.vercel.app/about">kenzo blog</a>.
+      </div>
+    </section>
 ---
 
 | key      | value                                                 |
@@ -85,8 +102,3 @@ title: "About me"
 - **好奇心ドリブン**：新しい技術を試したり、ソースコードを調べたりして新しい発見をすることが好きです。OSS にも興味があり、できる範囲でコントリビュートしています。
 - **改善志向**：課題を解決し、世の中に価値が届けることにやりがいを感じます。仕事において、精神的報酬も重要視しています。
 - **チーム志向**：メンバーと協働して、世の中に価値を届けていくことが好きです。多様な職種と連携しながら仕事を進めることに関心があります。
-
-### コンタクト
-
-下記アドレスにご連絡ください。  
-dev.kenzo99@gmail.com
