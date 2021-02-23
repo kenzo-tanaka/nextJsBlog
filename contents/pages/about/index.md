@@ -1,5 +1,22 @@
 ---
 title: "About me"
+pdf_options:
+  format: A4
+  margin: 30mm 20mm
+  printBackground: true
+  footerTemplate: |-
+    <style>
+      section {
+        margin: 0 auto;
+        font-family: system-ui;
+        font-size: 10px;
+      }
+    </style>
+    <section>
+      <div>
+        Originally from <a href="https://kenzoblog.vercel.app/about">kenzo blog</a>.
+      </div>
+    </section>
 ---
 
 | key      | value                                                 |
