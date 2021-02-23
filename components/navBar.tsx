@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { config } from "../site.config";
 
 const NavBar: React.FC = () => {
@@ -15,7 +16,12 @@ const NavBar: React.FC = () => {
           </div>
           <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
             <a target="_blank" href={config.repo}>
-              <img className="h-6" src="/images/github.png" alt="GitHub" />
+              <Image
+                src="/images/github.png"
+                alt="GitHub Icon"
+                width={25}
+                height={25}
+              />
             </a>
           </div>
         </div>
