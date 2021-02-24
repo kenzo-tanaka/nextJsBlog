@@ -4,7 +4,7 @@
   "description": "田中建蔵の技術ブログ",
   "private": true,
   "scripts": {
-    "dev": "next-remote-watch contents/",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start"
   },
