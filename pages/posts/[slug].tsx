@@ -7,6 +7,7 @@ import PostList from "../../components/postsList";
 import { PageSEO } from "../../components/pageSEO";
 import { getAllPostSlugs, getPostData } from "../../lib/posts";
 import { getCategoryPosts } from "../../lib/categories";
+import { isURL } from "../../lib/helper";
 import ReactMarkdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import style from "react-syntax-highlighter/dist/cjs/styles/prism/dracula";
@@ -48,15 +49,6 @@ const CodeBlock = ({
       <SyntaxHighlighter language={lang} style={style} children={value} />
     </div>
   );
-};
-
-export const isURL = (url: string) => {
-  try {
-    new URL(url);
-  } catch (e) {
-    return false;
-  }
-  return true;
 };
 
 // Fetch necessary data for the blog post using params.slug

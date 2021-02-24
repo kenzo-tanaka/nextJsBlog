@@ -2,7 +2,7 @@ import { NextPage } from "next";
 import Head from "next/head";
 import Layout from "../components/layout";
 import { getPageData } from "../lib/page";
-import { isURL } from "./posts/[slug]";
+import { isURL } from "../lib/helper";
 import ReactMarkdown from "react-markdown";
 import gfm from "remark-gfm";
 
