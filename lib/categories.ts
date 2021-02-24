@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-import { getMatterResult } from "./matter";
+import { getMatterResult } from "./helper";
 import { config } from "../site.config";
 
 const postDir = config.postDir;
