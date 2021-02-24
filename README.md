@@ -9,6 +9,24 @@ $ npm run dev
 
 Make directory in `/contents/posts/`, then add `index.md` inside that.
 
+### Add image
+
+Add image inside `/contents/posts/{slug}`, then read with relative path.
+
+```md
+![alt text](image.png)
+```
+
+### Add Twitter embed
+
+Add `twitter` code block, and write id.
+
+````md
+```twitter
+1353188620912402433
+```
+````
+
 ## Output pdf resume
 
 ```shell
