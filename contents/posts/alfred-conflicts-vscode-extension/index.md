@@ -4,7 +4,7 @@ date: "2021-02-23"
 category: "work"
 ---
 
-デスクトップアプリ [Alfred](https://www.alfredapp.com/) に課金すると、「スニペット機能」が使えるようになります。このスニペット機能が、VSCode の拡張機能[Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)と干渉してうまく使えないことがあったのでメモしておきます。
+Mac のデスクトップアプリ [Alfred](https://www.alfredapp.com/) に課金すると、「スニペット機能」が使えるようになります。このスニペット機能が、VSCode の拡張機能[Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)と干渉してうまく使えないことがあったのでメモしておきます。
 
 ## 前提
 
