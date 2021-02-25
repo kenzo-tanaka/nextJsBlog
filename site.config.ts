@@ -8,7 +8,7 @@ export const config = {
   },
   gaID: "G-YVLG2X1KMY",
   postDir: path.join(process.cwd(), "contents/posts"),
-  repo: "https://github.com/kenzoukenzou/nextJsBlog",
+  repo: "https://github.com/kenzo-tanaka/nextJsBlog",
   siteRoot:
     process.env.NODE_ENV === "production"
       ? "https://kenzoblog.vercel.app"
