@@ -28,7 +28,7 @@ pdf_options:
 | 名前     | 田中建蔵                                              |
 | 年齢     | 25 歳                                                 |
 | 最終学歴 | 関西大学 法学部 法律政治学科                          |
-| GitHub   | [kenzoukenzou](https://github.com/kenzoukenzou)       |
+| GitHub   | [kenzo-tanaka](https://github.com/kenzo-tanaka)       |
 | Twitter  | [@kenzoooooB](https://twitter.com/kenzoooooB)         |
 | Qiita    | [@kenz-dev](https://qiita.com/kenz-dev)               |
 | connpass | [connpass](https://connpass.com/user/kenzoukenzou/)   |
