@@ -45,6 +45,7 @@ export async function getPostData(slug: string) {
     slug: slug,
     content: matterResult.content,
     category: matterResult.data.category,
+    thumbnail: matterResult.data.thumbnail || null,
     ...matterResult.data,
   };
 }
