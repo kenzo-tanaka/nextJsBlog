@@ -76,7 +76,7 @@ export const getStaticPaths = async () => {
 };
 
 const Post: NextPage<Props> = ({ postData, relatedPosts }) => {
-  const { slug, title, date, content, category } = postData;
+  const { slug, title, date, content, category, thumbnail } = postData;
 
   const Img = ({ alt, src }: { alt: string; src: string }) => {
     return (
@@ -93,7 +93,14 @@ const Post: NextPage<Props> = ({ postData, relatedPosts }) => {
 
   return (
     <Layout>
-      <PageSEO title={title} slug={`posts/${slug}`} />
+      <PageSEO
+        title={title}
+        slug={`posts/${slug}`}
+        ogImageUrl={
+          thumbnail &&
+          config.siteRoot + require(`../../contents/posts/${slug}/${thumbnail}`)
+        }
+      />
       <div className="shadow-md mt-8">
         <div className="p-7">
           <article>
