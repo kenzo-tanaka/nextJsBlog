@@ -1,6 +1,6 @@
 ---
 title: 自分リリースノートを執筆✏️【{{ date | date('YYYY/MM/DD') }}】
-assignees: kenzoukenzou
+assignees: kenzo-tanaka
 labels: article
 ---
 
