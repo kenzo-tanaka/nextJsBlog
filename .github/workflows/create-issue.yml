@@ -1,8 +1,9 @@
 name: create issue
 
-on:
-  schedule:
-    - cron: "0 0 27 * *"
+# on:
+#   schedule:
+#     - cron: "0 0 27 * *"
+on: push
 
 jobs:
   build:
