@@ -15,7 +15,8 @@
        "max-kanji-continuous-len": {
         max: 10
       },
-      "no-exclamation-question-mark": false
+      "no-exclamation-question-mark": false,
+      "ja-no-weak-phrase": false
     },
     "spellcheck-tech-word": true
   }
