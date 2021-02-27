@@ -17,6 +17,12 @@ Add image inside `/contents/posts/{slug}`, then read with relative path.
 ![alt text](image.png)
 ```
 
+Also you can use absolute path.
+
+```md
+![alt text](http://image-path...)
+```
+
 ### Add Twitter embed
 
 Add `twitter` code block, and write id.
