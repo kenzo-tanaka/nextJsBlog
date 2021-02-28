@@ -2,13 +2,14 @@
 title: 自分リリースノート v 0.25.08
 date: "2021-02-27"
 category: "work"
+thumbnail: "cat.jpg"
 ---
 
 ## 👨‍💻 技術関連
 
 - 仕事では shrine と uppy を使った動画アップロード機能の実装をした。
 - Next.js の翻訳プロジェクト 2 記事目の翻訳を一旦 PR 出すところまで完了させた。
-- [GitHub Issue のコメント body をクリックしたら即編集できるようにする JavaScript](https://gist.github.com/kenzoukenzou/7f0681cd33230c63c338df5faeaaa044) を作成して Bookmarklet で使っている
+- [GitHub Issue のコメント body をクリックしたら即編集できるようにする JavaScript](https://gist.github.com/kenzo-tanaka/7f0681cd33230c63c338df5faeaaa044) を作成して Bookmarklet で使っている
 - ブログにカテゴリーを実装した。
 - ブログに関連記事を実装した。
 - ジャーナリングをリマインドする GitHub Actions を書いて、GitHub Actions について少し理解した。
