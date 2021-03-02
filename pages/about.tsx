@@ -2,6 +2,7 @@ import { NextPage } from "next";
 import Link from "next/link";
 import Layout from "../components/layout";
 import ShareBtns from "../components/shareBtns";
+import { PageSEO } from "../components/pageSEO";
 import { getPageData } from "../lib/page";
 import { isURL } from "../lib/helper";
 import ReactMarkdown from "react-markdown";
@@ -41,6 +42,7 @@ const About: NextPage<Props> = ({ pageData }) => {
 
   return (
     <Layout>
+      <PageSEO title={title} slug={`${slug}`} />
       <div className="shadow-md mt-8">
         <div className="p-7">
           <article>
