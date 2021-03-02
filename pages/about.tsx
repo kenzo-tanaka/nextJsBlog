@@ -1,7 +1,6 @@
 import { NextPage } from "next";
 import Link from "next/link";
 import Layout from "../components/layout";
-import ShareBtns from "../components/shareBtns";
 import { PageSEO } from "../components/pageSEO";
 import { getPageData } from "../lib/page";
 import { isURL } from "../lib/helper";
@@ -54,7 +53,6 @@ const About: NextPage<Props> = ({ pageData }) => {
               />
             </div>
           </article>
-          <ShareBtns slug={slug} title={title} />
           <div className="text-center mt-3">
             <Link
               href={`${config.repo}/edit/main/contents/pages/about/index.md`}
