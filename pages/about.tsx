@@ -1,10 +1,12 @@
 import { NextPage } from "next";
-import Head from "next/head";
+import Link from "next/link";
 import Layout from "../components/layout";
+import ShareBtns from "../components/shareBtns";
 import { getPageData } from "../lib/page";
 import { isURL } from "../lib/helper";
 import ReactMarkdown from "react-markdown";
 import gfm from "remark-gfm";
+import { config } from "../site.config";
 
 export async function getStaticProps() {
   const pageData = await getPageData("about");
@@ -39,15 +41,28 @@ const About: NextPage<Props> = ({ pageData }) => {
 
   return (
     <Layout>
-      <Head>
-        <title>{title}</title>
-      </Head>
-      <div className="markdown-body p-7 shadow-md mt-8">
-        <ReactMarkdown
-          renderers={{ image: Img }}
-          plugins={[gfm]}
-          children={content}
-        />
+      <div className="shadow-md mt-8">
+        <div className="p-7">
+          <article>
+            <div className="markdown-body">
+              <ReactMarkdown
+                renderers={{ image: Img }}
+                plugins={[gfm]}
+                children={content}
+              />
+            </div>
+          </article>
+          <ShareBtns slug={slug} title={title} />
+          <div className="text-center mt-3">
+            <Link
+              href={`${config.repo}/edit/main/contents/pages/about/index.md`}
+            >
+              <a className="text-gray-400" target="_blank">
+                Edit on GitHub
+              </a>
+            </Link>
+          </div>
+        </div>
       </div>
     </Layout>
   );
