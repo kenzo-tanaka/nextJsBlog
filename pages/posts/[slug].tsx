@@ -120,7 +120,7 @@ const Post: NextPage<Props> = ({ postData, relatedPosts }) => {
               />
             </div>
           </article>
-          <ShareBtns slug={slug} title={title} />
+          <ShareBtns slug={`posts/${slug}`} title={title} />
           <div className="text-center mt-3">
             <Link
               href={`${config.repo}/edit/main/contents/posts/${slug}/index.md`}
