@@ -6,7 +6,7 @@ type Props = {
 };
 
 const ShareBtns: React.FC<Props> = ({ slug, title }) => {
-  const pageUrl = `${config.siteRoot}/posts/${slug}`;
+  const pageUrl = `${config.siteRoot}/${slug}`;
   const postTitle = encodeURIComponent(`${title} | Kenzo Blog`);
   return (
     <div className="btnsWrapper mt-5 text-center">
