@@ -9,6 +9,17 @@ $ npm run dev
 
 Make directory in `/contents/posts/`, then add `index.md` inside that.
 
+If you want to set thumbnail, add a image to `slug` directory and set thumbnail as follows.
+
+```
+---
+title: md
+date: "2021-02-19"
+category: "dev"
+thumbnail: "cat.jpg"
+---
+```
+
 ### Add image
 
 Add image inside `/contents/posts/{slug}`, then read with relative path.
