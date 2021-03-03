@@ -16,7 +16,7 @@ category: "dev"
 
 タスク管理用のリポジトリを作成し、月単位でフォルダを作ります。
 
-```
+```shell
 /task
   /2021
     /02
@@ -30,7 +30,7 @@ category: "dev"
 
 このファイルにマークダウン記法でタスクを書いていきます。
 
-```
+```shell
 /02
   README.md
 /03
@@ -73,3 +73,5 @@ category: "dev"
 ちなみにこの組み合わせは干渉することが分かったので、その解決策は下記の記事に書いています。
 
 [Alfred のスニペットと VSCode の拡張機能「Markdown All in One」が干渉する件の解決策](https://kenzoblog.vercel.app/posts/alfred-conflicts-vscode-extension)
+
+タグ付けや消化率の可視化などはできませんが、個人のタスク管理でそこまでの機能は要らないのでこれくらいシンプルなのが僕は好きです。動作の軽さを特に優先したい人には、おすすめのタスク管理方法です。
