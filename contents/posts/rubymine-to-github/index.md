@@ -4,7 +4,7 @@ date: "2021-02-22"
 category: "dev"
 ---
 
-RubyMine の annotate から GitHub のコミットや Pull Request を開く方法について書きます。
+RubyMine の annotate から GitHub のコミットや Pull Request を開く方法について書きます。見つけづらい割にかなり重宝する機能なので。
 
 適当なファイルを開いて annotate で行ごとのコミットを確認します。annotate コマンドは Keymap から自分で登録できます。僕は cmd + shfit + b に設定しています。
 ![](image1.png)
