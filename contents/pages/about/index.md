@@ -14,7 +14,7 @@ pdf_options:
     </style>
     <section>
       <div>
-        Originally from <a href="https://kenzoblog.vercel.app/about">kenzo blog</a>.
+        <a href="https://kenzoblog.vercel.app/about">Web版</a>
       </div>
     </section>
 ---
@@ -114,5 +114,3 @@ pdf_options:
 ## 連絡先
 
 dev.kenzo99@gmail.com
-
-
