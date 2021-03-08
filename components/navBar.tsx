@@ -4,7 +4,7 @@ import { config } from "../site.config";
 
 const NavBar: React.FC = () => {
   return (
-    <nav className="bg-white-800 shadow">
+    <nav className="bg-white border-black">
       <div className="max-w-3xl mx-auto px-2 sm:px-6 lg:px-8">
         <div className="relative flex items-center justify-between h-16">
           <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">

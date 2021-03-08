@@ -101,7 +101,7 @@ const Post: NextPage<Props> = ({ postData, relatedPosts }) => {
           config.siteRoot + require(`../../contents/posts/${slug}/${thumbnail}`)
         }
       />
-      <div className="shadow-md mt-8">
+      <div className="shadow-md bg-white">
         <div className="p-7">
           <article>
             <small className="text-sm font-normal text-gray-400">
