@@ -10,7 +10,7 @@ type Props = {
 
 const NavBar: React.FC<Props> = ({ posts }) => {
   return (
-    <div className="shadow-md p-5">
+    <div className="shadow-md p-5 bg-white">
       <Profile />
       <MobileCategoryMenu />
       <hr className="my-5 hidden sm:block" />
