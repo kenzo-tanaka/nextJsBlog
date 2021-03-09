@@ -1,15 +1,18 @@
-## Setup
+## セットアップ
 
 ```shell
 $ npm install
 $ npm run dev
 ```
 
-## How to add post
+## 記事の追加
 
-Make directory in `/contents/posts/`, then add `index.md` inside that.
+`/contents/posts/`の下にスラグ名でディレクトリを作成して下さい。
+例えば、`/hoge` というスラグにしたいなら `/contents/posts/hoge` を作成します。
 
-If you want to set thumbnail, add a image to `slug` directory and set thumbnail as follows.
+作成したディレクトリの下に、`index.md` を作成して下さい。
+
+もしサムネイルを指定したい場合には、下記のようにサムネイルを相対パスで指定して下さい。
 
 ```
 ---
@@ -20,23 +23,23 @@ thumbnail: "cat.jpg"
 ---
 ```
 
-### Add image
+### 画像の追加
 
-Add image inside `/contents/posts/{slug}`, then read with relative path.
+`/contents/posts/{slug}`の下に画像を追加し、それを相対パスで読み込んで下さい。
 
 ```md
 ![alt text](image.png)
 ```
 
-Also you can use absolute path.
+URL の指定でも動作します。
 
 ```md
 ![alt text](http://image-path...)
 ```
 
-### Add Twitter embed
+### Twitter の embed
 
-Add `twitter` code block, and write id.
+`twitter` のコードブロックを作成し、ツイート ID を記述して下さい。
 
 ````md
 ```twitter
@@ -44,7 +47,9 @@ Add `twitter` code block, and write id.
 ```
 ````
 
-## Output pdf resume
+## 履歴書を PDF で出力
+
+下記を実行して、`/contents/pages/about/index.pdf`を確認して下さい。
 
 ```shell
 $ md-to-pdf contents/pages/about/index.md
@@ -52,4 +57,4 @@ $ md-to-pdf contents/pages/about/index.md
 
 ## GitHub Actions
 
-The workflow named `create issue` will create issue every month on the 27th. The purpose of these issues is to check my growth as a engineer by myself.
+`create issu` というワークフローが毎月 27 日に実行されます。これは、月次の振り返りをする自分リリースノート執筆リマインダーです。
