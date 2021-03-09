@@ -13,9 +13,11 @@ pdf_options:
       }
     </style>
     <section>
-      <div>
+      <p>
         <a href="https://kenzoblog.vercel.app/about">Web版</a>
-      </div>
+        /
+        <a href="https://github.com/kenzo-tanaka/nextJsBlog">SourceCode</a>
+      </p>
     </section>
 ---
 
