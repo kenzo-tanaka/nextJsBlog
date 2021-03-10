@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { config } from "../site.config";
 
 type Props = {
   children: React.ReactNode;
@@ -11,13 +11,15 @@ const Layout: React.FC<Props> = ({ children, home = false }) => {
       <main>
         <div className="shadow-md bg-white">{children}</div>
       </main>
-      {!home && (
-        <div className="p-7">
-          <Link href="/">
-            <a className="underline">← Back to home</a>
-          </Link>
-        </div>
-      )}
+      <p className="mt-7 text-center">
+        <a
+          href={config.repo}
+          target="_blank"
+          className="text-gray-400 underline"
+        >
+          SourceCode
+        </a>
+      </p>
     </div>
   );
 };

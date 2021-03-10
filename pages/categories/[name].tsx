@@ -35,15 +35,6 @@ const Category: NextPage<Props> = ({ posts, categoryName }) => {
       <PageSEO title={categoryName} slug={`categories/${categoryName}`} />
       <div className="p-5">
         <PostsContainer posts={posts} />
-        <p className="mt-7 text-center">
-          <a
-            href={config.repo}
-            target="_blank"
-            className="text-gray-400 underline"
-          >
-            SourceCode
-          </a>
-        </p>
       </div>
     </Layout>
   );
