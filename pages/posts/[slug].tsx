@@ -101,7 +101,7 @@ const Post: NextPage<Props> = ({ postData, relatedPosts }) => {
           config.siteRoot + require(`../../contents/posts/${slug}/${thumbnail}`)
         }
       />
-      <div className="p-7">
+      <div className="p-4 sm:p-7">
         <article>
           <small className="text-sm font-normal text-gray-400">
             <Date dateString={date} />

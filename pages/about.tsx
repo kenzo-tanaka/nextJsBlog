@@ -43,7 +43,7 @@ const About: NextPage<Props> = ({ pageData }) => {
   return (
     <Layout>
       <PageSEO title={title} slug={`${slug}`} />
-      <div className="p-7">
+      <div className="p-4 sm:p-7">
         <article>
           <div className="markdown-body">
             <ReactMarkdown
