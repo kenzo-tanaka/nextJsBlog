@@ -7,5 +7,5 @@ fi
 
 mkdir contents/posts/$1
 touch contents/posts/$1/index.md
-echo "記事作成が正常終了しました。"
+echo "contents/posts/$1/index.md を作成しました。"
 exit 1
