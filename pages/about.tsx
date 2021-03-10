@@ -43,27 +43,23 @@ const About: NextPage<Props> = ({ pageData }) => {
   return (
     <Layout>
       <PageSEO title={title} slug={`${slug}`} />
-      <div className="shadow-md bg-white">
-        <div className="p-7">
-          <article>
-            <div className="markdown-body">
-              <ReactMarkdown
-                renderers={{ image: Img }}
-                plugins={[gfm]}
-                children={content}
-              />
-            </div>
-          </article>
-          <ShareBtns slug={slug} title={title} />
-          <div className="text-center mt-3">
-            <Link
-              href={`${config.repo}/edit/main/contents/pages/about/index.md`}
-            >
-              <a className="text-gray-400" target="_blank">
-                Edit on GitHub
-              </a>
-            </Link>
+      <div className="p-7">
+        <article>
+          <div className="markdown-body">
+            <ReactMarkdown
+              renderers={{ image: Img }}
+              plugins={[gfm]}
+              children={content}
+            />
           </div>
+        </article>
+        <ShareBtns slug={slug} title={title} />
+        <div className="text-center mt-3">
+          <Link href={`${config.repo}/edit/main/contents/pages/about/index.md`}>
+            <a className="text-gray-400" target="_blank">
+              Edit on GitHub
+            </a>
+          </Link>
         </div>
       </div>
     </Layout>

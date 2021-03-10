@@ -101,41 +101,39 @@ const Post: NextPage<Props> = ({ postData, relatedPosts }) => {
           config.siteRoot + require(`../../contents/posts/${slug}/${thumbnail}`)
         }
       />
-      <div className="shadow-md bg-white">
-        <div className="p-7">
-          <article>
-            <small className="text-sm font-normal text-gray-400">
-              <Date dateString={date} />
-            </small>
-            <h1 className="text-3xl font-bold my-3">{title}</h1>
-            <Link href={`/categories/${category}`}>
-              <a className="text-gray-500 underline">#{category}</a>
-            </Link>
-            <div className="markdown-body">
-              <ReactMarkdown
-                renderers={{ code: CodeBlock, image: Img }}
-                plugins={[gfm]}
-                children={content}
-                allowDangerousHtml={true}
-              />
-            </div>
-          </article>
-          <ShareBtns slug={`posts/${slug}`} title={title} />
-          <div className="text-center mt-3">
-            <Link
-              href={`${config.repo}/edit/main/contents/posts/${slug}/index.md`}
-            >
-              <a target="_blank" className="text-gray-400">
-                Edit on GitHub
-              </a>
-            </Link>
+      <div className="p-7">
+        <article>
+          <small className="text-sm font-normal text-gray-400">
+            <Date dateString={date} />
+          </small>
+          <h1 className="text-3xl font-bold my-3">{title}</h1>
+          <Link href={`/categories/${category}`}>
+            <a className="text-gray-500 underline">#{category}</a>
+          </Link>
+          <div className="markdown-body">
+            <ReactMarkdown
+              renderers={{ code: CodeBlock, image: Img }}
+              plugins={[gfm]}
+              children={content}
+              allowDangerousHtml={true}
+            />
           </div>
+        </article>
+        <ShareBtns slug={`posts/${slug}`} title={title} />
+        <div className="text-center mt-3">
+          <Link
+            href={`${config.repo}/edit/main/contents/posts/${slug}/index.md`}
+          >
+            <a target="_blank" className="text-gray-400">
+              Edit on GitHub
+            </a>
+          </Link>
         </div>
-        <div className="px-7 pb-2">
-          <hr className="mb-8" />
-          <h2 className="font-semibold text-gray-800 text-md mb-3">関連記事</h2>
-          <PostList posts={relatedPosts} />
-        </div>
+      </div>
+      <div className="px-7 pb-2">
+        <hr className="mb-8" />
+        <h2 className="font-semibold text-gray-800 text-md mb-3">関連記事</h2>
+        <PostList posts={relatedPosts} />
       </div>
     </Layout>
   );
