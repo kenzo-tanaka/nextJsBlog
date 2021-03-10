@@ -2,6 +2,7 @@
 title: SeedファイルでShrineのuploadを使うと、IOError closed streamとなる場合の対処
 date: "2021-03-10"
 category: "dev"
+thumbnail: "cat.jpg"
 ---
 
 Seed ファイルで Shrine の `upload` メソッドを使うと、動画や画像を紐付けたサンプルデータを生成できます。以下は、`seed_fu` を使ってデータを生成しているコードです。
