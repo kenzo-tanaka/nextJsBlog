@@ -33,16 +33,20 @@ const Category: NextPage<Props> = ({ posts, categoryName }) => {
   return (
     <Layout>
       <PageSEO title={categoryName} slug={`categories/${categoryName}`} />
-      <PostsContainer posts={posts} />
-      <p className="mt-7 text-center">
-        <a
-          href={config.repo}
-          target="_blank"
-          className="text-gray-400 underline"
-        >
-          SourceCode
-        </a>
-      </p>
+      <div className="shadow-md bg-white">
+        <div className="p-5">
+          <PostsContainer posts={posts} />
+          <p className="mt-7 text-center">
+            <a
+              href={config.repo}
+              target="_blank"
+              className="text-gray-400 underline"
+            >
+              SourceCode
+            </a>
+          </p>
+        </div>
+      </div>
     </Layout>
   );
 };

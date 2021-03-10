@@ -23,16 +23,20 @@ const Home: NextPage<Props> = ({ allPostsData }) => {
   return (
     <Layout home>
       <PageSEO title={config.siteMeta.title} />
-      <PostsContainer posts={allPostsData} />
-      <p className="mt-7 text-center">
-        <a
-          href={config.repo}
-          target="_blank"
-          className="text-gray-400 underline"
-        >
-          SourceCode
-        </a>
-      </p>
+      <div className="shadow-md bg-white">
+        <div className="p-5">
+          <PostsContainer posts={allPostsData} />
+          <p className="mt-7 text-center">
+            <a
+              href={config.repo}
+              target="_blank"
+              className="text-gray-400 underline"
+            >
+              SourceCode
+            </a>
+          </p>
+        </div>
+      </div>
     </Layout>
   );
 };
