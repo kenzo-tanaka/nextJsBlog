@@ -7,8 +7,11 @@ $ npm run dev
 
 ## 記事の追加
 
-`/contents/posts/`の下にスラグ名でディレクトリを作成して下さい。
-例えば、`/hoge` というスラグにしたいなら `/contents/posts/hoge` を作成します。
+引数にはスラグにしたい文字列を指定して、シェルスクリプトを実行して下さい。
+
+```shell
+$ bash add-post.sh slug
+```
 
 作成したディレクトリの下に、`index.md` を作成して下さい。
 

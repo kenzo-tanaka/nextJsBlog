@@ -7,5 +7,9 @@ fi
 
 mkdir contents/posts/$1
 touch contents/posts/$1/index.md
+
+today=$(date +%Y-%m-%d)
+printf -- "---\ntitle:\ndate: '$today'\ncategory: 'dev'\n---" >> contents/posts/$1/index.md
+
 echo "contents/posts/$1/index.md を作成しました。"
 exit 1
