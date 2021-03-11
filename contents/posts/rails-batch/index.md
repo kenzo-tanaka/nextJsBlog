@@ -25,7 +25,7 @@ Ruby on Rails の開発でバッチファイルを書く時気にしているこ
 => "SELECT \"users\".* FROM \"users\""
 ```
 
-[【Rails】開発環境とテストコード上（または本番環境）でデータの並び順が異なる場合の原因と対処方法 - Qiita](https://qiita.com/jnchito/items/90c28c3f3e856add0a82)
+参考: [【Rails】開発環境とテストコード上（または本番環境）でデータの並び順が異なる場合の原因と対処方法 - Qiita](https://qiita.com/jnchito/items/90c28c3f3e856add0a82)
 
 ## `ActiveRecord::Base.transaction` を使う
 
@@ -39,6 +39,8 @@ ActiveRecord::Base.transaction do
   product.update!(price: 10000)
 end
 ```
+
+参考: [Rails の Transaction の使い方 - Qiita](https://qiita.com/huydx/items/d946970d130b7dabe7ec)
 
 ## 本番のデータをダウンロードしてバッチ処理を試す
 
@@ -55,4 +57,4 @@ $ # バッチ処理
 $ rm latest.dump
 ```
 
-[Importing and Exporting Heroku Postgres Databases | Heroku Dev Center](https://devcenter.heroku.com/articles/heroku-postgres-import-export)
+参考: [Importing and Exporting Heroku Postgres Databases | Heroku Dev Center](https://devcenter.heroku.com/articles/heroku-postgres-import-export)
