@@ -22,7 +22,7 @@ Shrine は uppy という JavaScript のファイルアップローダーとの�
 
 ```js
 uppy.use(Uppy.AwsS3, {
-  companionUrl: "/photos/presign/",
+  companionUrl: "/s3/presign/",
 });
 ```
 
@@ -52,3 +52,24 @@ Shrine 側の設定で uploader ごとにディレクトリを変えるのはそ
 参考:
 [Default Storage · Shrine](https://shrinerb.com/docs/plugins/default_storage)  
 [Ruby:Shrine で Uploader 個別にアップロード先を設定するメモ - Madogiwa Blog](https://madogiwa0124.hatenablog.com/entry/2018/05/26/101109)
+
+`default_storage` を使った実装例は GitHub で検索するといくつかヒットするので参考になると思います。
+[Search · "plugin :default_storage"](https://github.com/search?q=%22plugin+%3Adefault_storage%22&type=code)
+
+## uppy の companionUrl に合わせるため routes.rb の設定を変更
+
+```rb:routes.rb
+mount VideoUploader.presign_endpoint(:cache) => '/presign/videos/s3/params'
+mount ImageUploader.presign_endpoint(:cache) => '/presign/images/s3/params'
+```
+
+```js
+// uploader は引数とかで受け取っている想定
+// uppyが自動的にcompanionUrlのパスの末尾に /s3/params を付与するため
+// routes.rb はその仕様に合わせて設定する
+uppy.use(Uppy.AwsS3, {
+  companionUrl: `/presign/${uploader}`,
+});
+```
+
+[uppy/index.js at transloadit/uppy](https://github.com/transloadit/uppy/blob/d4e9e2ed21d94b8e54f513cc88d75efc7a25a943/packages/%40uppy/aws-s3/src/index.js#L130)
