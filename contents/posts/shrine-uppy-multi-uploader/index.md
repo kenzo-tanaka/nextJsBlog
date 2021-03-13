@@ -1,5 +1,5 @@
 ---
-title: Shrineとuppyを使ってuploaderごとに署名付きURLを設定する
+title: Shrineとuppyを使ってuploaderごとに事前署名付きURLを設定する
 date: "2021-03-13"
 category: "dev"
 ---

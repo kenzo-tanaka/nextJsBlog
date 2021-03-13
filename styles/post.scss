@@ -1,34 +1,14 @@
 .markdown-body {
   margin-top: 20px;
-  &__codeblock-container {
-    position: relative;
-    background: rgb(40, 42, 54);
-    code {
-      font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo,
-        monospace;
-      background-color: rgba(27, 31, 35, 0.05);
-      font-size: 85%;
-      border-radius: 6px;
-    }
-  }
-  &__codeblock-filename {
-    display: inline-block;
-    max-width: 100%;
-    font-size: 13px;
-    color: #ffffff;
-    padding: 5px;
-    background: rgba(177, 197, 247, 0.25);
+  code {
+    padding: 0.2em 0.4em;
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    background-color: rgba(27, 31, 35, 0.05);
+    font-size: 85%;
+    border-radius: 6px;
   }
   p {
     margin-bottom: 15px;
-    code {
-      padding: 0.2em 0.4em;
-      font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo,
-        monospace;
-      background-color: rgba(27, 31, 35, 0.05);
-      font-size: 85%;
-      border-radius: 6px;
-    }
   }
   a {
     color: #0070f3;
@@ -73,5 +53,25 @@
     padding: 1.5rem;
     margin-bottom: 20px;
     background: rgb(241, 244, 247);
+  }
+  &__codeblock-container {
+    position: relative;
+    background: rgb(40, 42, 54);
+    code {
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo,
+        monospace;
+      background-color: rgba(27, 31, 35, 0.05);
+      font-size: 85%;
+      border-radius: 6px;
+      padding: 0;
+    }
+  }
+  &__codeblock-filename {
+    display: inline-block;
+    max-width: 100%;
+    font-size: 13px;
+    color: #ffffff;
+    padding: 5px;
+    background: rgba(177, 197, 247, 0.25);
   }
 }
