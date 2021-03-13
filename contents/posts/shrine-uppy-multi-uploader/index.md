@@ -58,18 +58,22 @@ Shrine 側の設定で uploader ごとにディレクトリを変えるのはそ
 
 ## uppy の companionUrl に合わせるため routes.rb の設定を変更
 
-```rb:routes.rb
-mount VideoUploader.presign_endpoint(:cache) => '/presign/videos/s3/params'
-mount ImageUploader.presign_endpoint(:cache) => '/presign/images/s3/params'
-```
+まず uppy の companionUrl に設定したパスには、自動で`/s3/params`が付与されます。GitHub で調べてみたのですが、関連する実装としてはこの辺りかなと思います。
+
+[uppy/index.js at transloadit/uppy](https://github.com/transloadit/uppy/blob/d4e9e2ed21d94b8e54f513cc88d75efc7a25a943/packages/%40uppy/aws-s3/src/index.js#L130)
+
+事前署名付き URL を発行するエンドポイントを uploader ごとに動的に設定するため、以下では引数を式展開しています。
 
 ```js
 // uploader は引数とかで受け取っている想定
-// uppyが自動的にcompanionUrlのパスの末尾に /s3/params を付与するため
-// routes.rb はその仕様に合わせて設定する
 uppy.use(Uppy.AwsS3, {
   companionUrl: `/presign/${uploader}`,
 });
 ```
 
-[uppy/index.js at transloadit/uppy](https://github.com/transloadit/uppy/blob/d4e9e2ed21d94b8e54f513cc88d75efc7a25a943/packages/%40uppy/aws-s3/src/index.js#L130)
+routes.rb の設定も上記のエンドポイントを考慮して設定する必要があります。`presign_endpoint`は uploader ごとの設定が可能なため、以下のように設定します。
+
+```rb:routes.rb
+mount VideoUploader.presign_endpoint(:cache) => '/presign/videos/s3/params'
+mount ImageUploader.presign_endpoint(:cache) => '/presign/images/s3/params'
+```
