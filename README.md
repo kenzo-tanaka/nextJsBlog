@@ -10,7 +10,7 @@ $ npm run dev
 引数にはスラグにしたい文字列を指定して、シェルスクリプトを実行して下さい。
 
 ```shell
-$ bash add-post.sh slug
+$ ./add-post.sh slug
 ```
 
 作成したディレクトリの下に、`index.md` を作成して下さい。
