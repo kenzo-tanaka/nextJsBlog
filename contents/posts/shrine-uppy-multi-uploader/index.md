@@ -26,7 +26,7 @@ uppy.use(Uppy.AwsS3, {
 });
 ```
 
-しかし、複数の uploader でアップロードするディレクトリの出し分けを行いたい場合、上記の設定では動作せずネットにも情報がほぼなかったので書いておきます。
+複数の uploader でアップロードするディレクトリの出し分けをしつつ、uppy の事前署名付き URL を使いたい場合の設定方法がネットにも情報がほぼなかったので書いておきます。
 
 ## 前提
 
@@ -49,11 +49,11 @@ Shrine 側の設定で uploader ごとにディレクトリを変えるのはそ
 - プラグインの `default_storage` を使う
 - uploader ごとに `@storages` 変数を上書きする
 
-参考:
+参考:  
 [Default Storage · Shrine](https://shrinerb.com/docs/plugins/default_storage)  
 [Ruby:Shrine で Uploader 個別にアップロード先を設定するメモ - Madogiwa Blog](https://madogiwa0124.hatenablog.com/entry/2018/05/26/101109)
 
-`default_storage` を使った実装例は GitHub で検索するといくつかヒットするので参考になると思います。
+`default_storage` を使った実装例は GitHub で検索するといくつかヒットするので参考になると思います。  
 [Search · "plugin :default_storage"](https://github.com/search?q=%22plugin+%3Adefault_storage%22&type=code)
 
 ## uppy の companionUrl に合わせるため routes.rb の設定を変更
@@ -66,6 +66,7 @@ Shrine 側の設定で uploader ごとにディレクトリを変えるのはそ
 
 ```js
 // uploader は引数とかで受け取っている想定
+// 例: /presigns/videos
 uppy.use(Uppy.AwsS3, {
   companionUrl: `/presign/${uploader}`,
 });
@@ -74,6 +75,10 @@ uppy.use(Uppy.AwsS3, {
 routes.rb の設定も上記のエンドポイントを考慮して設定する必要があります。`presign_endpoint`は uploader ごとの設定が可能なため、以下のように設定します。
 
 ```rb:routes.rb
+# uploader ごとに presign_endpoint を設定
+# 末尾に /s3/params と付けているのはuppyのcompanionUrlに合わせるため
 mount VideoUploader.presign_endpoint(:cache) => '/presign/videos/s3/params'
 mount ImageUploader.presign_endpoint(:cache) => '/presign/images/s3/params'
 ```
+
+[Presign Endpoint Setup · Shrine](https://shrinerb.com/docs/plugins/presign_endpoint#setup)
