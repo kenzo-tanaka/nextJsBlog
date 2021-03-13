@@ -18,7 +18,7 @@ end
 
 [shrine/direct_s3.md at master · shrinerb/shrine](https://github.com/shrinerb/shrine/blob/master/doc/direct_s3.md)
 
-Shrine は uppy という JavaScript のファイルアップローダーとの相性が良く、Shrine でダイレクトアップロードを実装する際には、下記のように書くことで対応できます。
+Shrine は [uppy](https://github.com/transloadit/uppy) という JavaScript のファイルアップローダーとの相性が良く、Shrine でダイレクトアップロードを実装する際には、下記のように書くことで対応できます。
 
 ```js
 uppy.use(Uppy.AwsS3, {
@@ -36,8 +36,8 @@ uppy.use(Uppy.AwsS3, {
 
 ## やりたいこと
 
-- uppy を使ったダイレクトアップロードを採用する
-- Shrine の uploader ごとにアップロードするディレクトリを変えたい
+- Shrine の `presign_endpoint` を使って事前署名付き URL を発行し、uppy と組み合わせて使う
+- Shrine の uploader ごとにアップロードするディレクトリを変える
   - `VideoUploader` → /videos
   - `ImageUploader` → /images
   - みたいな感じ
@@ -49,30 +49,33 @@ Shrine 側の設定で uploader ごとにディレクトリを変えるのはそ
 - プラグインの `default_storage` を使う
 - uploader ごとに `@storages` 変数を上書きする
 
-参考:  
-[Default Storage · Shrine](https://shrinerb.com/docs/plugins/default_storage)  
-[Ruby:Shrine で Uploader 個別にアップロード先を設定するメモ - Madogiwa Blog](https://madogiwa0124.hatenablog.com/entry/2018/05/26/101109)
+参考:
 
-`default_storage` を使った実装例は GitHub で検索するといくつかヒットするので参考になると思います。  
+- [Ruby:Shrine で Uploader 個別にアップロード先を設定するメモ - Madogiwa Blog](https://madogiwa0124.hatenablog.com/entry/2018/05/26/101109)
+- [Default Storage · Shrine](https://shrinerb.com/docs/plugins/default_storage)
+
+`@storages`を使った実装で動作確認をしましたが、やっていることは同じなので`default_storage`でも適用できると思います。`default_storage` を使った実装例は GitHub で検索するといくつかヒットします。  
 [Search · "plugin :default_storage"](https://github.com/search?q=%22plugin+%3Adefault_storage%22&type=code)
 
 ## uppy の companionUrl に合わせるため routes.rb の設定を変更
 
-まず uppy の companionUrl に設定したパスには、自動で`/s3/params`が付与されます。GitHub で調べてみたのですが、関連する実装としてはこの辺りかなと思います。
+今回は uploader ごとにアップロードするディレクトリを変えたいので、事前署名付き URL も uploader ごとに別のものを設定する必要があります。また、`routes.rb` で設定する内容は、uppy の `companionUrl` とも関連するので、まず uppy の方から見ていきます。
+
+uppy の `companionUrl` に設定したパスには、自動で `/s3/params` が付与されます。これはドキュメントなどに書いてあったとかではなく、動作確認する中で分かったことです。GitHub で調べてみたのですが、関連する実装としてはこの辺りかなと思います。
 
 [uppy/index.js at transloadit/uppy](https://github.com/transloadit/uppy/blob/d4e9e2ed21d94b8e54f513cc88d75efc7a25a943/packages/%40uppy/aws-s3/src/index.js#L130)
 
 事前署名付き URL を発行するエンドポイントを uploader ごとに動的に設定するため、以下では引数を式展開しています。
 
 ```js
-// uploader は引数とかで受け取っている想定
-// 例: /presigns/videos
+// uploader は引数で指定している想定
+// 例: uploader = "videos"を受け取った場合 /presign/videos/s3/params となる
 uppy.use(Uppy.AwsS3, {
   companionUrl: `/presign/${uploader}`,
 });
 ```
 
-routes.rb の設定も上記のエンドポイントを考慮して設定する必要があります。`presign_endpoint`は uploader ごとの設定が可能なため、以下のように設定します。
+routes.rb の設定も上記のエンドポイントに合わせて設定します。`presign_endpoint`は uploader ごとの設定が可能です。
 
 ```rb:routes.rb
 # uploader ごとに presign_endpoint を設定
