@@ -60,4 +60,4 @@ $ md-to-pdf contents/pages/about/index.md
 
 ## GitHub Actions
 
-`create issu` というワークフローが毎月 27 日に実行されます。これは、月次の振り返りをする自分リリースノート執筆リマインダーです。
+`create issue` というワークフローが毎月 27 日に実行されます。これは、月次の振り返りをする自分リリースノート執筆リマインダーです。
