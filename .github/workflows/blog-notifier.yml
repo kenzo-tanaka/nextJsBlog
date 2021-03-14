@@ -14,4 +14,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          filename: .github/ISSUE_TEMPLATE/jibun-release.md
+          filename: .github/ISSUE_TEMPLATE/blog-notify.md
