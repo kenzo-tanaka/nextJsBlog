@@ -5,7 +5,7 @@ const Profile: React.FC = () => {
   return (
     <div className="flex flex-col	items-center">
       <Image
-        src="/images/profile.jpg"
+        src="/images/profile.webp"
         alt="Picture of the author"
         className="rounded-full"
         width={100}
