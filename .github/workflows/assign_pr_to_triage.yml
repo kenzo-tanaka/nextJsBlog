@@ -1,8 +1,10 @@
 name: Move pull requests to Triage project
 
-on:
-  pull_request:
-    types: [opened]
+# on:
+#   pull_request:
+#     types: [opened]
+
+on: [push]
 
 jobs:
   automate-project-columns:
