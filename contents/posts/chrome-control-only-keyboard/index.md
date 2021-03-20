@@ -2,6 +2,7 @@
 title: Google Chromeをできるだけキーボードのみで操作する
 date: "2021-03-20"
 category: "dev"
+thumbnail: "cat.jpg"
 ---
 
 できるだけキーボードから手を離さずキーボードのみで Google Chrome を操作するコツなどをまとめます。
