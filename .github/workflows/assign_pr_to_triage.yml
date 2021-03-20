@@ -1,10 +1,8 @@
 name: Move pull requests to Triage project
 
-# on:
-#   pull_request:
-#     types: [opened]
-
-on: [push]
+on:
+  pull_request:
+    types: [opened]
 
 jobs:
   automate-project-columns:
@@ -14,4 +12,4 @@ jobs:
         with:
           project: Triage
           column: In progress
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          repo-token: ${{ secrets.GH_TOKEN }}
