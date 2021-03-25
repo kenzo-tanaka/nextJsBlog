@@ -6,8 +6,8 @@ category: "dev"
 
 ## やりたいこと
 
-- Rails API の開発でインスタンスメソッドの返り値もレスポンスに含めたい
-- レスポンスのデータは以下のようにネストしたハッシュにしたい
+- テーブルのカラム以外にインスタンスメソッドの返り値もレスポンスに含めたい
+- レスポンスのデータはネストした構造にしたい
 
 ```json
 // GET: /api/v1/ideas のレスポンス
@@ -27,16 +27,9 @@ category: "dev"
 
 ## 前提知識
 
-`as_json`や`to_json`で `methods` オプションを指定することで「インスタンスメソッドの返り値もレスポンスに含めたい」は実装できます。
+### `as_json` と `to_json`
 
-```rb
-user.as_json(methods: :permalink)
-# => { "id" => 1, "name" => "Konata Izumi", "age" => 16,
-#      "created_at" => "2006-08-01T17:27:13.000Z", "awesome" => true,
-#      "permalink" => "1-konata-izumi" }
-```
-
-### `as_json` と `to_json` の違い
+`as_json` や `to_json` を使うと `ActiveRecord_Relation` を Hash の配列に変換できます。用意されているオプションなどはほぼ同じなのですが、`as_json` と `to_json` には以下のような違いがあります。
 
 - `as_json`: Hash を返す
 - `to_json`: String を返す
@@ -48,19 +41,26 @@ user.as_json(methods: :permalink)
 => String
 ```
 
-`render json`で指定したときの動きを調べる。動かしてた感じだと`to_json`でもハッシュの配列になっていたけれど、それは何でなのか。
+`methods` オプションを指定することで「インスタンスメソッドの返り値もレスポンスに含めたい」の要件は実装できます。
 
-## 事象
+```rb
+user.as_json(methods: :permalink)
+# => { "id" => 1, "name" => "Konata Izumi", "age" => 16,
+#      "created_at" => "2006-08-01T17:27:13.000Z", "awesome" => true,
+#      "permalink" => "1-konata-izumi" }
+```
 
-まずは`to_json`を使わず、シンプルな実装をしてみます。
+[ActiveModel::Serializers::JSON](https://api.rubyonrails.org/v6.0.3.3/classes/ActiveModel/Serializers/JSON.html)
+
+## to_json で実装しているとぶつかる壁
+
+まずは`to_json`を使わず、シンプルな実装をしてみます。この実装ではまずレスポンスのデータが想定している構造で問題なく出力されます。
 
 ```rb
 def index
   render json: { data: Idea.order(:id) }
 end
 ```
-
-問題なく出力されていることを確認します。
 
 ```json
 // curl localhost:3000 | json_pp を実行
@@ -84,15 +84,18 @@ end
 }
 ```
 
-ここで`to_json`がオプションとして用意している、`methods`を使ってみます。
+上記では`to_json`を呼び出していませんが、`Idea.order(:id)`を Rails がよしなにハッシュの配列に変換してくれています。
+
+> 出力するオブジェクトに対して to_json を呼び出す必要はありません。:json オプションが指定されていれば、render によって to_json が自動的に呼び出されるようになっています。  
+> [レイアウトとレンダリング - Rails ガイド](https://railsguides.jp/layouts_and_rendering.html)
+
+「テーブルのカラム以外にインスタンスメソッドの返り値もレスポンスに含めたい」の要件を実装するため`to_json`がオプションとして用意している、`methods`を使ってみます。しかし、下記の実装では data の値が文字列になってしまいます。
 
 ```rb
 def index
   render json: { data: Idea.order(:id).to_json(methods: [:category_name]) }
 end
 ```
-
-しかし、こうすると出力が以下のように data の値が文字列になってしまっていることが分かります。
 
 ```json
 // curl localhost:3000 | json_pp
@@ -101,12 +104,9 @@ end
 }
 ```
 
-> 出力するオブジェクトに対して to_json を呼び出す必要はありません。:json オプションが指定されていれば、render によって to_json が自動的に呼び出されるようになっています。  
-> [レイアウトとレンダリング - Rails ガイド](https://railsguides.jp/layouts_and_rendering.html)
+## 原因
 
-`render json`に渡す値は明示的に `to_json` する必要はないが、`to_json`で文字列に変換されていてもよしなに実行してくれる。
-
-`to_json`を使いつつ、`data`の構造を剥がしてみます。
+状況を整理するため、data のネストを剥がして、methods オプションなしで`to_json`を使ってみます。こうすると、先程のような文字列にはならず綺麗に整形されたデータを返します。
 
 ```rb
 def index
@@ -115,28 +115,46 @@ end
 ```
 
 ```json
-// $ curl localhost:3000 | json_pp を実行
+// curl localhost:3000 | json_pp
+[
+  {
+    "id": 1,
+    "body": "Go言語の本を読む",
+    "category_id": 1,
+    "created_at": "2021-03-20T02:33:36.893Z",
+    "updated_at": "2021-03-20T02:33:36.893Z"
+  },
+  {
+    "body": "Ruby on RailsでAPI開発",
+    "id": 2,
+    "created_at": "2021-03-20T02:33:36.916Z",
+    "updated_at": "2021-03-20T02:33:36.916Z",
+    "category_id": 1
+  }
+]
+```
+
+`json`に Hash が渡された時の挙動も確かめてみます。
+
+```rb
+def index
+  render json: { data: 'hoge' }
+end
+```
+
+```json
 {
-  "data": [
-    {
-      "body": "Go言語の本を読む",
-      "id": 1,
-      "created_at": "2021-03-20T02:33:36.893Z",
-      "category_id": 1,
-      "updated_at": "2021-03-20T02:33:36.893Z"
-    },
-    {
-      "created_at": "2021-03-20T02:33:36.916Z",
-      "category_id": 1,
-      "updated_at": "2021-03-20T02:33:36.916Z",
-      "body": "Ruby on RailsでAPI開発",
-      "id": 2
-    }
-  ]
+  "data": "hoge"
 }
 ```
 
-`render json` に `to_json`した文字列を渡してもよしなにやってくれています。
+なので状況を整理すると、以下のようになります。
+
+- `json`で指定するオブジェクトに対して`to_json`を呼び出す必要はない
+- `json`で指定するオブジェクトが`to_json`されて文字列の場合、それを整形して返す
+- `json`で指定するオブジェクトが Hash の場合は、それをそのまま返す
+
+先程のこのコードの場合 `{ data: 'to_jsonによって生成された文字列' }` という Hash が渡されたことになるので、整形してくれません。
 
 ```rb
 def index
@@ -144,13 +162,12 @@ def index
 end
 ```
 
-しかしこのコードの場合 `{ data: 'to_jsonによって生成された文字列' }` という Hash が渡されたことになるので、整形してくれません。
-なのでこの場合は `as_json` を使う必要があります。
+## 解決策
+
+今回の場合は `as_json` を使って Hash の配列を data に渡す必要があります。
 
 ```rb
 def index
   render json: { data: Idea.order(:id).as_json(methods: [:category_name]) }
 end
 ```
-
-こうすと `data` のバリューは`as_json`によって生成されたハッシュの配列になるので想定する結果を得られます。
