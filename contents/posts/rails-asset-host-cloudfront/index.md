@@ -18,6 +18,8 @@ config.action_controller.asset_host = 'xxx.cloudfront.net'
 
 上記設定を加えて本番のページで確認したところ、CloudFront 経由から配信されていることが確認できました。しかし、Network > Img タブで見てみると各画像の読み込みは 1 回目 301 ステータスを返し、オリジンサーバへリダイレクトされていました。
 
+![](img1.png)
+
 また、`curl`コマンドでヘッダーを確認すると、同じく 301 リダイレクトを返していました。
 
 ```shell
