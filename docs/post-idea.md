@@ -8,7 +8,8 @@
 - [x] Shrine の upload を seed ファイルでブロックごとに実行しようとするとエラーになる
 - [x] Shrine と uppy の連携でうまく行かなかった点をまとめる
 - [x] バッチ処理で気にすることまとめ
-- [ ] API で JSON を整形するときの Tips を書く(as_json options 調べる)
+- [x] API で JSON を整形するときの Tips を書く(as_json options 調べる)
+- [ ] タスク管理方法を少し改良した
 - [ ] ブランチ名から Issue 番号を切り出して Pull request を作成するシェルスクリプト
 - [ ] 関数型プログラミングとは何なのか
 - [ ] プログラマが知るべき 97 のこと読んだ
