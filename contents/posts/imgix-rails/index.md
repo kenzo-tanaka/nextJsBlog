@@ -51,5 +51,23 @@ view 側では`ix_image_tag`を使用すれば、imgix から配信された URL
 
 この場合、**特にデフォルト設定から何も変えずに imgix で Source を作成すると、非公開バケットの全てのオブジェクトを参照できるようになってしまいます。**
 
-これを回避するため imgix には Secure URLs という仕組みがあります。これを使うと token の情報なしにアクセスすることを防ぐことができます。
+これを回避するため imgix には Secure URLs という仕組みがあります。これを使うと token の情報なしにアクセスできなくなります。
 [Securing Images | imgix Documentation](https://docs.imgix.com/setup/securing-images#expiring-urls)
+
+Source を作成する時の画面下部で、下記のようなチェックボックスがあるのでこれを ON にしておけば、ダッシュボード側での設定は完了です。
+![](image2.png)
+
+これを imgix-rails 側で設定する必要があるので、application.rb を下記のように書き換えます。
+
+```rb:application.rb
+Rails.application.configure do
+  config.imgix = {
+    source: ENV['IMGIX_SOURCE']
+  },
+  secure_url_token: ENV['IMGIX_SECURE_URL_TOKEN']
+end
+```
+
+こうすれば、token によって発行される乱数が`?s=`についた URL が発行され、期限が切れると画像は参照できなくなります。期限が切れた画像を開くと下記のように 404 を返します。
+
+![](image3.png)
