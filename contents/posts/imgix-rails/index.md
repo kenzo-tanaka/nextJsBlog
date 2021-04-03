@@ -107,3 +107,29 @@ end
 [imgix Sandbox](https://sandbox.imgix.com/create)を使うと便利です。URL に付与するパラメータを画面で色々操作できて、右上の方でどれくらい軽量化されたかも確認できます。
 
 ![](image6.png)
+
+## 遅延コードもやりたい
+
+imgix が推している lazysizes という遅延ロード用のライブラリに関しても書いておきます。
+
+- [Improving Site Performance | imgix Documentation](https://docs.imgix.com/best-practices/improving-site-performance#lazy-loading-and-responsive-images-with-imgixjs)
+- [imgix Blog | Using imgix with lazysizes](https://blog.imgix.com/2016/05/02/imgix-lazysizes)
+- [aFarkas/lazysizes | GitHub](https://github.com/aFarkas/lazysizes)
+
+公式の手順に沿って lazysizes をインストールして、application.js とかでインポートします。
+
+```shell
+$ npm install lazysizes --save
+```
+
+```js:application.js
+import 'lazysizes';
+// import a plugin
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
+```
+
+あとは ix_image_tag 側を色々いじります。
+
+```erb
+<%= ix_image_tag('/path-to-img.jpg', attribute_options: { src: 'data-src', srcset: 'data-srcset', sizes: 'data-sizes' }, tag_options: { class: 'lazyload' }) %>
+```
