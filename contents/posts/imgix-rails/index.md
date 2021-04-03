@@ -21,9 +21,9 @@ CloudFront などに比べると管理画面が分かりやすく、リサイズ
 
 ## imgix-rails を使う
 
-imgix 公式が出している Gem [imgix-rails](https://github.com/imgix/imgix-rails)を使えば手軽に Rails プロジェクトに imgix を導入できます。
+imgix 公式が出している Gem [imgix-rails](https://github.com/imgix/imgix-rails)を使えば手軽に Rails プロジェクトに imgix を導入でき、必要なパラメータ設定などもしっかり網羅してくれています。
 
-設定として application.rb に以下の設定を書きます。ステージングなど環境ごとで切り替えたい場合には、環境変数を使って書くのが良いと思います。
+application.rb に以下の設定を書きます。ステージングなど環境ごとで Source を切り替えたい場合には、環境変数を使って書くのが良いと思います。
 
 ```rb:application.rb
 Rails.application.configure do
@@ -33,7 +33,7 @@ Rails.application.configure do
 end
 ```
 
-view 側では`ix_image_tag`を使用すれば、imgix から配信された URL をレンダリングしてくれるようになります。第一引数には画像のパス（S3 でいうとキー）を指定、`url_params`には画像のサイズなどを設定できます。
+view 側では`ix_image_tag`を使用すれば、imgix から配信された URL をレンダリングしてくれるようになります。引数には画像のパス（S3 でいうとキー）を指定、`url_params`には画像のサイズなどを設定できます。
 
 ```erb
 <%= ix_image_tag('/unsplash/hotairballoon.jpg', url_params: { w: 300, h: 500, fit: 'crop', crop: 'right'}, tag_options: { alt: 'A hot air balloon on a sunny day' }) %>
@@ -75,3 +75,27 @@ end
 トークンが付与されていない URL でオブジェクトを参照しようとすると、403 Forbidden を返します。
 
 ![](image4.png)
+
+## 複数の Source からの配信
+
+imgix では複数の Source を設定して、ix_image_tag で出し分けができます。`sources`には Source のドメインと Token のハッシュを渡します。上述した Secure URLs の設定を入れていない場合には、value に nil を渡します。
+
+```rb:application.rb
+Rails.application.configure do
+  config.imgix = {
+    sources: {
+      "assets.imgix.net"  => "foobarbaz",
+      "assets2.imgix.net" => nil,   # Will generate unsigned URLs
+    },
+    default_source: "assets.imgix.net"
+  }
+end
+```
+
+[Multi-source configuration - imgix/imgix-rails](https://github.com/imgix/imgix-rails#multi-source-configuration)
+
+`ix_image_tag`での Source の切り替えは、第一引数に配信したい Source のキーを渡します。
+
+```erb
+<%= ix_image_tag('assets2.imgix.net' ,'/path-to-img.jpg') %>
+```
