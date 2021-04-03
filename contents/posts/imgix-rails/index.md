@@ -133,3 +133,5 @@ import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 ```erb
 <%= ix_image_tag('/path-to-img.jpg', attribute_options: { src: 'data-src', srcset: 'data-srcset', sizes: 'data-sizes' }, tag_options: { class: 'lazyload' }) %>
 ```
+
+ここまでやれば激重な Rails プロジェクトでも多少は動作が軽くなるのではと思います。
