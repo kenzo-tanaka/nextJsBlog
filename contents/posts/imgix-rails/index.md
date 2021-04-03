@@ -50,7 +50,7 @@ view 側では`ix_image_tag`を使用すれば、imgix から配信された URL
 
 この場合、**特にデフォルト設定で Source を作成すると、非公開バケットの全てのオブジェクトを参照できるようになってしまいます。**
 
-これを回避するため imgix には Secure URLs という仕組みがあります。これを使うと token の情報なしにアクセスできなくなります。
+これを回避するため imgix には Secure URLs という仕組みがあります。これを使うと token の情報なしにアクセスできなくなります。  
 [Securing Images | imgix Documentation](https://docs.imgix.com/setup/securing-images#expiring-urls)
 
 Source を作成する時の画面下部で、下記のようなチェックボックスがあるのでこれを ON にしておけば、ダッシュボード側での設定は完了です。
