@@ -38,7 +38,7 @@ view 側では`ix_image_tag`を使用すれば、imgix から配信された URL
 <%= ix_image_tag('/unsplash/hotairballoon.jpg', url_params: { w: 300, h: 500, fit: 'crop', crop: 'right'}, tag_options: { alt: 'A hot air balloon on a sunny day' }) %>
 ```
 
-## 注意点：デフォルト設定で Source を作成すると非公開バケット内のオブジェクトも参照できてしまう
+## 注意点：デフォルト設定で Source を作成すると非公開バケット内のオブジェクトも閲覧できてしまう
 
 非公開バケットの一部のディレクトリだけ imgix から配信して、他のディレクトリにはアクセスできないようにしたいという場合を考えてみます。
 
@@ -48,7 +48,7 @@ view 側では`ix_image_tag`を使用すれば、imgix から配信された URL
   /dir_b # 非公開のままにしたい
 ```
 
-この場合、**特にデフォルト設定で Source を作成すると、非公開バケットの全てのオブジェクトを参照できるようになってしまいます。**
+この場合、**デフォルト設定で Source を作成すると、非公開バケットの全てのオブジェクトを閲覧できるようになってしまいます。**
 
 これを回避するため imgix には Secure URLs という仕組みがあります。これを使うと token の情報なしにアクセスできなくなります。  
 [Securing Images | imgix Documentation](https://docs.imgix.com/setup/securing-images#expiring-urls)
