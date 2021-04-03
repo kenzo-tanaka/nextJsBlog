@@ -99,3 +99,11 @@ end
 ```erb
 <%= ix_image_tag('assets2.imgix.net' ,'/path-to-img.jpg') %>
 ```
+
+## どれくらい画像が軽くなるのか確認したい
+
+![](image5.png)
+
+[imgix Sandbox](https://sandbox.imgix.com/create)を使うと便利です。URL に付与するパラメータを画面で色々操作できて、右上の方でどれくらい軽量化されたかも確認できます。
+
+![](image6.png)
