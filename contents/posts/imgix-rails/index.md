@@ -1,27 +1,26 @@
 ---
-title: "imgix-railsをがっつり触ったのでメモ"
+title: "imgix-railsでパフォーマンス改善をする時の設定と注意点"
 date: "2021-04-03"
 category: "dev"
 ---
 
-業務で imgix-rails をがっつり触ってパフォーマンスの改善をしたので、調べたことなどをメモしておきます。
+最近 imgix-rails でパフォーマンスの改善をしたので、調べたことや注意点などをまとめておきます。
 
 ## imgix とは
 
 ![](image1.png)
 [Image processing and optimization API - Image CDN • imgix](https://www.imgix.com/)
 
-画像のリサイズ、整形、最適化、キャッシュなどを行ってくれる CDN です。
-URL にパラメータを付与するだけで画像のサイズやフォーマットを変えたりできます。
+画像のリサイズ、整形、最適化、キャッシュなどを行ってくれる高機能な CDN です。
+URL にパラメータを付与するだけで、手軽に画像のリサイズやフォーマット変更など色々なことができます。
 
-CloudFront などに比べると管理画面が分かりやすく、リサイズやフォーマットの設定までできるところが imgix の強力さかなと思います。
-
-この記事では S3 を向き先として想定していますが、Google Cloud Storage や Microsoft Azure とかも設定できるみたいです。  
+CloudFront に比べると管理画面が分かりやすく、リサイズやフォーマットの設定までできるところが imgix の強力さかなと思います。この記事では S3 を向き先として想定していますが、Google Cloud Storage や Microsoft Azure なども設定できます。  
 [Creating Sources | imgix Documentation](https://docs.imgix.com/setup/creating-sources)
 
 ## imgix-rails を使う
 
-imgix 公式が出している Gem [imgix-rails](https://github.com/imgix/imgix-rails)を使えば手軽に Rails プロジェクトに imgix を導入でき、必要なパラメータ設定などもしっかり網羅してくれています。
+imgix 公式が出している Gem [imgix-rails](https://github.com/imgix/imgix-rails)を使えば手軽に Rails プロジェクトに imgix を導入でき、必要なパラメータ設定などもしっかり網羅してくれています。  
+ドキュメント：[Rails library for imgix | imgix-rails | imgix Documentation](https://docs.imgix.com/libraries/imgix-rails)
 
 application.rb に以下の設定を書きます。ステージングなど環境ごとで Source を切り替えたい場合には、環境変数を使って書くのが良いと思います。
 
@@ -33,7 +32,7 @@ Rails.application.configure do
 end
 ```
 
-view 側では`ix_image_tag`を使用すれば、imgix から配信された URL をレンダリングしてくれるようになります。引数には画像のパス（S3 でいうとキー）を指定、`url_params`には画像のサイズなどを設定できます。
+view 側では`ix_image_tag`を使用すれば、imgix から配信された URL をレンダリングしてくれます。引数には画像のパス（S3 でいうとキー）を指定、`url_params`には画像のサイズなどを設定できます。その他引数で設定できる項目は、[ここ](https://github.com/imgix/imgix-rails#ix_image_tag)に記載されています。
 
 ```erb
 <%= ix_image_tag('/unsplash/hotairballoon.jpg', url_params: { w: 300, h: 500, fit: 'crop', crop: 'right'}, tag_options: { alt: 'A hot air balloon on a sunny day' }) %>
@@ -46,10 +45,10 @@ view 側では`ix_image_tag`を使用すれば、imgix から配信された URL
 ```shell
 /secret_bucket
   /dir_a # imgixで配信したい
-  /dir_b # これは非公開のままにしたい
+  /dir_b # 非公開のままにしたい
 ```
 
-この場合、**特にデフォルト設定から何も変えずに imgix で Source を作成すると、非公開バケットの全てのオブジェクトを参照できるようになってしまいます。**
+この場合、**特にデフォルト設定で Source を作成すると、非公開バケットの全てのオブジェクトを参照できるようになってしまいます。**
 
 これを回避するため imgix には Secure URLs という仕組みがあります。これを使うと token の情報なしにアクセスできなくなります。
 [Securing Images | imgix Documentation](https://docs.imgix.com/setup/securing-images#expiring-urls)
@@ -68,7 +67,7 @@ Rails.application.configure do
 end
 ```
 
-こうすれば、token によって発行される乱数が`?s=`についた URL が発行され、期限が切れると画像は参照できなくなります。期限が切れた画像を開くと下記のように 404 を返します。
+こうすれば、token によって発行される乱数が`s`パラメータに付与されます。セキュアな URL は expires パラメータで明示的に有効期限をセットできます。期限が切れると画像は参照できなくなり 404 を返します。
 
 ![](image3.png)
 
@@ -98,6 +97,12 @@ end
 
 ```erb
 <%= ix_image_tag('assets2.imgix.net' ,'/path-to-img.jpg') %>
+```
+
+第一引数を省略した場合は、`default_source`でセットした Source を見に行きます。
+
+```erb
+<%= ix_image_tag('/path-to-img.jpg') %>
 ```
 
 ## どれくらい画像が軽くなるのか確認したい
