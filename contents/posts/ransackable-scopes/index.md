@@ -25,9 +25,23 @@ class Product < ActiveRecord::Base
 end
 ```
 
+```rb
+Product.search(by_complex_logic: 'hoge').result
+```
+
+view 側で使う際には、普通の Ransack の検索と同じように第一引数に渡して上げる形で動作します。
+
+```slim:index.html.slim
+= f.select :by_complex_logic, ...
+```
+
 ## ransackable_scopes の注意点
 
-注意しないといけないのは、ransackable_scopes で定義したスコープに対して引数で`1`を渡すと true に変換されてしまいます。
+注意しないといけないのは、ransackable_scopes で定義したスコープに対して引数で`1`を渡すと true に変換されるため、エラーになります。
+
+```shell
+ArgumentError wrong number of arguments (given 0, expected 1)
+```
 
 なので id など数値の引数を期待する scope を定義して ransackable_scopes で使おうとすると、id=1 のときだけ検索できないみたいなことになります。  
 このサニタイズを Ransack の検索全てから剥がしたい場合は、以下の設定を追加します。
