@@ -37,7 +37,8 @@ view 側で使う際には、普通の Ransack の検索と同じように第一
 
 ## ransackable_scopes の注意点
 
-注意しないといけないのは、ransackable_scopes で定義したスコープに対して引数で`1`を渡すと true に変換されるため、エラーになります。
+注意しないといけないのは、ransackable_scopes で定義したスコープに対して引数で`1`を渡すと`true`に変換されるため、エラーになります。
+同じような理由で`0`が渡されたときは`false`に変換されて、エラーになります。
 
 ```shell
 ArgumentError wrong number of arguments (given 0, expected 1)
