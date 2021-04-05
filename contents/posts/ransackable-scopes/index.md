@@ -30,10 +30,29 @@ end
 注意しないといけないのは、ransackable_scopes で定義したスコープに対して引数で`1`を渡すと true に変換されてしまいます。
 
 なので id など数値の引数を期待する scope を定義して ransackable_scopes で使おうとすると、id=1 のときだけ検索できないみたいなことになります。  
-この暗黙的な変換を Ransack の検索全てから剥がしたい場合は、以下の設定を追加します。
+このサニタイズを Ransack の検索全てから剥がしたい場合は、以下の設定を追加します。
 
 ```rb:config/initializers/ransack.rb
 Ransack.configure do |c|
   c.sanitize_custom_scope_booleans = false
+end
+```
+
+部分的にサニタイズを剥がしたい場合は、以下のように設定します。
+
+```rb:product.rb
+class Product < ActiveRecord::Base
+  scope :by_complex_logic, -> (arg) {
+    # 複雑なロジック
+  }
+
+  def self.ransackable_scopes(auth_object = nil)
+    %i[by_complex_logic]
+  end
+
+  # この設定を加えたscopeでは 1→true とかの変換をしなくなる
+  def self.ransackable_scopes_skip_sanitize_args
+    %i[by_complex_logic]
+  end
 end
 ```
