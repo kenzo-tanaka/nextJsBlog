@@ -3,3 +3,37 @@ title: "ransackable_scopesを使う際の注意点"
 date: "2021-04-05"
 category: "dev"
 ---
+
+Rails で検索を実装する際に、Ransack を使用することはよくあると思います。
+[activerecord-hackery/ransack: Object-based searching.](https://github.com/activerecord-hackery/ransack)
+
+通常の部分一致の検索やアソシエーションからの検索などは用意にできますが、より複雑な検索機能を実装したい際には、`ransackable_scopes`が便利です。
+
+## ransackable_scopes
+
+通常の Ransack の検索では実現できないような複雑なロジックを含んだ検索をできるようにする機能です。使い方は以下のような感じで、scope を用意しておいて、それを`self.ransackable_scopes`に仕込んでおきます。
+
+```rb:product.rb
+class Product < ActiveRecord::Base
+  scope :by_complex_logic, -> (arg) {
+    # 複雑なロジック
+  }
+
+  def self.ransackable_scopes(auth_object = nil)
+    %i[by_complex_logic]
+  end
+end
+```
+
+## ransackable_scopes の注意点
+
+注意しないといけないのは、ransackable_scopes で定義したスコープに対して引数で`1`を渡すと true に変換されてしまいます。
+
+なので id など数値の引数を期待する scope を定義して ransackable_scopes で使おうとすると、id=1 のときだけ検索できないみたいなことになります。  
+この暗黙的な変換を Ransack の検索全てから剥がしたい場合は、以下の設定を追加します。
+
+```rb:config/initializers/ransack.rb
+Ransack.configure do |c|
+  c.sanitize_custom_scope_booleans = false
+end
+```
