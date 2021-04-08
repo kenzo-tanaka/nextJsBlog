@@ -7,6 +7,8 @@ category: "work"
 ## Google Analytics のコンバージョンとは
 
 Google Analytics のコンバージョンの機能を使えば、資料請求が何件あったか・何人が新規登録したかなど、サイト内で計測したい指標を追うことができます。
+[コンバージョン - アナリティクス ヘルプ](https://support.google.com/analytics/answer/6086209?hl=ja)
+
 コンバージョンの設定には「到達ページ」「滞在時間」「イベント」などの測定方法があります。
 ![](img1.png)
 
@@ -15,7 +17,13 @@ Google Analytics のコンバージョンの機能を使えば、資料請求が
 - Google Tag Manager を使う
 - gtag.js を使う
 
-gtag を使う方法は[こちらの記事](https://qiita.com/yamitake@github/items/876c6de1b3f7631e802e)に書かれていたので、GTM を使うやり方をこの記事では書きます。
+タイトルの件に関して、gtag を使う方法は[こちらの記事](https://qiita.com/yamitake@github/items/876c6de1b3f7631e802e)に書かれています。  
+GTM を使った方法に関しては情報が見当たらず苦戦したので、この記事に残しておきます。
+
+ちなみに Google 的には、GTM を推している雰囲気を感じました。
+
+> If you currently use Tag Manager, you should continue to do so. Google Ads and Google Marketing Platform tags are fully supported by Tag Manager, and there is no need to deploy additional gtag.js-based code on your site if Tag Manager is already in use.  
+> [Tag Manager and gtag.js - Tag Manager Help](https://support.google.com/tagmanager/answer/7582054?hl=en#:~:text=Tag%20Manager%20is%20a%20tag,tags%20directly%20to%20web%20pages.)
 
 ## 前提
 
