@@ -1,6 +1,6 @@
 ---
 title: "Google Tag Managerを使いつつGAのコンバージョンを確認できるようにする"
-date: "2021-04-07"
+date: "2021-04-08"
 category: "work"
 ---
 
