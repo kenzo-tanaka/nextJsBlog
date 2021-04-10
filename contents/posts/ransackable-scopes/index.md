@@ -49,9 +49,10 @@ view 側で使う際には、普通の Ransack の検索と同じように第一
 ```shell
 Product.search(no_arg_scope: true).result
 Product.search(no_arg_scope: 1).result
-# -> no_arg_scopeによる絞り込みを実行
+# -> no_arg_scopeによる絞り込みを実行した結果を返す
 Product.search(no_arg_scope: false).result
 Product.search(no_arg_scope: 0).result
+# -> no_arg_scopeによる絞り込みを実行しない結果を返す
 ```
 
 ### ransackable_scopes で定義したスコープに対して引数で`1`を渡すと`true`に変換される
@@ -76,6 +77,9 @@ ArgumentError wrong number of arguments (given 0, expected 1)
 ```
 
 これは Ransack が 1→true に変換するからです。
+
+> However, perhaps you have user_id: [1] and you do not want Ransack to convert 1 into a boolean.  
+> [ransack - Using Scopes/Class Methods](https://github.com/activerecord-hackery/ransack#using-scopesclass-methods)
 
 ```shell
 # つまりこれが実行されているのと同じ
