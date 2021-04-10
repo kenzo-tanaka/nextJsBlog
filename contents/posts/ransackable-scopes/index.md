@@ -4,10 +4,10 @@ date: "2021-04-10"
 category: "dev"
 ---
 
-Rails で検索を実装する際に、Ransack を使用することはよくあると思います。
+Rails で検索を実装する際に、Ransack を使用することはよくあると思います。  
 [activerecord-hackery/ransack: Object-based searching.](https://github.com/activerecord-hackery/ransack)
 
-通常の部分一致の検索やアソシエーションからの検索などは用意にできますが、より複雑な検索機能を実装したい際には、`ransackable_scopes`が便利です。
+通常の部分一致の検索やアソシエーションからの検索などは用意にできますが、より複雑な検索機能を実装したい際には、`ransackable_scopes`が便利です。  
 [ransack - Using Scopes/Class Methods](https://github.com/activerecord-hackery/ransack#using-scopesclass-methods)
 
 ## ransackable_scopes
