@@ -1,8 +1,10 @@
 ---
-title: "Heroku dataclipが便利という話"
+title: "Heroku dataclipが便利という話と力技でデータをソートした話"
 date: "2021-04-15"
 category: "dev"
 ---
+
+## dataclips が便利
 
 Heroku を使って長らく開発をしているのですが、社内から〇〇のデータを CSV で吐き出せるようにしてほしいという要望が出てくることがあります。
 Rails では CSV 出力は比較的容易に実装できますが、頻繁に使われる機能でないならば Dataclips を使う方が得策だと思います。
@@ -19,3 +21,43 @@ https://devcenter.heroku.com/articles/dataclips
 ![](https://devcenter3.assets.heroku.com/article-images/1596470518-share-link.png)
 
 ただ上記で生成した URL は特に認証などなしで誰でも参照できてしまうので、個人的にはあまり使わない方が良いかなと考えています。CSV でダウンロードした結果を Google SpreadSheet とかに貼り付けて共有する方がセキュアかなと思います。
+
+## 力技でソートする
+
+概要としてはこんな感じです 👇
+
+- 組織の情報を都道府県順で並び替えした結果がほしい
+  - ただし組織のテーブルには都道府県に関する情報は保存されていない
+- 組織に紐付いた別テーブルのレコード数も取得したい
+
+こういった「カラムに関係ないソートをしたい」みたいな場合を想定して、MySQL では`field`関数というものがあることを知りました。
+
+- [MySQL FIELD() Function](https://www.w3schools.com/sql/func_mysql_field.asp)
+- [mysql の order by field で指定の ID 順に並べる - mikami's blog](https://mikamisan.hatenablog.com/entry/2017/03/22/230615)
+
+```sql
+-- idを5,4,6の順に並び替えする
+select *
+from products
+order by field(id, 5, 4, 6)
+```
+
+これと同じことがどうやら PostgreSQL ではできなさそうなので、下記を参考に力技でソートする方法を採用しました 😅
+[Simulating MySQL's ORDER BY FIELD() in Postgresql - Stack Overflow](https://stackoverflow.com/questions/1309624/simulating-mysqls-order-by-field-in-postgresql)
+
+```sql
+-- こんな感じ
+SELECT organizations.id, organizations.name, count(posts.id)
+FROM organizations
+FULL OUTER JOIN posts
+ON posts.organization_id = posts.id
+GROUP BY posts.id
+ORDER BY
+  CASE
+    when organizations.id=5 then 10
+    when organizations.id=8 then 20
+    -- 続く
+  end;
+```
+
+10,20 と間隔をあけているのは、この後に組織が新たに追加されたときに書き換える必要があるからです。プロダクトの性質上そこまで組織がガンガン増えていくような感じでもないので、10 間隔で十分だと判断しました。
