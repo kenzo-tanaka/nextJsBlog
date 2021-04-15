@@ -14,3 +14,8 @@ Dataclip を使うと、DB に保存されているデータに対して SQL を
 https://devcenter.heroku.com/articles/dataclips
 
 出力したデータは CSV か JSON 形式でダウンロードできます。
+
+また Dataclip の URL を共有することで、出力結果を共有することもできます。
+![](https://devcenter3.assets.heroku.com/article-images/1596470518-share-link.png)
+
+ただ上記で生成した URL は特に認証などなしで誰でも参照できてしまうので、個人的にはあまり使わない方が良いかなと考えています。CSV でダウンロードした結果を Google SpreadSheet とかに貼り付けて共有する方がセキュアかなと思います。
