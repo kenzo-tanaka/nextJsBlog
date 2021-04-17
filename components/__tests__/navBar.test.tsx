@@ -1,6 +1,6 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import Navbar from "../components/navBar";
+import Navbar from "../navBar";
 
 test("Navbar", () => {
   const component = renderer.create(<Navbar />);
