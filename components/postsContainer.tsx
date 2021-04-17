@@ -8,7 +8,7 @@ type Props = {
   posts: PostData[];
 };
 
-const NavBar: React.FC<Props> = ({ posts }) => {
+const PostaContainer: React.FC<Props> = ({ posts }) => {
   return (
     <>
       <Profile />
@@ -26,4 +26,4 @@ const NavBar: React.FC<Props> = ({ posts }) => {
   );
 };
 
-export default NavBar;
+export default PostaContainer;
