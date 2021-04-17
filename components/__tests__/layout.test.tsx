@@ -2,7 +2,7 @@ import React from "react";
 import renderer from "react-test-renderer";
 import Layout from "../layout";
 
-test("Navbar", () => {
+test("Layout", () => {
   const component = renderer.create(<Layout children={""} />);
   const tree = component.toJSON();
 
