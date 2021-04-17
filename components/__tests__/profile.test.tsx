@@ -1,10 +1,10 @@
 import React from "react";
-import renderer from "react-test-renderer";
+import { createRenderer } from "react-test-renderer/shallow";
 import Profile from "../profile";
 
+const renderer = createRenderer();
 test("profile", () => {
-  const component = renderer.create(<Profile />);
-  const tree = component.toJSON();
-
-  expect(tree).toMatchSnapshot();
+  renderer.render(<Profile />);
+  const renderedOutput = renderer.getRenderOutput();
+  expect(renderedOutput).toMatchSnapshot();
 });
