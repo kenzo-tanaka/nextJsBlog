@@ -4,29 +4,32 @@ exports[`MobileCategoryMenu 1`] = `
 <div
   className="block sm:hidden grid grid-cols-3 mt-5 mb-8 text-center content-center"
 >
-  <a
-    className="m-auto font-medium text-gray-800 w-full pb-1 "
+  <Link
     href="/"
-    onClick={[Function]}
-    onMouseEnter={[Function]}
   >
-    All
-  </a>
-  <a
-    className="m-auto font-medium text-gray-800 w-full pb-1 "
+    <a
+      className="m-auto font-medium text-gray-800 w-full pb-1 "
+    >
+      All
+    </a>
+  </Link>
+  <Link
     href="/categories/dev"
-    onClick={[Function]}
-    onMouseEnter={[Function]}
   >
-    dev
-  </a>
-  <a
-    className="m-auto font-medium text-gray-800 w-full pb-1 "
+    <a
+      className="m-auto font-medium text-gray-800 w-full pb-1 "
+    >
+      dev
+    </a>
+  </Link>
+  <Link
     href="/categories/work"
-    onClick={[Function]}
-    onMouseEnter={[Function]}
   >
-    work
-  </a>
+    <a
+      className="m-auto font-medium text-gray-800 w-full pb-1 "
+    >
+      work
+    </a>
+  </Link>
 </div>
 `;

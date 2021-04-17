@@ -1,5 +1,5 @@
 import React from "react";
-import renderer from "react-test-renderer";
+import { createRenderer } from "react-test-renderer/shallow";
 import MobileCategoryMenu from "../mobileCategoryMenu";
 
 jest.mock("next/router", () => ({
@@ -12,9 +12,10 @@ jest.mock("next/router", () => ({
     };
   },
 }));
+const renderer = createRenderer();
 
 test("MobileCategoryMenu", () => {
-  const component = renderer.create(<MobileCategoryMenu />);
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+  renderer.render(<MobileCategoryMenu />);
+  const renderedOutput = renderer.getRenderOutput();
+  expect(renderedOutput).toMatchSnapshot();
 });

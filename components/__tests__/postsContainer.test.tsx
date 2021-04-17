@@ -1,5 +1,5 @@
 import React from "react";
-import renderer from "react-test-renderer";
+import { createRenderer } from "react-test-renderer/shallow";
 import PostsContainer from "../postsContainer";
 import { PostData } from "@types";
 
@@ -23,9 +23,10 @@ const posts: PostData[] = [
     category: "work",
   },
 ];
+const renderer = createRenderer();
 
 test("PostsContainer", () => {
-  const component = renderer.create(<PostsContainer posts={posts} />);
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+  renderer.render(<PostsContainer posts={posts} />);
+  const renderedOutput = renderer.getRenderOutput();
+  expect(renderedOutput).toMatchSnapshot();
 });

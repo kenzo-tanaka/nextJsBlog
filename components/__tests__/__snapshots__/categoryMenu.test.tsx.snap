@@ -2,29 +2,32 @@
 
 exports[`CategoryMenu 1`] = `
 <div>
-  <a
-    className="p-2 font-medium text-gray-800 w-full inline-block hover:bg-gray-100 hover:no-underline "
+  <Link
     href="/"
-    onClick={[Function]}
-    onMouseEnter={[Function]}
   >
-    All
-  </a>
-  <a
-    className="p-2 font-medium text-gray-800 w-full inline-block hover:bg-gray-100 hover:no-underline "
+    <a
+      className="p-2 font-medium text-gray-800 w-full inline-block hover:bg-gray-100 hover:no-underline "
+    >
+      All
+    </a>
+  </Link>
+  <Link
     href="/categories/dev"
-    onClick={[Function]}
-    onMouseEnter={[Function]}
   >
-    dev
-  </a>
-  <a
-    className="p-2 font-medium text-gray-800 w-full inline-block hover:bg-gray-100 hover:no-underline "
+    <a
+      className="p-2 font-medium text-gray-800 w-full inline-block hover:bg-gray-100 hover:no-underline "
+    >
+      dev
+    </a>
+  </Link>
+  <Link
     href="/categories/work"
-    onClick={[Function]}
-    onMouseEnter={[Function]}
   >
-    work
-  </a>
+    <a
+      className="p-2 font-medium text-gray-800 w-full inline-block hover:bg-gray-100 hover:no-underline "
+    >
+      work
+    </a>
+  </Link>
 </div>
 `;

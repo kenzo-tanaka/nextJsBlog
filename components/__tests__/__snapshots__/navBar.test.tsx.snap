@@ -19,13 +19,11 @@ exports[`Navbar 1`] = `
           <h1
             className="font-bold font-sans text-xl text-gray-800"
           >
-            <a
+            <Link
               href="/"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
             >
               {{ kenzo }}
-            </a>
+            </Link>
           </h1>
         </div>
       </div>
@@ -36,72 +34,12 @@ exports[`Navbar 1`] = `
           href="https://github.com/kenzo-tanaka/nextJsBlog"
           target="_blank"
         >
-          <div
-            style={
-              Object {
-                "boxSizing": "border-box",
-                "display": "inline-block",
-                "margin": 0,
-                "maxWidth": "100%",
-                "overflow": "hidden",
-                "position": "relative",
-              }
-            }
-          >
-            <div
-              style={
-                Object {
-                  "boxSizing": "border-box",
-                  "display": "block",
-                  "maxWidth": "100%",
-                }
-              }
-            >
-              <img
-                alt=""
-                aria-hidden={true}
-                role="presentation"
-                src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjUiIGhlaWdodD0iMjUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"
-                style={
-                  Object {
-                    "border": "none",
-                    "display": "block",
-                    "margin": 0,
-                    "maxWidth": "100%",
-                    "padding": 0,
-                  }
-                }
-              />
-            </div>
-            <img
-              alt="GitHub Icon"
-              decoding="async"
-              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-              style={
-                Object {
-                  "border": "none",
-                  "bottom": 0,
-                  "boxSizing": "border-box",
-                  "display": "block",
-                  "height": 0,
-                  "left": 0,
-                  "margin": "auto",
-                  "maxHeight": "100%",
-                  "maxWidth": "100%",
-                  "minHeight": "100%",
-                  "minWidth": "100%",
-                  "objectFit": undefined,
-                  "objectPosition": undefined,
-                  "padding": 0,
-                  "position": "absolute",
-                  "right": 0,
-                  "top": 0,
-                  "visibility": "hidden",
-                  "width": 0,
-                }
-              }
-            />
-          </div>
+          <Image
+            alt="GitHub Icon"
+            height={25}
+            src="/images/github.png"
+            width={25}
+          />
         </a>
       </div>
     </div>

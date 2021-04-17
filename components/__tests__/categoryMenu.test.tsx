@@ -1,5 +1,5 @@
 import React from "react";
-import renderer from "react-test-renderer";
+import { createRenderer } from "react-test-renderer/shallow";
 import CategoryMenu from "../categoryMenu";
 
 jest.mock("next/router", () => ({
@@ -13,8 +13,9 @@ jest.mock("next/router", () => ({
   },
 }));
 
+const renderer = createRenderer();
 test("CategoryMenu", () => {
-  const component = renderer.create(<CategoryMenu />);
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+  renderer.render(<CategoryMenu />);
+  const renderedOutput = renderer.getRenderOutput();
+  expect(renderedOutput).toMatchSnapshot();
 });

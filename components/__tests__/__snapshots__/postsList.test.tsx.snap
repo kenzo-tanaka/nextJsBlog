@@ -6,23 +6,22 @@ exports[`PostsList 1`] = `
     <li
       className="mb-6"
     >
-      <a
-        className="text-lg font-semibold text-gray-800 visited:text-gray-600"
+      <Link
         href="/posts/test-slug"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
       >
-        Test title
-      </a>
+        <a
+          className="text-lg font-semibold text-gray-800 visited:text-gray-600"
+        >
+          Test title
+        </a>
+      </Link>
       <br />
       <small
         className="text-sm font-normal text-gray-400"
       >
-        <time
-          dateTime="2021-04-17"
-        >
-          2021/04/17
-        </time>
+        <Date
+          dateString="2021-04-17"
+        />
       </small>
     </li>
   </ul>

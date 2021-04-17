@@ -1,10 +1,10 @@
 import React from "react";
-import renderer from "react-test-renderer";
+import { createRenderer } from "react-test-renderer/shallow";
 import Navbar from "../navBar";
 
+const renderer = createRenderer();
 test("Navbar", () => {
-  const component = renderer.create(<Navbar />);
-  const tree = component.toJSON();
-
-  expect(tree).toMatchSnapshot();
+  renderer.render(<Navbar />);
+  const renderedOutput = renderer.getRenderOutput();
+  expect(renderedOutput).toMatchSnapshot();
 });

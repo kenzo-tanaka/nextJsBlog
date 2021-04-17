@@ -1,5 +1,5 @@
 import React from "react";
-import renderer from "react-test-renderer";
+import { createRenderer } from "react-test-renderer/shallow";
 import PostsList from "../postsList";
 import { PostData } from "@types";
 
@@ -12,9 +12,10 @@ const posts: PostData[] = [
     category: "work",
   },
 ];
+const renderer = createRenderer();
 
 test("PostsList", () => {
-  const component = renderer.create(<PostsList posts={posts} />);
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+  renderer.render(<PostsList posts={posts} />);
+  const renderedOutput = renderer.getRenderOutput();
+  expect(renderedOutput).toMatchSnapshot();
 });

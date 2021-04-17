@@ -1,12 +1,11 @@
 import React from "react";
-import renderer from "react-test-renderer";
+import { createRenderer } from "react-test-renderer/shallow";
 import ShareBtns from "../shareBtns";
 
-test("ShareBtns", () => {
-  const component = renderer.create(
-    <ShareBtns slug="test-slug" title="test-title" />
-  );
-  const tree = component.toJSON();
+const renderer = createRenderer();
 
-  expect(tree).toMatchSnapshot();
+test("ShareBtns", () => {
+  renderer.render(<ShareBtns slug="test-slug" title="test-title" />);
+  const renderedOutput = renderer.getRenderOutput();
+  expect(renderedOutput).toMatchSnapshot();
 });
