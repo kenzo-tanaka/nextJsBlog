@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ShareBtns 1`] = `
+<div
+  className="btnsWrapper mt-5 text-center"
+>
+  <a
+    className="p-1 text-center no-underline inline-block text-white truncate align-middle font-bold bg-black text-xl w-10 h-10 leading-10 rounded-full"
+    href="https://twitter.com/share?url=http://localhost:3000/test-slug&text=test-title%20%7C%20Kenzo%20Blog&via=kenzoooooB"
+    rel="nofollow"
+    target="_blank"
+  >
+    <img
+      alt="Twitter"
+      src="/images/twitter-white.svg"
+    />
+  </a>
+  <a
+    className="mx-3 text-center no-underline inline-block text-white truncate align-middle font-bold bg-black text-xl w-10 h-10 leading-10 rounded-full"
+    href="https://www.facebook.com/share.php?u=http://localhost:3000/test-slug"
+    rel="nofollow"
+    target="_blank"
+  >
+    F
+  </a>
+  <a
+    className="text-center no-underline inline-block text-white truncate align-middle font-bold bg-black text-xl w-10 h-10 leading-10 rounded-full"
+    href="http://b.hatena.ne.jp/add?mode=confirm&url=http://localhost:3000/test-slug"
+    rel="nofollow"
+    target="_blank"
+  >
+    B!
+  </a>
+</div>
+`;
+
+exports[`profile 1`] = `
+<div
+  className="btnsWrapper mt-5 text-center"
+>
+  <a
+    className="p-1 text-center no-underline inline-block text-white truncate align-middle font-bold bg-black text-xl w-10 h-10 leading-10 rounded-full"
+    href="https://twitter.com/share?url=http://localhost:3000/test-slug&text=test-title%20%7C%20Kenzo%20Blog&via=kenzoooooB"
+    rel="nofollow"
+    target="_blank"
+  >
+    <img
+      alt="Twitter"
+      src="/images/twitter-white.svg"
+    />
+  </a>
+  <a
+    className="mx-3 text-center no-underline inline-block text-white truncate align-middle font-bold bg-black text-xl w-10 h-10 leading-10 rounded-full"
+    href="https://www.facebook.com/share.php?u=http://localhost:3000/test-slug"
+    rel="nofollow"
+    target="_blank"
+  >
+    F
+  </a>
+  <a
+    className="text-center no-underline inline-block text-white truncate align-middle font-bold bg-black text-xl w-10 h-10 leading-10 rounded-full"
+    href="http://b.hatena.ne.jp/add?mode=confirm&url=http://localhost:3000/test-slug"
+    rel="nofollow"
+    target="_blank"
+  >
+    B!
+  </a>
+</div>
+`;
