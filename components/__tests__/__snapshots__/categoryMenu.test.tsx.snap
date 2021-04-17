@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CategoryMenu 1`] = `
+<div>
+  <a
+    className="p-2 font-medium text-gray-800 w-full inline-block hover:bg-gray-100 hover:no-underline "
+    href="/"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+  >
+    All
+  </a>
+  <a
+    className="p-2 font-medium text-gray-800 w-full inline-block hover:bg-gray-100 hover:no-underline "
+    href="/categories/dev"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+  >
+    dev
+  </a>
+  <a
+    className="p-2 font-medium text-gray-800 w-full inline-block hover:bg-gray-100 hover:no-underline "
+    href="/categories/work"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+  >
+    work
+  </a>
+</div>
+`;
