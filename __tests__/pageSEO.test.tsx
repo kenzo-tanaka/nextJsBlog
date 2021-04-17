@@ -1,10 +1,10 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import ShareBtns from "../components/shareBtns";
+import { PageSEO } from "../components/pageSEO";
 
-test("ShareBtns", () => {
+test("pageSEO", () => {
   const component = renderer.create(
-    <ShareBtns slug="test-slug" title="test-title" />
+    <PageSEO title="test-title" slug="test-slug" />
   );
   const tree = component.toJSON();
 
