@@ -1,12 +1,12 @@
 module.exports = {
   preset: "ts-jest",
   testEnvironment: "node",
-  roots: ["<rootDir>/__tests__"],
-  setupFilesAfterEnv: ["<rootDir>/__tests__/setupTests.ts"],
+  // roots: ["<rootDir>/__tests__"],
+  setupFilesAfterEnv: ["<rootDir>/components/__tests__/setupTests.ts"],
   testPathIgnorePatterns: [
-    "<rootDir>/__tests__/setupTests.ts",
-    "<rootDir>/__tests__/tsconfig.jest.json",
-    "<rootDir>/__tests__/mocks/",
+    "<rootDir>/components/__tests__/setupTests.ts",
+    "<rootDir>/components/__tests__/tsconfig.jest.json",
+    "<rootDir>/components/__tests__/mocks/",
   ],
   snapshotSerializers: ["enzyme-to-json/serializer"],
   transform: {
@@ -19,7 +19,7 @@ module.exports = {
     // to transform jsx into js rather than leaving it jsx such as the next build requires. you
     // can see this setting in tsconfig.jest.json -> "jsx": "react"
     "ts-jest": {
-      tsconfig: "<rootDir>/__tests__/tsconfig.jest.json",
+      tsconfig: "<rootDir>/tsconfig.jest.json",
     },
   },
   collectCoverage: false,

@@ -1,6 +1,6 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import ShareBtns from "../components/shareBtns";
+import ShareBtns from "../shareBtns";
 
 test("ShareBtns", () => {
   const component = renderer.create(
