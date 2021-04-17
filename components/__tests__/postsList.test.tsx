@@ -1,18 +1,7 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import PostsContainer from "../postsContainer";
+import PostsList from "../postsList";
 import { PostData } from "@types";
-
-jest.mock("next/router", () => ({
-  useRouter() {
-    return {
-      route: "/",
-      pathname: "",
-      query: "",
-      asPath: "",
-    };
-  },
-}));
 
 const posts: PostData[] = [
   {
@@ -24,8 +13,8 @@ const posts: PostData[] = [
   },
 ];
 
-test("PostsContainer", () => {
-  const component = renderer.create(<PostsContainer posts={posts} />);
+test("PostsList", () => {
+  const component = renderer.create(<PostsList posts={posts} />);
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });

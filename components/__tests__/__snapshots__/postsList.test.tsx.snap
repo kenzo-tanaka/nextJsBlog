@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PostsList 1`] = `
+<section>
+  <ul>
+    <li
+      className="mb-6"
+    >
+      <a
+        className="text-lg font-semibold text-gray-800 visited:text-gray-600"
+        href="/posts/test-slug"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        Test title
+      </a>
+      <br />
+      <small
+        className="text-sm font-normal text-gray-400"
+      >
+        <time
+          dateTime="2021-04-17"
+        >
+          2021/04/17
+        </time>
+      </small>
+    </li>
+  </ul>
+</section>
+`;
