@@ -1,3 +1,4 @@
+import React from "react";
 import Profile from "./profile";
 import MobileCategoryMenu from "./mobileCategoryMenu";
 import CategoryMenu from "./categoryMenu";
@@ -8,7 +9,7 @@ type Props = {
   posts: PostData[];
 };
 
-const PostaContainer: React.FC<Props> = ({ posts }) => {
+const PostsContainer: React.FC<Props> = ({ posts }) => {
   return (
     <>
       <Profile />
@@ -26,4 +27,4 @@ const PostaContainer: React.FC<Props> = ({ posts }) => {
   );
 };
 
-export default PostaContainer;
+export default PostsContainer;
