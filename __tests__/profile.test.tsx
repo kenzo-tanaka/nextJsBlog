@@ -1,8 +1,10 @@
-import { shallow } from "enzyme";
-import * as React from "react";
+import React from "react";
+import renderer from "react-test-renderer";
 import Profile from "../components/profile";
 
-describe("Profile", () => {
-  const wrapper = shallow(<Profile />);
-  expect(wrapper.find("p")).toHaveLength(1);
+test("profile", () => {
+  const component = renderer.create(<Profile />);
+  const tree = component.toJSON();
+
+  expect(tree).toMatchSnapshot();
 });

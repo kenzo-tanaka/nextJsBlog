@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`profile 1`] = `
+<div
+  className="flex flex-col	items-center"
+>
+  <div
+    style={
+      Object {
+        "boxSizing": "border-box",
+        "display": "inline-block",
+        "margin": 0,
+        "maxWidth": "100%",
+        "overflow": "hidden",
+        "position": "relative",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "boxSizing": "border-box",
+          "display": "block",
+          "maxWidth": "100%",
+        }
+      }
+    >
+      <img
+        alt=""
+        aria-hidden={true}
+        role="presentation"
+        src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="
+        style={
+          Object {
+            "border": "none",
+            "display": "block",
+            "margin": 0,
+            "maxWidth": "100%",
+            "padding": 0,
+          }
+        }
+      />
+    </div>
+    <img
+      alt="Picture of the author"
+      className="rounded-full"
+      decoding="async"
+      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+      style={
+        Object {
+          "border": "none",
+          "bottom": 0,
+          "boxSizing": "border-box",
+          "display": "block",
+          "height": 0,
+          "left": 0,
+          "margin": "auto",
+          "maxHeight": "100%",
+          "maxWidth": "100%",
+          "minHeight": "100%",
+          "minWidth": "100%",
+          "objectFit": undefined,
+          "objectPosition": undefined,
+          "padding": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+          "visibility": "hidden",
+          "width": 0,
+        }
+      }
+    />
+  </div>
+  <p
+    className="text-gray-500 mt-4"
+  >
+    Personal tech blog /
+     
+    <a
+      className="underline"
+      href="/about"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      resume
+    </a>
+  </p>
+</div>
+`;
