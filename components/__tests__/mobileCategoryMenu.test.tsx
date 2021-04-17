@@ -13,7 +13,7 @@ jest.mock("next/router", () => ({
   },
 }));
 
-test("CategoryMenu", () => {
+test("MobileCategoryMenu", () => {
   const component = renderer.create(<MobileCategoryMenu />);
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
