@@ -4,7 +4,7 @@
   "description": "田中建蔵の技術ブログ",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 3001",
     "build": "next build",
     "start": "next start",
     "test": "jest"
