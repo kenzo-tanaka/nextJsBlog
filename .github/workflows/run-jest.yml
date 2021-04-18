@@ -1,5 +1,5 @@
 name: run jest
-on: :push
+on: push
 
 jobs:
   build:
