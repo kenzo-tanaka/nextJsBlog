@@ -20,9 +20,9 @@ category: "dev"
 - パッケージのインストール
 - 設定ファイルの作成
 
-```bash
+````bash
 yarn add jest ts-jest react-test-renderer enzyme enzyme-adapter-react-16 enzyme-to-json @types/react-test-renderer @types/jest @types/enzyme-adapter-react-16 --dev
-```
+```ß
 
 `jest.config.js`の設定。[zenn-editor の`jest.config.js`](https://github.com/zenn-dev/zenn-editor/blob/master/packages/zenn-cli/jest.config.js)も参考にしつつ、自分の環境で必要そうな設定に絞って入れました。
 
@@ -41,7 +41,7 @@ module.exports = {
     },
   },
 };
-```
+````
 
 `tsconfig.jest.json`の設定。これは TypeScript のコードをコンパイルする時の設定値。
 
