@@ -134,8 +134,29 @@ test("CategoryMenu", () => {
 この修正の差分はこちらです。
 [test: snapshot を update してテストを実行 & profile.test.tsx の実装で act の warning が出ないよう修正 · kenzo-tanaka/nextJsBlog@ba32cb8](https://github.com/kenzo-tanaka/nextJsBlog/commit/ba32cb8059730c143d8c2205920a3be5ad8ee448)
 
+### `useRouter`のモックを作成
+
+僕のブログのカテゴリーメニューとかは現在のパスを見るために、`useRouter`を使っています。`useRouter`を使っているコンポーネントをスナップショットテストしようとすると、`TypeError: Cannot read property ... of null`となり実行できませんでした。
+
+Next.js のディスカッションを見ると、ここはモックを作成する必要がありそうなので、その対応も行います。  
+[How to mock useRouter? · Discussion #23034 · vercel/next.js](https://github.com/vercel/next.js/discussions/23034)
+
+```tsx:CategoryMenu.test.tsx
+jest.mock("next/router", () => ({
+  useRouter() {
+    return {
+      route: "/",
+      pathname: "",
+      query: "",
+      asPath: "",
+    };
+  },
+}));
+```
+
 ## 参考記事、リポジトリ
 
 - [Next.js+TypeScript 環境で Jest を設定してテストをする](https://zenn.dev/garypippi/articles/c79cb002e001681a73cd)
 - [Next.js + TypeScript のプロジェクトに JEST を導入する - Qiita](https://qiita.com/keitakn/items/0a714997eb058f2f67e2)
 - [zenn-dev/zenn-editor: Convert markdown to html in Zenn format](https://github.com/zenn-dev/zenn-editor)
+- [How to mock useRouter? · Discussion #23034 · vercel/next.js](https://github.com/vercel/next.js/discussions/23034)
