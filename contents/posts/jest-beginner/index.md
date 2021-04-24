@@ -4,11 +4,9 @@ date: "2021-04-24"
 category: "dev"
 ---
 
-当ブログに JEST を導入した時のメモです。
+## 概要
 
-## 経緯
-
-仕事で Next.js を使うことになったので、JEST に入門しました。色々調べてながら当ブログ(Next.js x Vercel の構成)にも JEST を導入しました。
+仕事で Next.js を使うことになったので、JEST に入門しました。色々調べてながら当ブログ(Next.js x TypeScript x Vercel の構成)にも JEST を導入しました。
 
 その時の PR がこちらです。  
 [スナップショットテストを追加 by kenzo-tanaka · Pull Request #179 · kenzo-tanaka/nextJsBlog](https://github.com/kenzo-tanaka/nextJsBlog/pull/179)
