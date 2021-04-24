@@ -10,9 +10,49 @@ category: "dev"
 
 業務で Next.js を使うことになりました。JavaScript でテストを書いたことはなかったので、色々調べてみて当ブログにも JEST を導入しました。
 
+その時の PR がこれです。  
+[スナップショットテストを追加 by kenzo-tanaka · Pull Request #179 · kenzo-tanaka/nextJsBlog](https://github.com/kenzo-tanaka/nextJsBlog/pull/179)
+
 ## JavaScript のテストの種類
 
 ## JEST を導入する
+
+- パッケージのインストール
+- 設定ファイルの作成
+
+```bash
+yarn add jest ts-jest react-test-renderer enzyme enzyme-adapter-react-16 enzyme-to-json @types/react-test-renderer @types/jest @types/enzyme-adapter-react-16 --dev
+```
+
+`jest.config.js`の設定。[zenn-editor の`jest.config.js`](https://github.com/zenn-dev/zenn-editor/blob/master/packages/zenn-cli/jest.config.js)も参考にしつつ、自分の環境で必要そうな設定に絞って入れました。
+
+```js:jest.config.js
+module.exports = {
+  preset: "ts-jest",
+  testEnvironment: "node",
+  transform: {
+    "^.+\\.(ts|tsx)$": "ts-jest",
+  },
+  moduleFileExtensions: ["ts", "tsx", "js", "jsx"],
+  // https://github.com/zeit/next.js/issues/8663#issue-490553899
+  globals: {
+    "ts-jest": {
+      tsconfig: "<rootDir>/tsconfig.jest.json",
+    },
+  },
+};
+```
+
+`tsconfig.jest.json`の設定。これは TypeScript のコードをコンパイルする時の設定値。
+
+```json:tsconfig.jest.json
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "jsx": "react"
+  }
+}
+```
 
 ## スナップショットテストを書く
 
@@ -20,3 +60,10 @@ category: "dev"
 スナップショットが一致しない場合テストが落下するため、意図しない UI の変更が生じていないかをチェックできます。
 
 [スナップショットテスト · Jest](https://jestjs.io/ja/docs/snapshot-testing)
+
+参考になりそう ↓  
+[Next.js+TypeScript 環境で Jest を設定してテストをする](https://zenn.dev/garypippi/articles/c79cb002e001681a73cd)
+
+参考記事：
+
+- [Next.js + TypeScript のプロジェクトに JEST を導入する - Qiita](https://qiita.com/keitakn/items/0a714997eb058f2f67e2)
