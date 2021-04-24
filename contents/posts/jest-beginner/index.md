@@ -56,14 +56,22 @@ module.exports = {
 
 ## スナップショットテストを書く
 
-スナップショットテストはプログラムの出力を前回の出力と比較して、差分が生じていないかをチェックするテストです。
-スナップショットが一致しない場合テストが落下するため、意図しない UI の変更が生じていないかをチェックできます。
+スナップショットテストはプログラムの出力を前回の出力と比較して、差分が生じていないかをチェックするテストです。スナップショットが一致しない場合テストが落下するため、意図しない UI の変更が生じていないかをチェックできます。
 
 [スナップショットテスト · Jest](https://jestjs.io/ja/docs/snapshot-testing)
 
-参考になりそう ↓  
-[Next.js+TypeScript 環境で Jest を設定してテストをする](https://zenn.dev/garypippi/articles/c79cb002e001681a73cd)
+スナップショットのテストの置き場ですが、人によって分かれているようで。
 
-参考記事：
+- `./_tests__`
+- `./componennts/__tests__`
 
+自分のブログの場合は、最終的に `/components/__tests__`下に置く形を採用しました。こちらのほうがコンポーネントファイルとの距離が近いので、可視性が高いかなと考えたからです。
+
+act ワーニングが出る。
+参考記事などの書き方だと`act`ワーニングが出続けていたので、書き方を途中変更しました。この際も zenn-editor を参考にしました。この時の差分がこちらです。
+[test: snapshot を update してテストを実行 & profile.test.tsx の実装で act の warning が出ないよう修正 · kenzo-tanaka/nextJsBlog@ba32cb8](https://github.com/kenzo-tanaka/nextJsBlog/commit/ba32cb8059730c143d8c2205920a3be5ad8ee448)
+
+### 参考記事
+
+- [Next.js+TypeScript 環境で Jest を設定してテストをする](https://zenn.dev/garypippi/articles/c79cb002e001681a73cd)
 - [Next.js + TypeScript のプロジェクトに JEST を導入する - Qiita](https://qiita.com/keitakn/items/0a714997eb058f2f67e2)
