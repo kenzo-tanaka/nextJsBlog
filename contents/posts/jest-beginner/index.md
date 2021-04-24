@@ -1,5 +1,5 @@
 ---
-title: "当ブログにJESTを導入した。"
+title: "Next.js x TypeScriptのブログにJESTを導入した。"
 date: "2021-04-24"
 category: "dev"
 ---
@@ -20,7 +20,7 @@ category: "dev"
 - パッケージのインストール
 - 設定ファイルの作成
 
-````bash
+```bash
 yarn add jest ts-jest react-test-renderer enzyme enzyme-adapter-react-16 enzyme-to-json @types/react-test-renderer @types/jest @types/enzyme-adapter-react-16 --dev
 ```
 
@@ -41,7 +41,7 @@ module.exports = {
     },
   },
 };
-````
+```
 
 `tsconfig.jest.json`の設定。これは TypeScript のコードをコンパイルする時の設定値。
 
