@@ -138,7 +138,7 @@ test("CategoryMenu", () => {
 
 僕のブログのカテゴリーメニューとかは現在のパスを見るために、`useRouter`を使っています。`useRouter`を使っているコンポーネントをスナップショットテストしようとすると、`TypeError: Cannot read property ... of null`となり実行できませんでした。
 
-Next.js のディスカッションを見ると、ここはモックを作成する必要がありそうなので、その対応も行います。  
+Next.js のディスカッションを見ると、ここはモックを作成する必要がありそうなので、その対応も行いました。  
 [How to mock useRouter? · Discussion #23034 · vercel/next.js](https://github.com/vercel/next.js/discussions/23034)
 
 ```tsx:CategoryMenu.test.tsx
