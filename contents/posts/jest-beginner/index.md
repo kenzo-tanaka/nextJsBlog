@@ -1,17 +1,17 @@
 ---
-title: "Next.js x TypeScriptのブログにJESTを導入した。"
+title: "Next.js x TypeScriptのブログにJestを導入した。"
 date: "2021-04-24"
 category: "dev"
 ---
 
 ## 概要
 
-仕事で Next.js を使うことになったので、JEST に入門しました。色々調べてながら当ブログ(Next.js x TypeScript x Vercel の構成)にも JEST を導入しました。
+仕事で Next.js を使うことになったので、Jest に入門しました。色々調べてながら当ブログ(Next.js x TypeScript x Vercel の構成)にも Jest を導入しました。
 
 その時の PR がこちらです。  
 [スナップショットテストを追加 by kenzo-tanaka · Pull Request #179 · kenzo-tanaka/nextJsBlog](https://github.com/kenzo-tanaka/nextJsBlog/pull/179)
 
-## JEST を導入する
+## Jest を導入する
 
 セットアップ手順としては、ざっくり以下の 2 つです。
 
