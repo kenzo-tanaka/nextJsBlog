@@ -54,6 +54,7 @@ document.querySelectorAll("video").forEach((video) => {
   });
 
   video.addEventListener("mouseout", () => {
+    // pauseが非同期のplayを邪魔しないよう、thenの中に入れる
     video.play().then(function () {
       video.pause();
     });
