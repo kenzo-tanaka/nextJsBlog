@@ -8,15 +8,18 @@ import {
 } from "react-instantsearch-dom";
 
 const algoliaSettings = {
-  searchClient: algoliasearch("latency", "6be0576ff61c053d5f9a3225e2a90f76"),
-  indexName: "instant_search",
+  searchClient: algoliasearch(
+    process.env.ALGOLIA_APP_ID,
+    process.env.ALGOLIA_API_KEY
+  ),
+  indexName: "kenzo_blog",
 };
 
 const Hit = ({ hit }: any) => {
   return (
     <div className="hit">
       <div className="hitImage">
-        <img src={hit.image} />
+        <h2>{hit.title}</h2>
       </div>
       <div className="hitName">
         <Highlight attribute="name" hit={hit} />
