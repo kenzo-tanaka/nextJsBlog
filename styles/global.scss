@@ -6,3 +6,7 @@
 
 // tailwind が h2 などのスタイルをリセットするので、post.scss で上書きしている
 @import "./post.scss";
+
+.search-result {
+  display: none;
+}
