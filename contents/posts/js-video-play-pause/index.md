@@ -40,3 +40,21 @@ Google の開発ブログにこのエラーに関しての記事があります�
 - `video.play()`が動画コンテンツを非同期で読み込み始める
 - `video.pause()`が動画の読み込みに割り込みする（動画の読み込みがまだ完了していないので）
 - `video.play()` が非同期的に拒否する
+
+上記のコード例だと、`mouseover`した時に動画読み込みを開始してすぐに`mouseout`されると、動画の読み込みが完了していないところで、`pause()`が走ってしまうので、`DOMException: The play() request was interrupted`エラーになるという感じです。
+
+## `video.pause()`を改善する
+
+```js
+document.querySelectorAll("video").forEach((video) => {
+  video.addEventListener("mouseover", () => {
+    video.play();
+  });
+
+  video.addEventListener("mouseout", () => {
+    video.play().then(function () {
+      video.pause();
+    });
+  });
+});
+```
