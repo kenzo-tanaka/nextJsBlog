@@ -16,7 +16,7 @@ category: "dev"
 
 動画の一覧で表示する video タグには、`preload`属性を none に指定します。こうすることでブラウザが事前に読み込むことがなくなるため、パフォーマンスが悪化するのを防ぐことができます。
 
-[<video>: The Video Embed element - HTML: HyperText Markup Language | MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video)
+[video : The Video Embed element - HTML: HyperText Markup Language | MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video)
 
 ## シンプルなホバー再生を実装してみる
 
