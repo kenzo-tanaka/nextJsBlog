@@ -72,6 +72,4 @@ document.querySelectorAll("video").forEach((video) => {
 
 ![](img1.png)
 
-```twitter
-1387677745593810952
-```
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">Firefoxの検証機能便利だな👀</p>&mdash; Kenzo Tanaka (@kenzoooooB) <a href="https://twitter.com/kenzoooooB/status/1387677745593810952?ref_src=twsrc%5Etfw">April 29, 2021</a></blockquote>
