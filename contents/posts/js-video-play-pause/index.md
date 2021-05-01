@@ -35,7 +35,10 @@ document.querySelectorAll("video").forEach((video) => {
 });
 ```
 
-Google の開発ブログにこのエラーに関しての記事があります。何が起こっているのかを記事から意訳すると以下の通りです。
+Google の開発ブログにこのエラーに関しての記事があります。  
+[DOMException: The play() request was interrupted  |  Web](https://developers.google.com/web/updates/2017/06/play-request-was-interrupted)
+
+何が起こっているのかを記事から意訳すると以下の通りです。
 
 - `video.play()`が動画コンテンツを非同期で読み込み始める
 - `video.pause()`が動画の読み込みに割り込みする（動画の読み込みがまだ完了していないので）
