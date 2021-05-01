@@ -16,6 +16,7 @@ import gfm from "remark-gfm";
 import { TwitterTweetEmbed } from "react-twitter-embed";
 import Skeleton from "react-loading-skeleton";
 import { config } from "../../site.config";
+import { useEffect } from "react";
 
 type Props = {
   postData: PostData;
@@ -77,6 +78,16 @@ export const getStaticPaths = async () => {
 
 const Post: NextPage<Props> = ({ postData, relatedPosts }) => {
   const { slug, title, date, content, category, thumbnail } = postData;
+
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://platform.twitter.com/widgets.js";
+    document.body.appendChild(script);
+    // アンマウント時に一応scriptタグを消しておく
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
 
   const Img = ({ alt, src }: { alt: string; src: string }) => {
     return (
