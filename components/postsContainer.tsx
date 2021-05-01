@@ -13,10 +13,6 @@ const PostsContainer: React.FC<Props> = ({ posts }) => {
   return (
     <>
       <Profile />
-      <input
-        className="my-3 appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
-        placeholder="search..."
-      />
       <MobileCategoryMenu />
       <hr className="my-5 hidden sm:block" />
       <div className="grid grid-cols-6 gap-4">
