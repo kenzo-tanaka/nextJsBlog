@@ -1,5 +1,6 @@
 import React from "react";
 import algoliasearch from "algoliasearch/lite";
+import Link from "next/link";
 import {
   SearchBox,
   Hits,
@@ -19,7 +20,9 @@ const Hit = ({ hit }: any) => {
   return (
     <div className="hit">
       <div className="hitImage">
-        <h2>{hit.title}</h2>
+        <Link href={`/posts/${hit.slug}`}>
+          <a>{hit.title}</a>
+        </Link>
       </div>
       <div className="hitName">
         <Highlight attribute="name" hit={hit} />
