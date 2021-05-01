@@ -19,6 +19,7 @@
     "imagemin-mozjpeg": "^9.0.0",
     "imagemin-optipng": "^8.0.0",
     "imagemin-svgo": "^8.0.0",
+    "instantsearch.css": "^7.4.5",
     "md-to-pdf": "^3.3.0",
     "next": "^10.0.0",
     "next-compose-plugins": "^2.2.1",
