@@ -21,10 +21,8 @@ const Hit = ({ hit }: any) => {
     <Link href={`/posts/${hit.slug}`}>
       <a>
         <div className="p-7">
-          {hit.title}
-
           <div className="hitName">
-            <Highlight attribute="name" hit={hit} />
+            <Highlight attribute="title" tagName="span" hit={hit} />
           </div>
         </div>
       </a>
