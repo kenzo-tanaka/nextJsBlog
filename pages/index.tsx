@@ -1,7 +1,6 @@
 import { NextPage } from "next";
 import Layout from "../components/layout";
 import PostsContainer from "../components/postsContainer";
-import Search from "../components/search";
 import { PageSEO } from "../components/pageSEO";
 import { config } from "../site.config";
 import { getSortedPostsData } from "../lib/posts";
@@ -32,17 +31,12 @@ const Home: NextPage<Props> = ({ allPostsData }) => {
   }, []);
 
   return (
-    <>
-      <div className="max-w-4xl mx-auto my-3 px-2 sm:px-6 lg:px-8">
-        <Search />
+    <Layout home>
+      <PageSEO title={config.siteMeta.title} />
+      <div className="p-5">
+        <PostsContainer posts={allPostsData} />
       </div>
-      <Layout home>
-        <PageSEO title={config.siteMeta.title} />
-        <div className="p-5">
-          <PostsContainer posts={allPostsData} />
-        </div>
-      </Layout>
-    </>
+    </Layout>
   );
 };
 
