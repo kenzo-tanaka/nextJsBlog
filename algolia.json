@@ -1,0 +1,262 @@
+[
+  {
+    "slug": "js-video-play-pause",
+    "date": "2021-05-01",
+    "title": "JavaScriptで動画のホバー再生・停止を実装する",
+    "category": "dev"
+  },
+  {
+    "slug": "jibun-release-025010",
+    "date": "2021-04-27",
+    "title": "自分リリースノート v 0.25.10",
+    "category": "dev",
+    "thumbnail": "cat.jpg"
+  },
+  {
+    "slug": "jest-beginner",
+    "date": "2021-04-24",
+    "title": "Next.js x TypeScriptのブログにJestを導入した。",
+    "category": "dev"
+  },
+  {
+    "slug": "ga-ransack",
+    "date": "2021-04-23",
+    "title": "Ransackの検索結果をGoogle Analyticsで可視化する",
+    "category": "dev"
+  },
+  {
+    "slug": "voyage-book",
+    "date": "2021-04-18",
+    "title": "「Engineers in VOYAGE ― 事業をエンジニアリングする技術者たち」を読んだ感想",
+    "category": "dev"
+  },
+  {
+    "slug": "heroku-dataclip",
+    "date": "2021-04-15",
+    "title": "Heroku Dataclipsが便利という話とPostgreSQLで力技でデータをソートした話",
+    "category": "dev"
+  },
+  {
+    "slug": "ransackable-scopes",
+    "date": "2021-04-10",
+    "title": "ransackable_scopesを使う際の注意点",
+    "category": "dev"
+  },
+  {
+    "slug": "rails-anchor-link",
+    "date": "2021-04-10",
+    "title": "Railsアプリケーションでscroll-behaviorが正常に動作しない場合の対処",
+    "category": "dev"
+  },
+  {
+    "slug": "gtm-conversion",
+    "date": "2021-04-08",
+    "title": "Google Tag Managerを使いつつGAのコンバージョンを確認できるようにする",
+    "category": "work",
+    "thumbnail": "cat.jpg"
+  },
+  {
+    "slug": "imgix-rails",
+    "date": "2021-04-03",
+    "title": "imgix-railsでパフォーマンス改善をする時の設定と注意点",
+    "category": "dev"
+  },
+  {
+    "slug": "update-task-management",
+    "date": "2021-03-30",
+    "title": "シェルスクリプトでタスク管理方法を少し改良した。",
+    "category": "dev"
+  },
+  {
+    "slug": "rails-asset-host-cloudfront",
+    "date": "2021-03-27",
+    "title": "Railsのasset_hostでCloudFrontを指定する場合は、Match Viewer の設定が必要",
+    "category": "dev"
+  },
+  {
+    "slug": "jibun-release-02509",
+    "date": "2021-03-27",
+    "title": "自分リリースノート v 0.25.09",
+    "category": "dev"
+  },
+  {
+    "slug": "rails-api-json",
+    "date": "2021-03-21",
+    "title": "Rails APIモードでレスポンスのハッシュに任意の値を持たせつつネストさせたい時の注意点",
+    "category": "dev"
+  },
+  {
+    "slug": "chrome-control-only-keyboard",
+    "date": "2021-03-20",
+    "title": "Google Chromeをできるだけキーボードのみで操作する",
+    "category": "dev",
+    "thumbnail": "cat.jpg"
+  },
+  {
+    "slug": "shrine-uppy-multi-uploader",
+    "date": "2021-03-13",
+    "title": "Shrineのuploaderごとに事前署名付きURLを設定しuppyと組み合わせて使う",
+    "category": "dev"
+  },
+  {
+    "slug": "rails-batch",
+    "date": "2021-03-11",
+    "title": "Railsでバッチファイルを書く時に気にしていること",
+    "category": "dev"
+  },
+  {
+    "slug": "seed-with-shrine",
+    "date": "2021-03-10",
+    "title": "SeedファイルでShrineのuploadを使うと、IOError closed streamとなる場合の対処",
+    "category": "dev",
+    "thumbnail": "cat.jpg"
+  },
+  {
+    "slug": "task-manage-with-editor",
+    "date": "2021-03-03",
+    "title": "エディターとGitHubでシンプルなタスク管理をする",
+    "category": "work",
+    "thumbnail": "cat.jpg"
+  },
+  {
+    "slug": "how-to-solve-dev-problem",
+    "date": "2021-02-28",
+    "title": "開発業務における問題解決パターン",
+    "category": "work",
+    "thumbnail": "cat.jpg"
+  },
+  {
+    "slug": "jibun-release-02508",
+    "date": "2021-02-27",
+    "title": "自分リリースノート v 0.25.08",
+    "category": "work",
+    "thumbnail": "cat.jpg"
+  },
+  {
+    "slug": "alfred-conflicts-vscode-extension",
+    "date": "2021-02-23",
+    "title": "AlfredのスニペットとVSCodeの拡張機能「Markdown All in One」が干渉する件の解決策",
+    "category": "work",
+    "thumbnail": "cat.jpg"
+  },
+  {
+    "slug": "rubymine-to-github",
+    "date": "2021-02-22",
+    "title": "RubyMineのannotateからGitHubでコミットを確認する方法",
+    "category": "dev"
+  },
+  {
+    "slug": "blog-dev-stack",
+    "date": "2021-02-20",
+    "title": "Kezo Blog を支える技術",
+    "category": "dev"
+  },
+  {
+    "slug": "next-ga",
+    "date": "2021-02-19",
+    "title": "【翻訳】NextJS と TypeScript のプロジェクトで Google Analytics を使用する",
+    "category": "dev"
+  },
+  {
+    "slug": "rubymine-catch-up",
+    "date": "2021-02-18",
+    "title": "できるだけ苦しまずに RubyMine に入門する。",
+    "category": "work"
+  },
+  {
+    "slug": "update-style-with-tailwind",
+    "date": "2021-02-13",
+    "title": "Next.js ブログに Tailwind CSS を導入した際、記事のスタイルがリセットされる問題",
+    "category": "dev"
+  },
+  {
+    "slug": "rails-scope-distinct",
+    "date": "2021-02-12",
+    "title": "【Rails】distinct を使った合計値の計算で意図しない値を返す挙動について調べた。",
+    "category": "dev"
+  },
+  {
+    "slug": "next-doc-translation",
+    "date": "2021-02-10",
+    "title": "Next.js のドキュメント翻訳プロジェクトに参加した。",
+    "category": "dev"
+  },
+  {
+    "slug": "tweet-embed-nextjs",
+    "date": "2021-02-09",
+    "title": "Next.js ブログでマークダウンの記事にツイートの埋め込む",
+    "category": "dev"
+  },
+  {
+    "slug": "var-and-memory",
+    "date": "2021-02-07",
+    "title": "変数とメモリ、ガベージコレクタなどをざっくばらんにまとめる。",
+    "category": "dev"
+  },
+  {
+    "slug": "nextjs-blog-asset",
+    "date": "2021-02-06",
+    "title": "Next.js ブログにおける画像ファイル管理",
+    "category": "dev"
+  },
+  {
+    "slug": "bookmarklet",
+    "date": "2021-02-03",
+    "title": "Bookmarklet を使って GitHub をちょっとだけ使いやすくする。",
+    "category": "work"
+  },
+  {
+    "slug": "jibun-release-02507",
+    "date": "2021-01-29",
+    "title": "自分リリースノート v 0.25.07",
+    "category": "work"
+  },
+  {
+    "slug": "health-tech-event",
+    "date": "2021-01-29",
+    "title": "【イベントレポート】ヘルスケア×ITで事業・プロダクト開発を推進する企業の最前線",
+    "category": "work"
+  },
+  {
+    "slug": "css-manage",
+    "date": "2021-01-27",
+    "title": "styled-components, CSS Modules について調べたのでまとめる",
+    "category": "dev"
+  },
+  {
+    "slug": "keep-up-with-js",
+    "date": "2021-01-24",
+    "title": "JavaScriptを1から勉強し直すときの教材リスト",
+    "category": "dev"
+  },
+  {
+    "slug": "heroku-logs",
+    "date": "2021-01-24",
+    "title": "Herokuのログ確認方法や監視について",
+    "category": "dev"
+  },
+  {
+    "slug": "kingkong-playlist",
+    "date": "2020-12-11",
+    "title": "「キングコングプレイリスト」というサービスを作りました。",
+    "category": "dev"
+  },
+  {
+    "slug": "first-year-as-engineer",
+    "date": "2020-11-17",
+    "title": "エンジニア 1 年目でやってきたこと",
+    "category": "work"
+  },
+  {
+    "slug": "startup-doc",
+    "date": "2020-11-13",
+    "title": "スタートアップでのドキュメント運用の効用とやり方",
+    "category": "dev"
+  },
+  {
+    "slug": "webpacker-js-rails",
+    "date": "2020-01-21",
+    "title": "RailsプロジェクトにおけるJavaScript管理方法",
+    "category": "dev"
+  }
+]

@@ -4,6 +4,7 @@ module.exports = {
   transform: {
     "^.+\\.(ts|tsx)$": "ts-jest",
   },
+  testPathIgnorePatterns: ["<rootDir>/functions/*"],
   moduleFileExtensions: ["ts", "tsx", "js", "jsx"],
   // https://github.com/zeit/next.js/issues/8663#issue-490553899
   globals: {

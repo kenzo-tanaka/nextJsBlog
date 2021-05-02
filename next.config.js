@@ -1,4 +1,3 @@
-const { is } = require("date-fns/locale");
 const withPlugins = require("next-compose-plugins");
 const optimizedImages = require("next-optimized-images");
 
@@ -16,5 +15,9 @@ module.exports = withPlugins([[optimizedImages, {}]], {
       use: "raw-loader",
     });
     return config;
+  },
+  env: {
+    ALGOLIA_APP_ID: process.env.ALGOLIA_APP_ID,
+    ALGOLIA_API_KEY: process.env.ALGOLIA_API_KEY,
   },
 });
