@@ -1,7 +1,6 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { config } from "../site.config";
 
 const NavBar: React.FC = () => {
   return (
@@ -15,15 +14,17 @@ const NavBar: React.FC = () => {
               </h1>
             </div>
           </div>
-          <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-            <a target="_blank" href={config.repo}>
-              <Image
-                src="/images/github.png"
-                alt="GitHub Icon"
-                width={25}
-                height={25}
-              />
-            </a>
+          <div className="absolute inset-y-0 right-0 flex items-center pt-2 pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+            <Link href="/search">
+              <a>
+                <Image
+                  src="/images/search.svg"
+                  alt="GitHub Icon"
+                  width={20}
+                  height={20}
+                />
+              </a>
+            </Link>
           </div>
         </div>
       </div>
