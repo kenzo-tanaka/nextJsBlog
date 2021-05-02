@@ -6,3 +6,8 @@
 
 // tailwind が h2 などのスタイルをリセットするので、post.scss で上書きしている
 @import "./post.scss";
+
+.ais-SearchBox-input {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
