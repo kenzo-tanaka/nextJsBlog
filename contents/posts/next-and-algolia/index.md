@@ -1,5 +1,5 @@
 ---
-title: "Next.jsのブログにAlgoliaの検索機能を導入した。"
+title: "【雑メモ】Next.jsのブログにAlgoliaの検索機能を導入した。"
 date: "2021-05-02"
 category: "dev"
 ---
