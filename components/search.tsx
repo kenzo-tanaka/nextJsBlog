@@ -18,10 +18,10 @@ const algoliaSettings = {
 
 const Hit = ({ hit }: any) => {
   return (
-    <>
+    <div className="border-b search-result-item">
       <Link href={`/posts/${hit.slug}`}>
         <a>
-          <div className="bg-white p-6 border-l border-r border-t">
+          <div className="p-5">
             {hit.title}
 
             <div className="hitName">
@@ -30,7 +30,7 @@ const Hit = ({ hit }: any) => {
           </div>
         </a>
       </Link>
-    </>
+    </div>
   );
 };
 
@@ -50,7 +50,7 @@ const Search: React.FC = () => {
         indexName={algoliaSettings.indexName}
       >
         <SearchBox translations={{ placeholder: "search..." }} />
-        <div className="mt-2">
+        <div className="mt-2 bg-white shadow-md p-3">
           <SearchResult />
         </div>
       </InstantSearch>
