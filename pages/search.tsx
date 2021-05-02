@@ -4,10 +4,10 @@ import { PageSEO } from "../components/pageSEO";
 
 const SearchPage = () => {
   return (
-    <Layout>
-      <Search />
+    <div className="max-w-4xl mx-auto p-5">
       <PageSEO title="検索" />
-    </Layout>
+      <Search />
+    </div>
   );
 };
 
