@@ -3,7 +3,7 @@ import * as gtag from "../lib/gtag";
 import { AppProps } from "next/app";
 import { useEffect } from "react";
 import "../styles/global.scss";
-import "instantsearch.css/themes/satellite.css";
+// import "instantsearch.css/themes/satellite.css";
 import "tailwindcss/tailwind.css";
 import Navbar from "../components/navBar";
 

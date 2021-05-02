@@ -18,15 +18,19 @@ const algoliaSettings = {
 
 const Hit = ({ hit }: any) => {
   return (
-    <div className="hit">
+    <>
       <Link href={`/posts/${hit.slug}`}>
-        <a>{hit.title}</a>
-      </Link>
+        <a>
+          <div className="bg-white p-6 border-l border-r border-t">
+            {hit.title}
 
-      <div className="hitName">
-        <Highlight attribute="name" hit={hit} />
-      </div>
-    </div>
+            <div className="hitName">
+              <Highlight attribute="name" hit={hit} />
+            </div>
+          </div>
+        </a>
+      </Link>
+    </>
   );
 };
 
