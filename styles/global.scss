@@ -23,3 +23,11 @@
 .ais-SearchBox-resetIcon {
   display: none;
 }
+
+.ais-Hits-item {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.ais-Hits-item:last-child {
+  border-bottom: none;
+}
