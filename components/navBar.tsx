@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 const NavBar: React.FC = () => {
   return (
@@ -17,12 +18,7 @@ const NavBar: React.FC = () => {
           <div className="absolute inset-y-0 right-0 flex items-center pt-2 pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
             <Link href="/search">
               <a>
-                <Image
-                  src="/images/search.svg"
-                  alt="GitHub Icon"
-                  width={20}
-                  height={20}
-                />
+                <FontAwesomeIcon icon={faSearch} size="lg" color="gray" />
               </a>
             </Link>
           </div>
