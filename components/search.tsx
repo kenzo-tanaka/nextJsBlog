@@ -45,7 +45,7 @@ const Search: React.FC = () => {
         searchClient={algoliaSettings.searchClient}
         indexName={algoliaSettings.indexName}
       >
-        <SearchBox translations={{ placeholder: "search..." }} />
+        <SearchBox />
         <div className="mt-2 bg-white shadow-md p-3">
           <SearchResult />
         </div>
