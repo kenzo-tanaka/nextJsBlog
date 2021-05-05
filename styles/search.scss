@@ -47,8 +47,8 @@
 
 [type="search"] {
   -webkit-appearance: none !important;
-  appearance: none;
-  -moz-appearance: none !important;
-  -webkit-appearance: none;
-  outline: none;
+}
+
+[type="search"]:focus {
+  outline: none !important;
 }
