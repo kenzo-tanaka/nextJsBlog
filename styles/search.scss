@@ -1,0 +1,54 @@
+.ais-SearchBox-input {
+  background-color: white;
+  width: 100%;
+  margin: 0 auto;
+  border: 1px solid #d6d6e7;
+  padding: 10px 0 10px 2.5rem;
+  outline-color: transparent;
+}
+
+.ais-SearchBox-submit {
+  display: none;
+}
+
+.ais-SearchBox-resetIcon {
+  display: none;
+}
+
+.ais-Hits-item {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.ais-Hits-item:last-child {
+  border-bottom: none;
+}
+
+.ais-SearchBox-form {
+  position: relative;
+}
+
+.ais-SearchBox-form:before {
+  background: transparent
+    url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%235a5e9a%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Ccircle%20cx%3D%2211%22%20cy%3D%2211%22%20r%3D%228%22%3E%3C%2Fcircle%3E%3Cline%20x1%3D%2221%22%20y1%3D%2221%22%20x2%3D%2216.65%22%20y2%3D%2216.65%22%3E%3C%2Fline%3E%3C%2Fsvg%3E")
+    repeat scroll 0 0;
+  content: "";
+  height: 1rem;
+  left: 1rem;
+  margin-top: -0.5rem;
+  position: absolute;
+  top: 50%;
+  width: 1rem;
+}
+
+.ais-Highlight-highlighted {
+  font-weight: 500;
+  border-bottom: 2px solid yellow;
+}
+
+[type="search"] {
+  -webkit-appearance: none !important;
+}
+
+[type="search"]:focus {
+  outline: none !important;
+}
