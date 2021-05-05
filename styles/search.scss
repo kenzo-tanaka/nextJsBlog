@@ -5,9 +5,6 @@
   border: 1px solid #d6d6e7;
   padding: 10px 0 10px 2.5rem;
   outline-color: transparent;
-  appearance: none;
-  -moz-appearance: none !important;
-  -webkit-appearance: none;
 }
 
 .ais-SearchBox-submit {
@@ -50,5 +47,8 @@
 
 [type="search"] {
   -webkit-appearance: none !important;
-  outline-offset: 0px !important;
+  appearance: none;
+  -moz-appearance: none !important;
+  -webkit-appearance: none;
+  outline: none;
 }
