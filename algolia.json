@@ -1,5 +1,17 @@
 [
   {
+    "slug": "stripe-reserved",
+    "date": "2021-05-08",
+    "title": "Stripeの予備資金に関して",
+    "category": "work"
+  },
+  {
+    "slug": "next-and-algolia",
+    "date": "2021-05-02",
+    "title": "【雑メモ】Next.jsのブログにAlgoliaの検索機能を導入した。",
+    "category": "dev"
+  },
+  {
     "slug": "js-video-play-pause",
     "date": "2021-05-01",
     "title": "JavaScriptで動画のホバー再生・停止を実装する",
