@@ -43,15 +43,16 @@ const Search: React.FC = () => {
         searchClient={algoliaSettings.searchClient}
         indexName={algoliaSettings.indexName}
       >
-        <SearchBox
+        <div
           onFocus={() => toggleDisplay("block")}
           onBlur={() =>
             setTimeout(() => {
               toggleDisplay("hidden");
             }, 300)
           }
-          translations={{ placeholder: "記事を検索" }}
-        />
+        >
+          <SearchBox translations={{ placeholder: "記事を検索" }} />
+        </div>
         <div className={`relative ${suggestDisplay}`}>
           <div className="bg-white search-result p-3 shadow-lg absolute w-full z-10 h-96 overflow-y-scroll">
             <SearchResult />
