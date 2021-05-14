@@ -16,11 +16,11 @@ const NavBar: React.FC = () => {
             </div>
           </div>
           <div className="absolute inset-y-0 right-0 flex items-center pt-2 pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-            <Link href="/search">
+            {/* <Link href="/search">
               <a>
                 <FontAwesomeIcon icon={faSearch} size="lg" color="gray" />
               </a>
-            </Link>
+            </Link> */}
           </div>
         </div>
       </div>

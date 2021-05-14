@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import algoliasearch from "algoliasearch/lite";
 import Link from "next/link";
 import {
@@ -31,23 +31,31 @@ const Hit = ({ hit }: any) => {
 };
 
 const SearchResult = () => {
-  return (
-    <div className="search-result">
-      <Hits hitComponent={Hit} />
-    </div>
-  );
+  return <Hits hitComponent={Hit} />;
 };
 
 const Search: React.FC = () => {
+  const [suggestDisplay, toggleDisplay] = useState("hidden");
+
   return (
     <>
       <InstantSearch
         searchClient={algoliaSettings.searchClient}
         indexName={algoliaSettings.indexName}
       >
-        <SearchBox />
-        <div className="mt-2 bg-white shadow-md p-3">
-          <SearchResult />
+        <SearchBox
+          onFocus={() => toggleDisplay("block")}
+          onBlur={() =>
+            setTimeout(() => {
+              toggleDisplay("hidden");
+            }, 300)
+          }
+          translations={{ placeholder: "よくあるご質問を検索" }}
+        />
+        <div className={`relative ${suggestDisplay}`}>
+          <div className="bg-white search-result p-3 shadow-lg absolute w-full z-10 h-96 overflow-y-scroll">
+            <SearchResult />
+          </div>
         </div>
       </InstantSearch>
     </>
