@@ -50,7 +50,7 @@ const Search: React.FC = () => {
               toggleDisplay("hidden");
             }, 300)
           }
-          translations={{ placeholder: "よくあるご質問を検索" }}
+          translations={{ placeholder: "記事を検索" }}
         />
         <div className={`relative ${suggestDisplay}`}>
           <div className="bg-white search-result p-3 shadow-lg absolute w-full z-10 h-96 overflow-y-scroll">
