@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "next dev -p 3001",
     "build": "next build",
-    "algolia": "ts-node --project tsconfig.builder.json ./functions/test.ts",
+    "algolia": "ts-node --project tsconfig.builder.json ./builders/algolia.ts",
     "start": "next start",
     "test": "jest"
   },

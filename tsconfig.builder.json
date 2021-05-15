@@ -6,5 +6,5 @@
     "noEmit": false
   },
   "exclude": ["node_modules"],
-  "include": ["functions/*.ts"]
+  "include": ["builders/*.ts"]
 }
