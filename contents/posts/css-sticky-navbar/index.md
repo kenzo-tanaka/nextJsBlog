@@ -24,3 +24,19 @@ Mozilla のサイトでは「Sticky は `position: relative`と`position: fixed`
 > - Position sticky may not work correctly if any parent element has a set height.
 > - Many browsers still do not support sticky positioning. Check out which browsers support position: sticky.
 >   [Creating a sticky sidebar | Webflow University](https://university.webflow.com/lesson/create-a-sticky-sidebar#:~:text=Troubleshooting%20position%20sticky,-Sometimes%2C%20position%20sticky&text=That%20can%20happen%20for%20many,element%20has%20a%20set%20height.)
+
+```css
+body {
+  overflow: hidden;
+}
+
+.navbar {
+  /* 固定されない */
+  position: sticky;
+  top: 0;
+  width: 100%;
+}
+```
+
+これを解消するには`body`に当たっている`overflow`を剥がせば良いのですが、そうするとスマホ画面の右側に余白が生じてしまう状況でした。
+さらに、Bulma を使っている場合だと、Bulmaa が`html`に対して`overflow-x` `overflow-y`のスタイルを書き換えていて、これが干渉していたりもするので`sticky`を使いづらい状況でした。
