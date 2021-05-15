@@ -4,6 +4,7 @@ import { getSortedPostsData } from "../lib/posts";
 import algoliasearch from "algoliasearch";
 
 const basicPath = "./data/";
+const allArtilcesPath = basicPath + "all-articles.json";
 const client = algoliasearch(
   `${process.env.ALGOLIA_APP_ID}`,
   `${process.env.ALGOLIA_API_KEY}`
@@ -20,22 +21,20 @@ const generateFilename = () => {
 };
 
 const generatePastJsonString = () => {
-  const jsonFiles = fs.readdirSync(basicPath);
-  const jsonFilePath = basicPath + jsonFiles[jsonFiles.length - 1];
-
-  const pastPostsArray = JSON.parse(fs.readFileSync(jsonFilePath, "utf8"));
+  const pastPostsArray = JSON.parse(fs.readFileSync(allArtilcesPath, "utf8"));
   return JSON.stringify(pastPostsArray);
 };
 
+// 既存のall-articles.jsonとgetSortedPostsData()との差分(追加分)を取得
 const generatePostsGap = () => {
-  const currentPostsArray = getSortedPostsData();
-  const pastPostsString = generatePastJsonString();
+  const currentAllPostsArray = getSortedPostsData();
+  const pastAllPostsString = generatePastJsonString();
 
   let postsGap: PostData[] = [];
-  currentPostsArray.forEach((post: PostData) => {
+  currentAllPostsArray.forEach((post: PostData) => {
     const stringPost = JSON.stringify(post);
 
-    if (!pastPostsString.includes(stringPost)) {
+    if (!pastAllPostsString.includes(stringPost)) {
       postsGap.push(post);
     }
   });
@@ -44,7 +43,6 @@ const generatePostsGap = () => {
 
 const updateAllArticles = () => {
   const allArtilces = getSortedPostsData();
-  const allArtilcesPath = basicPath + "all-articles.json";
   fs.writeFile(allArtilcesPath, JSON.stringify(allArtilces), (err) => {
     if (err) throw err;
     console.log(allArtilcesPath + "への書き込みが完了しました。");
@@ -55,18 +53,18 @@ const createJson = () => {
   const newFile = generateFilename();
   const data = generatePostsGap();
 
-  updateAllArticles();
-
-  // TODO: data/timestamp-algolia.jsonはall-articles.jsonとの差分
-
-  // fs.writeFile(newFile, JSON.stringify(data), (err) => {
-  //   if (err) throw err;
-  //   console.log("正常に書き込みが完了しました");
-  // });
-
-  // console.log(data);
-
-  // index.saveObjects(data, { autoGenerateObjectIDIfNotExist: true });
+  if (data.length !== 0) {
+    fs.writeFile(newFile, JSON.stringify(data), (err) => {
+      if (err) throw err;
+      console.log(newFile + "への書き込みが完了しました。");
+    });
+    updateAllArticles();
+    // index.saveObjects(data, { autoGenerateObjectIDIfNotExist: true });
+  } else {
+    console.log(
+      "差分が検出されなかったため、JSONファイルは作成されませんでした。"
+    );
+  }
 };
 
 createJson();
