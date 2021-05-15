@@ -4,7 +4,10 @@ exports[`Layout 1`] = `
 <div
   className="max-w-4xl mx-auto px-2 sm:px-6 lg:px-8"
 >
-  <main>
+  <Search />
+  <main
+    className="mt-3"
+  >
     <div
       className="shadow-md bg-white"
     >
