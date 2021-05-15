@@ -9,7 +9,7 @@ const client = algoliasearch(
   `${process.env.ALGOLIA_APP_ID}`,
   `${process.env.ALGOLIA_API_KEY}`
 );
-const index = client.initIndex("your_index_name");
+const index = client.initIndex("kenzo_blog");
 
 const generateFilename = () => {
   const today = new Date();
