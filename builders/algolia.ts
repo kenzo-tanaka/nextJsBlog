@@ -16,7 +16,9 @@ const generateFilename = () => {
   const timeStamp =
     today.getFullYear() +
     String(today.getMonth() + 1).padStart(2, "0") +
-    String(today.getDate()).padStart(2, "0");
+    String(today.getDate()).padStart(2, "0") +
+    "-" +
+    String(today.getTime());
   return basicPath + timeStamp + "-algolia.json";
 };
 
@@ -45,7 +47,7 @@ const updateAllArticles = () => {
   const allArtilces = getSortedPostsData();
   fs.writeFile(allArtilcesPath, JSON.stringify(allArtilces), (err) => {
     if (err) throw err;
-    console.log(allArtilcesPath + "への書き込みが完了しました。");
+    console.log(allArtilcesPath + " への書き込みが完了しました。");
   });
 };
 
@@ -56,7 +58,7 @@ const createJson = () => {
   if (data.length !== 0) {
     fs.writeFile(newFile, JSON.stringify(data), (err) => {
       if (err) throw err;
-      console.log(newFile + "への書き込みが完了しました。");
+      console.log(newFile + " への書き込みが完了しました。");
     });
     updateAllArticles();
     // index.saveObjects(data, { autoGenerateObjectIDIfNotExist: true });
