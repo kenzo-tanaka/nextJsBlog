@@ -38,7 +38,9 @@ body {
 }
 ```
 
-これを解消するには`body`に当たっている`overflow`を剥がせば良いのですが、そうするとスマホ画面の右側に余白が生じてしまう状況でした。
-また、Bulma を使っている場合だと、Bulmaa が`html`要素の`overflow-x` `overflow-y`に当てているスタイルが干渉することもあるので、更に注意が必要。
+仕事で書いているコードでは画面左右に余白が生じないように、`body`に`overflow`を書いていて、これを剥がすとスマホで表示した時に横スクロールが発生したりする状況でした。
 
-仕事で書いているプロダクトでは、Bulma を使っていて、`sticky`を使おうとすると`html`に当たっている`overflow-x,y`のスタイルを剥がすところから始める必要があり、影響範囲が広すぎたのでやめました。
+また、Bulma を使っている場合だと、Bulmaa が`html`要素の`overflow-x` `overflow-y`に当てているスタイルが干渉することもあるので、更に注意が必要です。  
+CSS フレームワークとして Bulma を使っている場合には、`sticky`を使うのは諦めて、`fixed`を使った Navbar を実装するのが良いでしょう。
+
+[Navbar | Bulma: Free, open source, and modern CSS framework based on Flexbox](https://bulma.io/documentation/components/navbar/#fixed-navbar)
