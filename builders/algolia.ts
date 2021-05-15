@@ -2,21 +2,18 @@ import fs from "fs";
 import { PostData } from "../types";
 import { getSortedPostsData } from "../lib/posts";
 
-const getTimeStamp = () => {
+const basicPath = "./data/";
+
+const generateFilename = () => {
   const today = new Date();
   const timeStamp =
     today.getFullYear() +
     String(today.getMonth() + 1).padStart(2, "0") +
     String(today.getDate()).padStart(2, "0");
-  return timeStamp + "-algolia.json";
+  return basicPath + timeStamp + "-algolia.json";
 };
 
 const createJson = () => {
-  // fs.writeFile("algolia.json", data, (err) => {
-  //   if (err) throw err;
-  //   console.log("正常に書き込みが完了しました");
-  // });
-  const basicPath = "./data/";
   const currentPostsArray = getSortedPostsData();
 
   const jsonFiles = fs.readdirSync(basicPath);
@@ -36,9 +33,13 @@ const createJson = () => {
       }
     });
 
-    console.log(postsGap);
+    const fileName = generateFilename();
+    fs.writeFile(fileName, JSON.stringify(postsGap), (err) => {
+      if (err) throw err;
+      console.log("正常に書き込みが完了しました");
+    });
+    // TODO: できればそのままAlgolia APIを使ってFileをアップロードする
   });
-  // TODO: できればそのままAlgolia APIを使ってFileをアップロードする
 };
 
 createJson();
