@@ -1,8 +1,14 @@
 import fs from "fs";
 import { PostData } from "../types";
 import { getSortedPostsData } from "../lib/posts";
+import algoliasearch from "algoliasearch";
 
 const basicPath = "./data/";
+const client = algoliasearch(
+  `${process.env.ALGOLIA_APP_ID}`,
+  `${process.env.ALGOLIA_API_KEY}`
+);
+const index = client.initIndex("your_index_name");
 
 const generateFilename = () => {
   const today = new Date();
@@ -44,6 +50,10 @@ const createJson = () => {
     if (err) throw err;
     console.log("正常に書き込みが完了しました");
   });
+
+  // console.log(data);
+
+  // index.saveObjects(data, { autoGenerateObjectIDIfNotExist: true });
 };
 
 createJson();
