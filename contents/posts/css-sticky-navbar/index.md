@@ -18,7 +18,7 @@ Mozilla のサイトでは「Sticky は `position: relative`と`position: fixed`
 
 ## `position: sticky`が動かない場合
 
-`sticky`は親要素に`overflow`の指定があったりすると、固定が正常に動作しないので注意が必要です。
+`sticky`は親要素に`overflow`の指定があったりすると、固定が正常に動作しないので注意が必要です。僕はこれになかなか気付かず、かなり時間を消費しました..。
 
 > - Position sticky will most probably not work if overflow is set to hidden, scroll, or auto on any of the parents of the element.
 > - Position sticky may not work correctly if any parent element has a set height.
