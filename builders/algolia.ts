@@ -2,6 +2,15 @@ import fs from "fs";
 import { PostData } from "../types";
 import { getSortedPostsData } from "../lib/posts";
 
+const getTimeStamp = () => {
+  const today = new Date();
+  const timeStamp =
+    today.getFullYear() +
+    String(today.getMonth() + 1).padStart(2, "0") +
+    String(today.getDate()).padStart(2, "0");
+  return timeStamp + "-algolia.json";
+};
+
 const getArticleMeta = () => {
   // const data = JSON.stringify(posts);
   // fs.writeFile("algolia.json", data, (err) => {
@@ -12,27 +21,25 @@ const getArticleMeta = () => {
   const currentPostsArray = getSortedPostsData();
 
   // TODO: data/下のalgoliaファイルの最新ファイルのものを取得
-  const jsonFiles = fs.readdirSync(basicPath);
-  const lastJsonFile = jsonFiles[jsonFiles.length - 1];
-  const jsonFilePath = basicPath + lastJsonFile;
+  // const jsonFiles = fs.readdirSync(basicPath);
+  // const lastJsonFile = jsonFiles[jsonFiles.length - 1];
+  // const jsonFilePath = basicPath + lastJsonFile;
 
-  fs.readFile(jsonFilePath, "utf8", (err, postsString) => {
-    const pastPostsArray = JSON.parse(postsString);
-    const pastPostsString = JSON.stringify(pastPostsArray);
+  // fs.readFile(jsonFilePath, "utf8", (err, postsString) => {
+  //   const pastPostsArray = JSON.parse(postsString);
+  //   const pastPostsString = JSON.stringify(pastPostsArray);
 
-    let postsGap: PostData[] = [];
-    currentPostsArray.forEach((post: PostData) => {
-      const stringPost = JSON.stringify(post);
+  //   let postsGap: PostData[] = [];
+  //   currentPostsArray.forEach((post: PostData) => {
+  //     const stringPost = JSON.stringify(post);
 
-      if (!pastPostsString.includes(stringPost)) {
-        postsGap.push(post);
-      }
-    });
+  //     if (!pastPostsString.includes(stringPost)) {
+  //       postsGap.push(post);
+  //     }
+  //   });
 
-    console.log(postsGap);
-  });
-
-  // TODO: 20210515のような日付つきファイルを作成して保存
+  //   console.log(postsGap);
+  // });
   // TODO: できればそのままAlgolia APIを使ってFileをアップロードする
 };
 
