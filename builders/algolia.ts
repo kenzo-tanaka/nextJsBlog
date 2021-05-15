@@ -61,7 +61,11 @@ const createJson = () => {
       console.log(newFile + " への書き込みが完了しました。");
     });
     updateAllArticles();
-    // index.saveObjects(data, { autoGenerateObjectIDIfNotExist: true });
+    index
+      .saveObjects(data, { autoGenerateObjectIDIfNotExist: true })
+      .catch((err) => {
+        console.log(err);
+      });
   } else {
     console.log(
       "差分が検出されなかったため、JSONファイルは作成されませんでした。"
