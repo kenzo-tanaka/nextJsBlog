@@ -42,14 +42,27 @@ const generatePostsGap = () => {
   return postsGap;
 };
 
+const updateAllArticles = () => {
+  const allArtilces = getSortedPostsData();
+  const allArtilcesPath = basicPath + "all-articles.json";
+  fs.writeFile(allArtilcesPath, JSON.stringify(allArtilces), (err) => {
+    if (err) throw err;
+    console.log(allArtilcesPath + "への書き込みが完了しました。");
+  });
+};
+
 const createJson = () => {
   const newFile = generateFilename();
   const data = generatePostsGap();
 
-  fs.writeFile(newFile, JSON.stringify(data), (err) => {
-    if (err) throw err;
-    console.log("正常に書き込みが完了しました");
-  });
+  updateAllArticles();
+
+  // TODO: data/timestamp-algolia.jsonはall-articles.jsonとの差分
+
+  // fs.writeFile(newFile, JSON.stringify(data), (err) => {
+  //   if (err) throw err;
+  //   console.log("正常に書き込みが完了しました");
+  // });
 
   // console.log(data);
 
