@@ -8,10 +8,15 @@ const getArticleMeta = () => {
   //   if (err) throw err;
   //   console.log("正常に書き込みが完了しました");
   // });
+  const basicPath = "./data/";
   const currentPostsArray = getSortedPostsData();
 
   // TODO: data/下のalgoliaファイルの最新ファイルのものを取得
-  fs.readFile("./data/20210509-algolia.json", "utf8", (err, postsString) => {
+  const jsonFiles = fs.readdirSync(basicPath);
+  const lastJsonFile = jsonFiles[jsonFiles.length - 1];
+  const jsonFilePath = basicPath + lastJsonFile;
+
+  fs.readFile(jsonFilePath, "utf8", (err, postsString) => {
     const pastPostsArray = JSON.parse(postsString);
     const pastPostsString = JSON.stringify(pastPostsArray);
 
