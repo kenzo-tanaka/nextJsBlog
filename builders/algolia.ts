@@ -15,7 +15,7 @@ const getArticleMeta = () => {
     const pastPostsArray = JSON.parse(postsString);
     const pastPostsString = JSON.stringify(pastPostsArray);
 
-    let postsGap: PostData[];
+    let postsGap: PostData[] = [];
     currentPostsArray.forEach((post: PostData) => {
       const stringPost = JSON.stringify(post);
 
@@ -23,6 +23,8 @@ const getArticleMeta = () => {
         postsGap.push(post);
       }
     });
+
+    console.log(postsGap);
   });
 
   // TODO: 20210515のような日付つきファイルを作成して保存
