@@ -3,9 +3,6 @@ import { PostData } from "../types";
 import { getSortedPostsData } from "../lib/posts";
 
 const basicPath = "./data/";
-const currentPostsArray = getSortedPostsData();
-const jsonFiles = fs.readdirSync(basicPath);
-const jsonFilePath = basicPath + jsonFiles[jsonFiles.length - 1];
 
 const generateFilename = () => {
   const today = new Date();
@@ -16,9 +13,18 @@ const generateFilename = () => {
   return basicPath + timeStamp + "-algolia.json";
 };
 
-const generatePostsGap = () => {
+const generatePastJsonString = () => {
+  const jsonFiles = fs.readdirSync(basicPath);
+  const jsonFilePath = basicPath + jsonFiles[jsonFiles.length - 1];
+
   const pastPostsArray = JSON.parse(fs.readFileSync(jsonFilePath, "utf8"));
-  const pastPostsString = JSON.stringify(pastPostsArray);
+  return JSON.stringify(pastPostsArray);
+};
+
+const generatePostsGap = () => {
+  const currentPostsArray = getSortedPostsData();
+  const pastPostsString = generatePastJsonString();
+
   let postsGap: PostData[] = [];
   currentPostsArray.forEach((post: PostData) => {
     const stringPost = JSON.stringify(post);
@@ -31,7 +37,6 @@ const generatePostsGap = () => {
 };
 
 const createJson = () => {
-  // 既存JSONファイルをRead
   const newFile = generateFilename();
   const data = generatePostsGap();
 
