@@ -3,11 +3,13 @@ import { PostData } from "../types";
 import { getSortedPostsData } from "../lib/posts";
 import algoliasearch from "algoliasearch";
 
+require("dotenv").config("../.env.local");
+
 const basicPath = "./data/";
 const allArtilcesPath = basicPath + "all-articles.json";
 const client = algoliasearch(
   `${process.env.ALGOLIA_APP_ID}`,
-  `${process.env.ALGOLIA_API_KEY}`
+  `${process.env.ALGOLIA_ADMIN_KEY}`
 );
 const index = client.initIndex("kenzo_blog");
 
