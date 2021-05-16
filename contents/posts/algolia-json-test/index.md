@@ -124,3 +124,56 @@ const createJson = () => {
 
 createJson();
 ```
+
+## 詰まったところ
+
+### オブジェクトの配列を比較
+
+最初、オブジェクトの配列を比較する方法が分からなかった。最終的に、`JSON.stringify`を使って比較をすると、差分をとってこれることが分かった。以下のようにオブジェクトの key,value とも一致していても`includes`では`false`を返してしまう。同様に`filter`関数を使う方法でも、差分は検出できない。
+
+```js
+const arrA = [
+  {
+    slug: "test",
+    title: "test",
+  },
+];
+const arrB = [
+  {
+    slug: "test",
+    title: "test",
+  },
+];
+console.log(arrB.includes(arrA[0])); // -> false
+```
+
+なので、`JSON.stringify`を使って双方を文字列化した上で比較する方法にした。
+
+```js
+const arrA = [
+  {
+    slug: "test",
+    title: "test",
+  },
+];
+const arrB = [
+  {
+    slug: "test",
+    title: "test",
+  },
+];
+const strA = JSON.stringify(arrA); // '[{"slug":"test","title":"test"}]'
+console.log(strA.includes(JSON.stringify(arrB[0]))); // true
+```
+
+### 環境変数の取り扱い
+
+Next.js のアプリケーションでは`.env.local`に登録した環境変数を読み込んでくれるが、Next.js のアプリとは関係ない`builders`というディレクトリの中なので読み込んでくれない。そのため、`dotenv`を使う必要があった。
+
+```ts
+require("dotenv");
+```
+
+### Algolia にレコードを登録
+
+レコードをアップロードするには、`Search-Only API Key`ではなく`Admin API Key`を使う必要がある。
