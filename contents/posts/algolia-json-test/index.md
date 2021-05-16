@@ -32,16 +32,21 @@ Algolia にすでに登録済のレコードはアップロードしたくない
 
 ## 実装
 
-[前回の記事](https://kenzoblog.vercel.app/posts/next-and-algolia)で作成したスクリプトに改良を加えていきます。
+[前回の記事](https://kenzoblog.vercel.app/posts/next-and-algolia)で作成したスクリプトに改良を加えていきます。  
+インラインでコメントを残しています。
 
-```js:builders/algolia.ts
+```ts:builders/algolia.ts
+// 色々必要なものをimport
 import fs from "fs";
 import { PostData } from "../types";
+// 現在の記事一覧をオブジェクトの配列として返す関数
 import { getSortedPostsData } from "../lib/posts";
 import algoliasearch from "algoliasearch";
 
+// algoliaのappid,apikeyを.envから読み込むために必要
 require("dotenv").config();
 
+// 変数を色々定義
 const basicPath = "./data/";
 const allArtilcesPath = basicPath + "all-articles.json";
 const client = algoliasearch(
@@ -50,6 +55,7 @@ const client = algoliasearch(
 );
 const index = client.initIndex("kenzo_blog");
 
+// タイムスタンプを含んだファイル名を生成して返す関数
 const generateFilename = () => {
   const today = new Date();
   const timeStamp =
@@ -61,12 +67,15 @@ const generateFilename = () => {
   return basicPath + timeStamp + "-algolia.json";
 };
 
+// 既存の「すべての記事」ファイルを読み込んでStringで返す
 const generatePastJsonString = () => {
   const pastPostsArray = JSON.parse(fs.readFileSync(allArtilcesPath, "utf8"));
   return JSON.stringify(pastPostsArray);
 };
 
-// 既存のall-articles.jsonとgetSortedPostsData()との差分(追加分)を取得
+// 既存の「すべての記事」ファイルと
+// 現在の「すべての記事」を比較して
+// 差分を返す関数
 const generatePostsGap = () => {
   const currentAllPostsArray = getSortedPostsData();
   const pastAllPostsString = generatePastJsonString();
@@ -94,6 +103,7 @@ const createJson = () => {
   const newFile = generateFilename();
   const data = generatePostsGap();
 
+  // 差分があったときのみタイムスタンプ付きのファイルを生成して書き込み & Algoliaへレコードを登録する
   if (data.length !== 0) {
     fs.writeFile(newFile, JSON.stringify(data), (err) => {
       if (err) throw err;
@@ -113,5 +123,4 @@ const createJson = () => {
 };
 
 createJson();
-
 ```
