@@ -40,16 +40,17 @@ category: "dev"
 - [position: sticky で Navbar を固定したい](https://kenzoblog.vercel.app/posts/css-sticky-navbar)
 - [Algolia に登録する JSON ファイルを生成してアップロードするスクリプトを書いた](https://kenzoblog.vercel.app/posts/algolia-json-test)
 - [Ransack でチェックボックス検索を実装した時にはまったこと](https://kenzoblog.vercel.app/posts/ransack-checkbox)
+- [グロースハック完全教本を読んだ](https://kenzoblog.vercel.app/posts/hacking-growth)
 
 ## 振り返り
 
 Keep
 
-- ブログ執筆を継続できている。
+- 今月は仕事で CSS を書く機会が多くあり、以前ほどの苦手意識はなくなってきた。
 - プロダクト開発について明確な方針を持ちつつ、着実に前進できている。
   - 結果サービスの使い心地がかなり良くなっている。
 - 検索を入れたことでブログの使い勝手も良くなっている。
-  - またその知見を仕事で活かせた（Next.js でのヘルプサイト構築）
+  - またその知見を仕事で活かせた
 
 Problem
 
