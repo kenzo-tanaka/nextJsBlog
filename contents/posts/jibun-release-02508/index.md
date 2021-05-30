@@ -1,7 +1,7 @@
 ---
 title: 自分リリースノート v 0.25.08
 date: "2021-02-27"
-category: "work"
+category: "dev"
 thumbnail: "cat.jpg"
 ---
 
