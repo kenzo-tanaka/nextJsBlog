@@ -1,5 +1,5 @@
 ---
-title:
-date: '2021-06-05'
-category: 'dev'
+title: "gem client_side_validationsを試してみた。"
+date: "2021-06-05"
+category: "dev"
 ---
