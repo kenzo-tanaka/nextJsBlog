@@ -4,13 +4,13 @@ date: "2021-06-05"
 category: "dev"
 ---
 
-GitHub のメルマガで流れてきて知った Gem[DavyJonesLocker/client_side_validations](https://github.com/DavyJonesLocker/client_side_validations)を試してみた。
+クライアント側でバリデーションをかけられる Gem[DavyJonesLocker/client_side_validations](https://github.com/DavyJonesLocker/client_side_validations)を試してみた。このリポジトリは GitHub のニュースレターで流れてきて知った。
 
 ## Gem の紹介
 
 [DavyJonesLocker/client_side_validations](https://github.com/DavyJonesLocker/client_side_validations)
 
-バックエンドではなく、クライアント側でフォームにバリデーションをかけたい時に使える Gem。Email のフォーマットなど複雑なバリデーションをかけたいときなどに使えそう。スターも 2021/06 現在で 2.5k ついている。README を見る限りではセットアップも簡単そう。
+クライアント側で Email のフォーマットなど複雑なバリデーションをかけたいときなどに使える Gem。GitHub スター数も 2021/06 現在で 2.5k ついている。README を見る限りではセットアップも簡単そう。
 
 ## セットアップ
 
@@ -86,6 +86,16 @@ require('@client-side-validations/simple-form/dist/simple-form.bootstrap4')
 
 ![](img3.png)
 
-ついでに wiki に書いてあった設定も試してみた。画面右側にエラーメッセージを表示させている感じ。
+Wiki に書いてあった設定も試してみた。画面右側にエラーメッセージを表示させている感じ。  
+[Custom HTML · DavyJonesLocker/client_side_validations Wiki](https://github.com/DavyJonesLocker/client_side_validations/wiki/Custom-HTML)
 
 ![](img4.png)
+
+このあたりのスタイリングは頑張って CSS 書いたり、フレームワークを入れたりすればなんとでもできそう。
+
+## ユニークバリデーションは多分できない
+
+ユニークバリデーションは動作しなかったので、Issue を探ってみたら、サポートを止めたとのこと（DB まで見にいくのがセキュリティ的に微妙だったとかかな）。
+
+> Hi, uniqueness validator support was removed in version 7.0.  
+> [Validation for uniqueness not working · Issue #725 · DavyJonesLocker/client_side_validations](https://github.com/DavyJonesLocker/client_side_validations/issues/725)
