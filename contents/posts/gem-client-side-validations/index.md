@@ -98,4 +98,5 @@ Wiki に書いてあった設定も試してみた。画面右側にエラーメ
 ユニークバリデーションは動作しなかったので、Issue を探ってみたら、サポートを止めたとのこと（DB まで見にいくのがセキュリティ的に微妙だったとかかな）。
 
 > Hi, uniqueness validator support was removed in version 7.0.  
-> [Validation for uniqueness not working · Issue #725 · DavyJonesLocker/client_side_validations](https://github.com/DavyJonesLocker/client_side_validations/issues/725)
+> [Validation for uniqueness not working · Issue #725 · DavyJonesLocker/client_side_validations](https://github.com/DavyJonesLocker/client_side_validations/issues/725)  
+> [Devise's email validations (uniqueness and regexp) is not working with client_side_validations · Issue #710 · DavyJonesLocker/client_side_validations](https://github.com/DavyJonesLocker/client_side_validations/issues/710)
