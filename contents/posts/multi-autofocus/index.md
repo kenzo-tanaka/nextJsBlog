@@ -16,3 +16,11 @@ MDN を見ると以下の記述があるため、複数設定することは想�
 
 > もし複数あった場合、属性がセットされた最初の要素 (通常はページの最初の要素) が初期のフォーカスを得ます。
 > [HTMLSelectElement.autofocus - Web API | MDN](https://developer.mozilla.org/ja/docs/Web/API/HTMLSelectElement/autofocus)
+
+## Turbolinks が原因？
+
+Turbolinks のリポジトリで同様の事象を再現している Issue を見つけた。2020/11 月に作成されていてまだクローズされていない。  
+[multiple autofocus inputs problems in Mobile Safari / embedded webkit in turbolinks-ios · Issue #589 · turbolinks/turbolinks](https://github.com/turbolinks/turbolinks/issues/589)
+
+事象を再現する Demo ページも用意されている。  
+[Page Two | Turbolinks Demo](https://turbolinks-ios14-autofocus.glitch.me/two.html)
