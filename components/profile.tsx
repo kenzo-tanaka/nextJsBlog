@@ -5,13 +5,16 @@ import Image from "next/image";
 const Profile: React.FC = () => {
   return (
     <div className="flex flex-col	items-center">
-      <Image
-        src="/images/profile.webp"
-        alt="Picture of the author"
-        className="rounded-full"
-        width={100}
-        height={100}
-      />
+      <picture>
+        <source srcSet="/images/profile.webp" />
+        <Image
+          src="/images/profile.webp"
+          alt="Picture of the author"
+          className="rounded-full"
+          width={100}
+          height={100}
+        />
+      </picture>
       <p className="text-gray-500 mt-4">
         Personal tech blog /{" "}
         <Link href="/about">
