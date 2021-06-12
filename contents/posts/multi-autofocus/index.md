@@ -1,5 +1,5 @@
 ---
-title: "autofocusを複数inputに設定していると、iOS環境で「ページを開けません」と表示される"
+title: "autofocusを複数inputに設定していると、iOS Chrome/Safariでページを開けない事象"
 date: "2021-06-12"
 category: "dev"
 ---
