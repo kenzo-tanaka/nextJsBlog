@@ -4,11 +4,9 @@ date: "2021-06-12"
 category: "dev"
 ---
 
-とある事情で複数の input に対して、`autofocus: true`と設定していたとき、iOS Chrome/Safari の環境で以下のページが表示されるエラーとなった。
+Rails プロジェクトで複数の input に対して、`autofocus: true`と設定していたとき、iOS Chrome/Safari の環境で以下のページが表示されるエラーとなった。
 
-![](ios-safari-error.jpeg)
-
-![](ios-chrome-error.jpeg)
+![](img1.jpeg)
 
 ## autofocus は複数のフィールドに設定してよいか
 
