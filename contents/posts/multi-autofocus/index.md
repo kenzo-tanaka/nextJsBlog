@@ -28,7 +28,7 @@ Turbolinks のリポジトリで同様の事象を再現している Issue を�
 上記 Issue のコメントにて「Turbolinks をオフにしたりすれば動作するので、Turbolinks が原因だよね」と。
 
 > Definitely seems to be turbolinks related because on hard refresh the page works and adding `data: { turbolinks: "false" }` to my signup links worked as a hotfix for me.
-> https://github.com/turbolinks/turbolinks/issues/589#issuecomment-738755245
+> [Comment](https://github.com/turbolinks/turbolinks/issues/589#issuecomment-738755245)
 
 ## 対処法
 
