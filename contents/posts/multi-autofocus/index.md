@@ -22,10 +22,15 @@ MDN を見ると以下の記述があるため、複数設定することは想�
 Turbolinks のリポジトリで同様の事象を再現している Issue を見つけた。2020/11 月に作成されていてまだクローズされていない。  
 [multiple autofocus inputs problems in Mobile Safari / embedded webkit in turbolinks-ios · Issue #589 · turbolinks/turbolinks](https://github.com/turbolinks/turbolinks/issues/589)
 
-事象を再現する Demo ページも用意されている。  
-[Page Two | Turbolinks Demo](https://turbolinks-ios14-autofocus.glitch.me/two.html)
+事象を再現する Demo ページも用意されている。iOS Chrome か Safari で下記サイトのトップページから「Page two」のリンクに遷移すると、上記キャプチャと同じようにページを開けないエラーになる。ちなみに「Page two」のリンクを直接踏んだときはエラーにならない。
+[Page Two | Turbolinks Demo](https://turbolinks-ios14-autofocus.glitch.me/)
 
-上記 Issue のコメントにて「Turbolinks をオフにしたりすれば動作するので、Turbolinks が原因だよね」とのこと。
+上記 Issue のコメントにて「Turbolinks をオフにしたりすれば動作するので、Turbolinks が原因だよね」と。
 
 > Definitely seems to be turbolinks related because on hard refresh the page works and adding `data: { turbolinks: "false" }` to my signup links worked as a hotfix for me.
 > https://github.com/turbolinks/turbolinks/issues/589#issuecomment-738755245
+
+## 対処法
+
+- 対象リンク`data: { turbolinks: "false" }`を付与する
+- `autofocus`を複数の input にセットするのをやめる
