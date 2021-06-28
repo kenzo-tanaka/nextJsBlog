@@ -6,13 +6,13 @@ exports[`profile 1`] = `
 >
   <picture>
     <source
-      srcSet="/images/profile.webp"
+      srcSet="/images/profile.jpg"
     />
     <Image
       alt="Picture of the author"
       className="rounded-full"
       height={100}
-      src="/images/profile.webp"
+      src="/images/profile.jpg"
       width={100}
     />
   </picture>
