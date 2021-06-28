@@ -6,9 +6,9 @@ const Profile: React.FC = () => {
   return (
     <div className="flex flex-col	items-center">
       <picture>
-        <source srcSet="/images/profile.webp" />
+        <source srcSet="/images/profile.jpg" />
         <Image
-          src="/images/profile.webp"
+          src="/images/profile.jpg"
           alt="Picture of the author"
           className="rounded-full"
           width={100}
