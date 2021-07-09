@@ -30,7 +30,7 @@ pdf_options:
 | key      | value                                                 |
 | -------- | ----------------------------------------------------- |
 | 名前     | 田中建蔵                                              |
-| 年齢     | 25 歳                                                 |
+| 年齢     | 26 歳                                                 |
 | 最終学歴 | 関西大学 法学部 法律政治学科 卒業                     |
 | GitHub   | [kenzo-tanaka](https://github.com/kenzo-tanaka)       |
 | Twitter  | [@kenzoooooB](https://twitter.com/kenzoooooB)         |
