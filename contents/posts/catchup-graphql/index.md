@@ -6,10 +6,10 @@ category: "dev"
 
 ## メリット
 
-LayerX さんのエンジニアブログが参考になりました。  
+LayerX さんのエンジニアブログが参考になった。  
 [GraphQL でバックエンドのコードをすっきりさせた話 - LayerX エンジニアブログ](https://tech.layerx.co.jp/entry/2021/04/12/121427)
 
-僕の理解では GraphQL を使うことによって得られるメリットは以下です。
+僕の理解では GraphQL を使うことによって得られるメリットは以下。
 
 - 本当に必要なデータを手軽に取得できる（複雑なクエリを書かなくて良い）
 - 不要なデータは取得しないので、パフォーマンスを落とさない
@@ -20,3 +20,14 @@ GraphQL からは SQL・NoSQL・REST などに接続が可能。なので GraphQ
 
 PIXTA が運営する texta.fm でも GraphQL を界面として使うという表現がされていた。  
 [Sideshow 4. Worse is Better by texta.fm • A podcast on Anchor](https://anchor.fm/textafm/episodes/Sideshow-4--Worse-is-Better-eqsi31)
+
+## 具体的な実装
+
+具体的にどのような実装になるのかを以下の記事を参考にしながら、手を動かした。記事の後半あたりで GraphQL が出てくる。  
+[Next.js + Rails プロジェクトのセットアップ手順](https://zenn.dev/kei178/articles/43172ba33eece4)
+
+ざっくりした流れは以下。
+
+- カラム名や型を定義する
+- クエリを作成する
+- 定義したクエリをルートクエリとして取得できるよう設定する
