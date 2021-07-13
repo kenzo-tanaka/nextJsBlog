@@ -28,9 +28,22 @@ PIXTA が運営する texta.fm でも GraphQL を界面として使用してい�
 
 ## 用語
 
+**アーキテクチャ**
+
+- GraphQL クライアント: サーバーにリクエスト送信
+- GraphQL サーバー: クライアントからリクエストを受ける
+- Resolver: 実際のデータを操作する
+
+**クエリ言語**
+
 - Query: GET の処理
 - Mutaition: 更新系の処理をするための形式
 - Subscription: リアルタイムデータ通信
+
+**スキーマ言語**
+
+- Schema: GraphQL サーバーが実行可能な操作を定義
+- Types: 開発者が定義できる GraphQL の型
 
 ## 具体的な実装
 
