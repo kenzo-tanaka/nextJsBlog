@@ -45,6 +45,8 @@ PIXTA が運営する texta.fm でも GraphQL を界面として使用してい�
 - Schema: GraphQL サーバーが実行可能な操作を定義
 - Types: 開発者が定義できる GraphQL の型
 
+参考: [GraphQL のアプリケーションへの組み込みを考える - RAKUS Developers Blog | ラクス エンジニアブログ](https://tech-blog.rakus.co.jp/entry/20210323/graphql#GraphQL%E3%81%AE%E3%82%A2%E3%83%BC%E3%82%AD%E3%83%86%E3%82%AF%E3%83%81%E3%83%A3)
+
 ## 具体的な実装
 
 具体的にどのような実装になるのかを以下の記事を参考にしながら、手を動かした。  
