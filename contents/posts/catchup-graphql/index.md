@@ -23,13 +23,19 @@ GraphQL からは SQL・NoSQL・REST などに接続が可能。なので GraphQ
 
 ![](https://camo.qiitausercontent.com/233a8d1c741735932d52ebc06292db33a464a939/68747470733a2f2f71696974612d696d6167652d73746f72652e73332e616d617a6f6e6177732e636f6d2f302f3130383736312f33656532323234622d636639362d613636342d616531392d6264313139393864316266612e706e67)
 
-PIXTA が運営する texta.fm でも GraphQL を界面として使うという表現がされていた。  
+PIXTA が運営する texta.fm でも GraphQL を界面として使用しているという表現がされていた。  
 [Sideshow 4. Worse is Better by texta.fm • A podcast on Anchor](https://anchor.fm/textafm/episodes/Sideshow-4--Worse-is-Better-eqsi31)
+
+## 用語
+
+- Query: GET の処理
+- Mutaition: 更新系の処理をするための形式
+- Subscription: リアルタイムデータ通信
 
 ## 具体的な実装
 
-具体的にどのような実装になるのかを以下の記事を参考にしながら、手を動かした。記事の後半あたりで GraphQL が出てくる。  
-[Next.js + Rails プロジェクトのセットアップ手順](https://zenn.dev/kei178/articles/43172ba33eece4)
+具体的にどのような実装になるのかを以下の記事を参考にしながら、手を動かした。  
+[Rails：GraphQL API の構築手順](https://zenn.dev/kei178/articles/2f4ffc6b89618c)
 
 ざっくりした流れは以下。
 
