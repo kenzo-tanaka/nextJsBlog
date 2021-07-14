@@ -49,11 +49,12 @@ PIXTA が運営する texta.fm でも GraphQL を界面として使用してい�
 
 ## SQL との比較
 
-|                | SQL                      | GraphQL          |
-| -------------- | ------------------------ | ---------------- |
-| 実行先         | データベースに対して実行 | API に対して実行 |
-| データ取得処理 | SELECT                   | Query            |
-| データ更新処理 | INSERT, UPDATE, DELETE   | Mutation         |
+|                        | SQL                      | GraphQL          |
+| ---------------------- | ------------------------ | ---------------- |
+| 実行先                 | データベースに対して実行 | API に対して実行 |
+| データ取得処理         | SELECT                   | Query            |
+| データ更新処理         | INSERT, UPDATE, DELETE   | Mutation         |
+| リアルタイムデータ通信 | -                        | Subscription     |
 
 ## 具体的な実装
 
