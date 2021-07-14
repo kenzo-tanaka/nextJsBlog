@@ -47,6 +47,14 @@ PIXTA が運営する texta.fm でも GraphQL を界面として使用してい�
 
 参考: [GraphQL のアプリケーションへの組み込みを考える - RAKUS Developers Blog | ラクス エンジニアブログ](https://tech-blog.rakus.co.jp/entry/20210323/graphql#GraphQL%E3%81%AE%E3%82%A2%E3%83%BC%E3%82%AD%E3%83%86%E3%82%AF%E3%83%81%E3%83%A3)
 
+## SQL との比較
+
+|                | SQL                      | GraphQL          |
+| -------------- | ------------------------ | ---------------- |
+| 実行先         | データベースに対して実行 | API に対して実行 |
+| データ取得処理 | SELECT                   | Query            |
+| データ更新処理 | INSERT, UPDATE, DELETE   | Mutation         |
+
 ## 具体的な実装
 
 具体的にどのような実装になるのかを以下の記事を参考にしながら、手を動かした。  
