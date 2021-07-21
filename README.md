@@ -55,7 +55,7 @@ URL の指定でも動作します。
 下記を実行して、`/contents/pages/about/index.pdf`を確認して下さい。
 
 ```shell
-$ md-to-pdf contents/pages/about/index.md
+$ npx md-to-pdf contents/pages/about/index.md
 ```
 
 ## GitHub Actions
