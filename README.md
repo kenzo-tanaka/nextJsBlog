@@ -58,6 +58,12 @@ URL の指定でも動作します。
 $ npx md-to-pdf contents/pages/about/index.md
 ```
 
+## Algoliaにインデックス登録
+
+```shell
+npx ts-node --project tsconfig.builder.json ./builders/algolia.ts
+```
+
 ## GitHub Actions
 
 `create issue` というワークフローが毎月 27 日に実行されます。これは、月次の振り返りをする自分リリースノート執筆リマインダーです。
