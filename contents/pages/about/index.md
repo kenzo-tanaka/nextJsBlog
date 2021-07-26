@@ -35,9 +35,8 @@ pdf_options:
 | GitHub   | [kenzo-tanaka](https://github.com/kenzo-tanaka)       |
 | Twitter  | [@kenzoooooB](https://twitter.com/kenzoooooB)         |
 | ブログ   | [Kenzo Tech Blog](https://kenzoblog.vercel.app/)      |
-| Qiita    | [@kenz-dev](https://qiita.com/kenz-dev)               |
-| connpass | [connpass](https://connpass.com/user/kenzoukenzou/)   |
 | Zenn     | [kenzo](https://zenn.dev/kenzo)                       |
+| connpass | [connpass](https://connpass.com/user/kenzoukenzou/)   |
 | 本棚     | [ブクログ](https://booklog.jp/users/4165b902f43abd44) |
 
 ## 学歴
@@ -49,10 +48,10 @@ pdf_options:
 
 ## 職務経歴概要
 
-| 在籍期間          |                                                      |
-| ----------------- | ---------------------------------------------------- |
-| 2018 年 - 2019 年 | 株式会社ワークスアプリケーションズ IT コンサル正社員 |
-| 2019 年 - 現在    | EXest 株式会社 ソフトウェアエンジニア正社員          |
+| 在籍期間          |                                                  |
+| ----------------- | ------------------------------------------------ |
+| 2018 年 - 2019 年 | 株式会社ワークスアプリケーションズ BizDev 正社員 |
+| 2019 年 - 現在    | EXest 株式会社 Webエンジニア 正社員              |
 
 ## 職務経歴詳細
 
@@ -69,10 +68,11 @@ pdf_options:
 - 観光動画プラットフォーム「[DOGADOZO](http://dogadozo.com/)」の新規開発
 - 訪日外国人マッチングプラットフォーム「[WOW U](https://www.wowu.jp/)」の保守及び機能追加
 
-#### [DOGADOZO](http://dogadozo.com/) の新規開発
+
+#### 2019 年 10 月 - 現在: [DOGADOZO](http://dogadozo.com/) の新規開発
 
 `チーム規模`  
-自分含め 3 人で開発していました。
+自分含め 3 名の開発チーム。ビジネスサイド 1 名。
 
 `担当領域`  
 要件定義・設計・実装・テスト・リリース・保守を担当しました。
@@ -81,7 +81,7 @@ pdf_options:
 
 - コード管理：Git, GitHub
 - DB：PostgreSQL
-- 言語・フレームワーク：Ruby, Ruby on Rails
+- 言語・フレームワーク：Ruby(2.6.6), Ruby on Rails()
 - テスティングフレームワーク：RSpec
 - インフラ：Heroku
 - AWS：
@@ -102,10 +102,10 @@ Facebook の広告データ取り込みや Elastic Transcoder を使った動画
 #### WOW U の保守及び機能追加
 
 `チーム規模`  
-自分含め 3 人で開発していました。
+自分含め 3 名ので開発チーム。
 
 `担当領域`  
-実装・テスト・保守を担当しました。
+実装・テストを担当しました。
 
 `使用技術`
 
@@ -129,7 +129,7 @@ Facebook の広告データ取り込みや Elastic Transcoder を使った動画
 
 ## 直近でやりたいこと
 
-- いわゆるPMFしているような顧客の課題をしっかりと捉えているプロダクトの開発
+- いわゆる PMF しているような顧客の課題をしっかりと捉えているプロダクトの開発
 - ただコードを書くだけではなく課題ヒアリングから解決策を考えるまで関与したい
 - 今まで培ってきた技術の知識で貢献しつつ、新しい技術領域にもチャレンジしたい
 
