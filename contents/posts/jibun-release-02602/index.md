@@ -1,7 +1,7 @@
 ---
 title: "自分リリースノート v 0.26.2"
 date: "2021-07-31"
-category: "work"
+category: "dev"
 ---
 
 ## 👨‍💻 技術関連
