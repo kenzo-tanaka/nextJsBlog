@@ -18,19 +18,31 @@ exports[`PostsContainer 1`] = `
     <div
       className="col-span-6 md:col-span-5"
     >
-      <PostsList
-        posts={
-          Array [
-            Object {
-              "category": "work",
-              "content": "This is a test post",
-              "date": "2021-04-17",
-              "slug": "test-slug",
-              "title": "Test title",
-            },
-          ]
-        }
-      />
+      <section>
+        <ul>
+          <li
+            className="mb-6"
+          >
+            <Link
+              href="/posts/test-slug"
+            >
+              <a
+                className="text-lg font-semibold text-gray-800 visited:text-gray-600"
+              >
+                Test title
+              </a>
+            </Link>
+            <br />
+            <small
+              className="text-sm font-normal text-gray-400"
+            >
+              <Date
+                dateString="2021-04-17"
+              />
+            </small>
+          </li>
+        </ul>
+      </section>
     </div>
   </div>
 </React.Fragment>

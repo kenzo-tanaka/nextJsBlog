@@ -6,3 +6,9 @@ export type PostData = {
   category: string;
   thumbnail?: string;
 };
+
+export type ExternalPostData = {
+  title: string;
+  url: string;
+  created_at: string;
+};

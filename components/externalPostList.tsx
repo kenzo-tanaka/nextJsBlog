@@ -2,15 +2,14 @@ import React from "react";
 import Profile from "./profile";
 import MobileCategoryMenu from "./mobileCategoryMenu";
 import CategoryMenu from "./categoryMenu";
-import Link from "next/link";
 import Date from "./date";
-import { PostData } from "@types";
+import { ExternalPostData } from "@types";
 
 type Props = {
-  posts: PostData[];
+  posts: ExternalPostData[];
 };
 
-const PostsContainer: React.FC<Props> = ({ posts }) => {
+const ExternalPostList: React.FC<Props> = ({ posts }) => {
   return (
     <>
       <Profile />
@@ -23,16 +22,14 @@ const PostsContainer: React.FC<Props> = ({ posts }) => {
         <div className="col-span-6 md:col-span-5">
           <section>
             <ul>
-              {posts.map(({ slug, date, title }) => (
-                <li className="mb-6" key={slug}>
-                  <Link href={`/posts/${slug}`}>
-                    <a className="text-lg font-semibold text-gray-800 visited:text-gray-600">
-                      {title}
-                    </a>
-                  </Link>
+              {posts.map(({ url, created_at, title }) => (
+                <li className="mb-6">
+                  <a href={url} target='_blank' className="text-lg font-semibold text-gray-800 visited:text-gray-600">
+                    {title}
+                  </a>
                   <br />
                   <small className="text-sm font-normal text-gray-400">
-                    <Date dateString={date} />
+                    <Date dateString={created_at} />
                   </small>
                 </li>
               ))}
@@ -44,4 +41,4 @@ const PostsContainer: React.FC<Props> = ({ posts }) => {
   );
 };
 
-export default PostsContainer;
+export default ExternalPostList;

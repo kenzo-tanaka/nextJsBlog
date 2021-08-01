@@ -10,25 +10,25 @@ exports[`MobileCategoryMenu 1`] = `
     <a
       className="m-auto font-medium text-gray-800 w-full pb-1 "
     >
-      All
+      Blog
     </a>
   </Link>
   <Link
-    href="/categories/dev"
+    href="/zenn"
   >
     <a
       className="m-auto font-medium text-gray-800 w-full pb-1 "
     >
-      dev
+      Zenn
     </a>
   </Link>
   <Link
-    href="/categories/work"
+    href="/qiita"
   >
     <a
       className="m-auto font-medium text-gray-800 w-full pb-1 "
     >
-      work
+      Qiita
     </a>
   </Link>
 </div>
