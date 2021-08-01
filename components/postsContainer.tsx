@@ -2,7 +2,8 @@ import React from "react";
 import Profile from "./profile";
 import MobileCategoryMenu from "./mobileCategoryMenu";
 import CategoryMenu from "./categoryMenu";
-import PostsList from "./postsList";
+import Link from "next/link";
+import Date from "./date";
 import { PostData } from "@types";
 
 type Props = {
@@ -20,7 +21,23 @@ const PostsContainer: React.FC<Props> = ({ posts }) => {
           <CategoryMenu />
         </div>
         <div className="col-span-6 md:col-span-5">
-          <PostsList posts={posts} />
+          <section>
+            <ul>
+              {posts.map(({ slug, date, title }) => (
+                <li className="mb-6" key={slug}>
+                  <Link href={`/posts/${slug}`}>
+                    <a className="text-lg font-semibold text-gray-800 visited:text-gray-600">
+                      {title}
+                    </a>
+                  </Link>
+                  <br />
+                  <small className="text-sm font-normal text-gray-400">
+                    <Date dateString={date} />
+                  </small>
+                </li>
+              ))}
+            </ul>
+          </section>
         </div>
       </div>
     </>
