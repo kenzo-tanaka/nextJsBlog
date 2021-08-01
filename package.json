@@ -19,6 +19,7 @@
     "autoprefixer": "^9.8.6",
     "date-fns": "^2.16.1",
     "dotenv": "^9.0.2",
+    "fs-extra": "^10.0.0",
     "gray-matter": "^4.0.2",
     "imagemin-mozjpeg": "^9.0.0",
     "imagemin-optipng": "^8.0.0",
@@ -45,6 +46,7 @@
   },
   "devDependencies": {
     "@types/enzyme-adapter-react-16": "^1.0.6",
+    "@types/fs-extra": "^9.0.12",
     "@types/gtag.js": "0.0.4",
     "@types/jest": "^26.0.22",
     "@types/node": "^14.14.21",
