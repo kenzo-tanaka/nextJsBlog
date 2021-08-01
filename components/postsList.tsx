@@ -15,7 +15,7 @@ const PostsList: NextPage<Props> = ({ posts }) => {
         {posts.map(({ slug, date, title }) => (
           <li className="mb-6" key={slug}>
             <Link href={`/posts/${slug}`}>
-              <a className="text-lg font-semibold text-gray-800 visited:text-gray-600">
+              <a className="break-words text-lg font-semibold text-gray-800 visited:text-gray-600">
                 {title}
               </a>
             </Link>
