@@ -8,25 +8,25 @@ exports[`CategoryMenu 1`] = `
     <a
       className="p-2 font-medium text-gray-800 w-full inline-block hover:bg-gray-100 hover:no-underline "
     >
-      All
+      Blog
     </a>
   </Link>
   <Link
-    href="/categories/dev"
+    href="/zenn"
   >
     <a
       className="p-2 font-medium text-gray-800 w-full inline-block hover:bg-gray-100 hover:no-underline "
     >
-      dev
+      Zenn
     </a>
   </Link>
   <Link
-    href="/categories/work"
+    href="/qiita"
   >
     <a
       className="p-2 font-medium text-gray-800 w-full inline-block hover:bg-gray-100 hover:no-underline "
     >
-      work
+      Qiita
     </a>
   </Link>
 </div>
