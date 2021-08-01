@@ -5,5 +5,6 @@ request('https://zenn.dev/api/articles?username=kenzo&order=latest', function (e
 	const data = JSON.parse(body)
 	const articles = data['articles']
 
+	// @see: https://github.com/jprichardson/node-fs-extra/blob/master/docs/writeJson.md
 	fs.writeJsonSync("test.json", articles);
 })
