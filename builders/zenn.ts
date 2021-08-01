@@ -3,14 +3,13 @@ import fs from "fs-extra";
 
 request('https://zenn.dev/api/articles?username=kenzo&order=latest', function (error: any, response: any, body: any) {
 	const data = JSON.parse(body)
-
-	const articles: { title: string; created_at: string; slug: string; }[] = [];
+	const articles: { title: string; created_at: string; url: string; }[] = [];
 
 	data['articles'].forEach((element: any) => {
 		const article = {
 			'title': element['title'],
 			'created_at': element['created_at'],
-			'slug': element['slug'],
+			'url': 'https://zenn.dev/kenzo/articles/' + element['slug'],
 		}
 		articles.push(article)
 	});
