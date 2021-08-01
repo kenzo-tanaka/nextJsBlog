@@ -1,0 +1,102 @@
+[
+  {
+    "title": "RailsプロジェクトにCircleCIを導入したがGemキャッシュが効いていない時の対応方法",
+    "created_at": "2020-05-26T17:38:01+09:00",
+    "url": "https://qiita.com/kenz-dev/items/1e5331e13c34e13d33ac"
+  },
+  {
+    "title": "既存のRails6アプリをDocker化しつつCircleCIでシステムスペックも実行できる環境を作る",
+    "created_at": "2020-01-28T16:45:59+09:00",
+    "url": "https://qiita.com/kenz-dev/items/e3d970b59bf106cab19e"
+  },
+  {
+    "title": "ElasticTranscoderでサムネイルサイズを調整する方法",
+    "created_at": "2019-12-11T16:14:21+09:00",
+    "url": "https://qiita.com/kenz-dev/items/9193af3746bff398f0f1"
+  },
+  {
+    "title": "facebook-ruby-business-sdkで広告結果データを取得しchartkickでグラフ化",
+    "created_at": "2019-12-11T16:06:58+09:00",
+    "url": "https://qiita.com/kenz-dev/items/41b3c7866d2e2d849564"
+  },
+  {
+    "title": "ユーザー属性によってdeviseの新規登録フォームを変える方法",
+    "created_at": "2019-12-11T15:38:14+09:00",
+    "url": "https://qiita.com/kenz-dev/items/b95de28a45d8b42fda53"
+  },
+  {
+    "title": "Rails新規プロジェクトを実装する時のセットアップまとめ",
+    "created_at": "2019-11-09T16:50:36+09:00",
+    "url": "https://qiita.com/kenz-dev/items/6d56f12edab312166bd2"
+  },
+  {
+    "title": "【Rails】ancestryを使って動的なセレクトボックスを作る方法",
+    "created_at": "2019-11-03T19:07:25+09:00",
+    "url": "https://qiita.com/kenz-dev/items/07f6b5f7fdcf2761ac8f"
+  },
+  {
+    "title": "実務未経験からRuby on Railsを独学して自社開発企業のエンジニアに転職するまでの半年間",
+    "created_at": "2019-07-18T17:11:34+09:00",
+    "url": "https://qiita.com/kenz-dev/items/0c77af2e9695c3eb8466"
+  },
+  {
+    "title": "React + Redux + Firebaseで「プログラミング独学ロードマップ」を共有できるサービスを作った。",
+    "created_at": "2019-06-14T13:55:38+09:00",
+    "url": "https://qiita.com/kenz-dev/items/f43885f74616c8e42679"
+  },
+  {
+    "title": "GWを使ってRailsでポートフォリオを作ってみた。",
+    "created_at": "2019-05-05T14:59:57+09:00",
+    "url": "https://qiita.com/kenz-dev/items/e40e3f1b6134654d3ea1"
+  },
+  {
+    "title": "Docker + Bootstrap で「Autoprefixer doesn’t support Node v4.8.2. Update it.」というエラーに遭遇",
+    "created_at": "2019-04-27T21:17:35+09:00",
+    "url": "https://qiita.com/kenz-dev/items/4075c9d66114779e1067"
+  },
+  {
+    "title": "Dockerで「No images to push」というエラーが出た【結論：Dockerfile-railsという命名が原因】",
+    "created_at": "2019-04-27T12:17:33+09:00",
+    "url": "https://qiita.com/kenz-dev/items/90dd187a3fb1c8897656"
+  },
+  {
+    "title": "Docker環境構築で発生したエラーと対処法メモ",
+    "created_at": "2019-04-26T14:11:17+09:00",
+    "url": "https://qiita.com/kenz-dev/items/7dac5012226159590ef6"
+  },
+  {
+    "title": "既存のRailsアプリにDockerを導入する手順",
+    "created_at": "2019-04-25T21:02:35+09:00",
+    "url": "https://qiita.com/kenz-dev/items/b9e716204e0cd0cea447"
+  },
+  {
+    "title": "RailsDBをMySQLに変更してHerokuでデプロイまでする手順",
+    "created_at": "2019-04-23T16:16:32+09:00",
+    "url": "https://qiita.com/kenz-dev/items/8f95967601e587e14812"
+  },
+  {
+    "title": "【Rails】omniauth-twitterでTwitterログインを実装する流れ",
+    "created_at": "2019-04-21T14:40:15+09:00",
+    "url": "https://qiita.com/kenz-dev/items/7995cd8796c6181b6c95"
+  },
+  {
+    "title": "【Rails】Googleログイン実装〜Herokuデプロイまでの道のり",
+    "created_at": "2019-04-20T12:51:19+09:00",
+    "url": "https://qiita.com/kenz-dev/items/c10a5642afbee93a961a"
+  },
+  {
+    "title": "「String does not have #dig method」AWS S3とのねちっこい戦い【初心者の場合】",
+    "created_at": "2019-04-13T18:11:11+09:00",
+    "url": "https://qiita.com/kenz-dev/items/641ea1de1a4499817f10"
+  },
+  {
+    "title": "EDITOR=vim rails credentials:editを実行すると「ActiveSupport::MessageEncryptor::InvalidMessage」と言われる",
+    "created_at": "2019-04-12T16:00:51+09:00",
+    "url": "https://qiita.com/kenz-dev/items/67ac14d1c89f7c5641c1"
+  },
+  {
+    "title": "Ajaxを用いて画面遷移なく投稿を編集する機能を実装する",
+    "created_at": "2019-04-08T15:39:09+09:00",
+    "url": "https://qiita.com/kenz-dev/items/cff077c2f553aeba5eb2"
+  }
+]
