@@ -1,9 +1,10 @@
 const request = require('request');
 import fs from "fs-extra";
+import { ExternalPostData } from "@types";
 
 request('https://qiita.com/api/v2/users/kenz-dev/items', function (error: any, response: any, body: any) {
   const data = JSON.parse(body)
-  const articles: { title: string; created_at: string; url: string; }[] = [];
+  const articles: ExternalPostData[] = [];
   data.forEach((element: any) => {
     const article = {
       'title': element['title'],

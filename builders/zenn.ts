@@ -1,9 +1,10 @@
 const request = require('request');
 import fs from "fs-extra";
+import { ExternalPostData } from "@types";
 
 request('https://zenn.dev/api/articles?username=kenzo&order=latest', function (error: any, response: any, body: any) {
 	const data = JSON.parse(body)
-	const articles: { title: string; created_at: string; url: string; }[] = [];
+	const articles: ExternalPostData[] = [];
 
 	data['articles'].forEach((element: any) => {
 		const article = {
