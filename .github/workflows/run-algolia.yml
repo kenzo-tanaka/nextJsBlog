@@ -23,6 +23,7 @@ jobs:
         run: |
           git config --global user.name 'Kenzo Tanaka'
           git config --global user.email 'kenzo-tanaka@users.noreply.github.com'
-          git commit -am 'Run algolia'
+          git add .
+          git commit -m 'Run algolia'
           git push
 
