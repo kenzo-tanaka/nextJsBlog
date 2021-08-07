@@ -3,7 +3,7 @@ import { PostData } from "../types";
 import { getSortedPostsData } from "../lib/posts";
 import algoliasearch from "algoliasearch";
 
-require("dotenv").config("../.env.local");
+require("dotenv");
 
 const basicPath = "./data/";
 const allArtilcesPath = basicPath + "all-articles.json";
