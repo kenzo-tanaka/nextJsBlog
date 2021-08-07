@@ -45,7 +45,8 @@
     "remark-gfm": "^1.0.0",
     "sass": "^1.32.7",
     "styled-components": "^5.2.1",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.3"
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.3",
+    "ts-node": "^10.1.0"
   },
   "devDependencies": {
     "@types/enzyme-adapter-react-16": "^1.0.6",
