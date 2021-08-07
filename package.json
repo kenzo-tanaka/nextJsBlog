@@ -5,10 +5,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev -p 3001",
-    "build": "next build",
+    "build": "run-s build:zenn build:qiita build:next",
     "build:algolia": "ts-node --project tsconfig.builder.json ./builders/algolia.ts",
     "build:zenn": "ts-node --project tsconfig.builder.json ./builders/zenn.ts",
     "build:qiita": "ts-node --project tsconfig.builder.json ./builders/qiita.ts",
+    "build:next": "next build",
     "start": "next start",
     "test": "jest"
   },
