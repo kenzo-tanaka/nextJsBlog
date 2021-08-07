@@ -20,7 +20,11 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
-
+      - name: Create .env
+        run: |
+          touch .env
+          echo ALGOLIA_APP_ID=${{ secrets.ALGOLIA_APP_ID }} >> .env
+          echo ALGOLIA_ADMIN_KEY=${{ secrets.ALGOLIA_ADMIN_KEY }} >> .env
       - name: npm install
         run: npm install
       - name: Run algolia script
