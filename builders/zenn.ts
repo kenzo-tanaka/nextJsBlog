@@ -1,8 +1,9 @@
 const request = require('request');
 import fs from "fs-extra";
 import { ExternalPostData } from "@types";
+import { config } from "../site.config";
 
-request('https://zenn.dev/api/articles?username=kenzo&order=latest', function (error: any, response: any, body: any) {
+request(`https://zenn.dev/api/articles?username=${config.zennId}&order=latest`, function (error: any, response: any, body: any) {
 	const data = JSON.parse(body)
 	const articles: ExternalPostData[] = [];
 
