@@ -16,6 +16,12 @@ request(`https://zenn.dev/api/articles?username=${config.zennId}&order=latest`, 
 		articles.push(article)
 	});
 
-	// @see: https://github.com/jprichardson/node-fs-extra/blob/master/docs/writeJson.md
-	fs.writeJsonSync("./contents/zenn/articles.json", articles);
+
+	const pastPosts = fs.readJSONSync('./contents/zenn/articles.json');
+	if (JSON.stringify(pastPosts) === JSON.stringify(articles)) {
+		console.log('Zennの記事は更新がなかったのでファイルを更新しませんでした。')
+		return;
+	} else {
+		fs.writeJsonSync("./contents/zenn/articles.json", articles);
+	}
 })

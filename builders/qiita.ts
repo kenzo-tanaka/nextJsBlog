@@ -15,6 +15,11 @@ request(`https://qiita.com/api/v2/users/${config.qiitaId}/items`, function (erro
     articles.push(article)
   });
 
-  // @see: https://github.com/jprichardson/node-fs-extra/blob/master/docs/writeJson.md
-  fs.writeJsonSync("./contents/qiita/articles.json", articles);
+  const pastPosts = fs.readJSONSync('./contents/qiita/articles.json');
+  if (JSON.stringify(pastPosts) === JSON.stringify(articles)) {
+    console.log('Qiitaの記事は更新がなかったのでファイルを更新しませんでした。')
+    return;
+  } else {
+    fs.writeJsonSync("./contents/zenn/articles.json", articles);
+  }
 })
