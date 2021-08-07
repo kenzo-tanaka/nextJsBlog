@@ -1,5 +1,9 @@
 name: Run Algolia script
-on: push
+on:
+  push:
+    paths:
+      - 'contents/posts/**'
+
 jobs:
   build:
     name: algolia
