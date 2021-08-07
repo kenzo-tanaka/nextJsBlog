@@ -5,7 +5,7 @@ jobs:
     name: algolia
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
 
       - name: Setup cache
         uses: actions/cache@v1
@@ -19,3 +19,10 @@ jobs:
         run: npm install
       - name: Run algolia script
         run: npm run build:algolia
+      - name: Commin and push
+        run: |
+          git config --global user.name 'Kenzo Tanaka'
+          git config --global user.email 'kenzo-tanaka@users.noreply.github.com'
+          git commit -am 'Run algolia'
+          git push
+
