@@ -1,6 +1,8 @@
 name: Run Algolia script
 on:
   push:
+    branches:
+      - main
     paths:
       - 'contents/posts/**'
 
