@@ -27,7 +27,7 @@ exports[`PostsContainer 1`] = `
               href="/posts/test-slug"
             >
               <a
-                className="text-lg font-semibold text-gray-800 visited:text-gray-600"
+                className="break-words text-lg font-semibold text-gray-800 visited:text-gray-600"
               >
                 Test title
               </a>

@@ -1,8 +1,9 @@
 const request = require('request');
 import fs from "fs-extra";
 import { ExternalPostData } from "@types";
+import { config } from "../site.config";
 
-request('https://qiita.com/api/v2/users/kenz-dev/items', function (error: any, response: any, body: any) {
+request(`https://qiita.com/api/v2/users/${config.qiitaId}/items`, function (error: any, response: any, body: any) {
   const data = JSON.parse(body)
   const articles: ExternalPostData[] = [];
   data.forEach((element: any) => {
@@ -14,6 +15,11 @@ request('https://qiita.com/api/v2/users/kenz-dev/items', function (error: any, r
     articles.push(article)
   });
 
-  // @see: https://github.com/jprichardson/node-fs-extra/blob/master/docs/writeJson.md
-  fs.writeJsonSync("./contents/qiita/articles.json", articles);
+  const pastPosts = fs.readJSONSync('./contents/qiita/articles.json');
+  if (JSON.stringify(pastPosts) === JSON.stringify(articles)) {
+    console.log('Qiitaの記事は更新がなかったのでファイルを更新しませんでした。')
+    return;
+  } else {
+    fs.writeJsonSync("./contents/zenn/articles.json", articles);
+  }
 })
