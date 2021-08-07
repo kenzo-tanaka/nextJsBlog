@@ -4,18 +4,13 @@ exports[`profile 1`] = `
 <div
   className="flex flex-col	items-center"
 >
-  <picture>
-    <source
-      srcSet="/images/profile.jpg"
-    />
-    <Image
-      alt="Picture of the author"
-      className="rounded-full"
-      height={100}
-      src="/images/profile.jpg"
-      width={100}
-    />
-  </picture>
+  <img
+    alt="Picture of the author"
+    className="rounded-full"
+    height={100}
+    src="/images/profile.jpg"
+    width={100}
+  />
   <p
     className="text-gray-500 mt-4"
   >
