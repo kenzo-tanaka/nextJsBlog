@@ -23,7 +23,7 @@ const ExternalPostList: React.FC<Props> = ({ posts }) => {
           <section>
             <ul>
               {posts.map(({ url, created_at, title }) => (
-                <li className="mb-6">
+                <li className="mb-6" key={url}>
                   <a href={url} target='_blank' className="break-words text-lg font-semibold text-gray-800 visited:text-gray-600">
                     {title}
                   </a>
