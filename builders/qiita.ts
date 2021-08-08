@@ -6,7 +6,7 @@ import { config } from "../site.config";
 request(`https://qiita.com/api/v2/users/${config.qiitaId}/items`, function (_error: any, _response: any, body: string) {
   const data = JSON.parse(body)
   const articles: ExternalPostData[] = [];
-  data.forEach((element: any) => {
+  data.forEach((element: ExternalPostData) => {
     const article = {
       'title': element['title'],
       'created_at': element['created_at'],
