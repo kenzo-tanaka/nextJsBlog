@@ -3,7 +3,7 @@ import fs from "fs-extra";
 import { ExternalPostData } from "@types";
 import { config } from "../site.config";
 
-request(`https://qiita.com/api/v2/users/${config.qiitaId}/items`, function (error: any, response: any, body: any) {
+request(`https://qiita.com/api/v2/users/${config.qiitaId}/items`, function (_error: any, _response: any, body: string) {
   const data = JSON.parse(body)
   const articles: ExternalPostData[] = [];
   data.forEach((element: any) => {
