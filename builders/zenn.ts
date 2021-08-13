@@ -7,7 +7,7 @@ request(`https://zenn.dev/api/articles?username=${config.zennId}&order=latest`, 
 	const data = JSON.parse(body)
 	const articles: ExternalPostData[] = [];
 
-	data['articles'].forEach((element: ExternalPostData) => {
+	data['articles'].forEach((element: any) => {
 		const article = {
 			'title': element['title'],
 			'created_at': element['created_at'],
