@@ -1,8 +1,8 @@
 #!/bin/bash
 
-echo "VERCEL_GIT_COMMIT_REF: $VERCEL_GIT_COMMIT_REF"
+echo "VERCEL_GIT_COMMIT_MESSAGE: $VERCEL_GIT_COMMIT_MESSAGE"
 
-if [[ "$VERCEL_GIT_COMMIT_REF" == "Run algolia" ]] ; then
+if [[ "$VERCEL_GIT_COMMIT_MESSAGE" == "Run algolia" ]] ; then
   # Don't build
   echo "🛑 - Build cancelled"
   exit 0;
