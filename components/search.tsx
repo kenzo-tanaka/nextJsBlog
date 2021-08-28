@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import algoliasearch from "algoliasearch/lite";
 import Link from "next/link";
 import {
-  SearchBox,
   Hits,
   Highlight,
   InstantSearch,
+  connectSearchBox
 } from "react-instantsearch-dom";
 
 const algoliaSettings = {
@@ -34,32 +34,61 @@ const SearchResult = () => {
   return <Hits hitComponent={Hit} />;
 };
 
+const SearchBox = ({ currentRefinement, refine }: any) => (
+  <div className="bg-white shadow p-2 flex rounded-md">
+    <span className="w-auto flex justify-end items-center text-gray-500 p-2">
+      <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+      </svg>
+    </span>
+    <input
+      className='w-full rounded p-2 outline-none'
+      type="text"
+      placeholder='記事を検索'
+      value={currentRefinement}
+      onChange={event => refine(event.currentTarget.value)}
+    />
+  </div>
+);
+
+const CustomSearchBox = connectSearchBox(SearchBox);
+
 const Search: React.FC = () => {
   const [suggestDisplay, toggleDisplay] = useState("hidden");
 
+  // @see https://gist.github.com/pstoica/4323d3e6e37e8a23dd59
+  const handleBlur = (e: { currentTarget: any; }) => {
+    const currentTarget = e.currentTarget;
+    setTimeout(() => {
+      if (!currentTarget.contains(document.activeElement)) {
+        toggleDisplay('hidden')
+      }
+    }, 0)
+  }
+
+  const handleEnter = (e: { keyCode: number; }) => {
+    if (e.keyCode === 13) {
+      toggleDisplay('hidden')
+    }
+  }
+
   return (
-    <>
+    <div
+      onFocus={() => toggleDisplay("block")}
+      onBlur={handleBlur}
+    >
       <InstantSearch
         searchClient={algoliaSettings.searchClient}
         indexName={algoliaSettings.indexName}
       >
-        <div
-          onFocus={() => toggleDisplay("block")}
-          onBlur={() =>
-            setTimeout(() => {
-              toggleDisplay("hidden");
-            }, 300)
-          }
-        >
-          <SearchBox translations={{ placeholder: "記事を検索" }} />
-        </div>
+        <CustomSearchBox />
         <div className={`relative ${suggestDisplay}`}>
-          <div className="bg-white search-result p-3 shadow-lg absolute w-full z-10 h-96 overflow-y-scroll">
+          <div onKeyUp={handleEnter} className="bg-white search-result p-3 shadow-lg absolute w-full z-10 h-96 overflow-y-scroll border-t border-gray-300">
             <SearchResult />
           </div>
         </div>
       </InstantSearch>
-    </>
+    </div>
   );
 };
 
