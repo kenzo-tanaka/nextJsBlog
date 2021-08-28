@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import algoliasearch from "algoliasearch/lite";
 import Link from "next/link";
 import {
-  SearchBox,
   Hits,
   Highlight,
   InstantSearch,
+  connectSearchBox
 } from "react-instantsearch-dom";
 
 const algoliaSettings = {
@@ -34,6 +34,16 @@ const SearchResult = () => {
   return <Hits hitComponent={Hit} />;
 };
 
+const SearchBox = ({ currentRefinement, refine }: any) => (
+  <input
+    type="text"
+    value={currentRefinement}
+    onChange={event => refine(event.currentTarget.value)}
+  />
+);
+
+const CustomSearchBox = connectSearchBox(SearchBox);
+
 const Search: React.FC = () => {
   const [suggestDisplay, toggleDisplay] = useState("hidden");
 
@@ -51,7 +61,7 @@ const Search: React.FC = () => {
             }, 300)
           }
         >
-          <SearchBox translations={{ placeholder: "記事を検索" }} />
+          <CustomSearchBox />
         </div>
         <div className={`relative ${suggestDisplay}`}>
           <div className="bg-white search-result p-3 shadow-lg absolute w-full z-10 h-96 overflow-y-scroll">
