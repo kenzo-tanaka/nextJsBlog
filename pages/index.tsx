@@ -20,11 +20,12 @@ type Props = {
 };
 
 const Home: NextPage<Props> = ({ allPostsData }) => {
+  const posts = allPostsData.slice(0, config.postsNumPerPage);
   return (
     <Layout home>
       <PageSEO title={config.siteMeta.title} />
       <div className="p-5">
-        <PostsContainer posts={allPostsData} />
+        <PostsContainer posts={posts} />
       </div>
     </Layout>
   );
