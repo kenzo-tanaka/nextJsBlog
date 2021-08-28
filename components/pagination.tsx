@@ -10,10 +10,10 @@ type Props = {
 const isCurrent = (num: number) => {
   const router = useRouter();
 
-  if (router.asPath === '/' || router.asPath === null) {
-    return false
-  } else if (parseInt(router.asPath.match(/\d+/)[0]) === num) {
+  if (router.asPath.includes('posts/page') && parseInt(router.asPath.match(/\d+/)[0]) === num) {
     return true
+  } else {
+    return false
   }
 }
 
