@@ -66,6 +66,12 @@ const Search: React.FC = () => {
     }, 0)
   }
 
+  const handleEnter = (e: { keyCode: number; }) => {
+    if (e.keyCode === 13) {
+      toggleDisplay('hidden')
+    }
+  }
+
   return (
     <div
       onFocus={() => toggleDisplay("block")}
@@ -77,7 +83,7 @@ const Search: React.FC = () => {
       >
         <CustomSearchBox />
         <div className={`relative ${suggestDisplay}`}>
-          <div className="bg-white search-result p-3 shadow-lg absolute w-full z-10 h-96 overflow-y-scroll border-t border-gray-300">
+          <div onKeyUp={handleEnter} className="bg-white search-result p-3 shadow-lg absolute w-full z-10 h-96 overflow-y-scroll border-t border-gray-300">
             <SearchResult />
           </div>
         </div>
