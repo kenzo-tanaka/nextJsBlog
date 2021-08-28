@@ -57,28 +57,21 @@ const Search: React.FC = () => {
   const [suggestDisplay, toggleDisplay] = useState("hidden");
 
   return (
-    <>
+    <div
+      onFocus={() => toggleDisplay("block")}
+    >
       <InstantSearch
         searchClient={algoliaSettings.searchClient}
         indexName={algoliaSettings.indexName}
       >
-        <div
-          onFocus={() => toggleDisplay("block")}
-          onBlur={() =>
-            setTimeout(() => {
-              toggleDisplay("hidden");
-            }, 300)
-          }
-        >
-          <CustomSearchBox />
-        </div>
+        <CustomSearchBox />
         <div className={`relative ${suggestDisplay}`}>
-          <div className="bg-white search-result p-3 shadow-lg absolute w-full z-10 h-96 overflow-y-scroll">
+          <div className="bg-white search-result p-3 shadow-lg absolute w-full z-10 h-96 overflow-y-scroll border-t border-gray-300">
             <SearchResult />
           </div>
         </div>
       </InstantSearch>
-    </>
+    </div>
   );
 };
 
