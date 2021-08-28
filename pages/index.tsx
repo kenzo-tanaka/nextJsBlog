@@ -27,8 +27,11 @@ const Home: NextPage<Props> = ({ allPostsData }) => {
       <PageSEO title={config.siteMeta.title} />
       <div className="p-5">
         <PostsContainer posts={posts} />
-        <div className="text-center">
-          <Pagination totalCount={allPostsData.length} current={0} />
+        <div className="grid grid-cols-6 gap-4 mt-5">
+          <div className="hidden md:block"></div>
+          <div className="col-span-6 md:col-span-5">
+            <Pagination totalCount={allPostsData.length} current={1} />
+          </div>
         </div>
       </div>
     </Layout>
