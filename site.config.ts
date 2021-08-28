@@ -21,4 +21,5 @@ export const config = {
     { slug: "/zenn", name: "Zenn" },
     { slug: "/qiita", name: "Qiita" },
   ],
+  postsNumPerPage: 10
 };

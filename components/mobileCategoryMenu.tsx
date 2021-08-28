@@ -11,11 +11,10 @@ const MobileCategoryMenu: React.FC = () => {
       {categoryList.map(({ slug, name }) => (
         <Link href={slug} key={slug}>
           <a
-            className={`m-auto font-medium text-gray-800 w-full pb-1 ${
-              router.asPath === slug
+            className={`m-auto font-medium text-gray-800 w-full pb-1 ${router.asPath === slug || (slug === '/' && router.asPath.match(/posts\/page/))
                 ? "border-b-4 border-gray-500 bg-gray-100"
                 : ""
-            }`}
+              }`}
           >
             {name}
           </a>
