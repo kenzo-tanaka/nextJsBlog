@@ -6,7 +6,7 @@ type Props = {
 }
 
 const Pagination: React.FC<Props> = ({ totalCount }) => {
-  const PER_PAGE = 5;
+  const PER_PAGE = 10;
 
   const range = (start: number, end: number) =>
     [...Array(end - start + 1)].map((_, i) => start + i)
