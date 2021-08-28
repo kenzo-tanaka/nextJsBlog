@@ -56,9 +56,20 @@ const CustomSearchBox = connectSearchBox(SearchBox);
 const Search: React.FC = () => {
   const [suggestDisplay, toggleDisplay] = useState("hidden");
 
+  // @see https://gist.github.com/pstoica/4323d3e6e37e8a23dd59
+  const handleBlur = (e: { currentTarget: any; }) => {
+    const currentTarget = e.currentTarget;
+    setTimeout(() => {
+      if (!currentTarget.contains(document.activeElement)) {
+        toggleDisplay('hidden')
+      }
+    }, 0)
+  }
+
   return (
     <div
       onFocus={() => toggleDisplay("block")}
+      onBlur={handleBlur}
     >
       <InstantSearch
         searchClient={algoliaSettings.searchClient}
