@@ -1,6 +1,7 @@
 import { NextPage } from "next";
 import Layout from "../components/layout";
 import PostsContainer from "../components/postsContainer";
+import Pagination from "../components/pagination";
 import { PageSEO } from "../components/pageSEO";
 import { config } from "../site.config";
 import { getSortedPostsData } from "../lib/posts";
@@ -27,6 +28,7 @@ const Home: NextPage<Props> = ({ allPostsData }) => {
       <div className="p-5">
         <PostsContainer posts={posts} />
       </div>
+      <Pagination totalCount={allPostsData.length} />
     </Layout>
   );
 };
