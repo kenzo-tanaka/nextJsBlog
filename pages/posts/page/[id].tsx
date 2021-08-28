@@ -40,8 +40,10 @@ const PaginationPage: NextPage<Props> = ({ PostsData }) => {
       <PageSEO title={config.siteMeta.title} />
       <div className="p-5">
         <PostsContainer posts={PostsData} />
+        <div className="text-center">
+          <Pagenation totalCount={60} />
+        </div>
       </div>
-      <Pagenation totalCount={60} />
     </Layout>
   )
 }

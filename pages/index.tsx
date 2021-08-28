@@ -27,7 +27,7 @@ const Home: NextPage<Props> = ({ allPostsData }) => {
       <PageSEO title={config.siteMeta.title} />
       <div className="p-5">
         <PostsContainer posts={posts} />
-        <div className="mx-auto text-center">
+        <div className="text-center">
           <Pagination totalCount={allPostsData.length} />
         </div>
       </div>
