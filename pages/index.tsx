@@ -28,7 +28,7 @@ const Home: NextPage<Props> = ({ allPostsData }) => {
       <div className="p-5">
         <PostsContainer posts={posts} />
         <div className="text-center">
-          <Pagination totalCount={allPostsData.length} />
+          <Pagination totalCount={allPostsData.length} current={0} />
         </div>
       </div>
     </Layout>

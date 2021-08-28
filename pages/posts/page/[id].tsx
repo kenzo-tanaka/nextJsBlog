@@ -5,15 +5,17 @@ import { config } from '../../../site.config'
 import { PageSEO } from "../../../components/pageSEO";
 import Layout from "../../../components/layout";
 import PostsContainer from "../../../components/postsContainer";
-import Pagenation from '../../../components/pagination'
+import Pagination from '../../../components/pagination'
 
-export async function getStaticProps({ params }: { params: { id: number } }) {
-  const start: number = (params.id - 1) * config.postsNumPerPage;
-  const end: number = params.id * config.postsNumPerPage;
+export async function getStaticProps({ params }: { params: { id: string } }) {
+  const current = parseInt(params.id)
+  const start: number = (parseInt(params.id) - 1) * config.postsNumPerPage;
+  const end: number = parseInt(params.id) * config.postsNumPerPage;
   const totalCount = getSortedPostsData().length;
   const PostsData = getSortedPostsData().slice(start, end);
   return {
     props: {
+      current,
       totalCount,
       PostsData,
     },
@@ -34,18 +36,19 @@ export const getStaticPaths = async () => {
 };
 
 type Props = {
+  current: number
   totalCount: number
   PostsData: PostData[]
 }
 
-const PaginationPage: NextPage<Props> = ({ totalCount, PostsData }) => {
+const PaginationPage: NextPage<Props> = ({ current, totalCount, PostsData }) => {
   return (
     <Layout home>
       <PageSEO title={config.siteMeta.title} />
       <div className="p-5">
         <PostsContainer posts={PostsData} />
         <div className="text-center">
-          <Pagenation totalCount={totalCount} />
+          <Pagination totalCount={totalCount} current={current} />
         </div>
       </div>
     </Layout>
