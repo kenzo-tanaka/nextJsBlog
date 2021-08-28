@@ -19,7 +19,7 @@ const algoliaSettings = {
 const Hit = ({ hit }: any) => {
   return (
     <Link href={`/posts/${hit.slug}`}>
-      <a>
+      <a tabIndex={0}>
         <div className="p-7">
           <div className="hitName">
             <Highlight attribute="title" tagName="span" hit={hit} />
