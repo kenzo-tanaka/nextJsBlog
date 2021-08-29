@@ -1,5 +1,8 @@
 name: run jest
-on: push
+on: 
+  push:
+    paths:
+      - 'components/*'
 
 jobs:
   build:
