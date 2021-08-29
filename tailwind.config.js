@@ -13,10 +13,7 @@ module.exports = {
           css: {
             color: theme('colors.gray.800'),
             a: {
-              color: theme('colors.primary.500'),
-              '&:hover': {
-                color: theme('colors.primary.600'),
-              },
+              color: theme('colors.indigo.500'),
             },
             'ul li': {
               paddingLeft: '1.3em'
