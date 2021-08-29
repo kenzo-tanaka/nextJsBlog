@@ -22,8 +22,6 @@
     "dotenv": "^9.0.2",
     "fs-extra": "^10.0.0",
     "gray-matter": "^4.0.2",
-    "imagemin-mozjpeg": "^9.0.0",
-    "imagemin-optipng": "^8.0.0",
     "imagemin-svgo": "^8.0.0",
     "instantsearch.css": "^7.4.5",
     "next": "^10.0.0",
