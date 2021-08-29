@@ -15,6 +15,11 @@ module.exports = withPlugins([[optimizedImages, {}]], {
     });
     return config;
   },
+  // TypeError: unsupported file type: undefined (file: undefined)の対応
+  // ref: https://stackoverflow.com/a/68012194
+  images: {
+    disableStaticImages: true
+  },
   env: {
     ALGOLIA_APP_ID: process.env.ALGOLIA_APP_ID,
     ALGOLIA_API_KEY: process.env.ALGOLIA_API_KEY,
