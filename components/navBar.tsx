@@ -1,7 +1,5 @@
 import React from "react";
 import Link from "next/link";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 const NavBar: React.FC = () => {
   return (
@@ -14,13 +12,6 @@ const NavBar: React.FC = () => {
                 <Link href="/">{"{{ kenzo }}"}</Link>
               </h1>
             </div>
-          </div>
-          <div className="absolute inset-y-0 right-0 flex items-center pt-2 pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-            {/* <Link href="/search">
-              <a>
-                <FontAwesomeIcon icon={faSearch} size="lg" color="gray" />
-              </a>
-            </Link> */}
           </div>
         </div>
       </div>
