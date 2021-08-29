@@ -18,6 +18,9 @@ module.exports = {
                 color: theme('colors.primary.600'),
               },
             },
+            'ul li': {
+              paddingLeft: '1.3em'
+            },
             code: {
               color: theme('colors.gray.500'),
               backgroundColor: theme('colors.gray.100'),
