@@ -15,8 +15,8 @@ const Pagination: React.FC<Props> = ({ totalCount, current }) => {
 
   return (
     <nav className='relative'>
-      {range(1, Math.ceil(totalCount / PER_PAGE)).map((number, index) => (
-        <div className="mx-1 inline-block" key={index}>
+      {range(1, Math.ceil(totalCount / PER_PAGE)).map((number) => (
+        <div className="mx-1 inline-block" key={number}>
           <Link href={`/posts/page/${number}`}>
             <a className={`${current === number ? 'bg-gray-100 border-gray-500' : ''} rounded-sm z-10 relative inline-flex items-center px-4 py-2 px-3 border border-gray-300 text-sm font-medium`}>
               {number}
