@@ -11,7 +11,7 @@ exports[`Navbar 1`] = `
       href="/posts/page/1"
     >
       <a
-        className="bg-gray-100 border-gray-500 rounded-sm z-10 relative inline-flex items-center px-4 py-2 px-3 border border-gray-300 text-sm font-medium"
+        className="bg-gray-100 border-gray-500 rounded-md z-10 relative inline-flex items-center px-4 py-2 px-3 border border-gray-300 text-sm font-medium"
       >
         1
       </a>
@@ -24,7 +24,7 @@ exports[`Navbar 1`] = `
       href="/posts/page/2"
     >
       <a
-        className=" rounded-sm z-10 relative inline-flex items-center px-4 py-2 px-3 border border-gray-300 text-sm font-medium"
+        className=" rounded-md z-10 relative inline-flex items-center px-4 py-2 px-3 border border-gray-300 text-sm font-medium"
       >
         2
       </a>
@@ -37,7 +37,7 @@ exports[`Navbar 1`] = `
       href="/posts/page/3"
     >
       <a
-        className=" rounded-sm z-10 relative inline-flex items-center px-4 py-2 px-3 border border-gray-300 text-sm font-medium"
+        className=" rounded-md z-10 relative inline-flex items-center px-4 py-2 px-3 border border-gray-300 text-sm font-medium"
       >
         3
       </a>
@@ -50,7 +50,7 @@ exports[`Navbar 1`] = `
       href="/posts/page/4"
     >
       <a
-        className=" rounded-sm z-10 relative inline-flex items-center px-4 py-2 px-3 border border-gray-300 text-sm font-medium"
+        className=" rounded-md z-10 relative inline-flex items-center px-4 py-2 px-3 border border-gray-300 text-sm font-medium"
       >
         4
       </a>
@@ -63,7 +63,7 @@ exports[`Navbar 1`] = `
       href="/posts/page/5"
     >
       <a
-        className=" rounded-sm z-10 relative inline-flex items-center px-4 py-2 px-3 border border-gray-300 text-sm font-medium"
+        className=" rounded-md z-10 relative inline-flex items-center px-4 py-2 px-3 border border-gray-300 text-sm font-medium"
       >
         5
       </a>
@@ -76,7 +76,7 @@ exports[`Navbar 1`] = `
       href="/posts/page/6"
     >
       <a
-        className=" rounded-sm z-10 relative inline-flex items-center px-4 py-2 px-3 border border-gray-300 text-sm font-medium"
+        className=" rounded-md z-10 relative inline-flex items-center px-4 py-2 px-3 border border-gray-300 text-sm font-medium"
       >
         6
       </a>

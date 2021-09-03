@@ -9,7 +9,7 @@ exports[`Layout 1`] = `
     className="mt-3"
   >
     <div
-      className="shadow-md bg-white"
+      className="shadow-md rounded-md bg-white"
     >
       
     </div>

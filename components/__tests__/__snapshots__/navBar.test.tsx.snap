@@ -17,7 +17,7 @@ exports[`Navbar 1`] = `
           className="flex-shrink-0 flex items-center"
         >
           <h1
-            className="font-bold font-sans text-xl text-gray-800"
+            className="font-bold font-sans text-xl text-black"
           >
             <Link
               href="/"
