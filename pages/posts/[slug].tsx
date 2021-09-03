@@ -118,9 +118,6 @@ const Post: NextPage<Props> = ({ postData, relatedPosts }) => {
             <Date dateString={date} />
           </small>
           <h1 className="text-3xl font-bold my-3">{title}</h1>
-          <Link href={`/categories/${category}`}>
-            <a className="text-gray-500 underline">#{category}</a>
-          </Link>
           <div className="markdown-body">
             <ReactMarkdown
               renderers={{ code: CodeBlock, image: Img }}
