@@ -113,7 +113,7 @@ const Post: NextPage<Props> = ({ postData, relatedPosts }) => {
         }
       />
       <div className="p-4 sm:p-7">
-        <article className='prose max-w-none'>
+        <article className='prose max-w-none break-words'>
           <small className="text-sm font-normal text-gray-400 block mb-5">
             <Date dateString={date} />
           </small>
