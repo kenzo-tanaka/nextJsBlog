@@ -44,7 +44,7 @@ const About: NextPage<Props> = ({ pageData }) => {
     <Layout>
       <PageSEO title={title} slug={`${slug}`} />
       <div className="p-4 sm:p-7">
-        <article className='prose max-w-none'>
+        <article className='prose max-w-none break-words'>
           <div className="markdown-body">
             <ReactMarkdown
               renderers={{ image: Img }}
