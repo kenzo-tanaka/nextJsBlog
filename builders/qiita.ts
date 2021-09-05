@@ -7,21 +7,21 @@ const articleJsonPath = './contents/qiita/articles.json'
 
 request(`https://qiita.com/api/v2/users/${config.qiitaId}/items`, function (error: Object, response: Object, body: string) {
   const data = JSON.parse(body)
-  const articles: ExternalPostData[] = [];
+  const currentPosts: ExternalPostData[] = [];
   data.forEach((element: any) => {
     const article = {
       'title': element['title'],
       'created_at': element['created_at'],
       'url': element['url'],
     }
-    articles.push(article)
+    currentPosts.push(article)
   });
 
   const pastPosts = fs.readJSONSync(articleJsonPath);
-  if (JSON.stringify(pastPosts) === JSON.stringify(articles)) {
+  if (JSON.stringify(pastPosts) === JSON.stringify(currentPosts)) {
     console.log('Qiitaの記事は更新がなかったのでファイルを更新しませんでした。')
     return;
   } else {
-    fs.writeJsonSync(articleJsonPath, articles);
+    fs.writeJsonSync(articleJsonPath, currentPosts);
   }
 })
