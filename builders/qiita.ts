@@ -11,7 +11,7 @@ const newPostPresent = (past: string, current: string) => {
 
 request(`https://qiita.com/api/v2/users/${config.qiitaId}/items`, function (error: Object, response: Object, body: string) {
   const currentPosts: ExternalPostData[] = [];
-  JSON.parse(body).forEach((element: any) => {
+  JSON.parse(body).forEach((element: ExternalPostData) => {
     currentPosts.push(
       {
         'title': element['title'],
