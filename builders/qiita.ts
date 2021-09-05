@@ -23,7 +23,8 @@ request(`https://qiita.com/api/v2/users/${config.qiitaId}/items`, function (erro
 
   if (newPostPresent(JSON.stringify(pastPosts), JSON.stringify(currentPosts))) {
     fs.writeJsonSync(articleJsonPath, currentPosts);
+    console.log('Qiitaの新しい記事を反映しました。');
   } else {
-    console.log('Qiitaの記事は更新がなかったのでファイルを更新しませんでした。')
+    console.log('Qiitaの記事は更新がなかったのでファイルを更新しませんでした。');
   }
 })
