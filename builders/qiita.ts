@@ -10,7 +10,7 @@ const newPostPresent = (past: string, current: string): boolean => {
 }
 
 request(`https://qiita.com/api/v2/users/${config.qiitaId}/items`, function (error: Object, response: Object, body: string) {
-  const currentPosts: ExternalPostData[] = JSON.parse(body).map((element: ExternalPostData) => {
+  const currentPosts: ExternalPostData[] = JSON.parse(body).map((element: { title: string, created_at: string, url: string }) => {
     return (
       {
         'title': element['title'],
