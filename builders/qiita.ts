@@ -6,7 +6,6 @@ import { config } from "../site.config";
 
 const articleJsonPath: string = './contents/qiita/articles.json'
 const pastPosts: ExternalPostData[] = fs.readJSONSync(articleJsonPath);
-
 const getPosts = async (url: string) => {
   const response = await axios.get(url);
   return response.data;

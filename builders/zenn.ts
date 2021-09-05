@@ -6,7 +6,6 @@ import { config } from "../site.config";
 
 const articleJsonPath: string = './contents/zenn/articles.json'
 const pastPosts: ExternalPostData[] = fs.readJSONSync(articleJsonPath);
-
 const getPosts = async (url: string) => {
 	const response = await axios.get(url);
 	return response.data;
@@ -15,11 +14,11 @@ const getPosts = async (url: string) => {
 const main = async () => {
 	try {
 		const posts = await getPosts(`https://zenn.dev/api/articles?username=${config.zennId}&order=latest`);
-		const currentPosts: ExternalPostData[] = posts['articles'].map((element: { title: string, created_at: string, url: string }) => {
+		const currentPosts: ExternalPostData[] = posts['articles'].map((element: { title: string, created_at: string, slug: string }) => {
 			return {
 				'title': element['title'],
 				'created_at': element['created_at'],
-				'url': element['url'],
+				'url': 'https://zenn.dev/kenzo/articles/' + element['slug'],
 			}
 		});
 		if (_.isEqual(pastPosts, currentPosts)) {
