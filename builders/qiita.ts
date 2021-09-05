@@ -6,15 +6,15 @@ import { config } from "../site.config";
 const articleJsonPath = './contents/qiita/articles.json'
 
 request(`https://qiita.com/api/v2/users/${config.qiitaId}/items`, function (error: Object, response: Object, body: string) {
-  const data = JSON.parse(body)
   const currentPosts: ExternalPostData[] = [];
-  data.forEach((element: any) => {
-    const article = {
-      'title': element['title'],
-      'created_at': element['created_at'],
-      'url': element['url'],
-    }
-    currentPosts.push(article)
+  JSON.parse(body).forEach((element: any) => {
+    currentPosts.push(
+      {
+        'title': element['title'],
+        'created_at': element['created_at'],
+        'url': element['url'],
+      }
+    )
   });
 
   const pastPosts = fs.readJSONSync(articleJsonPath);
