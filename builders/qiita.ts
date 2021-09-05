@@ -5,7 +5,7 @@ import { config } from "../site.config";
 
 const articleJsonPath: string = './contents/qiita/articles.json'
 const pastPosts: ExternalPostData[] = fs.readJSONSync(articleJsonPath);
-const newPostPresent = (past: string, current: string) => {
+const newPostPresent = (past: string, current: string): boolean => {
   return past !== current;
 }
 
