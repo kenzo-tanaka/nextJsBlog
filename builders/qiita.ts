@@ -1,4 +1,3 @@
-const request = require('request');
 const axios = require('axios').default;
 const _ = require('lodash');
 import fs from "fs-extra";
@@ -22,7 +21,7 @@ const main = async () => {
         'created_at': element['created_at'],
         'url': element['url'],
       }
-    })
+    });
 
     if (_.isEqual(pastPosts, currentPosts)) {
       console.log('Qiitaの記事は更新がなかったのでファイルを更新しませんでした。');
