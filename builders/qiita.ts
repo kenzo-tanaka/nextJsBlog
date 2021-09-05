@@ -3,7 +3,8 @@ import fs from "fs-extra";
 import { ExternalPostData } from "@types";
 import { config } from "../site.config";
 
-const articleJsonPath = './contents/qiita/articles.json'
+const articleJsonPath: string = './contents/qiita/articles.json'
+const pastPosts: ExternalPostData[] = fs.readJSONSync(articleJsonPath);
 
 request(`https://qiita.com/api/v2/users/${config.qiitaId}/items`, function (error: Object, response: Object, body: string) {
   const currentPosts: ExternalPostData[] = [];
@@ -17,7 +18,6 @@ request(`https://qiita.com/api/v2/users/${config.qiitaId}/items`, function (erro
     )
   });
 
-  const pastPosts = fs.readJSONSync(articleJsonPath);
   if (JSON.stringify(pastPosts) === JSON.stringify(currentPosts)) {
     console.log('Qiitaの記事は更新がなかったのでファイルを更新しませんでした。')
     return;
