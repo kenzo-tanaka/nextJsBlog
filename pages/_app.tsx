@@ -23,7 +23,7 @@ const App = ({ Component, pageProps }: AppProps) => {
   return (
     <>
       <Navbar />
-      <div className="bg-gray-50 pt-3 pb-12">
+      <div className="bg-gray-100 pt-3 pb-12">
         <Component {...pageProps} />
       </div>
     </>
