@@ -50,3 +50,17 @@ Railsではそれ用のGemが用意されている、おそらくRails7ではこ
 Hotwireなどもimport mapを通して読み込まれる。ブラウザで見ると`<script type='importmap'>`が該当する箇所。
 
 ![importmap](https://user-images.githubusercontent.com/33926355/132976540-4e5151ba-1d54-4515-8c56-3d5968f8f82e.png)
+
+
+\# TODO: import mapの利点などをもう少し詳しく書く。
+
+## Railsはどこに向かうのか
+
+> Rails needs to be a wonderful framework for developing traditional single-page JavaScript applications – complete with client-side routing, heavy state management, and all the other complexities of that style. And it's going to be.
+
+Railsはクライアントサイドのルーティング、状態管理などを含むSPA開発でも使えるようなまさにフルスタックなフレームワークを目指しているようです。
+
+> Rails has supported this path for a long time with --api, and will continue to do so. This is not a path I'd recommend for small-to-medium-sized teams, but if you're inside a large organization committed to making SPAs with high walls between front-end and back-end departments, it might make sense.
+
+バックエンドはRails APIでフロントエンドはReact等でSPA化するなどはDHHはあまり推していない印象です。特に小さいチームでは。
+RailsがJavaScriptに関しても面倒を見てSPAを作れるようにするから、それらをうまく使ってくれという感じかなと思います。
