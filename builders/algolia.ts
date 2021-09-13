@@ -35,7 +35,7 @@ const pastAllPosts = (): string => {
 };
 
 // 既存のall-articles.jsonとgetSortedPostsData()との差分(追加分)を取得
-const generatePostsGap = () => {
+const postsGap = (): PostData[] => {
   const currentPosts = getSortedPostsData();
   const pastPosts: string = pastAllPosts();
 
@@ -60,7 +60,7 @@ const updateAllArticles = () => {
 
 const main = () => {
   const newFile = newFilePath();
-  const data = generatePostsGap();
+  const data = postsGap();
 
   if (data.length !== 0) {
     fs.writeFile(newFile, JSON.stringify(data), (err) => {
