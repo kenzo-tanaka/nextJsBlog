@@ -36,14 +36,14 @@ const allArticles = (): string => {
 
 // 既存のall-articles.jsonとgetSortedPostsData()との差分(追加分)を取得
 const generatePostsGap = () => {
-  const currentAllPostsArray = getSortedPostsData();
-  const pastAllPostsString = allArticles();
+  const currentPosts = getSortedPostsData();
+  const pastPosts: string = allArticles();
 
   let postsGap: PostData[] = [];
-  currentAllPostsArray.forEach((post: PostData) => {
+  currentPosts.forEach((post: PostData) => {
     const stringPost = JSON.stringify(post);
 
-    if (!pastAllPostsString.includes(stringPost)) {
+    if (!pastPosts.includes(stringPost)) {
       postsGap.push(post);
     }
   });
