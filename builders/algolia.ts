@@ -29,7 +29,7 @@ const newFilePath = (): string => {
   return basicPath + timeStamp + "-algolia.json";
 };
 
-const generatePastJsonString = () => {
+const allArticles = (): string => {
   const pastPostsArray = JSON.parse(fs.readFileSync(allArtilcesPath, "utf8"));
   return JSON.stringify(pastPostsArray);
 };
@@ -37,7 +37,7 @@ const generatePastJsonString = () => {
 // 既存のall-articles.jsonとgetSortedPostsData()との差分(追加分)を取得
 const generatePostsGap = () => {
   const currentAllPostsArray = getSortedPostsData();
-  const pastAllPostsString = generatePastJsonString();
+  const pastAllPostsString = allArticles();
 
   let postsGap: PostData[] = [];
   currentAllPostsArray.forEach((post: PostData) => {
