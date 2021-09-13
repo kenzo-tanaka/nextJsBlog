@@ -13,7 +13,7 @@ const client = algoliasearch(
 );
 const index = client.initIndex("kenzo_blog");
 
-const generateFilename = () => {
+const getTimeStamp = (): string => {
   const today = new Date();
   const timeStamp =
     today.getFullYear() +
@@ -21,6 +21,11 @@ const generateFilename = () => {
     String(today.getDate()).padStart(2, "0") +
     "-" +
     String(today.getTime());
+  return timeStamp;
+};
+
+const generateFilename = (): string => {
+  const timeStamp = getTimeStamp();
   return basicPath + timeStamp + "-algolia.json";
 };
 
