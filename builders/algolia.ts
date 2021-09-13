@@ -24,7 +24,7 @@ const getTimeStamp = (): string => {
   return timeStamp;
 };
 
-const generateFilename = (): string => {
+const newFilePath = (): string => {
   const timeStamp = getTimeStamp();
   return basicPath + timeStamp + "-algolia.json";
 };
@@ -59,7 +59,7 @@ const updateAllArticles = () => {
 };
 
 const main = () => {
-  const newFile = generateFilename();
+  const newFile = newFilePath();
   const data = generatePostsGap();
 
   if (data.length !== 0) {
