@@ -5,8 +5,8 @@ import algoliasearch from "algoliasearch";
 
 require("dotenv").config("../.env.local");
 
-const basicPath = "./data/";
-const allArtilcesPath = basicPath + "all-articles.json";
+const basicPath: string = "./data/";
+const allArtilcesPath: string = basicPath + "all-articles.json";
 const client = algoliasearch(
   `${process.env.ALGOLIA_APP_ID}`,
   `${process.env.ALGOLIA_ADMIN_KEY}`
@@ -29,7 +29,7 @@ const newFilePath = (): string => {
   return basicPath + timeStamp + "-algolia.json";
 };
 
-const allArticles = (): string => {
+const pastAllPosts = (): string => {
   const pastPostsArray = JSON.parse(fs.readFileSync(allArtilcesPath, "utf8"));
   return JSON.stringify(pastPostsArray);
 };
@@ -37,7 +37,7 @@ const allArticles = (): string => {
 // 既存のall-articles.jsonとgetSortedPostsData()との差分(追加分)を取得
 const generatePostsGap = () => {
   const currentPosts = getSortedPostsData();
-  const pastPosts: string = allArticles();
+  const pastPosts: string = pastAllPosts();
 
   let postsGap: PostData[] = [];
   currentPosts.forEach((post: PostData) => {
