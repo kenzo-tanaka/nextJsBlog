@@ -53,7 +53,7 @@ const updateAllArticles = () => {
   });
 };
 
-const createJson = () => {
+const main = () => {
   const newFile = generateFilename();
   const data = generatePostsGap();
 
@@ -75,4 +75,4 @@ const createJson = () => {
   }
 };
 
-createJson();
+main();
