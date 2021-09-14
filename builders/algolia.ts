@@ -64,26 +64,27 @@ const updateAllArticles = () => {
   });
 };
 
-const main = () => {
+const main = (): void => {
   const newFile = newFilePath();
   const data = postsGap();
 
-  if (data.length !== 0) {
-    fs.writeFile(newFile, JSON.stringify(data), (err) => {
-      if (err) throw err;
-      console.log(newFile + " への書き込みが完了しました。");
-    });
-    updateAllArticles();
-    // index
-    //   .saveObjects(data, { autoGenerateObjectIDIfNotExist: true })
-    //   .catch((err) => {
-    //     console.log(err);
-    //   });
-  } else {
+  if (data.length === 0) {
     console.log(
       "差分が検出されなかったため、JSONファイルは作成されませんでした。"
     );
+    return;
   }
+
+  fs.writeFile(newFile, JSON.stringify(data), (err) => {
+    if (err) throw err;
+    console.log(newFile + " への書き込みが完了しました。");
+  });
+  updateAllArticles();
+  // index
+  //   .saveObjects(data, { autoGenerateObjectIDIfNotExist: true })
+  //   .catch((err) => {
+  //     console.log(err);
+  //   });
 };
 
 main();
