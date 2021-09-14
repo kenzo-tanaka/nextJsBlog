@@ -66,22 +66,22 @@ const updateAllArticles = () => {
 
 const main = (): void => {
   const newFile = newFilePath();
-  const data = postsGap();
+  const gap = postsGap();
 
-  if (data.length === 0) {
+  if (gap.length === 0) {
     console.log(
       "差分が検出されなかったため、JSONファイルは作成されませんでした。"
     );
     return;
   }
 
-  fs.writeFile(newFile, JSON.stringify(data), (err) => {
+  fs.writeFile(newFile, JSON.stringify(gap), (err) => {
     if (err) throw err;
     console.log(newFile + " への書き込みが完了しました。");
   });
   updateAllArticles();
   // index
-  //   .saveObjects(data, { autoGenerateObjectIDIfNotExist: true })
+  //   .saveObjects(gap, { autoGenerateObjectIDIfNotExist: true })
   //   .catch((err) => {
   //     console.log(err);
   //   });
