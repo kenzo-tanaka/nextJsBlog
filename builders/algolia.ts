@@ -1,5 +1,4 @@
 import fs from "fs";
-import { PostData } from "../types";
 import { getSortedPostsData } from "../lib/posts";
 import algoliasearch from "algoliasearch";
 
@@ -12,6 +11,13 @@ const client = algoliasearch(
   `${process.env.ALGOLIA_ADMIN_KEY}`
 );
 const index = client.initIndex("kenzo_blog");
+
+type Post = {
+  slug: string;
+  date: string;
+  title: string;
+  category: string;
+}
 
 const getTimeStamp = (): string => {
   const today = new Date();
@@ -35,19 +41,19 @@ const pastAllPosts = (): string => {
 };
 
 // 既存のall-articles.jsonとgetSortedPostsData()との差分(追加分)を取得
-const postsGap = (): PostData[] => {
-  const currentPosts = getSortedPostsData();
+const postsGap = (): Post[] => {
+  const currentPosts: Post[] = getSortedPostsData();
   const pastPosts: string = pastAllPosts();
 
-  let postsGap: PostData[] = [];
-  currentPosts.forEach((post: PostData) => {
+  let gap: Post[] = [];
+  currentPosts.forEach((post: Post) => {
     const stringPost = JSON.stringify(post);
 
     if (!pastPosts.includes(stringPost)) {
-      postsGap.push(post);
+      gap.push(post);
     }
   });
-  return postsGap;
+  return gap;
 };
 
 const updateAllArticles = () => {
@@ -68,11 +74,11 @@ const main = () => {
       console.log(newFile + " への書き込みが完了しました。");
     });
     updateAllArticles();
-    index
-      .saveObjects(data, { autoGenerateObjectIDIfNotExist: true })
-      .catch((err) => {
-        console.log(err);
-      });
+    // index
+    //   .saveObjects(data, { autoGenerateObjectIDIfNotExist: true })
+    //   .catch((err) => {
+    //     console.log(err);
+    //   });
   } else {
     console.log(
       "差分が検出されなかったため、JSONファイルは作成されませんでした。"
