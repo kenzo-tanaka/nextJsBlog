@@ -56,13 +56,12 @@ const postsGap = (): Post[] => {
   return gap;
 };
 
-const updateAllArticles = () => {
-  const allArtilces = getSortedPostsData();
-  fs.writeFile(allArtilcesPath, JSON.stringify(allArtilces), (err) => {
+const writeToFile = (path: string, data: string): void => {
+  fs.writeFile(path, data, (err) => {
     if (err) throw err;
-    console.log(allArtilcesPath + " への書き込みが完了しました。");
+    console.log(path + " への書き込みが完了しました。");
   });
-};
+}
 
 const main = (): void => {
   const newFile = newFilePath();
@@ -79,7 +78,7 @@ const main = (): void => {
     if (err) throw err;
     console.log(newFile + " への書き込みが完了しました。");
   });
-  updateAllArticles();
+  writeToFile(allArtilcesPath, JSON.stringify(getSortedPostsData()));
   // index
   //   .saveObjects(gap, { autoGenerateObjectIDIfNotExist: true })
   //   .catch((err) => {
