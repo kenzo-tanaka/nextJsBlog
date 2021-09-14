@@ -74,10 +74,7 @@ const main = (): void => {
     return;
   }
 
-  fs.writeFile(newFile, JSON.stringify(gap), (err) => {
-    if (err) throw err;
-    console.log(newFile + " への書き込みが完了しました。");
-  });
+  writeToFile(newFile, JSON.stringify(gap));
   writeToFile(allArtilcesPath, JSON.stringify(getSortedPostsData()));
   // index
   //   .saveObjects(gap, { autoGenerateObjectIDIfNotExist: true })
