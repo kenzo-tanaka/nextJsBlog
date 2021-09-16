@@ -15,7 +15,8 @@ export function getSortedPostsData() {
     return {
       slug: dirName,
       date: matterResult.data.date,
-      ...matterResult.data,
+      title: matterResult.data.title,
+      category: matterResult.data.category,
     };
   });
 
