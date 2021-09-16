@@ -75,11 +75,11 @@ const main = (): void => {
 
   writeToFile(newFile, JSON.stringify(gap));
   writeToFile(allArtilcesPath, JSON.stringify(getSortedPostsData()));
-  // index
-  //   .saveObjects(gap, { autoGenerateObjectIDIfNotExist: true })
-  //   .catch((err) => {
-  //     console.log(err);
-  //   });
+  index
+    .saveObjects(gap, { autoGenerateObjectIDIfNotExist: true })
+    .catch((err) => {
+      console.log(err);
+    });
 };
 
 main();
