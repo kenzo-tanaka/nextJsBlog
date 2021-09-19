@@ -89,8 +89,8 @@ https://github.com/rbenv/rbenv/issues/759#issuecomment-124748535
 
 ## 今回の事象について
 
-- 今回はRubyバージョンを切り替えた後にGemを実行できなかった
-- 結果的に`rehash`を実行すると実行できる状態となった。
+- 何らかの理由で本来削除されるはずの一時ファイル`.rbenv-shim`が残ったままとなっていた。
+- `gem install typeprof`を実行したとき、Gemのインストールは正常終了したが、`rbenv rehash`は失敗していた。
+  - `rehash`に失敗しているので、`~/.rbenv/shims/`にコピーが作成されておらず実行できなかった。
 
-なので、`gem install steep`を実行した時に自動で実行されるはずの`rbenv rehash`が正常に終了しなかったため、`~/.rbenv/shims/`以下にコピーが作成されていない状況だった。
-
+なので`.rbenv-shim`を削除して、`rbenv rehash`を実行すると`~/.rbenv/shims/`以下に正しくコピーが作成された状態となるため、動作するようになった。
