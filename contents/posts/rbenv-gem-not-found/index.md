@@ -71,9 +71,8 @@ list_executable_names() {
 
 [rbenv/rbenv-rehash at master · rbenv/rbenv](https://github.com/rbenv/rbenv/blob/master/libexec/rbenv-rehash#L82-L91)
 
-`gem install hoge`を実行したときには、`rehash`が自動で実行される。もともとは[rbenv/rbenv-gem-rehash](https://github.com/rbenv/rbenv-gem-rehash)というプラグインがこれを担っていた。現在はDEPRECATEDとなっている。
+`gem install hoge`を実行したときには、`rehash`が自動で実行される。もともとは[rbenv/rbenv-gem-rehash](https://github.com/rbenv/rbenv-gem-rehash)というプラグインがこれを担っていた。現在はDEPRECATEDとなっていて、現在はrbenvの中に移植されている。
 
-現在はrbenvの中に移植されている。
 [rbenv/rubygems_plugin.rb at master · rbenv/rbenv](https://github.com/rbenv/rbenv/blob/master/rbenv.d/exec/gem-rehash/rubygems_plugin.rb)
 
 なので`gem install`を実行するたびに`rehash`を実行しなくてもそのGemを使用できる状態となる。
