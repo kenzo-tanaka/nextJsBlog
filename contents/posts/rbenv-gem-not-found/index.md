@@ -30,7 +30,7 @@ $ typeprof xxx.rb
 zsh: command not found: typeprof
 ```
 
-## 原因
+## 対応
 
 結論としては、`rbenv rehash`を実行する必要があった。また`rbenv rehash`実行にあたり、下記エラーが発生したため、`.rbenv-shim`を削除する対応をとった。
 
