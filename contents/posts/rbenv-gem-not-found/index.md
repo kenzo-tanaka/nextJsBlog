@@ -75,3 +75,12 @@ list_executable_names() {
 
 現在はrbenvの中に移植されている。
 [rbenv/rubygems_plugin.rb at master · rbenv/rbenv](https://github.com/rbenv/rbenv/blob/master/rbenv.d/exec/gem-rehash/rubygems_plugin.rb)
+
+なので`gem install`を実行するたびに`rehash`を実行しなくてもそのGemを使用できる状態となる。
+
+## 今回の事象について
+
+- 今回はRubyバージョンを切り替えた後にGemを実行できなかった
+- 結果的に`rehash`を実行すると実行できる状態となった。
+
+なので、`gem install steep`を実行した時に自動で実行されるはずの`rbenv rehash`が正常に終了しなかったため、`~/.rbenv/shims/`以下にコピーが作成されていない状況だった。
