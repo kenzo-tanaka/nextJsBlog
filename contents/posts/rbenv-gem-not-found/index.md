@@ -35,5 +35,9 @@ zsh: command not found: typeprof
 結論としては、`rbenv rehash`を実行する必要があった。また`rbenv rehash`実行にあたり、下記エラーが発生したため、`.rbenv-shim`を削除する対応をとった。
 
 ```shell
+$ rbenv rehash
 rbenv: cannot rehash: /usr/local/var/rbenv/shims/.rbenv-shim exists
+$ cd /Users/xxx/.rbenv/shims
+$ rm .rbenv-shim
+$ rbenv rehash
 ```
