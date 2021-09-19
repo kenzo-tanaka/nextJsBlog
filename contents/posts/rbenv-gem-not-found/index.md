@@ -52,3 +52,8 @@ rbenvの仕組みなどをちゃんと調べてこなかったので、以下で
 - インストールされた全てのバージョンのRubyコマンドにマッチするshimをディレクトリに維持する。
 
 `gem install hoge`したときには、`shims/`ディレクトリをrbenvが書き換えてくれる。`shims/`にはパスが通っているため、実行可能な状態となる。
+
+## `rehash`は何をするのか
+
+> `rbenv rehash` コマンドを実行すると、大まかには `~/.rbenv/versions/*/bin/` 以下のファイルを `~/.rbenv/shims/` 以下にコピーする。  
+[rbenv rehashをちゃんと理解する](https://mogulla3.tech/articles/2020-12-29-01)
