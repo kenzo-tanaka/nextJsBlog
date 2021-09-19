@@ -57,3 +57,18 @@ rbenvの仕組みなどをちゃんと調べてこなかったので、以下で
 
 > `rbenv rehash` コマンドを実行すると、大まかには `~/.rbenv/versions/*/bin/` 以下のファイルを `~/.rbenv/shims/` 以下にコピーする。  
 [rbenv rehashをちゃんと理解する](https://mogulla3.tech/articles/2020-12-29-01)
+
+```shell
+# List basenames of executables for every Ruby version
+list_executable_names() {
+  local version file
+  rbenv-versions --bare --skip-aliases | \
+  while read -r version; do
+    for file in "${RBENV_ROOT}/versions/${version}/bin/"*; do
+      echo "${file##*/}"
+    done
+  done
+}
+```
+
+[rbenv/rbenv-rehash at master · rbenv/rbenv](https://github.com/rbenv/rbenv/blob/master/libexec/rbenv-rehash#L82-L91)
