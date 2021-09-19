@@ -20,9 +20,7 @@ $ ruby -v
 ruby 3.0.2p107
 ```
 
-[Rubyで型チェック！動かして理解するRBS入門 〜サンプルコードでわかる！Ruby 3.0の主な新機能と変更点 Part 1〜 - Qiita](https://qiita.com/jnchito/items/bf8c6c2e1dd6cff05f4e)
-
-こちらの記事を参考にコードを書いていく。途中`typeprof`などが必要なので、インストールして実行しようとするが`command not found`のエラーとなる。
+型チェックのために`typeprof`などが必要なので、インストールして実行しようとするが`command not found`のエラーとなる。
 
 ```shell
 $ gem install typeprof
@@ -41,3 +39,14 @@ $ cd /Users/xxx/.rbenv/shims
 $ rm .rbenv-shim
 $ rbenv rehash
 ```
+
+rbenvの仕組みなどをちゃんと調べてこなかったので、以下ではrbenvの仕組みやrehashが何をしているのかについて調べた内容をメモしている。
+
+## `Shims`とはなにか
+
+公式のREADMEに記載がある。
+
+[rbenv/rbenv: README](https://github.com/rbenv/rbenv)
+
+- rbenvはPATHの先頭に`shims`のディレクトリを追加する
+- インストールされた全てのバージョンのRubyコマンドにマッチするshimをディレクトリに維持する。
