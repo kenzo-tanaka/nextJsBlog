@@ -78,9 +78,19 @@ list_executable_names() {
 
 なので`gem install`を実行するたびに`rehash`を実行しなくてもそのGemを使用できる状態となる。
 
+## 一時ファイル`.rbenv-shim`
+
+`rehash`のプロセスでは並列で実行されないように、一時ファイル`.rbenv-shim`を作成する。`rbenv rehash`を実行したとき、この一時ファイルが存在すると失敗するような挙動となっている。
+
+> During the rehash process, rbenv writes out the temporary file .rbenv-shim to indicate that the rehash is in progress. Then, if a parallel rbenv rehash process tries to run at the same time, it will fail because the file already exists. This guards against race conditions in parallel rehashes.  
+https://github.com/rbenv/rbenv/issues/759#issuecomment-124748535
+
+
+
 ## 今回の事象について
 
 - 今回はRubyバージョンを切り替えた後にGemを実行できなかった
 - 結果的に`rehash`を実行すると実行できる状態となった。
 
 なので、`gem install steep`を実行した時に自動で実行されるはずの`rbenv rehash`が正常に終了しなかったため、`~/.rbenv/shims/`以下にコピーが作成されていない状況だった。
+
