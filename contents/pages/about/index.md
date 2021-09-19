@@ -39,13 +39,6 @@ pdf_options:
 | connpass | [connpass](https://connpass.com/user/kenzoukenzou/)   |
 | 本棚     | [ブクログ](https://booklog.jp/users/4165b902f43abd44) |
 
-## 職務経歴概要
-
-| 在籍期間          |                                                  |
-| ----------------- | ------------------------------------------------ |
-| 2018 年 - 2019 年 | 株式会社ワークスアプリケーションズ BizDev 正社員 |
-| 2019 年 - 現在    | EXest 株式会社 Web エンジニア 正社員             |
-
 ## 保有スキル
 - Ruby on Railsを用いたモノリシックなプロダクト開発～ライブラリの選定
 - JavaScriptの基本的な理解、Vanilla JSを使ったフロントエンド実装
@@ -72,7 +65,14 @@ pdf_options:
 - Heroku, AWS(S3, CloudFront, Lambda, Elastic Transcoder), imgix
 - CircleCI, GitHub Actions
 
-## 職務経歴
+## 職務経歴概要
+
+| 在籍期間          |                                                  |
+| ----------------- | ------------------------------------------------ |
+| 2018 年 - 2019 年 | 株式会社ワークスアプリケーションズ BizDev 正社員 |
+| 2019 年 - 現在    | EXest 株式会社 Web エンジニア 正社員             |
+
+## 職務経歴詳細
 
 ### EXest株式会社 — Webエンジニア  
 2019 年 8 月～現在
