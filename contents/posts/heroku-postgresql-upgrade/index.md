@@ -32,24 +32,24 @@ Heroku Postgres をアップグレードする方法は以下の3つがありま
 **途中アプリをメンテナンスモードにする必要がある**ので、適切なタイミングを見計らってやる必要がある。
 
 1. 新しいプランのDBを用意する
-  ```shell
-  $ heroku addons:create heroku-postgresql:standard-0 --app hoge
-  ```
-  この時点で Heroku Postgres が既存と新規で2種類アタッチされた状態となる。下記コマンドで確認が可能。
-  ```shell
-  $ heroku pg:info --app hoge
-  ```
-  ```shell
-  $ heroku pg:wait --app hoge
-  # プロビジョニングが完了するまでローディング状態となり
-  # プロビジョニングが完了したら available と表示される
-  ```
+    ```shell
+    $ heroku addons:create heroku-postgresql:standard-0 --app hoge
+    ```
+    この時点で Heroku Postgres が既存と新規で2種類アタッチされた状態となる。下記コマンドで確認が可能。
+    ```shell
+    $ heroku pg:info --app hoge
+    ```
+    ```shell
+    $ heroku pg:wait --app hoge
+    # プロビジョニングが完了するまでローディング状態となり
+    # プロビジョニングが完了したら available と表示される
+    ```
 2. アプリをメンテナンスモードにする
-  ```shell
-  # アプリをメンテナンスモードにする
-  # 利用者はアプリにアクセス出来ない状態となり、DBが書き換わるのを防ぐ
-  $ heroku maintenance:on --app hoge
-  ```
+    ```shell
+    # アプリをメンテナンスモードにする
+    # 利用者はアプリにアクセス出来ない状態となり、DBが書き換わるのを防ぐ
+    $ heroku maintenance:on --app hoge
+    ```
 3. 新規のDBにデータをコピーする
    以下のコマンドで表示される新しいデータベース名を確認する。(例: `HEROKU_POSTGRESQL_PINK`)
    ```shell
