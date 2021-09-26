@@ -28,8 +28,23 @@ Heroku Postgres をアップグレードする方法は以下の3つがありま
 
 ## `pg:copy`でアップグレードしていく
 
+アップグレードしたいプランでDBを新しく用意し、`pg:copy`で既存DBのレコードを移行する方法。  
+**途中アプリをメンテナンスモードにする必要がある**ので、適切なタイミングを見計らってやる必要がある。
+
 1. 新しいプランのDBを用意する
   ```shell
   $ heroku addons:create heroku-postgresql:standard-0 --app hoge
   ```
   この時点で Heroku Postgres が既存と新規で2種類アタッチされた状態となる。新しい方に既存のデータを移行していく。
+
+  ```shell
+  $ heroku pg:wait --app hoge
+  # プロビジョニングが完了するまでローディング状態となり
+  # プロビジョニングが完了したら available と表示される
+  ```
+2. アプリをメンテナンスモードにする
+  ```shell
+  # アプリをメンテナンスモードにする
+  # 利用者はアプリにアクセス出来ない状態となり、DBが書き換わるのを防ぐ
+  $ heroku maintenance:on --app hoge
+  ```
