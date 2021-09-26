@@ -21,7 +21,7 @@ Heroku Postgres をアップグレードする方法は以下の3つがありま
 
 [Heroku Postgres データベースのプランまたはインフラストラクチャの変更 | Heroku Dev Center](https://devcenter.heroku.com/ja/articles/updating-heroku-postgres-databases)
 
-ただし、Hobby層(`hobby-dev​` と `hobby-basic`))からのアップグレードをするには、`pg:copy`を使うのが唯一の手段です。
+ただし、Hobby層(`hobby-dev​` と `hobby-basic`)からのアップグレードをするには、`pg:copy`を使うのが唯一の手段です。
 
 > pg:copy​ コマンドでは、サポートされているすべての Heroku Postgres プランおよびバージョン間での更新がサポートされます。さらに、これは Hobby 層​のデータベースに関連する更新 (このデータベースとの間のすべての移行) のためにサポートされている唯一の方法です。
 > [pg:copyの更新 - Heroku Postgres データベースのプランまたはインフラストラクチャの変更 | Heroku Dev Center](https://devcenter.heroku.com/ja/articles/updating-heroku-postgres-databases#updating-with-pg-copy)
