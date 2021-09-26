@@ -23,7 +23,7 @@ Heroku Postgres をアップグレードする方法は以下の3つがありま
 
 ただし、Hobby層(`hobby-dev​` と `hobby-basic`)からのアップグレードをするには、`pg:copy`を使うのが唯一の手段です。
 
-> pg:copy​ コマンドでは、サポートされているすべての Heroku Postgres プランおよびバージョン間での更新がサポートされます。さらに、これは Hobby 層​のデータベースに関連する更新 (このデータベースとの間のすべての移行) のためにサポートされている唯一の方法です。
+> pg:copy​ コマンドでは、サポートされているすべての Heroku Postgres プランおよびバージョン間での更新がサポートされます。さらに、これは Hobby 層​のデータベースに関連する更新 (このデータベースとの間のすべての移行) のためにサポートされている唯一の方法です。  
 > [pg:copyの更新 - Heroku Postgres データベースのプランまたはインフラストラクチャの変更 | Heroku Dev Center](https://devcenter.heroku.com/ja/articles/updating-heroku-postgres-databases#updating-with-pg-copy)
 
 ## `pg:copy`でアップグレードしていく
@@ -51,3 +51,21 @@ Heroku Postgres をアップグレードする方法は以下の3つがありま
   $ heroku maintenance:on --app hoge
   ```
 3. 新規のDBにデータをコピーする
+   以下のコマンドで表示される新しいデータベース名を確認する。(例: `HEROKU_POSTGRESQL_PINK`)
+   ```shell
+   $ heroku pg:info --app hoge
+   ```
+   `pg:copy`を実行してデータをコピーする。
+   ```shell
+   $ heroku pg:copy DATABASE_URL HEROKU_POSTGRESQL_PINK --app hoge
+   # アプリ名の入力を求められるので入力してEnter
+   ```
+4. 新しいデータベースをプロモートする
+   作成されたデータベースをプライマリデータベースにする。
+   ```shell
+   $ heroku pg:promote HEROKU_POSTGRESQL_PINK
+   ```
+5. メンテナンスモードを終了する
+   ```shell
+   $ heroku maintenance:off --app hoge
+   ```
