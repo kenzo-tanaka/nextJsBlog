@@ -4,7 +4,7 @@ date: '2021-10-03'
 category: 'dev'
 ---
 
-月次振り返り。
+2021年9月の振り返り。
 
 ## 技術関連
 - 仕事では受託開発がメインになっている。先方とのやり取りなど含めて色々やっている。
@@ -30,8 +30,25 @@ category: 'dev'
 読んだ
 - [オブジェクト指向設計実践ガイド ~Rubyでわかる 進化しつづける柔軟なアプリケーションの育て方 | Sandi Metz, 髙山 泰基 |本 | 通販 | Amazon](https://www.amazon.co.jp/%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E6%8C%87%E5%90%91%E8%A8%AD%E8%A8%88%E5%AE%9F%E8%B7%B5%E3%82%AC%E3%82%A4%E3%83%89-Ruby%E3%81%A7%E3%82%8F%E3%81%8B%E3%82%8B-%E9%80%B2%E5%8C%96%E3%81%97%E3%81%A4%E3%81%A5%E3%81%91%E3%82%8B%E6%9F%94%E8%BB%9F%E3%81%AA%E3%82%A2%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%81%AE%E8%82%B2%E3%81%A6%E6%96%B9-Sandi-Metz/dp/477418361X)
 - [保守性の高いソフトウェア開発のTips集](https://zenn.dev/riku/books/36d9873ee1c0e6)
-- [マスタリングTCP/IP　入門編] (https://amzn.to/3A3iyUX)
+- [マスタリングTCP/IP入門編] (https://amzn.to/3A3iyUX)
 - [達人に学ぶDB設計 徹底指南書](https://amzn.to/3D4gFth)
 - [オブジェクト指向でなぜつくるのか 第３版](https://amzn.to/3F7JLK9)
 - [Getting Started – React](https://ja.reactjs.org/docs/getting-started.html)
 - https://scrapbox.io/kawasima/イミュータブルデータモデル
+- [3. Low-Code Development by texta.fm](https://anchor.fm/textafm/episodes/3--Low-Code-Development-emr6k3/a-a3ttrie)
+
+## 振り返り
+
+**Keep**
+- 低レイヤーや設計に関する書籍を何冊か読めた。最初に読んだときよりも解像度高く読めたと思う。
+- 技術学習用のリポジトリを作り、書籍の内容をメモしたり写経したりして学びが薄くならないにようにできた。
+
+**Problem**
+- 平日の就業前時間を最近使えていない。
+
+**Try**
+- 早く寝て早く起きる。
+
+## 🐈 所感
+
+今まで学習した知識で点だったものが線でつながる感覚が多く、とても楽しかった。10月はDDDなども勉強していきたい。
