@@ -42,3 +42,10 @@ end
   = form.date_field :created_since
   = form.submit 'Search'
 ```
+
+検索を実行する(検索フォームをサブミット)と下記のエラーとなります。
+
+```shell
+undefined method `strftime' for "2021-09-25":String
+Did you mean?  strip
+```
