@@ -65,3 +65,59 @@ Did you mean?  strip
 ```slim
 = form.search_field :created_since, type: 'date'
 ```
+
+## なんで`search_field`で解決するか
+
+```erb
+<%# Not work %>
+<%= form.date_field :created_since %>
+
+<%# Work %>
+<%= form.search_field :created_since, type: 'date' %>
+```
+
+吐き出されるHTMLは同じです。
+
+```html
+<input type="date" name="q[created_since]" id="q_created_since">
+<input type="date" name="q[created_since]" id="q_created_since">
+```
+
+`date_field`の実装を見てみます。  
+[date_field (ActionView::Helpers::FormHelper) - APIdock](https://apidock.com/rails/v6.0.0/ActionView/Helpers/FormHelper/date_field)
+
+```rb:action_view/helpers/tags/date_field.rb
+module ActionView
+  module Helpers
+    module Tags # :nodoc:
+      class DateField < DatetimeField # :nodoc:
+        private
+          def format_date(value)
+            value&.strftime("%Y-%m-%d") # 👈 エラーとなる箇所
+          end
+      end
+    end
+  end
+end
+```
+
+スーパークラスの`DatetimeField`を見てみます。
+
+```rb:action_view/helpers/tags/datetime_field.rb
+module ActionView
+  module Helpers
+    module Tags # :nodoc:
+      class DatetimeField < TextField # :nodoc:
+        def render
+          options = @options.stringify_keys
+          options["value"] ||= format_date(value) # 👈 format_dateがここで呼ばれている
+          options["min"] = format_date(datetime_value(options["min"]))
+          options["max"] = format_date(datetime_value(options["max"]))
+          @options = options
+          super
+        end
+      end
+    end
+  end
+end
+```
