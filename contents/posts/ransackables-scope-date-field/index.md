@@ -66,25 +66,47 @@ Did you mean?  strip
 = form.search_field :created_since, type: 'date'
 ```
 
-## なんで`search_field`で解決するか
+## Ransackの中の処理
 
-```erb
-<%# Not work %>
-<%= form.date_field :created_since %>
+`ransackable_scopes`を介さない検索であればエラーにならないところが謎だったので、Ransackの処理を追ってみました。
 
-<%# Work %>
-<%= form.search_field :created_since, type: 'date' %>
+`ransackable_scopes`ではない普通の検索であれば、`Condition#value`から`Value#cast`が呼ばれて、検索時の value をよしなにキャストしてくれます。
+
+```rb:lib/ransack/nodes/condition.rb
+def value
+  if predicate.wants_array
+    values.map { |v| v.cast(default_type) }
+  else
+    values.first.cast(default_type)
+  end
+end
 ```
 
-吐き出されるHTMLは同じです。
 
-```html
-<input type="date" name="q[created_since]" id="q_created_since">
-<input type="date" name="q[created_since]" id="q_created_since">
+```rb:lib/ransack/nodes/value.rb
+def cast(type)
+  case type
+  when :date
+    cast_to_date(value)
+  when :datetime, :timestamp, :time
+    cast_to_time(value)
+  when :boolean
+    cast_to_boolean(value)
+  when :integer
+    cast_to_integer(value)
+  when :float
+    cast_to_float(value)
+  when :decimal
+    cast_to_decimal(value)
+  when :money
+    cast_to_money(value)
+  else
+    cast_to_string(value)
+  end
+end
 ```
 
-`date_field`の実装を見てみます。  
-[date_field (ActionView::Helpers::FormHelper) - APIdock](https://apidock.com/rails/v6.0.0/ActionView/Helpers/FormHelper/date_field)
+`ransackable_scopes`の場合は上記処理を通過しないので、キャストされずに文字列のまま`strftime`を呼び出そうとしてエラーになっているようです。
 
 ```rb:action_view/helpers/tags/date_field.rb
 module ActionView
@@ -101,23 +123,4 @@ module ActionView
 end
 ```
 
-スーパークラスの`DatetimeField`を見てみます。
-
-```rb:action_view/helpers/tags/datetime_field.rb
-module ActionView
-  module Helpers
-    module Tags # :nodoc:
-      class DatetimeField < TextField # :nodoc:
-        def render
-          options = @options.stringify_keys
-          options["value"] ||= format_date(value) # 👈 format_dateがここで呼ばれている
-          options["min"] = format_date(datetime_value(options["min"]))
-          options["max"] = format_date(datetime_value(options["max"]))
-          @options = options
-          super
-        end
-      end
-    end
-  end
-end
-```
+`search_field`を使うと上記処理は通らないのでエラーになりません。
