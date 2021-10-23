@@ -23,18 +23,13 @@ in `connect_nonblock': SSL_connect returned=1 errno=0 state=error: certificate v
 
 HobbyプランではTLSと非暗号化接続両方をサポートしているが、プロダクションプラン（Premiumなど）ではTLS接続が必要。プレミアムプランではRedis6に接続するために、クライアント側でTLSを有効化する必要がある。
 
-[Heroku Redis | Heroku Dev Center](https://devcenter.heroku.com/articles/heroku-redis#provisioning-the-add-on)
-
-Herokuは内部的にはSSLを使用おらず、ルーターのレイヤーでSSL認証してHTTPでアプリケーションにリクエストを転送する。
-
-> From version 6 and above, Redis requires using TLS to connect. However, Heroku does not use SSL internally. They terminate SSL at the router level and forward requests from there to your application via HTTP which is safe as all these do happen behind Heroku’s firewall.
-
-[How to solve the SSL error for Redis 6 on Heroku? | ogirginc](https://ogirginc.github.io/en/heroku-redis-ssl-error)
+Herokuは内部的にはルーターのレイヤーでSSLターミネーションをして、HTTPでアプリケーションにリクエストを転送する。
 
 > インバウンドリクエストは、SSL ターミネーションを提供するロードバランサーによって受信されます。リクエストは、ここから一連のルータに直接渡されます。
-ルーターは、アプリケーションの Web ​dyno​ の場所を判断し、これらの dyno のいずれかに HTTP リクエストを転送する役割を担います。
+> ルーターは、アプリケーションの Web ​dyno​ の場所を判断し、これらの dyno のいずれかに HTTP リクエストを転送する役割を担います。
 
-[HTTP ルーティング | Heroku Dev Center](https://devcenter.heroku.com/ja/articles/http-routing)
+- [HTTP ルーティング | Heroku Dev Center](https://devcenter.heroku.com/ja/articles/http-routing)
+- [How to solve the SSL error for Redis 6 on Heroku? | ogirginc](https://ogirginc.github.io/en/heroku-redis-ssl-error)
 
 ## 対処
 
@@ -51,7 +46,7 @@ Sidekiq.configure_client do |config|
 end
 ```
 
-ここで`config.redis`に渡すハッシュはSidekiqの処理の中で`Redis.new`するときのパラメータとして渡る。redis-rbのコードを読むと、`ssl_params`は`OpenSSL::SSL::SSLContext.new`のオブジェクトのパラメータとしてセットされている。
+ここで`config.redis=`のハッシュ設定値は、Sidekiqの処理の中で`Redis.new`するときのパラメータとして渡る。[redis-rb](https://github.com/redis/redis-rb)のコードを読むと、`ssl_params`は`OpenSSL::SSL::SSLContext.new`のオブジェクトのパラメータとしてセットされている。
 
 ```rb
 def self.connect(host, port, timeout, ssl_params)
@@ -74,6 +69,10 @@ https://github.com/redis/redis-rb/blob/506f9228cc106d1364040a73fb2366cf99e94207/
 `OpenSSL::SSL::VERIFY_NONE`の設定はサーバーモードでは証明書を要求せず、クライアントモードでは証明書を検証するが失敗してもハンドシェイクを継続するとのこと。
 
 [OpenSSL::SSL::VERIFY_NONE (Ruby 3.0.0 リファレンスマニュアル)](https://docs.ruby-lang.org/ja/latest/method/OpenSSL=3a=3aSSL/c/VERIFY_NONE.html)
+
+まとめるとRedis6、HerokuであればPremiumプラン以上ではTLS接続が必須であるが、Heroku内部ではSSL認証をルーターというレイヤでやるので、Redisとの接続のところでTLS接続されていない。
+
+なのでRedis側の設定を変えることで対応をしている。という認識。
 
 ## 関連記事
 
