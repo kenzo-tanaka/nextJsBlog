@@ -21,8 +21,7 @@ in `connect_nonblock': SSL_connect returned=1 errno=0 state=error: certificate v
 
 ## 原因
 
-HobbyプランではTLSと非暗号化接続両方をサポートしているが、プロダクションプラン（Premiumなど）ではTLS接続が必要。  
-プレミアムプランではRedis6に接続するために、クライアント側でTLSを有効化する必要がある。
+HobbyプランではTLSと非暗号化接続両方をサポートしているが、プロダクションプラン（Premiumなど）ではTLS接続が必要。プレミアムプランではRedis6に接続するために、クライアント側でTLSを有効化する必要がある。
 
 [Heroku Redis | Heroku Dev Center](https://devcenter.heroku.com/articles/heroku-redis#provisioning-the-add-on)
 
@@ -39,12 +38,7 @@ Herokuは内部的にはSSLを使用おらず、ルーターのレイヤーでSS
 
 ## 対処
 
-```rb
-# config/initializers/redis.rb
-$redis = Redis.new(url: ENV["REDIS_URL"], ssl_params: { verify_mode: OpenSSL::SSL::VERIFY_NONE })
-```
-
-Sidekiqの設定だけ変えたい場合はこんなふうにもできる。
+SidekiqでRedisを使用しているので下記の設定を追加する。
 
 ```rb
 # config/initializers/sidekiq.rb
@@ -56,6 +50,30 @@ Sidekiq.configure_client do |config|
   config.redis = { ssl_params: { verify_mode: OpenSSL::SSL::VERIFY_NONE } }
 end
 ```
+
+ここで`config.redis`に渡すハッシュはSidekiqの処理の中で`Redis.new`するときのパラメータとして渡る。redis-rbのコードを読むと、`ssl_params`は`OpenSSL::SSL::SSLContext.new`のオブジェクトのパラメータとしてセットされている。
+
+```rb
+def self.connect(host, port, timeout, ssl_params)
+  # Note: this is using Redis::Connection::TCPSocket
+  tcp_sock = TCPSocket.connect(host, port, timeout)
+
+  ctx = OpenSSL::SSL::SSLContext.new
+
+  # The provided parameters are merged into OpenSSL::SSL::SSLContext::DEFAULT_PARAMS
+  ctx.set_params(ssl_params || {})
+  # ...
+end
+```
+
+https://github.com/redis/redis-rb/blob/506f9228cc106d1364040a73fb2366cf99e94207/lib/redis/connection/ruby.rb#L227
+
+`OpenSSL::SSL::SSLContext#verify_mode=`のドキュメントがここ。 
+[OpenSSL::SSL::SSLContext#verify_mode= (Ruby 3.0.0 リファレンスマニュアル)](https://docs.ruby-lang.org/ja/latest/method/OpenSSL=3a=3aSSL=3a=3aSSLContext/i/verify_mode=3d.html)
+
+`OpenSSL::SSL::VERIFY_NONE`の設定はサーバーモードでは証明書を要求せず、クライアントモードでは証明書を検証するが失敗してもハンドシェイクを継続するとのこと。
+
+[OpenSSL::SSL::VERIFY_NONE (Ruby 3.0.0 リファレンスマニュアル)](https://docs.ruby-lang.org/ja/latest/method/OpenSSL=3a=3aSSL/c/VERIFY_NONE.html)
 
 ## 関連記事
 
