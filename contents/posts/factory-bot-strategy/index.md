@@ -117,3 +117,5 @@ def define_syntax_method(name, &block)
   end
 end
 ```
+
+![](img1.png)
