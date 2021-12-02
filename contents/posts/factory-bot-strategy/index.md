@@ -1,12 +1,11 @@
 ---
-title: 'factory_botと学ぶデザインパターン [Strategyパターン]'
+title: 'factory_botと学ぶデザインパターン【Strategyパターン】'
 date: '2021-12-02'
 category: 'dev'
 ---
 
 最近[factory_bot](https://github.com/thoughtbot/factory_bot)のコードを読み始めました。
-factory_botにはいくつかのデザインパターンが実装されていて、`create`や`build`メソッドの定義には、Strategyパターンが使われています。
-
+factory_botにはいくつかのデザインパターンが実装されていて、`create`や`build`メソッドの定義には、Strategyパターンが使われています。  
 factory_botのコードを追いながら、Strategyパターンについて学ぶ記事です。
 
 ## Strategyパターンの紹介
@@ -49,15 +48,15 @@ Main.new(AlgorithmB.new).execute
 class Main
   def execute
     if some_condition
-      AlgorithmA.new.print_name
+      p 'AlgorithmA'
     else
-      AlgorithmB.new.print_name
+      p 'AlgorithmB'
     end
   end
 end
 ```
 
-こうなるとアルゴリズムのパターンが増えたときには条件分岐が増え、可読性・保守性が下がります。なので、`execute`の中の条件分岐を外(AlgorithmA, AlgorithmB)に追いやり、責務を移譲するのがStrategyパターンです。
+こうなるとアルゴリズムのパターンが増えたときには条件分岐が増え、可読性・保守性が下がります。なので、`execute`の中の条件分岐を外(`AlgorithmA`, `AlgorithmB`)に追いやり、責務を移譲するのがStrategyパターンです。
 
 結城浩さんのデザインパターンの本では、じゃんけんの戦略を呼び出し側で切り替えする実装例が紹介されています。
 
@@ -65,6 +64,8 @@ end
 
 
 ## factory_botの`create`メソッド
+
+factory_botの`create`や`build`などのメソッドの箇所でStrategyパターンが使われています。実装の詳細を確認する前に、factrory_botの使い方についておさらいします。
 
 factrory_botを使うと以下のように書いて、インスタンスの生成ができます。
 
@@ -126,3 +127,8 @@ end
 
 - `trait`を使う、`_list`のメソッドも合わせて定義するなど、基本的にやりたいことは同じ
 - ただ処理の中身は各メソッドで差異があるので、アルゴリズムを切り替えたい
+
+## 最後に
+
+[factory_bot](https://github.com/thoughtbot/factory_bot)で実装されているStrategyパターンを見てみました。  
+factory_botでは他にもObserverパターンなども入っているので、こちらも続編記事などで紹介したいと思います。
