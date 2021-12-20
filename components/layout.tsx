@@ -20,7 +20,7 @@ const Layout: React.FC<Props> = ({ children, home = false }) => {
           target="_blank"
           className="text-gray-400 underline"
         >
-          SourceCode
+          Source code
         </a>
       </p>
     </div>
