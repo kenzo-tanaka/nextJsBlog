@@ -4,7 +4,7 @@
   "description": "田中建蔵の技術ブログ",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 3001",
+    "dev": "next dev -p 3002",
     "build": "next build",
     "build:algolia": "ts-node --project tsconfig.builder.json ./builders/algolia.ts",
     "build:zenn": "ts-node --project tsconfig.builder.json ./builders/zenn.ts",
