@@ -55,6 +55,33 @@ https://github.com/joelhawksley/view-component-demo
 
 使い方等はめちゃめちゃシンプルで直感的なので、公式サイトを見て頂ければと思います。
 
+## 個人的に感じたプロコン
+
+まだがっつり使ったわけではないので、その点はご了承ください。
+
+pro:
+
+- GitHub社がアクティブに開発しているのである程度信用できそう
+- コンポーネントの考え方など開発者の新しい知識習得の機会になりそう
+- コンポーネントは独立してテスト可能なのでテスタビリティが高い
+
+con:
+
+- `xxx_component.rb` と `xxx_component.html.haml` が同じ階層に入るので、コンポーネントが増えてきたらファイルの見通しが悪くなりそう
+- コンポーネントの切り方、ディレクトリ構造は開発者に委ねられているのでなど悩みそう & 無秩序になりそう
+- コンポーネントのディレクトリ構造を変更する際、使用する側のコードも変更が必要になりそう
+- 比較的新しいライブラリなので、ゴリゴリ使い込んでいるOSSとかがなさそう
+  - [forem](https://github.com/forem/forem) とかも浅く使っている感じ
+  - foremにViewComponentが入ったのは多分ここ https://github.com/forem/forem/pull/14283
+
+その他OSS:
+
+* [joemasilotti/railsdevs.com: The reverse job board for Rails developers.](https://github.com/joemasilotti/railsdevs.com)
+* [Spina/app at master · SpinaCMS/Spina](https://github.com/SpinaCMS/Spina/tree/master/app)
+* [18F/identity-idp: Login.gov Core App: Identity Provider (IdP)](https://github.com/18F/identity-idp)
+* [TheOdinProject/theodinproject: Main Website for The Odin Project](https://github.com/TheOdinProject/theodinproject)
+
+
 ## 最後に
 
 コンポーネントの設計なども学んでいかなくては、と思いました。
