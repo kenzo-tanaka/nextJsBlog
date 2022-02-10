@@ -16,5 +16,5 @@ export const getZennPosts = async () => {
       'url': 'https://zenn.dev/kenzo/articles/' + element['slug'],
     }
   });
-  return currentPosts
+  return [currentPosts[0]]
 }
