@@ -8,7 +8,7 @@ const getPosts = async (url: string) => {
 }
 
 export const getZennPosts = async () => {
-  const posts = await getPosts(`https://zenn.dev/api/articles?username=${config.zennId}&order=latest`);
+  const posts = await getPosts(`https://zenn.dev/api/articles?username=kenzo&order=latest`);
   const currentPosts: ExternalPostData[] = posts['articles'].map((element: { title: string, created_at: string, slug: string }) => {
     return {
       'title': element['title'],
