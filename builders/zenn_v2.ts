@@ -9,7 +9,7 @@ const getPosts = async (url: string) => {
   return response.data;
 }
 
-export const comparePosts = (pastPosts: ExternalPostData[], currentPosts: ExternalPostData[]) => {
+export const comparePosts = (pastPosts: ExternalPostData[], currentPosts: ExternalPostData[]): boolean => {
   return (_.isEqual(pastPosts, currentPosts))
 }
 
