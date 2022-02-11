@@ -6,7 +6,7 @@ jest.mock("axios");
 const mockedAxios = axios as jest.Mocked<typeof axios>;
 
 describe("zenn", () => {
-  test("zenn", async () => {
+  test("記事をAPIから取得", async () => {
     mockedAxios.get.mockResolvedValue({ data: data })
     const result = await getZennPosts()
 
