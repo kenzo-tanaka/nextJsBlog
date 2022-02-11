@@ -34,7 +34,8 @@ export const getZennPosts = async () => {
   return currentPosts
 }
 
-const main = async () => {
+// TODO: テストでは実行されないようにする
+(async () => {
   try {
     const pastPosts = readPostFile(articleJsonPath)
     const currentPosts = await getZennPosts()
@@ -48,4 +49,4 @@ const main = async () => {
   } catch (error) {
     console.log(error)
   }
-}
+})();
