@@ -10,10 +10,10 @@ describe("zenn", () => {
     mockedAxios.get.mockResolvedValue({ data: data })
     const result = await getZennPosts()
 
-    expect(result).toEqual([{
+    expect(result[0]).toEqual({
       title: '一次情報を検索しやすくするChrome拡張を作った。',
       created_at: "2021-10-30T18:34:54.861+09:00",
       url: 'https://zenn.dev/kenzo/articles/e69f87236b479f'
-    }])
+    })
   })
 })
