@@ -35,8 +35,8 @@ const main = async () => {
   const currentPosts = await getZennPosts()
 
   if (comparePosts(pastPosts, currentPosts)) {
-    console.log('same')
+    console.log('Zennの記事は更新がなかったのでファイルを更新しませんでした。')
   } else {
-    console.log('not same')
+    console.log('Zennの新しい記事を反映しました。');
   }
 }
