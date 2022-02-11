@@ -1,7 +1,8 @@
-import { getZennPosts, comparePosts, readPostFile } from "../zenn_v2"
+import { getZennPosts, comparePosts, readPostFile, writeJsonFile } from "../zenn_v2"
 import axios from "axios"
 import data from "./zenn.api.json"
-
+import { writeFile } from "fs";
+import fs from "fs-extra"
 jest.mock("axios");
 const mockedAxios = axios as jest.Mocked<typeof axios>;
 
@@ -26,6 +27,20 @@ describe("zenn", () => {
         "url": "https://zenn.dev/kenzo/articles/e69f87236b479f"
       }
     ])
+  })
+
+  test("ファイルにWrite", () => {
+    const path = "./builders/__tests__/test.json"
+    const data = [{
+      "title": "一次情報を検索しやすくするChrome拡張を作った。",
+      "created_at": "2021-10-30T18:34:54.861+09:00",
+      "url": "https://zenn.dev/kenzo/articles/e69f87236b479f"
+    }]
+    writeJsonFile(path, data)
+    const result = fs.readJSONSync(path)
+    expect(result).toEqual(data)
+
+    // TODO: 後処理、ファイルを空にする
   })
 
   test("既存記事と比較", () => {

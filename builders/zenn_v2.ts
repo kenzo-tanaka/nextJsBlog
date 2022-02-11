@@ -18,6 +18,10 @@ export const readPostFile = (path: string) => {
   return (fs.readJSONSync(path))
 }
 
+export const writeJsonFile = (path: string, data: any): void => {
+  fs.writeJsonSync(path, data);
+}
+
 export const getZennPosts = async () => {
   const posts = await getPosts(`https://zenn.dev/api/articles?username=${config.zennId}&order=latest`);
   const currentPosts: ExternalPostData[] = posts['articles'].map((element: { title: string, created_at: string, slug: string }) => {
