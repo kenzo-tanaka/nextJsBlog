@@ -16,9 +16,6 @@ describe("zenn", () => {
       url: 'https://zenn.dev/kenzo/articles/e69f87236b479f'
     })
   })
-})
-
-describe("zenn", () => {
   test("既存記事と比較", () => {
     const pastPosts = [
       {
