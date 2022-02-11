@@ -1,7 +1,6 @@
 import { getZennPosts, comparePosts, readPostFile, writeJsonFile } from "../zenn_v2"
 import axios from "axios"
 import data from "./zenn.api.json"
-import { writeFile } from "fs";
 import fs from "fs-extra"
 jest.mock("axios");
 const mockedAxios = axios as jest.Mocked<typeof axios>;
