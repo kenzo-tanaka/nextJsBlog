@@ -41,6 +41,7 @@ const main = async () => {
   if (comparePosts(pastPosts, currentPosts)) {
     console.log('Zennの記事は更新がなかったのでファイルを更新しませんでした。')
   } else {
+    writeJsonFile(articleJsonPath, currentPosts)
     console.log('Zennの新しい記事を反映しました。');
   }
 }
