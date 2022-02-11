@@ -40,7 +40,8 @@ describe("zenn", () => {
     const result = fs.readJSONSync(path)
     expect(result).toEqual(data)
 
-    // TODO: 後処理、ファイルを空にする
+    // 後処理、ファイルを空にする
+    fs.writeFileSync(path, '')
   })
 
   test("既存記事と比較", () => {
