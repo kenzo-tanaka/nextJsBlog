@@ -35,13 +35,17 @@ export const getZennPosts = async () => {
 }
 
 const main = async () => {
-  const pastPosts = readPostFile(articleJsonPath)
-  const currentPosts = await getZennPosts()
+  try {
+    const pastPosts = readPostFile(articleJsonPath)
+    const currentPosts = await getZennPosts()
 
-  if (comparePosts(pastPosts, currentPosts)) {
-    console.log('Zennの記事は更新がなかったのでファイルを更新しませんでした。')
-  } else {
-    writeJsonFile(articleJsonPath, currentPosts)
-    console.log('Zennの新しい記事を反映しました。');
+    if (comparePosts(pastPosts, currentPosts)) {
+      console.log('Zennの記事は更新がなかったのでファイルを更新しませんでした。')
+    } else {
+      writeJsonFile(articleJsonPath, currentPosts)
+      console.log('Zennの新しい記事を反映しました。');
+    }
+  } catch (error) {
+    console.log(error)
   }
 }
