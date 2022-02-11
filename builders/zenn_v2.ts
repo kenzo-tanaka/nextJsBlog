@@ -3,6 +3,7 @@ import fs from "fs-extra"
 import { config } from '../site.config'
 import { ExternalPostData } from "@types";
 
+const articleJsonPath: string = "./contents/zenn/articles.json"
 const _ = require('lodash');
 const getPosts = async (url: string) => {
   const response = await axios.get(url)
@@ -30,7 +31,7 @@ export const getZennPosts = async () => {
 }
 
 const main = async () => {
-  const pastPosts = readPostFile("./contents/zenn/articles.json")
+  const pastPosts = readPostFile(articleJsonPath)
   const currentPosts = await getZennPosts()
 
   if (comparePosts(pastPosts, currentPosts)) {
