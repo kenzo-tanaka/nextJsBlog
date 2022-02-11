@@ -28,3 +28,14 @@ export const getZennPosts = async () => {
   });
   return currentPosts
 }
+
+const main = async () => {
+  const pastPosts = readPostFile("./contents/zenn/articles.json")
+  const currentPosts = await getZennPosts()
+
+  if (comparePosts(pastPosts, currentPosts)) {
+    console.log('same')
+  } else {
+    console.log('not same')
+  }
+}
