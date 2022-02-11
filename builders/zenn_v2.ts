@@ -3,6 +3,7 @@ import fs from "fs-extra"
 import { config } from '../site.config'
 import { ExternalPostData } from "@types";
 
+const articleJsonPath: string = "./contents/zenn/articles.json"
 const _ = require('lodash');
 const getPosts = async (url: string) => {
   const response = await axios.get(url)
@@ -15,6 +16,10 @@ export const comparePosts = (pastPosts: ExternalPostData[], currentPosts: Extern
 
 export const readPostFile = (path: string) => {
   return (fs.readJSONSync(path))
+}
+
+export const writeJsonFile = (path: string, data: any): void => {
+  fs.writeJsonSync(path, data);
 }
 
 export const getZennPosts = async () => {
@@ -30,12 +35,12 @@ export const getZennPosts = async () => {
 }
 
 const main = async () => {
-  const pastPosts = readPostFile("./contents/zenn/articles.json")
+  const pastPosts = readPostFile(articleJsonPath)
   const currentPosts = await getZennPosts()
 
   if (comparePosts(pastPosts, currentPosts)) {
-    console.log('same')
+    console.log('Zennの記事は更新がなかったのでファイルを更新しませんでした。')
   } else {
-    console.log('not same')
+    console.log('Zennの新しい記事を反映しました。');
   }
 }
