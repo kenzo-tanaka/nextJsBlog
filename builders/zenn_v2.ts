@@ -2,9 +2,14 @@ import axios from "axios"
 import { config } from '../site.config'
 import { ExternalPostData } from "@types";
 
+const _ = require('lodash');
 const getPosts = async (url: string) => {
   const response = await axios.get(url)
   return response.data;
+}
+
+export const comparePosts = (pastPosts: ExternalPostData[], currentPosts: ExternalPostData[]) => {
+  return (_.isEqual(pastPosts, currentPosts))
 }
 
 export const getZennPosts = async () => {

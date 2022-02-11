@@ -1,4 +1,4 @@
-import { getZennPosts } from "../zenn_v2"
+import { getZennPosts, comparePosts } from "../zenn_v2"
 import axios from "axios"
 import data from "./zenn.api.json"
 
@@ -15,5 +15,27 @@ describe("zenn", () => {
       created_at: "2021-10-30T18:34:54.861+09:00",
       url: 'https://zenn.dev/kenzo/articles/e69f87236b479f'
     })
+  })
+})
+
+describe("zenn", () => {
+  test("既存記事と比較", () => {
+    const pastPosts = [
+      {
+        "title": "一次情報を検索しやすくするChrome拡張を作った。",
+        "created_at": "2021-10-30T18:34:54.861+09:00",
+        "url": "https://zenn.dev/kenzo/articles/e69f87236b479f"
+      },
+    ]
+    const currentPosts = [
+      {
+        title: '一次情報を検索しやすくするChrome拡張を作った。',
+        created_at: "2021-10-30T18:34:54.861+09:00",
+        url: 'https://zenn.dev/kenzo/articles/e69f87236b479f'
+      }
+    ]
+
+    const result = comparePosts(pastPosts, currentPosts)
+    expect(result).toBe(true)
   })
 })
