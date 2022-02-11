@@ -1,4 +1,5 @@
 import axios from "axios"
+import fs from "fs-extra"
 import { config } from '../site.config'
 import { ExternalPostData } from "@types";
 
@@ -10,6 +11,10 @@ const getPosts = async (url: string) => {
 
 export const comparePosts = (pastPosts: ExternalPostData[], currentPosts: ExternalPostData[]) => {
   return (_.isEqual(pastPosts, currentPosts))
+}
+
+export const readPostFile = (path: string) => {
+  return (fs.readJSONSync(path))
 }
 
 export const getZennPosts = async () => {
