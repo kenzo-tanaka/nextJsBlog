@@ -109,7 +109,7 @@ require "test_prof/recipes/rspec/before_all"
 
 ```rb
 before_all do
-  let!(:articles) { create_list(:article, 10) }
+  create_list(:article, 10)
 end
 ```
 
