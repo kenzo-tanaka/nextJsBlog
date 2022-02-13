@@ -13,8 +13,6 @@ $ npm run dev
 $ bash add-post.sh slug
 ```
 
-作成したディレクトリの下に、`index.md` を作成して下さい。
-
 もしサムネイルを指定したい場合には、下記のようにサムネイルを相対パスで指定して下さい。
 
 ```
@@ -42,13 +40,7 @@ URL の指定でも動作します。
 
 ### Twitter の embed
 
-`twitter` のコードブロックを作成し、ツイート ID を記述して下さい。
-
-````md
-```twitter
-1353188620912402433
-```
-````
+Twitterの埋め込みコードによって、Embedすることができます。
 
 ## 履歴書を PDF で出力
 
@@ -57,7 +49,3 @@ URL の指定でも動作します。
 ```shell
 $ npx md-to-pdf contents/pages/about/index.md
 ```
-
-## GitHub Actions
-
-`create issue` というワークフローが毎月 27 日に実行されます。これは、月次の振り返りをする自分リリースノート執筆リマインダーです。
