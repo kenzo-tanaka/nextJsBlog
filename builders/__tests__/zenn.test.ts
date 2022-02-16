@@ -1,4 +1,4 @@
-import { getZennPosts, comparePosts, readPostFile, writeJsonFile } from "../zenn_v2"
+import { getZennPosts, comparePosts, readPostFile, writeJsonFile } from "../zenn"
 import axios from "axios"
 import data from "./zenn.api.json"
 import fs from "fs-extra"
