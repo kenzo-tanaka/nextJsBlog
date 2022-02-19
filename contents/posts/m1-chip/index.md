@@ -37,8 +37,13 @@ Inspect or clean up the working tree at /var/folders/j2/vfdnhrkx25j3xdmyvpcly7pc
 Results logged to /var/folders/j2/vfdnhrkx25j3xdmyvpcly7pc0000gp/T/ruby-build.20220219174837.49150.log
 ```
 
+まさに同じところでコケているIssueがruby-buildに上がっていた。 
 [Installation issues with Arm Mac (M1 Chip) · Issue #1691 · rbenv/ruby-build](https://github.com/rbenv/ruby-build/issues/1691)
+
+`RUBY_CFLAGS="-w"`を設定すると、インストールは通るようになる。
 
 ```shell
 RUBY_CFLAGS="-w" rbenv install 2.6.3
 ```
+
+関連: [M1 の MacBook で rbenv + Ruby 2.6.6 をビルドする - Secret Garden(Instrumental)](https://secret-garden.hatenablog.com/entry/2021/01/02/220713)
