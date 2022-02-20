@@ -20,11 +20,22 @@ Results logged to /var/folders/j2/vfdnhrkx25j3xdmyvpcly7pc0000gp/T/ruby-build.20
 
 ## 結論
 
+まさに同じところでコケているIssueがruby-buildに上がっていた。 
+[Installation issues with Arm Mac (M1 Chip) · Issue #1691 · rbenv/ruby-build](https://github.com/rbenv/ruby-build/issues/1691)
+
 `RUBY_CFLAGS="-w"`を設定すると、インストールは通るようになる。
 
 ```shell
 RUBY_CFLAGS="-w" rbenv install 2.6.3
 ```
 
-まさに同じところでコケているIssueがruby-buildに上がっていた。 
-[Installation issues with Arm Mac (M1 Chip) · Issue #1691 · rbenv/ruby-build](https://github.com/rbenv/ruby-build/issues/1691)
+2.7.2など、バージョンによって上記のエラーが発生しないこともある。
+
+```shell
+rbenv install 2.7.2
+Downloading ruby-2.7.2.tar.bz2...
+-> https://cache.ruby-lang.org/pub/ruby/2.7/ruby-2.7.2.tar.bz2
+Installing ruby-2.7.2...
+ruby-build: using readline from homebrew
+Installed ruby-2.7.2 to /Users/ben/.rbenv/versions/2.7.2
+```
