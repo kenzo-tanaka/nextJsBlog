@@ -7,6 +7,8 @@ category: 'dev'
 チームでリードタイムの可視化を始めていて、それを実現するミニマムなスクリプトを書いた。  
 [dotfiles/gh-leadtime.rb](https://github.com/kenzo-tanaka/dotfiles/blob/master/utils/gh-leadtime.rb)
 
+## 使い方
+
 こんな感じで使う。
 
 ```shell
@@ -19,4 +21,7 @@ USERS=kenzo-tanaka FROM=2022-04-07 TO=2022-04-12 ACCESS_TOKEN=xxx OWNER=kenzo-ta
 pulls: 2, nums: 25834 25790, leadtime: 48.89, diff_average: 246
 ```
 
-データをダッシュボード的に見れるようにするところまでは作っておらず、上記の結果をスプシとかに貼り付けて可視化している。
+## 最小限の実装だけした
+
+リードタイムの可視化などは社内で実績がなく、かなり手探りで進めていくことになりそうだったので、初手は大きく作りすぎないように心掛けた。  
+上記のように最小限のデータだけを返して、それをスプシに貼り付けてビジュアル化などをおこなっている。
