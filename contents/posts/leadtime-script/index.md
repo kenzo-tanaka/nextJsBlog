@@ -32,3 +32,8 @@ pulls: 2, nums: 25834 25790, leadtime: 48.89, diff_average: 246
 
 ただ、他チームで使ってもらうためには自動化しておく必要があって、そのタイミングでは割とがっつり作り込みをする必要がありそうな気がしている。  
 [Four Keys 〜自分たちの開発レベルを定量化してイケてる DevOps チームになろう〜 - Tech Blog - Recruit Engineer](https://engineer.recruit-lifestyle.co.jp/techblog/2021-03-31-four-keys/)
+
+## Graphqlを触った
+
+データの取得はGitHubのGraphql APIを使った。  
+クエリをいじってリクエストすると必要なデータをごっそり取ってこれるのが大変便利だった。
