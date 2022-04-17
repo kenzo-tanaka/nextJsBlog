@@ -12,10 +12,10 @@ category: 'dev'
 ```shell
 USERS=kenzo-tanaka FROM=2022-04-07 TO=2022-04-12 ACCESS_TOKEN=xxx OWNER=kenzo-tanaka REPO=dotfiles BASE=master ruby <(curl -s https://raw.githubusercontent.com/kenzo-tanaka/dotfiles/master/utils/gh-leadtime.rb)
 
-# 指定した期間でマージされたPRの本数
-# PRの番号
-# リードタイム(PRの作成-Mergeされるまで)の平均
-# diff(additions+deletions)の平均
+# pulls: 指定した期間でマージされたPRの本数
+# nums: PRの番号
+# leadtime: リードタイム(PRの作成-Mergeされるまで)の平均
+# diff_average: diff(additions+deletions)の平均
 pulls: 2, nums: 25834 25790, leadtime: 48.89, diff_average: 246
 ```
 
