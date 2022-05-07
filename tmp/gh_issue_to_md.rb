@@ -43,6 +43,11 @@ class GhIssue
   GraphQL
 
 	def self.call
+		res = exec_query
+		res.data.repository.issues.nodes
+	end
+
+	def self.exec_query
 		GitHubAPI::Client.query(QUERY)
 	end
 end 
