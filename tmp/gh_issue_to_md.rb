@@ -50,7 +50,7 @@ class GhIssue
 	def self.exec_query
 		GitHubAPI::Client.query(QUERY)
 	end
-end 
+end
 
 nodes = GhIssue.call
 nodes.each do |node|
