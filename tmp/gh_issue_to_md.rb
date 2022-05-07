@@ -23,10 +23,10 @@ end
 
 class GhIssue
   QUERY = GitHubAPI::Client.parse <<-GraphQL
-    query() {
+    query {
       repository(owner: "kenzo-tanaka", name: "nextJsBlog") {
 				issues(
-					first: 3,
+					first: 3
 					orderBy: { field: CREATED_AT, direction: DESC }
 					labels: "article-publish"
 					states: OPEN
@@ -41,5 +41,10 @@ class GhIssue
 			}
     }
   GraphQL
+
+	def self.call
+		GitHubAPI::Client.query(QUERY)
+	end
 end 
 
+GhIssue.call
