@@ -20,7 +20,7 @@ Results logged to /var/folders/j2/vfdnhrkx25j3xdmyvpcly7pc0000gp/T/ruby-build.20
 
 ## 結論
 
-まさに同じところでコケているIssueがruby-buildに上がっていた。 
+まさに同じところでコケているIssueがruby-buildに上がっていた。   
 [Installation issues with Arm Mac (M1 Chip) · Issue #1691 · rbenv/ruby-build](https://github.com/rbenv/ruby-build/issues/1691)
 
 `RUBY_CFLAGS="-w"`を設定すると、インストールは通るようになる。
