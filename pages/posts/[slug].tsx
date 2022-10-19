@@ -128,15 +128,6 @@ const Post: NextPage<Props> = ({ postData, relatedPosts }) => {
           </div>
         </article>
         <ShareBtns slug={`posts/${slug}`} title={title} />
-        <div className="text-center mt-3">
-          <Link
-            href={`${config.repo}/edit/main/contents/posts/${slug}/index.md`}
-          >
-            <a target="_blank" className="text-gray-400">
-              Edit on GitHub
-            </a>
-          </Link>
-        </div>
       </div>
       <div className="px-7 pb-2">
         <hr className="mb-8" />
