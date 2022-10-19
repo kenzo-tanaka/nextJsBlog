@@ -32,3 +32,4 @@ yarn-error.log*
 contents/pages/about/index.pdf
 
 .vercel
+.idea
