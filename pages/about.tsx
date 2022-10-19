@@ -54,13 +54,6 @@ const About: NextPage<Props> = ({ pageData }) => {
           </div>
         </article>
         <ShareBtns slug={slug} title={title} />
-        <div className="text-center mt-3">
-          <Link href={`${config.repo}/edit/main/contents/pages/about/index.md`}>
-            <a className="text-gray-400" target="_blank">
-              Edit on GitHub
-            </a>
-          </Link>
-        </div>
       </div>
     </Layout>
   );
