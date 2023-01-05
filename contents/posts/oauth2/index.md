@@ -58,3 +58,9 @@ OAuth 2.0 では4つのフローがあるが、ここでは
 
 ![](authentication-code.mmd.jpg)
 
+## Gem
+
+- [doorkeeper-gem/doorkeeper](https://github.com/doorkeeper-gem/doorkeeper#documentation)
+  - Ruby on Railsのアプリに組み込みやすそうなGem。Extensionとして、Open ID Connectのサポートもされているよう。
+- [oauth-xx / oauth2 · GitLab](https://gitlab.com/oauth-xx/oauth2/)
+  - クライアント側の実装で使えそう。
