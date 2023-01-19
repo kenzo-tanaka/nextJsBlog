@@ -23,8 +23,6 @@ pdf_options:
 
 # 職務経歴書
 
-![Profile img](profile.jpg)
-
 ## 基本情報
 
 | key      | value                                                 |
