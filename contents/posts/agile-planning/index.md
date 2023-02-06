@@ -1,5 +1,5 @@
 ---
-title:
+title: 'アジャイルな見積りと計画づくり'
 date: '2023-02-06'
 category: 'dev'
 ---
