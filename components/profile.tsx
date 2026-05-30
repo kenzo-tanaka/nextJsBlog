@@ -13,8 +13,8 @@ const Profile: React.FC = () => {
       />
       <p className="text-gray-500 mt-4">
         Personal tech blog /{" "}
-        <Link href="/about">
-          <a className="underline">resume</a>
+        <Link href="/about" className="underline">
+          resume
         </Link>
       </p>
     </div>

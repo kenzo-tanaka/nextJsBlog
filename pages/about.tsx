@@ -29,7 +29,7 @@ type Props = {
 const About: NextPage<Props> = ({ pageData }) => {
   const { slug, title, content } = pageData;
 
-  const Img = ({ alt, src }: { alt: string; src: string }) => {
+  const Img = ({ alt, src }: any) => {
     return (
       <picture>
         <img
@@ -47,10 +47,11 @@ const About: NextPage<Props> = ({ pageData }) => {
         <article className='prose max-w-none break-words'>
           <div className="markdown-body">
             <ReactMarkdown
-              renderers={{ image: Img }}
-              plugins={[gfm]}
-              children={content}
-            />
+              components={{ img: Img }}
+              remarkPlugins={[gfm]}
+            >
+              {content}
+            </ReactMarkdown>
           </div>
         </article>
         <ShareBtns slug={slug} title={title} />
