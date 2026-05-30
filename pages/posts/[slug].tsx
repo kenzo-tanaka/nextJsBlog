@@ -13,6 +13,7 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import style from "react-syntax-highlighter/dist/cjs/styles/prism/dracula";
 import { PostData } from "@types";
 import gfm from "remark-gfm";
+import rehypeRaw from "rehype-raw";
 import { TwitterTweetEmbed } from "react-twitter-embed";
 import Skeleton from "react-loading-skeleton";
 import { config } from "../../site.config";
@@ -23,13 +24,18 @@ type Props = {
   relatedPosts: PostData[];
 };
 
-const CodeBlock = ({
-  language,
-  value,
-}: {
-  language: string;
-  value: string;
-}) => {
+// react-markdown v9 以降の `code` コンポーネント。
+// インラインコードは className を持たず、フェンスドコードは `language-xxx` を持つ。
+const CodeBlock = ({ className, children }: any) => {
+  const match = /language-([\w:.\-]+)/.exec(className || "");
+  // インラインコードはそのまま描画
+  if (!match) {
+    return <code className={className}>{children}</code>;
+  }
+
+  const value = String(children).replace(/\n$/, "");
+  const language = match[1];
+
   if (language === "twitter") {
     return (
       <TwitterTweetEmbed
@@ -89,7 +95,7 @@ const Post: NextPage<Props> = ({ postData, relatedPosts }) => {
     };
   }, []);
 
-  const Img = ({ alt, src }: { alt: string; src: string }) => {
+  const Img = ({ alt, src }: any) => {
     return (
       <picture>
         <img
@@ -120,11 +126,17 @@ const Post: NextPage<Props> = ({ postData, relatedPosts }) => {
           <h1 className="text-3xl font-bold my-3">{title}</h1>
           <div className="markdown-body">
             <ReactMarkdown
-              renderers={{ code: CodeBlock, image: Img }}
-              plugins={[gfm]}
-              children={content}
-              allowDangerousHtml={true}
-            />
+              components={{
+                code: CodeBlock,
+                img: Img,
+                // CodeBlock が独自要素を返すため pre は素通しにする
+                pre: ({ children }: any) => <>{children}</>,
+              }}
+              remarkPlugins={[gfm]}
+              rehypePlugins={[rehypeRaw]}
+            >
+              {content}
+            </ReactMarkdown>
           </div>
         </article>
         <ShareBtns slug={`posts/${slug}`} title={title} />

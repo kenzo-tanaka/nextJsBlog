@@ -25,10 +25,11 @@ const PostsContainer: React.FC<Props> = ({ posts }) => {
             <ul>
               {posts.map(({ slug, date, title }) => (
                 <li className="mb-6" key={slug}>
-                  <Link href={`/posts/${slug}`}>
-                    <a className="break-words text-lg font-semibold text-gray-800 visited:text-gray-600">
-                      {title}
-                    </a>
+                  <Link
+                    href={`/posts/${slug}`}
+                    className="break-words text-lg font-semibold text-gray-800 visited:text-gray-600"
+                  >
+                    {title}
                   </Link>
                   <br />
                   <small className="text-sm font-normal text-gray-400">
