@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "description": "田中建蔵の技術ブログ",
   "private": true,
+  "engines": {
+    "node": "22.x"
+  },
   "scripts": {
     "dev": "next dev --webpack -p 3002",
     "build": "next build --webpack",
