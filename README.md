@@ -41,11 +41,3 @@ URL の指定でも動作します。
 ### Twitter の embed
 
 Twitterの埋め込みコードによって、Embedすることができます。
-
-## 履歴書を PDF で出力
-
-下記を実行して、`/contents/pages/about/index.pdf`を確認して下さい。
-
-```shell
-$ npx md-to-pdf contents/pages/about/index.md
-```

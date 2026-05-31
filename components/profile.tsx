@@ -1,5 +1,4 @@
 import React from "react";
-import Link from "next/link";
 
 const Profile: React.FC = () => {
   return (
@@ -12,10 +11,7 @@ const Profile: React.FC = () => {
         height={100}
       />
       <p className="text-gray-500 mt-4">
-        Personal tech blog /{" "}
-        <Link href="/about" className="underline">
-          resume
-        </Link>
+        Personal tech blog
       </p>
     </div>
   );
