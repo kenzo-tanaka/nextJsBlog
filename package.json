@@ -10,30 +10,27 @@
     "dev": "next dev --webpack -p 3002",
     "build": "next build --webpack",
     "build:algolia": "ts-node --project tsconfig.builder.json ./builders/algolia.ts",
-    "build:zenn": "ts-node --project tsconfig.builder.json ./builders/zenn.ts",
-    "build:qiita": "ts-node --project tsconfig.builder.json ./builders/qiita.ts",
     "build:next": "next build --webpack",
     "start": "next start",
-    "test": "jest --passWithNoTests"
+    "test": "echo \"No tests configured\""
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.19",
     "algoliasearch": "^4.27.0",
     "autoprefixer": "^10.4.20",
-    "axios": "^0.21.3",
     "date-fns": "^2.30.0",
     "dotenv": "^9.0.2",
     "fs-extra": "^10.0.0",
     "gray-matter": "^4.0.3",
     "lodash": "^4.17.21",
     "next": "^16.2.6",
-    "postcss": "^8.5.0",
+    "postcss": "8.5.15",
     "raw-loader": "^4.0.2",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-loading-skeleton": "^3.5.0",
     "react-markdown": "^10.1.0",
-    "react-syntax-highlighter": "^15.6.6",
+    "react-syntax-highlighter": "^16.1.1",
     "react-twitter-embed": "^4.0.4",
     "rehype-raw": "^7.0.0",
     "remark-gfm": "^4.0.1",
@@ -41,17 +38,17 @@
     "tailwindcss": "^3.4.19",
     "ts-node": "^10.2.1"
   },
+  "overrides": {
+    "postcss": "8.5.15"
+  },
   "devDependencies": {
     "@types/fs-extra": "^9.0.12",
     "@types/gtag.js": "0.0.4",
-    "@types/jest": "^26.0.24",
     "@types/node": "^22.19.19",
     "@types/react": "^19.2.15",
     "@types/react-dom": "^19.2.3",
     "@types/react-syntax-highlighter": "^15.5.13",
-    "jest": "^26.6.3",
     "npm-run-all": "^4.1.5",
-    "ts-jest": "^26.5.6",
     "typescript": "^5.9.3"
   }
 }

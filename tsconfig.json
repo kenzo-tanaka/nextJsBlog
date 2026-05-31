@@ -29,8 +29,7 @@
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx",
-    "builders/zenn.js"
+    "**/*.tsx"
   ],
   "exclude": [
     "node_modules"

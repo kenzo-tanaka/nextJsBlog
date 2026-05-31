@@ -9,8 +9,6 @@ export const config = {
   gaID: "G-YVLG2X1KMY",
   postDir: path.join(process.cwd(), "contents/posts"),
   repo: "https://github.com/kenzo-tanaka/nextJsBlog",
-  qiitaId: 'kenz-dev',
-  zennId: 'kenzo',
   siteRoot:
     process.env.NODE_ENV === "production"
       ? "https://kenzoblog.vercel.app"
@@ -18,8 +16,6 @@ export const config = {
   // カテゴリーは数を増やさない想定でデザインしているので、追加する際は注意
   categoryList: [
     { slug: "/", name: "Blog" },
-    { slug: "/zenn", name: "Zenn" },
-    { slug: "/qiita", name: "Qiita" },
   ],
   postsNumPerPage: 10
 };
